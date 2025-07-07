@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Still Time Beauty - Medical aesthetics practice in Boulder, Colorado specializing in Botox, dermal fillers, and facial rejuvenation. Expert Nurse Practitioner-driven treatments.">
+    <meta name="keywords" content="Botox Boulder, dermal fillers Boulder, medical aesthetics Boulder, facial rejuvenation Colorado, Nurse Practitioner injections">
+    <meta name="author" content="Still Time Beauty">
+    <meta property="og:title" content="Still Time Beauty - Medical Aesthetics in Boulder, Colorado">
+    <meta property="og:description" content="Expert medical aesthetics treatments including Botox and dermal fillers by a qualified Nurse Practitioner in downtown Boulder.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stilltimebeauty.com">
+    <title>Still Time Beauty - Medical Aesthetics | Boulder, Colorado</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Still Time Beauty",
+        "description": "Medical aesthetics practice specializing in Botox, dermal fillers, and facial rejuvenation treatments",
+        "url": "https://stilltimebeauty.com",
+        "telephone": "(720) 731-8222",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "741 Pearl St",
+            "addressLocality": "Boulder",
+            "addressRegion": "CO",
+            "postalCode": "80302",
+            "addressCountry": "US"
+        },
+        "openingHours": "Mo-Su 09:00-17:00",
+        "priceRange": "$$",
+        "medicalSpecialty": "Cosmetic Medicine"
+    }
+    </script>
+</head>
+<body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-serif font-bold text-primary-800">
+                        Still Time Beauty
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-primary-700 hover:text-accent-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-primary-700 hover:text-accent-600 transition-colors">About</a>
+                    <a href="services.html" class="text-primary-700 hover:text-accent-600 transition-colors">Services</a>
+                    <a href="tel:(720) 731-8222" class="bg-accent-600 text-white px-6 py-2 rounded-full hover:bg-accent-700 transition-colors font-medium">
+                        Call to Book: (720) 731-8222
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-primary-700 hover:text-accent-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-primary-700 hover:text-accent-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-primary-700 hover:text-accent-600">About</a>
+                <a href="services.html" class="block px-3 py-2 text-primary-700 hover:text-accent-600">Services</a>
+                            <a href="tel:(720) 731-8222" class="block mx-3 my-2 bg-accent-600 text-white px-4 py-2 rounded-full text-center hover:bg-accent-700">
+                Call to Book: (720) 731-8222
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl lg:text-6xl font-serif font-bold text-primary-900 mb-6 leading-tight">
+                        Enhance Your Natural Beauty with 
+                        <span class="text-accent-600">Expert Care</span>
+                    </h1>
+                    <p class="text-xl text-primary-600 mb-8 leading-relaxed">
+                        Professional medical aesthetics in downtown Boulder. Expert Botox and dermal filler treatments by a qualified Nurse Practitioner with surgical precision.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="tel:(720) 731-8222" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors shadow-lg">
+                            Call to Book: (720) 731-8222
+                        </a>
+                        <a href="services.html" class="border-2 border-primary-300 text-primary-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
+                            View Services
+                        </a>
+                    </div>
+                    <div class="mt-6 grid grid-cols-2 gap-4 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
+                        <div class="bg-white/80 backdrop-blur-sm border border-primary-200 rounded-xl px-4 py-3 text-center lg:text-left">
+                            <div class="flex items-center justify-center lg:justify-start space-x-2">
+                                <span class="text-accent-600 text-sm">📍</span>
+                                <div>
+                                    <div class="text-xs font-semibold text-primary-800">
+                                        Convenient<br class="sm:hidden"> Location
+                                    </div>
+                                    <div class="text-xs text-primary-600">Pearl Street, Boulder</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white/80 backdrop-blur-sm border border-primary-200 rounded-xl px-4 py-3 text-center lg:text-left">
+                            <div class="flex items-center justify-center lg:justify-start space-x-2">
+                                <span class="text-accent-600 text-sm">📅</span>
+                                <div>
+                                    <div class="text-xs font-semibold text-primary-800">
+                                        Flexible<br class="sm:hidden"> Scheduling
+                                    </div>
+                                    <div class="text-xs text-primary-600">By Appointment Only</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex items-center justify-center lg:justify-start space-x-6">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary-800">5.0</div>
+                            <div class="text-sm text-primary-600">★★★★★</div>
+                            <div class="text-xs text-primary-500">Google Reviews</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary-800">NP</div>
+                            <div class="text-sm text-primary-600">Licensed</div>
+                            <div class="text-xs text-primary-500">Nurse Practitioner</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <!-- Main circular image -->
+                    <div class="relative w-72 h-72 md:w-[26rem] md:h-[26rem] lg:w-[30rem] lg:h-[30rem]">
+                        <div class="w-full h-full rounded-full overflow-hidden shadow-2xl border-8 border-white">
+                            <img src="assets/hero-faces.png" alt="Professional medical aesthetics for men and women" class="w-full h-full object-cover object-center">
+                        </div>
+                        <!-- Floating badge -->
+                        <div class="absolute -top-4 -right-4 bg-white/95 backdrop-blur-sm border-2 border-accent-200 text-primary-800 rounded-2xl px-4 py-2 shadow-xl">
+                            <div class="text-center">
+                                <div class="text-xs font-bold text-accent-600">Expert Care</div>
+                                <div class="text-xs text-primary-600">Men & Women</div>
+                            </div>
+                        </div>
+                        <!-- Floating stats -->
+                        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 border border-primary-100">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary-800">5.0★</div>
+                                <div class="text-xs text-primary-600">Google Reviews</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute top-4 right-4 md:top-8 md:right-8 w-12 h-12 md:w-16 md:h-16 bg-accent-200 rounded-full opacity-30 animate-pulse"></div>
+                    <div class="absolute bottom-8 right-12 md:bottom-16 md:right-16 w-6 h-6 md:w-8 md:h-8 bg-primary-300 rounded-full opacity-40"></div>
+                    <div class="absolute top-12 left-4 md:top-16 md:left-8 w-8 h-8 md:w-12 md:h-12 bg-accent-100 rounded-full opacity-50"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-primary-900 mb-4">
+                    Expert Medical Aesthetics
+                </h2>
+                <p class="text-xl text-primary-600 max-w-3xl mx-auto">
+                    Precision treatments designed to enhance your natural beauty with the highest standards of safety and artistry.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">💉</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Botox Treatments</h3>
+                    <p class="text-primary-600 mb-6">
+                        Smooth fine lines and wrinkles with precision neuromodulator treatments. Natural-looking results that enhance your expressions.
+                    </p>
+                    <a href="services.html#botox" class="text-accent-600 font-semibold hover:text-accent-700">
+                        Learn More →
+                    </a>
+                </div>
+                
+                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">✨</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Dermal Fillers</h3>
+                    <p class="text-primary-600 mb-6">
+                        Restore volume and enhance facial contours with expertly placed dermal fillers. Achieve a refreshed, youthful appearance.
+                    </p>
+                    <a href="services.html#fillers" class="text-accent-600 font-semibold hover:text-accent-700">
+                        Learn More →
+                    </a>
+                </div>
+                
+                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🌟</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Facial Rejuvenation</h3>
+                    <p class="text-primary-600 mb-6">
+                        Comprehensive treatment plans tailored to your unique needs and aesthetic goals for complete facial harmony.
+                    </p>
+                    <a href="services.html#rejuvenation" class="text-accent-600 font-semibold hover:text-accent-700">
+                        Learn More →
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="services.html" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors">
+                    View All Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours Section -->
+    <section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
+                        Visit Us in Downtown Boulder
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl">📍</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary-800 mb-2">Location</h3>
+                                <p class="text-primary-600">
+                                    741 Pearl St<br>
+                                    Boulder, CO 80302<br>
+                                    Convenient downtown location
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl">🕒</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary-800 mb-2">Hours</h3>
+                                <p class="text-primary-600">
+                                    By appointment only<br>
+                                    Flexible scheduling available<br>
+                                    Call to schedule your consultation
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl">📞</span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary-800 mb-2">Contact</h3>
+                                <p class="text-primary-600">
+                                    <a href="tel:(720) 731-8222" class="text-accent-600 hover:text-accent-700 font-semibold">
+                                        (720) 731-8222
+                                    </a><br>
+                                    Call for appointment scheduling
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="h-80">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=741%20Pearl%20St,%20Boulder,%20CO%2080302&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Still Time Beauty Location - 741 Pearl St, Boulder, CO 80302">
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-800 mb-3">Easy to Find</h3>
+                        <p class="text-primary-600">
+                            Located on iconic Pearl Street in the heart of downtown Boulder with easy access and nearby parking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-primary-900 mb-4">
+                    What Our Clients Say
+                </h2>
+                <p class="text-xl text-primary-600">
+                    Real experiences from satisfied clients who trust us with their aesthetic goals.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="bg-primary-50 rounded-2xl p-8 hover:bg-primary-100 transition-colors cursor-pointer group">
+                    <div class="text-accent-500 text-2xl mb-4 group-hover:scale-105 transition-transform">★★★★★</div>
+                    <p class="text-primary-700 mb-4 italic">
+                        "I would highly recommend Maria to anyone who is seeking aesthetic services! She took the time to listen to what I wanted and delivered exactly that— with skill, care and precision. She exhibited professionalism and patience throughout the whole appointment and I couldn't be happier with the results!"
+                    </p>
+                    <div class="text-primary-600 text-sm flex items-center justify-between">
+                        <span>— Kendall M.</span>
+                        <svg class="w-4 h-4 text-primary-400 group-hover:text-accent-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="bg-primary-50 rounded-2xl p-8 hover:bg-primary-100 transition-colors cursor-pointer group">
+                    <div class="text-accent-500 text-2xl mb-4 group-hover:scale-105 transition-transform">★★★★★</div>
+                    <p class="text-primary-700 mb-4 italic">
+                        "The surgical precision background really shows. My results look completely natural and exactly what I was hoping for."
+                    </p>
+                    <div class="text-primary-600 text-sm flex items-center justify-between">
+                        <span>— Jennifer L.</span>
+                        <svg class="w-4 h-4 text-primary-400 group-hover:text-accent-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </div>
+                </a>
+                
+                <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="bg-primary-50 rounded-2xl p-8 hover:bg-primary-100 transition-colors cursor-pointer group">
+                    <div class="text-accent-500 text-2xl mb-4 group-hover:scale-105 transition-transform">★★★★★</div>
+                    <p class="text-primary-700 mb-4 italic">
+                        "Professional, knowledgeable, and truly cares about achieving the best results. I wouldn't go anywhere else for my treatments."
+                    </p>
+                    <div class="text-primary-600 text-sm flex items-center justify-between">
+                        <span>— Michelle R.</span>
+                        <svg class="w-4 h-4 text-primary-400 group-hover:text-accent-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="text-center">
+                <div class="inline-flex items-center space-x-4 bg-primary-50 rounded-full px-8 py-4 mb-8">
+                    <div class="text-3xl font-bold text-primary-800">5.0</div>
+                    <div class="text-accent-500 text-2xl">★★★★★</div>
+                    <div class="text-primary-600">
+                        <div class="font-semibold">Google Reviews</div>
+                        <div class="text-sm">Based on verified clients</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold inline-flex items-center">
+                        📖 Read All Reviews
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="border-2 border-accent-600 text-accent-600 px-8 py-4 rounded-full hover:bg-accent-50 transition-colors font-semibold inline-flex items-center">
+                        ⭐ Leave a Review
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Still Time Beauty</h3>
+                    <p class="text-primary-200 mb-6">
+                        Expert medical aesthetics in Boulder, Colorado. Enhancing natural beauty with precision, safety, and artistry.
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center space-x-2 border-2 border-accent-400 text-accent-400 px-3 py-1 rounded-lg">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-sm font-medium">Licensed Nurse Practitioner</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-primary-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-colors">About</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="privacy-policy.html" class="text-primary-200 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="text-primary-200 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2">
+                        <p class="text-primary-200">741 Pearl St</p>
+                        <p class="text-primary-200">Boulder, CO 80302</p>
+                        <p class="text-primary-200">By appointment only</p>
+                        <a href="tel:(720) 731-8222" class="text-accent-400 hover:text-accent-300 font-semibold">
+                            (720) 731-8222
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary-700 mt-12 pt-8">
+                <div class="grid md:grid-cols-2 gap-4 items-center">
+                    <div class="text-primary-300 text-sm">
+                        <p>&copy; 2024 Still Time Beauty. All rights reserved.</p>
+                    </div>
+                    <div class="text-primary-300 text-sm md:text-right">
+                        <p class="mb-2">Medical Disclaimer: Individual results may vary. Consultation required.</p>
+                        <div class="space-x-4">
+                            <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+                            <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+                            <a href="medical-disclaimers.html" class="hover:text-white">Medical Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html> 

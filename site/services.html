@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional medical aesthetics services in Boulder, Colorado. Expert Botox, dermal fillers, and facial rejuvenation treatments by licensed Nurse Practitioner.">
+    <meta name="keywords" content="Botox Boulder, dermal fillers Boulder, facial rejuvenation, medical aesthetics services, cosmetic injections Colorado">
+    <title>Services - Still Time Beauty | Medical Aesthetics Boulder</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        accent: {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        }
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans antialiased">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-serif font-bold text-primary-800">
+                        Still Time Beauty
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-primary-700 hover:text-accent-600 transition-colors">Home</a>
+                    <a href="about.html" class="text-primary-700 hover:text-accent-600 transition-colors">About</a>
+                    <a href="services.html" class="text-accent-600 font-medium">Services</a>
+                                <a href="tel:(720) 731-8222" class="bg-accent-600 text-white px-6 py-2 rounded-full hover:bg-accent-700 transition-colors font-medium">
+                Call (720) 731-8222
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-primary-700 hover:text-accent-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-primary-700 hover:text-accent-600">Home</a>
+                <a href="about.html" class="block px-3 py-2 text-primary-700 hover:text-accent-600">About</a>
+                <a href="services.html" class="block px-3 py-2 text-accent-600 font-medium">Services</a>
+                            <a href="tel:(720) 731-8222" class="block mx-3 my-2 bg-accent-600 text-white px-4 py-2 rounded-full text-center hover:bg-accent-700">
+                Call (720) 731-8222
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl lg:text-6xl font-serif font-bold text-primary-900 mb-6">
+                    Professional Medical Aesthetics Services
+                </h1>
+                <p class="text-xl text-primary-600 max-w-3xl mx-auto mb-8">
+                    Expert treatments designed to enhance your natural beauty with the highest standards of safety, precision, and artistry.
+                </p>
+                <a href="tel:(720) 731-8222" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors">
+                    Schedule Your Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Navigation -->
+    <section class="py-8 bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#botox" class="bg-primary-100 text-primary-800 px-6 py-3 rounded-full hover:bg-primary-200 transition-colors font-medium">
+                    Botox Treatments
+                </a>
+                <a href="#fillers" class="bg-primary-100 text-primary-800 px-6 py-3 rounded-full hover:bg-primary-200 transition-colors font-medium">
+                    Dermal Fillers
+                </a>
+                <a href="#rejuvenation" class="bg-primary-100 text-primary-800 px-6 py-3 rounded-full hover:bg-primary-200 transition-colors font-medium">
+                    Facial Rejuvenation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botox Section -->
+    <section id="botox" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-serif font-bold text-primary-900 mb-8">Botox & Neuromodulator Treatments</h2>
+                    <div class="prose prose-lg text-primary-700 space-y-6">
+                        <p>
+                            Our expert Botox treatments are designed to smooth fine lines and wrinkles while maintaining your natural expressions. Using FDA-approved neuromodulators, we target specific muscle groups to create a refreshed, youthful appearance.
+                        </p>
+                        <div class="bg-accent-50 rounded-2xl p-6">
+                            <h3 class="text-xl font-semibold text-primary-800 mb-4">Treatment Areas</h3>
+                            <div class="grid md:grid-cols-2 gap-3">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-accent-600">✓</span>
+                                    <span>Forehead lines</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-accent-600">✓</span>
+                                    <span>Crow's feet</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-accent-600">✓</span>
+                                    <span>Frown lines (11's)</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-accent-600">✓</span>
+                                    <span>Brow lift</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-accent-600">✓</span>
+                                    <span>Bunny lines</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-accent-600">✓</span>
+                                    <span>Lip flip</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-primary-50 rounded-3xl p-8">
+                    <h3 class="text-2xl font-serif font-bold text-primary-800 mb-6">Treatment Details</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-primary-800 mb-2">Duration</h4>
+                            <p class="text-primary-600">15-30 minutes</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary-800 mb-2">Results Timeline</h4>
+                            <p class="text-primary-600">Initial effects: 3-5 days<br>Full results: 7-14 days</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary-800 mb-2">Duration of Results</h4>
+                            <p class="text-primary-600">3-4 months typically</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-primary-800 mb-2">Downtime</h4>
+                            <p class="text-primary-600">Minimal to none</p>
+                        </div>
+                        <div class="bg-accent-100 rounded-2xl p-4">
+                            <h4 class="font-semibold text-primary-800 mb-2">Safety Note</h4>
+                            <p class="text-primary-600 text-sm">
+                                All treatments are performed by a licensed Nurse Practitioner with extensive training in facial anatomy and injection techniques.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dermal Fillers Section -->
+    <section id="fillers" class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 bg-white rounded-3xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-serif font-bold text-primary-800 mb-6">Popular Filler Areas</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-800">Lips</h4>
+                                <p class="text-primary-600 text-sm">Volume enhancement and definition</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-800">Cheeks</h4>
+                                <p class="text-primary-600 text-sm">Volume restoration and lifting</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-800">Nasolabial Folds</h4>
+                                <p class="text-primary-600 text-sm">Smoothing smile lines</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-800">Under Eyes</h4>
+                                <p class="text-primary-600 text-sm">Tear trough correction</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-800">Jawline</h4>
+                                <p class="text-primary-600 text-sm">Contouring and definition</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-accent-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-primary-800">Temples</h4>
+                                <p class="text-primary-600 text-sm">Volume restoration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="text-4xl font-serif font-bold text-primary-900 mb-8">Dermal Fillers</h2>
+                    <div class="prose prose-lg text-primary-700 space-y-6">
+                        <p>
+                            Our dermal filler treatments use FDA-approved hyaluronic acid-based products to restore volume, enhance facial contours, and smooth wrinkles. Each treatment is customized to your unique facial anatomy and aesthetic goals.
+                        </p>
+                        <div class="bg-white rounded-2xl p-6 shadow-lg">
+                            <h3 class="text-xl font-semibold text-primary-800 mb-4">Benefits</h3>
+                            <ul class="space-y-2 text-primary-700">
+                                <li>• Immediate, natural-looking results</li>
+                                <li>• Restore youthful volume and contours</li>
+                                <li>• Enhance facial symmetry and balance</li>
+                                <li>• Reversible with hyaluronidase if needed</li>
+                                <li>• Stimulates natural collagen production</li>
+                                <li>• Long-lasting results (6-18 months)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facial Rejuvenation Section -->
+    <section id="rejuvenation" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
+                    Comprehensive Facial Rejuvenation
+                </h2>
+                <p class="text-xl text-primary-600 max-w-4xl mx-auto">
+                    Personalized treatment plans that combine multiple techniques to achieve harmonious, natural-looking results tailored to your unique features and goals.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-primary-50 rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">📋</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Comprehensive Assessment</h3>
+                    <p class="text-primary-600">
+                        Detailed analysis of your facial anatomy, skin condition, and aesthetic goals to create a personalized treatment plan.
+                    </p>
+                </div>
+                
+                <div class="bg-primary-50 rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Targeted Treatments</h3>
+                    <p class="text-primary-600">
+                        Strategic combination of Botox and fillers to address multiple concerns while maintaining facial harmony and natural movement.
+                    </p>
+                </div>
+                
+                <div class="bg-primary-50 rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl">📅</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Ongoing Care</h3>
+                    <p class="text-primary-600">
+                        Long-term treatment planning with regular follow-ups to maintain and enhance your results over time.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-accent-50 to-primary-50 rounded-3xl p-8 lg:p-12">
+                <div class="grid lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-3xl font-serif font-bold text-primary-900 mb-6">
+                            The Full-Face Approach
+                        </h3>
+                        <p class="text-primary-700 mb-6">
+                            Rather than treating isolated areas, we take a holistic approach to facial rejuvenation. This ensures that all treatments work together harmoniously to create natural, balanced results that enhance your unique beauty.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-accent-600">✓</span>
+                                <span class="text-primary-700">Upper face rejuvenation (forehead, brows, eyes)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-accent-600">✓</span>
+                                <span class="text-primary-700">Mid-face enhancement (cheeks, under-eyes, nasolabial folds)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-accent-600">✓</span>
+                                <span class="text-primary-700">Lower face contouring (lips, jawline, chin)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <h4 class="text-xl font-semibold text-primary-800 mb-4">Treatment Timeline</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">1</div>
+                                <div>
+                                    <h5 class="font-semibold text-primary-800">Consultation</h5>
+                                    <p class="text-primary-600 text-sm">Comprehensive assessment and treatment planning</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">2</div>
+                                <div>
+                                    <h5 class="font-semibold text-primary-800">Initial Treatment</h5>
+                                    <p class="text-primary-600 text-sm">First round of treatments based on your plan</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">3</div>
+                                <div>
+                                    <h5 class="font-semibold text-primary-800">Follow-up</h5>
+                                    <p class="text-primary-600 text-sm">Assessment and adjustments as needed</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-accent-600 rounded-full flex items-center justify-center text-white text-sm font-semibold">4</div>
+                                <div>
+                                    <h5 class="font-semibold text-primary-800">Maintenance</h5>
+                                    <p class="text-primary-600 text-sm">Ongoing treatments to maintain results</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & Medical Information -->
+    <section class="py-20 bg-primary-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold mb-6">Your Safety is Our Priority</h2>
+                <p class="text-xl text-primary-200 max-w-3xl mx-auto">
+                    All treatments are performed by a licensed Nurse Practitioner with extensive training in facial anatomy, injection techniques, and emergency procedures.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-primary-700 rounded-2xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Contraindications</h3>
+                    <div class="text-primary-200 text-sm space-y-2">
+                        <p>• Pregnancy or breastfeeding</p>
+                        <p>• Active skin infections at treatment site</p>
+                        <p>• Known allergies to treatment components</p>
+                        <p>• Certain neurological conditions</p>
+                        <p>• Blood clotting disorders</p>
+                    </div>
+                </div>
+                
+                <div class="bg-primary-700 rounded-2xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Possible Side Effects</h3>
+                    <div class="text-primary-200 text-sm space-y-2">
+                        <p>• Temporary redness or swelling</p>
+                        <p>• Minor bruising at injection sites</p>
+                        <p>• Temporary headache</p>
+                        <p>• Asymmetry (rare, correctable)</p>
+                        <p>• Allergic reactions (very rare)</p>
+                    </div>
+                </div>
+                
+                <div class="bg-primary-700 rounded-2xl p-6">
+                    <h3 class="text-xl font-semibold mb-4">Emergency Protocols</h3>
+                    <div class="text-primary-200 text-sm space-y-2">
+                        <p>• Immediate access to emergency supplies</p>
+                        <p>• Trained in vascular occlusion management</p>
+                        <p>• Hospital partnerships for severe reactions</p>
+                        <p>• 24/7 emergency contact available</p>
+                        <p>• Hyaluronidase on-site for reversals</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <div class="bg-accent-600 rounded-2xl p-8 max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Important Medical Disclaimer</h3>
+                    <p class="text-accent-100 text-sm">
+                        Individual results may vary. All medical aesthetic treatments carry inherent risks and are not suitable for everyone. A comprehensive consultation and medical history review is required before any treatment. This website is for educational purposes only and does not constitute medical advice. Consultation with a qualified healthcare provider is necessary to determine if treatments are appropriate for your individual circumstances.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">Ready to Begin Your Transformation?</h2>
+            <p class="text-xl text-primary-600 mb-8 max-w-3xl mx-auto">
+                Schedule your personalized consultation to discuss your aesthetic goals and create a customized treatment plan that's right for you.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="tel:(720) 731-8222" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors">
+                📞 Call (720) 731-8222
+                </a>
+                <a href="about.html" class="border-2 border-primary-300 text-primary-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
+                    Learn About Our Approach
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Still Time Beauty</h3>
+                    <p class="text-primary-200 mb-6">
+                        Expert medical aesthetics in Boulder, Colorado. Enhancing natural beauty with precision, safety, and artistry.
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center space-x-2 border-2 border-accent-400 text-accent-400 px-3 py-1 rounded-lg">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-sm font-medium">Licensed Nurse Practitioner</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-primary-200 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-colors">About</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="privacy-policy.html" class="text-primary-200 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="text-primary-200 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2">
+                        <p class="text-primary-200">741 Pearl St</p>
+                        <p class="text-primary-200">Boulder, CO 80302</p>
+                        <p class="text-primary-200">By appointment only</p>
+                        <a href="tel:(720) 731-8222" class="text-accent-400 hover:text-accent-300 font-semibold">
+                            (720) 731-8222
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary-700 mt-12 pt-8">
+                <div class="grid md:grid-cols-2 gap-4 items-center">
+                    <div class="text-primary-300 text-sm">
+                        <p>&copy; 2024 Still Time Beauty. All rights reserved.</p>
+                    </div>
+                    <div class="text-primary-300 text-sm md:text-right">
+                        <p class="mb-2">Medical Disclaimer: Individual results may vary. Consultation required.</p>
+                        <div class="space-x-4">
+                            <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+                            <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+                            <a href="medical-disclaimers.html" class="hover:text-white">Medical Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Simple fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html> 
