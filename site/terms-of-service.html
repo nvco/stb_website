@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Terms of Service for Still Time Beauty - Website usage terms, appointment policies, and liability limitations.">
+    <meta name="robots" content="noindex, nofollow">
     <title>Terms of Service - Still Time Beauty</title>
     
     <!-- Tailwind CSS -->
@@ -45,12 +46,19 @@
                 }
             }
         }
+    
+
+        // Initialize Lucide icons
+        lucide.createIcons();
     </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">family=Playfair+Display:wght@400;500;600;700<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 <body class="font-sans antialiased bg-gray-50">
     <!-- Navigation -->
@@ -63,9 +71,9 @@
                     </a>
                 </div>
                 <div class="flex items-center space-x-8">
-                    <a href="index.html" class="text-primary-700 hover:text-accent-600 transition-colors">Home</a>
                     <a href="about.html" class="text-primary-700 hover:text-accent-600 transition-colors">About</a>
                     <a href="services.html" class="text-primary-700 hover:text-accent-600 transition-colors">Services</a>
+                    <a href="cancellation-policy.html" class="text-primary-700 hover:text-accent-600 transition-colors">Cancellation Policy</a>
                 </div>
             </div>
         </div>
@@ -329,16 +337,69 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-primary-800 text-white py-8 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2024 Still Time Beauty. All rights reserved.</p>
-            <div class="mt-4 space-x-4">
-                <a href="index.html" class="text-primary-300 hover:text-white">Home</a>
-                <a href="privacy-policy.html" class="text-primary-300 hover:text-white">Privacy Policy</a>
-                <a href="terms-of-service.html" class="text-primary-300 hover:text-white">Terms of Service</a>
-                <a href="medical-disclaimers.html" class="text-primary-300 hover:text-white">Medical Disclaimers</a>
+    <footer class="bg-primary-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Still Time Beauty</h3>
+                    <p class="text-primary-200 mb-6">
+                        Expert medical aesthetics in Boulder, Colorado. Enhancing natural beauty with precision, safety, and artistry.
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center space-x-2 border-2 border-accent-400 text-accent-400 px-3 py-1 rounded-lg">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-sm font-medium">Licensed Nurse Practitioner</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-colors">About</a></li>
+                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="cancellation-policy.html" class="text-primary-200 hover:text-white transition-colors">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2">
+                        <p class="text-primary-200">741 Pearl St</p>
+                        <p class="text-primary-200">Boulder, CO 80302</p>
+                        <p class="text-primary-200">By appointment only</p>
+                        <a href="tel:(720) 731-8222" class="text-accent-400 hover:text-accent-300 font-semibold">
+                            (720) 731-8222
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary-700 mt-12 pt-8">
+                <div class="grid md:grid-cols-2 gap-4 items-center">
+                    <div class="text-primary-300 text-sm">
+                        <p>&copy; 2024 Still Time Beauty. All rights reserved.</p>
+                    </div>
+                    <div class="text-primary-300 text-sm md:text-right">
+                        <p class="mb-2">Medical Disclaimer: Individual results may vary. Consultation required.</p>
+                        <div class="space-x-4">
+                            <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+                            <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+                            <a href="hipaa-notice.html" class="hover:text-white">HIPAA</a>
+                            <a href="medical-disclaimers.html" class="hover:text-white">Medical Info</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html> 
