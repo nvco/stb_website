@@ -1,6 +1,6 @@
 <?php
 // Terms of Service Page
-require_once 'config.php';
+require_once '../config.php';
 
 // Page-specific variables
 $current_page = 'terms-of-service';
@@ -8,8 +8,8 @@ $page_title = 'Terms of Service - ' . $business_name;
 $page_description = 'Terms of Service for Still Time Beauty - Medical practice terms, appointment policies, and legal agreements.';
 
 // Include legal header
-include 'includes/header-legal.php';
-include 'includes/navigation.php';
+include '../includes/header-legal.php';
+include '../includes/navigation.php';
 ?>
 
 <!-- Content starts at body padding top to account for fixed nav -->
@@ -215,7 +215,7 @@ include 'includes/navigation.php';
     </div>
 </div>
 
-<?php include 'includes/footer.php'; ?>
-<?php include 'includes/scripts.php'; ?>
+<?php include '../includes/footer.php'; ?>
+<?php include '../includes/scripts.php'; ?>
 </body>
 </html> 

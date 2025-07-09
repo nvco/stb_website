@@ -1,6 +1,6 @@
 <?php
 // HIPAA Notice Page
-require_once 'config.php';
+require_once '../config.php';
 
 // Page-specific variables
 $current_page = 'hipaa-notice';
@@ -8,8 +8,8 @@ $page_title = 'HIPAA Notice of Privacy Practices - ' . $business_name;
 $page_description = 'HIPAA Notice of Privacy Practices for Still Time Beauty - Your health information privacy rights and how your medical information may be used and disclosed.';
 
 // Include legal header
-include 'includes/header-legal.php';
-include 'includes/navigation.php';
+include '../includes/header-legal.php';
+include '../includes/navigation.php';
 ?>
 
 <!-- Content starts at body padding top to account for fixed nav -->
@@ -143,8 +143,8 @@ include 'includes/navigation.php';
     </section>
 </div>
 
-<?php include 'includes/footer.php'; ?>
-<?php include 'includes/scripts.php'; ?>
+<?php include '../includes/footer.php'; ?>
+<?php include '../includes/scripts.php'; ?>
 <script>
     // Initialize Lucide icons
     lucide.createIcons();

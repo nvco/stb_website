@@ -1,6 +1,6 @@
 <?php
 // Privacy Policy Page
-require_once 'config.php';
+require_once '../config.php';
 
 // Page-specific variables
 $current_page = 'privacy-policy';
@@ -8,8 +8,8 @@ $page_title = 'Privacy Policy - ' . $business_name;
 $page_description = 'Privacy Policy for Still Time Beauty - HIPAA-compliant medical practice privacy policies and data protection practices.';
 
 // Include legal header
-include 'includes/header-legal.php';
-include 'includes/navigation.php';
+include '../includes/header-legal.php';
+include '../includes/navigation.php';
 ?>
 
 <!-- Content starts at body padding top to account for fixed nav -->
@@ -247,7 +247,7 @@ include 'includes/navigation.php';
     </div>
 </div>
 
-<?php include 'includes/footer.php'; ?>
-<?php include 'includes/scripts.php'; ?>
+<?php include '../includes/footer.php'; ?>
+<?php include '../includes/scripts.php'; ?>
 </body>
 </html> 

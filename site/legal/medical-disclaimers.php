@@ -1,6 +1,6 @@
 <?php
 // Medical Disclaimers Page
-require_once 'config.php';
+require_once '../config.php';
 
 // Page-specific variables
 $current_page = 'medical-disclaimers';
@@ -8,8 +8,8 @@ $page_title = 'Medical Disclaimers - ' . $business_name;
 $page_description = 'Medical disclaimers for Still Time Beauty - Treatment risks, contraindications, and important medical information for aesthetic procedures.';
 
 // Include legal header
-include 'includes/header-legal.php';
-include 'includes/navigation.php';
+include '../includes/header-legal.php';
+include '../includes/navigation.php';
 ?>
 
 <!-- Content starts at body padding top to account for fixed nav -->
@@ -181,7 +181,7 @@ include 'includes/navigation.php';
     </div>
 </div>
 
-<?php include 'includes/footer.php'; ?>
-<?php include 'includes/scripts.php'; ?>
+<?php include '../includes/footer.php'; ?>
+<?php include '../includes/scripts.php'; ?>
 </body>
 </html> 
