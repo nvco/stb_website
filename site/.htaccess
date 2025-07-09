@@ -1,23 +1,36 @@
-# Still Time Beauty - www redirect, HTTPS enforcement, and clean URLs
+# Still Time Beauty - Production URL Rewriting
 RewriteEngine On
 
-# Redirect www to non-www
+# TEST: If you can access /test-htaccess, then .htaccess is working
+RewriteRule ^test-htaccess$ index.php [L]
+
+# Redirect www to non-www (if you want this)
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-# Force HTTPS (redirect HTTP to HTTPS)
+# Force HTTPS (if you want this)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
-# Clean URLs - Remove .php extension from URLs
-# Redirect .php files to clean URLs
-RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
-RewriteRule ^ /%1? [NC,L,R=301]
+# Explicit rules for main pages (more reliable)
+RewriteRule ^about/?$ about.php [L]
+RewriteRule ^services/?$ services.php [L]
+RewriteRule ^cancellation-policy/?$ cancellation-policy.php [L]
 
-# Route clean URLs to .php files
+# Legal pages
+RewriteRule ^legal/privacy-policy/?$ legal/privacy-policy.php [L]
+RewriteRule ^legal/terms-of-service/?$ legal/terms-of-service.php [L]
+RewriteRule ^legal/hipaa-notice/?$ legal/hipaa-notice.php [L]
+RewriteRule ^legal/medical-disclaimers/?$ legal/medical-disclaimers.php [L]
+
+# Fallback: Generic clean URL handling
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^.]+)$ $1.php [NC,L]
+RewriteRule ^([^.]+)/?$ $1.php [NC,L]
 
-# Handle root domain - serve index.php for /
-DirectoryIndex index.php 
+# Handle root domain
+DirectoryIndex index.php
+
+# Prevent direct access to .php files (optional)
+# RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+# RewriteRule ^ /%1? [NC,L,R=301] 

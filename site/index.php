@@ -1,4 +1,49 @@
-<?php 
+<?php
+// FALLBACK ROUTING - Only used if .htaccess is not working
+if (!empty($_SERVER['REQUEST_URI'])) {
+    $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $request_uri = trim($request_uri, '/');
+    
+    // Skip routing if it's an asset request
+    if (strpos($request_uri, 'assets/') === 0 || strpos($request_uri, '.') !== false) {
+        // Let the server handle assets normally
+    } else {
+        // Handle clean URL routing
+        switch ($request_uri) {
+            case 'about':
+                require_once 'about.php';
+                exit;
+            case 'services':
+                require_once 'services.php';
+                exit;
+            case 'cancellation-policy':
+                require_once 'cancellation-policy.php';
+                exit;
+            case 'legal/privacy-policy':
+                require_once 'legal/privacy-policy.php';
+                exit;
+            case 'legal/terms-of-service':
+                require_once 'legal/terms-of-service.php';
+                exit;
+            case 'legal/hipaa-notice':
+                require_once 'legal/hipaa-notice.php';
+                exit;
+            case 'legal/medical-disclaimers':
+                require_once 'legal/medical-disclaimers.php';
+                exit;
+            case 'test-htaccess':
+                // This will show if PHP routing is working
+                echo "<!DOCTYPE html><html><head><title>PHP Routing Test</title></head><body>";
+                echo "<h1>PHP Routing is Working!</h1>";
+                echo "<p>This means .htaccess is NOT working, but PHP fallback routing is active.</p>";
+                echo "<p><a href='/'>← Back to Home</a></p>";
+                echo "</body></html>";
+                exit;
+        }
+    }
+}
+
+// Continue with normal index.php content
 require_once 'config.php'; 
 
 // Page-specific variables
