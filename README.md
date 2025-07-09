@@ -81,6 +81,8 @@ stb_website/
 │   └── hero-faces.png      # Hero section imagery
 └── resources/              # Project resources & content management
     ├── about-us.md
+    ├── services-offered.md  # Master services reference document
+    ├── keywords.md         # SEO keywords for content optimization
     ├── google-reviews.md   # Reviews content tracking
     ├── still_time_beauty_cursor_prompt.md
     └── design reference files
@@ -178,7 +180,7 @@ Current imagery:
 - [ ] Add office/facility photos
 
 ### 2. **Technical Setup**
-- [ ] Purchase domain name (stilltimebeauty.com suggested)
+- [x] Purchase domain name (stilltimebeauty.com suggested)
 - [ ] Set up SSL certificate for HTTPS
 - [ ] Configure Google Analytics
 - [ ] Set up Google My Business listing
@@ -264,6 +266,8 @@ For questions about this website implementation or future enhancements, the code
 
 #### 📁 **Content Management System**
 - **Established resources folder** for detailed content tracking
+- `resources/services-offered.md` - Master services reference document
+- `resources/keywords.md` - SEO keywords for content optimization
 - `resources/google-reviews.md` - Customer review content and status
 - `resources/still_time_beauty_cursor_prompt.md` - Updated project specs
 - Separated high-level changelog from detailed content management
