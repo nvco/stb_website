@@ -1,84 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Terms of Service for Still Time Beauty - Website usage terms, appointment policies, and liability limitations.">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Terms of Service - Still Time Beauty</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        },
-                        accent: {
-                            50: '#fdf2f8',
-                            100: '#fce7f3',
-                            200: '#fbcfe8',
-                            300: '#f9a8d4',
-                            400: '#f472b6',
-                            500: '#ec4899',
-                            600: '#db2777',
-                            700: '#be185d',
-                            800: '#9d174d',
-                            900: '#831843',
-                        }
-                    },
-                    fontFamily: {
-                        'serif': ['Playfair Display', 'serif'],
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    
+<?php
+// Terms of Service Page
+require_once 'config.php';
 
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">family=Playfair+Display:wght@400;500;600;700<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">display=swap" rel="stylesheet">
+// Page-specific variables
+$current_page = 'terms-of-service';
+$page_title = 'Terms of Service - ' . $business_name;
+$page_description = 'Terms of Service for Still Time Beauty - Medical practice terms, appointment policies, and legal agreements.';
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-</head>
-<body class="font-sans antialiased bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-serif font-bold text-primary-800">
-                        Still Time Beauty
-                    </a>
-                </div>
-                <div class="flex items-center space-x-8">
-                    <a href="about.html" class="text-primary-700 hover:text-accent-600 transition-colors">About</a>
-                    <a href="services.html" class="text-primary-700 hover:text-accent-600 transition-colors">Services</a>
-                    <a href="cancellation-policy.html" class="text-primary-700 hover:text-accent-600 transition-colors">Cancellation Policy</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+// Include legal header
+include 'includes/header-legal.php';
+include 'includes/navigation.php';
+?>
 
+<!-- Content starts at body padding top to account for fixed nav -->
+<div class="pt-16 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="bg-white rounded-lg shadow-lg p-8">
             <h1 class="text-3xl font-serif font-bold text-primary-900 mb-8">Terms of Service</h1>
@@ -127,7 +62,7 @@
                     
                     <h3 class="text-xl font-semibold text-primary-700 mb-3">Scheduling</h3>
                     <ul class="list-disc pl-6 mb-4">
-                        <li>Appointments are by phone consultation only: (720) 731-8222</li>
+                        <li>Appointments are by phone consultation only: <?php echo $phone; ?></li>
                         <li>Initial consultations may require longer time slots</li>
                         <li>We operate by appointment only with flexible scheduling</li>
                         <li>Emergency appointments may be accommodated based on availability</li>
@@ -264,142 +199,23 @@
                 </section>
 
                 <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-primary-800 mb-4">Indemnification</h2>
-                    <p class="mb-4">
-                        You agree to indemnify and hold harmless Still Time Beauty from any claims, damages, or expenses arising from:
-                    </p>
-                    <ul class="list-disc pl-6 mb-4">
-                        <li>Your violation of these Terms of Service</li>
-                        <li>Your misuse of our website or services</li>
-                        <li>Your violation of any third-party rights</li>
-                        <li>Providing false or misleading information</li>
-                    </ul>
-                </section>
-
-                <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-primary-800 mb-4">Governing Law</h2>
-                    <p class="mb-4">
-                        These Terms are governed by the laws of the State of Colorado. Any disputes will be resolved in the appropriate courts of Boulder County, Colorado.
-                    </p>
-                    <ul class="list-disc pl-6 mb-4">
-                        <li>Colorado state law applies to all terms and conditions</li>
-                        <li>Federal law applies where applicable (HIPAA, FDA regulations)</li>
-                        <li>Venue for legal proceedings is Boulder County, Colorado</li>
-                        <li>Class action lawsuits are waived to the extent permitted by law</li>
-                    </ul>
-                </section>
-
-                <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-primary-800 mb-4">Modifications to Terms</h2>
-                    <p class="mb-4">
-                        We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting on our website. Continued use of our services constitutes acceptance of modified terms.
-                    </p>
-                    <ul class="list-disc pl-6 mb-4">
-                        <li>Significant changes will be highlighted on our website</li>
-                        <li>Patients will be notified of material changes affecting their care</li>
-                        <li>The most current version is always available on our website</li>
-                    </ul>
-                </section>
-
-                <section class="mb-8">
-                    <h2 class="text-2xl font-semibold text-primary-800 mb-4">Severability</h2>
-                    <p class="mb-4">
-                        If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.
-                    </p>
-                </section>
-
-                <section class="mb-8">
                     <h2 class="text-2xl font-semibold text-primary-800 mb-4">Contact Information</h2>
                     <p class="mb-4">For questions about these Terms of Service, please contact:</p>
-                    
                     <div class="bg-gray-50 p-6 rounded-lg">
-                        <p class="mb-2"><strong>Still Time Beauty</strong></p>
-                        <p class="mb-2">741 Pearl St</p>
-                        <p class="mb-2">Boulder, CO 80302</p>
-                        <p class="mb-2">Phone: <a href="tel:(720) 731-8222" class="text-accent-600 hover:text-accent-700">(720) 731-8222</a></p>
-                        <p class="mb-4">Email: info@stilltimebeauty.com</p>
-                        
-                        <p class="text-sm text-gray-600">
-                            <strong>Business Hours:</strong> By appointment only<br>
-                            <strong>Emergency Contact:</strong> For medical emergencies, call 911 or go to the nearest emergency room.
-                        </p>
+                        <p class="font-semibold text-primary-800 mb-2">Still Time Beauty</p>
+                        <p class="mb-1"><?php echo $contact_name; ?></p>
+                        <p class="mb-1"><?php echo $address_street; ?></p>
+                        <p class="mb-1"><?php echo $address_city; ?>, <?php echo $address_state; ?> <?php echo $address_zip; ?></p>
+                        <p class="mb-1">Phone: <a href="<?php echo $phone_link; ?>" class="text-accent-600 hover:text-accent-700"><?php echo $phone; ?></a></p>
+                        <p>Email: <a href="mailto:<?php echo $email; ?>" class="text-accent-600 hover:text-accent-700"><?php echo $email; ?></a></p>
                     </div>
                 </section>
-
-                <div class="bg-red-50 border border-red-200 p-6 rounded-lg mt-8">
-                    <h3 class="text-lg font-semibold text-red-800 mb-2">Important Notice</h3>
-                    <p class="text-sm text-red-700">
-                        These Terms of Service are legally binding. Please read them carefully and contact us with any questions before using our services. By scheduling an appointment or using our website, you acknowledge that you have read, understood, and agreed to these terms.
-                    </p>
-                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Footer -->
-    <footer class="bg-primary-900 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
-                    <h3 class="text-2xl font-serif font-bold mb-4">Still Time Beauty</h3>
-                    <p class="text-primary-200 mb-6">
-                        Expert medical aesthetics in Boulder, Colorado. Enhancing natural beauty with precision, safety, and artistry.
-                    </p>
-                    <div class="flex items-center space-x-3">
-                        <div class="flex items-center space-x-2 border-2 border-accent-400 text-accent-400 px-3 py-1 rounded-lg">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-sm font-medium">Licensed Nurse Practitioner</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="about.html" class="text-primary-200 hover:text-white transition-colors">About</a></li>
-                        <li><a href="services.html" class="text-primary-200 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="cancellation-policy.html" class="text-primary-200 hover:text-white transition-colors">Cancellation Policy</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
-                    <div class="space-y-2">
-                        <p class="text-primary-200">741 Pearl St</p>
-                        <p class="text-primary-200">Boulder, CO 80302</p>
-                        <p class="text-primary-200">By appointment only</p>
-                        <a href="tel:(720) 731-8222" class="text-accent-400 hover:text-accent-300 font-semibold">
-                            (720) 731-8222
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-primary-700 mt-12 pt-8">
-                <div class="grid md:grid-cols-2 gap-4 items-center">
-                    <div class="text-primary-300 text-sm">
-                        <p>&copy; 2024 Still Time Beauty. All rights reserved.</p>
-                    </div>
-                    <div class="text-primary-300 text-sm md:text-right">
-                        <p class="mb-2">Medical Disclaimer: Individual results may vary. Consultation required.</p>
-                        <div class="space-x-4">
-                            <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
-                            <a href="terms-of-service.html" class="hover:text-white">Terms</a>
-                            <a href="hipaa-notice.html" class="hover:text-white">HIPAA</a>
-                            <a href="medical-disclaimers.html" class="hover:text-white">Medical Info</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
+<?php include 'includes/footer.php'; ?>
+<?php include 'includes/scripts.php'; ?>
 </body>
 </html> 

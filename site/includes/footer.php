@@ -1,0 +1,59 @@
+    <!-- Footer -->
+    <footer class="bg-primary-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-serif font-bold mb-4"><?php echo $business_name; ?></h3>
+                    <p class="text-primary-200 mb-6">
+                        Expert medical aesthetics in Boulder, Colorado. Enhancing natural beauty with precision, safety, and artistry.
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="flex items-center space-x-2 border-2 border-accent-400 text-accent-400 px-3 py-1 rounded-lg">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <span class="text-sm font-medium"><?php echo $credentials; ?></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/about" class="text-primary-200 hover:text-white transition-colors">About</a></li>
+                        <li><a href="/services" class="text-primary-200 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="/cancellation-policy" class="text-primary-200 hover:text-white transition-colors">Cancellation Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <div class="space-y-2">
+                        <p class="text-primary-200"><?php echo $address_street; ?></p>
+                        <p class="text-primary-200"><?php echo $address_city; ?>, <?php echo $address_state; ?> <?php echo $address_zip; ?></p>
+                        <p class="text-primary-200">By appointment only</p>
+                        <a href="<?php echo $phone_link; ?>" class="text-accent-400 hover:text-accent-300 font-semibold">
+                            <?php echo $phone; ?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-primary-700 mt-12 pt-8">
+                <div class="grid md:grid-cols-2 gap-4 items-center">
+                    <div class="text-primary-300 text-sm">
+                        <p>&copy; 2024 <?php echo $business_name; ?>. All rights reserved.</p>
+                    </div>
+                    <div class="text-primary-300 text-sm md:text-right">
+                        <p class="mb-2">Medical Disclaimer: Individual results may vary. Consultation required.</p>
+                        <div class="space-x-4">
+                            <a href="/legal/privacy-policy" class="hover:text-white">Privacy</a>
+                            <a href="/legal/terms-of-service" class="hover:text-white">Terms</a>
+                            <a href="/legal/hipaa-notice" class="hover:text-white">HIPAA</a>
+                            <a href="/legal/medical-disclaimers" class="hover:text-white">Medical Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> 
