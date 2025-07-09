@@ -1,9 +1,6 @@
 # Still Time Beauty - Production URL Rewriting
 RewriteEngine On
 
-# TEST: If you can access /test-htaccess, then .htaccess is working
-RewriteRule ^test-htaccess$ index.php [L]
-
 # Redirect www to non-www (if you want this)
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
