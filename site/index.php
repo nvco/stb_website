@@ -147,15 +147,15 @@ include 'includes/navigation.php';
                     <div class="space-y-2 text-sm text-primary-600">
                         <div class="flex justify-between">
                             <span>✓ Forehead lines</span>
-                            <span class="text-accent-600 font-medium">$12-15/unit</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
                         </div>
                         <div class="flex justify-between">
                             <span>✓ Crow's feet</span>
-                            <span class="text-accent-600 font-medium">$12-15/unit</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
                         </div>
                         <div class="flex justify-between">
                             <span>✓ Frown lines</span>
-                            <span class="text-accent-600 font-medium">$12-15/unit</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
                         </div>
                     </div>
                 </div>
@@ -171,15 +171,15 @@ include 'includes/navigation.php';
                     <div class="space-y-2 text-sm text-primary-600">
                         <div class="flex justify-between">
                             <span>✓ Lip enhancement</span>
-                            <span class="text-accent-600 font-medium">$650+</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
                         </div>
                         <div class="flex justify-between">
                             <span>✓ Cheek volume</span>
-                            <span class="text-accent-600 font-medium">$700+</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
                         </div>
                         <div class="flex justify-between">
                             <span>✓ Facial contouring</span>
-                            <span class="text-accent-600 font-medium">$600+</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
                         </div>
                     </div>
                 </div>
@@ -347,38 +347,6 @@ include 'includes/navigation.php';
                     </p>
                     <div class="font-semibold text-primary-800">Michael T.</div>
                     <div class="text-sm text-primary-600">Verified Google Review</div>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-gradient-to-br from-accent-50 to-primary-50 rounded-2xl p-8">
-                    <h3 class="text-2xl font-serif font-bold text-primary-800 mb-4">Real Client Results</h3>
-                    <p class="text-primary-700 mb-6">
-                        Our commitment to natural enhancement means you'll look like the best version of yourself. No overdone results, just subtle improvements that enhance your natural beauty.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 text-center">
-                        <div class="bg-white rounded-xl p-4">
-                            <div class="text-2xl font-bold text-accent-600">98%</div>
-                            <div class="text-sm text-primary-600">Satisfaction Rate</div>
-                        </div>
-                        <div class="bg-white rounded-xl p-4">
-                            <div class="text-2xl font-bold text-accent-600">100%</div>
-                            <div class="text-sm text-primary-600">Return Clients</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8">
-                    <h3 class="text-2xl font-serif font-bold text-primary-800 mb-4">Before & After Gallery</h3>
-                    <p class="text-primary-700 mb-6">
-                        See the subtle, natural enhancements achieved through expert technique and artistic vision. Results that look like you, just refreshed.
-                    </p>
-                    <a href="services" class="bg-white text-primary-700 px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-shadow inline-flex items-center group">
-                        <i data-lucide="image" class="w-5 h-5 mr-2"></i>View Gallery
-                        <svg class="w-4 h-4 text-primary-400 group-hover:text-accent-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </a>
                 </div>
             </div>
             

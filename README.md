@@ -178,6 +178,7 @@ Current imagery:
 - [ ] Verify all medical disclaimer accuracy with legal counsel
 - [ ] Add practitioner photo to About page
 - [ ] Add office/facility photos
+- [ ] **Add back "Real Client Results" and "Before & After Gallery" sections** - These sections were removed from the index page but should be re-added to the Google Reviews section area on the homepage once ready. They included client satisfaction statistics (98% satisfaction rate, 100% return clients) and a gallery link showcasing treatment results.
 
 ### 2. **Technical Setup**
 - [x] Purchase domain name (stilltimebeauty.com suggested)

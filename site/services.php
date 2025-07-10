@@ -122,22 +122,22 @@ include 'includes/navigation.php';
                             </div>
                             <h3 class="text-2xl font-serif font-bold text-primary-800 mb-4">Botox Pricing</h3>
                             <div class="bg-white rounded-2xl p-6 shadow-lg mb-6">
-                                <div class="text-3xl font-bold text-accent-600 mb-2">$12-15</div>
+                                <div class="text-2xl font-bold text-accent-600 mb-2">Price at consultation</div>
                                 <div class="text-primary-600">per unit</div>
                                 <div class="text-sm text-primary-500 mt-2">Pricing depends on treatment area</div>
                             </div>
                             <div class="space-y-3 text-sm text-primary-600">
                                 <div class="flex justify-between">
                                     <span>Forehead (10-20 units)</span>
-                                    <span class="font-semibold">$120-300</span>
+                                    <span class="font-semibold">Price at consultation</span>
                                 </div>
                                 <div class="flex justify-between">
                                     <span>Crow's feet (6-12 units)</span>
-                                    <span class="font-semibold">$72-180</span>
+                                    <span class="font-semibold">Price at consultation</span>
                                 </div>
                                 <div class="flex justify-between">
                                     <span>Frown lines (10-25 units)</span>
-                                    <span class="font-semibold">$120-375</span>
+                                    <span class="font-semibold">Price at consultation</span>
                                 </div>
                             </div>
                         </div>
@@ -161,17 +161,17 @@ include 'includes/navigation.php';
                             <div class="space-y-4">
                                 <div class="bg-white rounded-2xl p-6 shadow-lg">
                                     <div class="text-lg font-semibold text-primary-800 mb-2">Lip Enhancement</div>
-                                    <div class="text-2xl font-bold text-accent-600">$650+</div>
+                                    <div class="text-lg font-bold text-accent-600">Price at consultation</div>
                                     <div class="text-sm text-primary-600">1 syringe typical</div>
                                 </div>
                                 <div class="bg-white rounded-2xl p-6 shadow-lg">
                                     <div class="text-lg font-semibold text-primary-800 mb-2">Cheek Volume</div>
-                                    <div class="text-2xl font-bold text-accent-600">$700+</div>
+                                    <div class="text-lg font-bold text-accent-600">Price at consultation</div>
                                     <div class="text-sm text-primary-600">1-2 syringes typical</div>
                                 </div>
                                 <div class="bg-white rounded-2xl p-6 shadow-lg">
                                     <div class="text-lg font-semibold text-primary-800 mb-2">Facial Contouring</div>
-                                    <div class="text-2xl font-bold text-accent-600">$600+</div>
+                                    <div class="text-lg font-bold text-accent-600">Price at consultation</div>
                                     <div class="text-sm text-primary-600">Varies by area</div>
                                 </div>
                             </div>
@@ -242,7 +242,7 @@ include 'includes/navigation.php';
                     <p class="text-primary-600 mb-4">
                         Non-surgical facial rejuvenation combining strategic Botox and filler placement for comprehensive lifting and volumization.
                     </p>
-                    <div class="text-lg font-bold text-accent-600">$1,200+</div>
+                    <div class="text-lg font-bold text-accent-600">Price at consultation</div>
                 </div>
                 
                 <div class="bg-primary-50 rounded-2xl p-8 text-center">
@@ -253,7 +253,7 @@ include 'includes/navigation.php';
                     <p class="text-primary-600 mb-4">
                         Targeted treatments for crow's feet, under-eye bags, and brow lifting to create a more youthful, refreshed appearance.
                     </p>
-                    <div class="text-lg font-bold text-accent-600">$400+</div>
+                    <div class="text-lg font-bold text-accent-600">Price at consultation</div>
                 </div>
                 
                 <div class="bg-primary-50 rounded-2xl p-8 text-center">
@@ -264,7 +264,7 @@ include 'includes/navigation.php';
                     <p class="text-primary-600 mb-4">
                         Complete facial assessment and customized treatment plan addressing all areas of concern for balanced, natural results.
                     </p>
-                    <div class="text-lg font-bold text-accent-600">$800+</div>
+                    <div class="text-lg font-bold text-accent-600">Price at consultation</div>
                 </div>
             </div>
         </div>
