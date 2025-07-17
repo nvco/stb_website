@@ -2,6 +2,9 @@
 
 A modern, responsive website for Still Time Beauty, a medical aesthetics practice specializing in injectables for both men and women, located at 741 Pearl St, Boulder, Colorado.
 
+# Project Planning Guidelines
+See original project planning and ideas in the `resources/` folder.
+
 ## Features
 
 ### 🎨 **Modern Design**
