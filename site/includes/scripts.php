@@ -1,5 +1,8 @@
     <!-- Optimized JavaScript -->
     <script>
+        // Prevent FOUC - mark as loaded once Tailwind is ready
+        document.documentElement.classList.add('fouc-loaded');
+        
         /**
          * Performance-optimized page initialization
          * Uses modern JavaScript features and efficient DOM handling

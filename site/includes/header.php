@@ -26,11 +26,15 @@
     <link rel="preconnect" href="https://unpkg.com">
     <link rel="dns-prefetch" href="https://www.google.com">
     
-    <!-- Tailwind CSS with optimized loading -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js" defer></script>
+    <!-- Tailwind CSS - load synchronously to prevent FOUC -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js"></script>
     
     <style>
+        /* Prevent FOUC by hiding content until Tailwind loads */
+        .no-fouc { visibility: hidden; }
+        .fouc-loaded .no-fouc { visibility: visible; }
+        
         /* Enhanced focus styles for accessibility */
         *:focus {
             outline: 2px solid #10b981;

@@ -8,9 +8,9 @@
     <meta name="robots" content="noindex, nofollow">
     <title><?php echo isset($page_title) ? $page_title : 'Legal Information - ' . $business_name; ?></title>
     
-    <!-- Tailwind CSS with optimized loading -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <script src="../includes/tailwind-config.js" defer></script>
+    <!-- Tailwind CSS - load synchronously to prevent FOUC -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../includes/tailwind-config.js"></script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
