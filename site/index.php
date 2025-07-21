@@ -73,7 +73,7 @@ include 'includes/navigation.php';
                     <!-- Main circular image -->
                     <div class="relative w-72 h-72 md:w-[26rem] md:h-[26rem] lg:w-[33rem] lg:h-[33rem]">
                         <div class="w-full h-full rounded-full overflow-hidden shadow-2xl border-8 border-white">
-                            <img src="assets/hero-faces.png" 
+                            <img src="assets/hero-faces.webp" 
                                  alt="Professional medical aesthetics for men and women" 
                                  class="w-full h-full object-cover object-center"
                                  loading="eager"
