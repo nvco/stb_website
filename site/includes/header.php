@@ -55,7 +55,7 @@
             }
         }
         .hero-accent {
-            color: #059669; /* text-accent-600 */
+            color: #0d9488; /* text-accent-600 - CORRECTED */
         }
         
         /* Critical focus styles for accessibility */
