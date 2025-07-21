@@ -35,9 +35,9 @@ include 'includes/navigation.php';
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left">
-                    <h1 class="text-4xl lg:text-6xl font-serif font-bold text-primary-900 mb-6 leading-tight">
+                    <h1 class="hero-heading">
                         Enhance Your Natural Beauty with 
-                        <span class="text-accent-600">Expert Care</span>
+                        <span class="hero-accent">Expert Care</span>
                     </h1>
                     <p class="text-xl text-primary-600 mb-8 leading-relaxed">
                         Professional medical aesthetics in downtown Boulder. Expert Botox and dermal filler treatments by a qualified Nurse Practitioner with surgical precision.

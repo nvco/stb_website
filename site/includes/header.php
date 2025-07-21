@@ -25,6 +25,10 @@
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://unpkg.com">
     
+    <!-- CRITICAL: Load hero font synchronously for LCP optimization -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
+    
     <!-- Critical CSS inline to prevent render blocking -->
     <style>
         /* Critical above-the-fold styles */
@@ -34,6 +38,25 @@
         /* Essential layout styles */
         body { font-family: system-ui, -apple-system, sans-serif; }
         .header-bg { background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); }
+        
+        /* CRITICAL: Hero heading styles for immediate LCP rendering */
+        .hero-heading {
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: 2.25rem; /* text-4xl */
+            line-height: 1.1;
+            color: #1e293b; /* text-primary-900 */
+            margin-bottom: 1.5rem;
+            font-display: swap; /* Reduce layout shift */
+        }
+        @media (min-width: 1024px) {
+            .hero-heading {
+                font-size: 3.75rem; /* lg:text-6xl */
+            }
+        }
+        .hero-accent {
+            color: #059669; /* text-accent-600 */
+        }
         
         /* Critical focus styles for accessibility */
         *:focus { outline: 2px solid #10b981; outline-offset: 2px; }
@@ -50,9 +73,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js"></script>
     
-    <!-- Optimized Google Fonts loading - keep async as this works correctly -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Secondary fonts loaded asynchronously (non-critical) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     
     <!-- Critical JavaScript inline for immediate execution -->
     <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/scripts-critical.js"></script>
