@@ -180,7 +180,127 @@ location / {
 
 ## Troubleshooting
 
-### **Common Issues**
+### **Router & Development Server Issues**
+
+#### **CRITICAL: Wrong pages loading (e.g., "about" shows "index" content)**
+**Symptoms:**
+- Visiting `/about` shows homepage content
+- All pages display the same content
+- Clean URLs not working
+
+**Root Cause:** PHP server started incorrectly with `-t site/` flag instead of using router.
+
+**Solution:**
+```bash
+# ❌ WRONG - This breaks clean URLs
+php -S localhost:8000 -t site/
+
+# ✅ CORRECT - Always use router.php
+php -S localhost:8000 router.php
+```
+
+**Quick Fix:**
+```bash
+# Stop the server
+pkill -f "php -S"
+
+# Restart correctly
+php -S localhost:8000 router.php
+```
+
+#### **Legal pages failing with "require_once" errors**
+**Symptoms:**
+- Privacy Policy/Terms pages show 500 errors
+- Error: "require_once(../config.php): Failed to open stream"
+- Legal pages can't find includes
+
+**Root Cause:** Router uses `chdir()` which breaks relative paths in includes.
+
+**Solution:** Use `__DIR__` for absolute path resolution in ALL legal pages:
+```php
+// ❌ WRONG - Relative paths break from router context
+require_once '../config.php';
+
+// ✅ CORRECT - Absolute path resolution
+require_once __DIR__ . '/../config.php';
+```
+
+**Files to check:**
+- `site/legal/privacy-policy.php`
+- `site/legal/terms-of-service.php`
+- `site/legal/hipaa-notice.php`
+- `site/legal/medical-disclaimers.php`
+
+#### **Static assets not loading (CSS, JS, images)**
+**Symptoms:**
+- Images show 404 errors
+- CSS not loading (unstyled HTML)
+- JavaScript not working
+- Browser console shows 404s for `/assets/` files
+
+**Root Cause:** Router's static file handling using `return false` unreliable.
+
+**Solution:** Router must directly serve static files with proper headers:
+```php
+// Check router.php has this pattern:
+if (file_exists($static_file_path) && is_file($static_file_path)) {
+    // Serve static files directly with proper MIME types
+    $mime_type = match(pathinfo($static_file_path, PATHINFO_EXTENSION)) {
+        'css' => 'text/css',
+        'js' => 'application/javascript',
+        'png' => 'image/png',
+        'webp' => 'image/webp',
+        // ... other types
+    };
+    
+    header('Content-Type: ' . $mime_type);
+    header('Content-Length: ' . filesize($static_file_path));
+    readfile($static_file_path);
+    return true;
+}
+```
+
+#### **Development server rapid troubleshooting checklist**
+When things break, check in this order:
+
+1. **Server Command:**
+   ```bash
+   # Check what's running
+   ps aux | grep "php -S"
+   
+   # Should show: php -S localhost:8000 router.php
+   # NOT: php -S localhost:8000 -t site/
+   ```
+
+2. **Test Router Directly:**
+   ```bash
+   curl -I http://localhost:8000/about
+   # Should return: HTTP/1.1 200 OK
+   ```
+
+3. **Check Static Assets:**
+   ```bash
+   curl -I http://localhost:8000/assets/hero-faces.webp
+   # Should return: HTTP/1.1 200 OK with image/webp content-type
+   ```
+
+4. **Test Legal Pages:**
+   ```bash
+   curl -I http://localhost:8000/privacy-policy
+   # Should return: HTTP/1.1 200 OK (not 500)
+   ```
+
+**Quick Reset Commands:**
+```bash
+# Nuclear option - restart everything
+pkill -f "php -S"
+php -S localhost:8000 router.php
+
+# Open in browser
+open http://localhost:8000
+```
+
+### **Other Common Issues**
 - **Clean URLs not working**: Check .htaccess/Nginx config
 - **PHP errors**: Check server error logs
 - **Mobile display issues**: Test with browser dev tools
