@@ -23,78 +23,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://unpkg.com">
-    <link rel="dns-prefetch" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
     
-    <!-- Tailwind CSS - load synchronously to prevent FOUC -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js"></script>
-    
+    <!-- Critical CSS inline to prevent render blocking -->
     <style>
-        /* Prevent FOUC by hiding content until Tailwind loads */
+        /* Critical above-the-fold styles */
         .no-fouc { visibility: hidden; }
         .fouc-loaded .no-fouc { visibility: visible; }
         
-        /* Enhanced focus styles for accessibility */
-        *:focus {
-            outline: 2px solid #10b981;
-            outline-offset: 2px;
-        }
+        /* Essential layout styles */
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .header-bg { background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); }
         
-        /* Focus styles for buttons and links */
-        button:focus,
-        a:focus {
-            outline: 2px solid #10b981;
-            outline-offset: 2px;
-        }
-
-        /* Focus indicator for smooth scroll targets */
-        .focus-from-scroll:focus {
-            outline: 3px solid #10b981;
-            outline-offset: 4px;
-            box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.2);
-        }
-
-        /* Enhanced mobile menu focus styles */
-        #mobile-menu a:focus {
-            background-color: rgba(16, 185, 129, 0.1);
-            outline: 2px solid #10b981;
-            outline-offset: -2px;
-        }
-
-        /* Focus trap indicator for mobile menu */
-        #mobile-menu.focus-trap {
-            box-shadow: 0 0 0 2px #10b981;
-        }
-
-        /* Skip to main content link */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 6px;
-            background: #000;
-            color: white;
-            padding: 8px;
-            text-decoration: none;
-            z-index: 1000;
-            transition: top 0.3s;
-        }
+        /* Critical focus styles for accessibility */
+        *:focus { outline: 2px solid #10b981; outline-offset: 2px; }
         
-        .skip-link:focus {
-            top: 6px;
-        }
+        /* Mobile menu critical styles */
+        .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 40; }
+        
+        /* Skip link styles */
+        .skip-link { position: absolute; left: -9999px; z-index: 999; padding: 8px 16px; background: #000; color: #fff; text-decoration: none; }
+        .skip-link:focus { left: 6px; top: 6px; }
     </style>
     
-    <!-- Optimized Google Fonts loading -->
-    <link rel="preload" 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" 
-          as="style" 
-          onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </noscript>
+    <!-- Load Tailwind CSS asynchronously to prevent render blocking -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" onload="this.onload=null;this.rel='stylesheet';var script=document.createElement('script');script.src=this.href;document.head.appendChild(script);">
+    <noscript><script src="https://cdn.tailwindcss.com"></script></noscript>
     
-    <!-- Lucide Icons with optimized loading -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
+    <!-- Load Tailwind config asynchronously -->
+    <script async src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js"></script>
+    
+    <!-- Optimized Google Fonts loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Critical JavaScript inline for immediate execution -->
+    <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/scripts-critical.js"></script>
+    
+    <!-- Non-critical resources loaded asynchronously -->
+    <script async src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script async src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/scripts-non-critical.js"></script>
+
 </head>
-<body class="font-sans antialiased"> 
+<body class="bg-gray-50 text-gray-900 leading-relaxed no-fouc"> 
