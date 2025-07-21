@@ -1,17 +1,22 @@
 <?php
-// HIPAA Notice Page
-require_once '../config.php';
+declare(strict_types=1);
+
+require_once __DIR__ . '/../config.php';
+
+// Set flag for header path resolution
+$is_legal_page = true;
 
 // Page-specific variables
-$current_page = 'hipaa-notice';
-$page_title = 'HIPAA Notice of Privacy Practices - ' . $business_name;
-$page_description = 'HIPAA Notice of Privacy Practices for Still Time Beauty - Your health information privacy rights and how your medical information may be used and disclosed.';
+$current_page = 'legal';
+$page_title = 'HIPAA Notice - ' . $business_name;
+$page_description = 'HIPAA Notice of Privacy Practices for ' . $business_name . ' - Boulder Medical Aesthetics Practice. Patient privacy protection information.';
 
 // Include legal header
-include '../includes/header-legal.php';
-include '../includes/navigation.php';
+include __DIR__ . '/../includes/header-legal.php';
+include __DIR__ . '/../includes/navigation.php';
 ?>
 
+<main id="main">
 <!-- Content starts at body padding top to account for fixed nav -->
 <div class="pt-16 bg-gray-50">
     <!-- Hero Section -->
@@ -142,9 +147,10 @@ include '../includes/navigation.php';
         </div>
     </section>
 </div>
+</main>
 
-<?php include '../includes/footer.php'; ?>
-<?php include '../includes/scripts.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/scripts.php'; ?>
 <script>
     // Initialize Lucide icons
     lucide.createIcons();

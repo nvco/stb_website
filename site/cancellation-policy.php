@@ -13,6 +13,7 @@ include 'includes/header.php';
 include 'includes/navigation.php';
 ?>
 
+<main id="main">
     <!-- Hero Section -->
     <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -223,6 +224,7 @@ include 'includes/navigation.php';
             </div>
         </div>
     </section>
+</main>
 
 <?php
 include 'includes/footer.php';

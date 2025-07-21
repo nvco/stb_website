@@ -1,17 +1,22 @@
 <?php
-// Terms of Service Page
-require_once '../config.php';
+declare(strict_types=1);
+
+require_once __DIR__ . '/../config.php';
+
+// Set flag for header path resolution
+$is_legal_page = true;
 
 // Page-specific variables
-$current_page = 'terms-of-service';
+$current_page = 'legal';
 $page_title = 'Terms of Service - ' . $business_name;
-$page_description = 'Terms of Service for Still Time Beauty - Medical practice terms, appointment policies, and legal agreements.';
+$page_description = 'Terms of Service for ' . $business_name . ' - Boulder Medical Aesthetics Practice. Patient treatment agreements and service terms.';
 
 // Include legal header
-include '../includes/header-legal.php';
-include '../includes/navigation.php';
+include __DIR__ . '/../includes/header-legal.php';
+include __DIR__ . '/../includes/navigation.php';
 ?>
 
+<main id="main">
 <!-- Content starts at body padding top to account for fixed nav -->
 <div class="pt-16 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -214,8 +219,9 @@ include '../includes/navigation.php';
         </div>
     </div>
 </div>
+</main>
 
-<?php include '../includes/footer.php'; ?>
-<?php include '../includes/scripts.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/scripts.php'; ?>
 </body>
 </html> 

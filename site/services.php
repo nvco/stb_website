@@ -1,4 +1,6 @@
 <?php 
+declare(strict_types=1);
+
 require_once 'config.php'; 
 
 // Page-specific variables
@@ -37,6 +39,7 @@ include 'includes/header.php';
 include 'includes/navigation.php';
 ?>
 
+<main id="main">
     <!-- Hero Section -->
     <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,7 +61,12 @@ include 'includes/navigation.php';
     <section class="py-8 bg-white border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#botox" class="bg-primary-100 text-primary-800 px-6 py-3 rounded-full hover:bg-primary-200 transition-colors font-medium">
+                                    <a href="#botox" class="inline-flex items-center 
+                                            px-6 py-3 
+                                            font-medium text-primary-800 
+                                            bg-primary-100 
+                                            rounded-full 
+                                            hover:bg-primary-200 transition-colors">
                     Botox Treatments
                 </a>
                 <a href="#fillers" class="bg-primary-100 text-primary-800 px-6 py-3 rounded-full hover:bg-primary-200 transition-colors font-medium">
@@ -365,6 +373,7 @@ include 'includes/navigation.php';
             </div>
         </div>
     </section>
+</main>
 
 <?php
 include 'includes/footer.php';

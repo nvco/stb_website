@@ -1,17 +1,22 @@
 <?php
-// Privacy Policy Page
-require_once '../config.php';
+declare(strict_types=1);
+
+require_once __DIR__ . '/../config.php';
+
+// Set flag for header path resolution
+$is_legal_page = true;
 
 // Page-specific variables
-$current_page = 'privacy-policy';
+$current_page = 'legal';
 $page_title = 'Privacy Policy - ' . $business_name;
-$page_description = 'Privacy Policy for Still Time Beauty - HIPAA-compliant medical practice privacy policies and data protection practices.';
+$page_description = 'Privacy Policy for ' . $business_name . ' - Boulder Medical Aesthetics Practice. HIPAA compliant privacy practices for patient information protection.';
 
 // Include legal header
-include '../includes/header-legal.php';
-include '../includes/navigation.php';
+include __DIR__ . '/../includes/header-legal.php';
+include __DIR__ . '/../includes/navigation.php';
 ?>
 
+<main id="main">
 <!-- Content starts at body padding top to account for fixed nav -->
 <div class="pt-16 bg-gray-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -246,8 +251,9 @@ include '../includes/navigation.php';
         </div>
     </div>
 </div>
+</main>
 
-<?php include '../includes/footer.php'; ?>
-<?php include '../includes/scripts.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/scripts.php'; ?>
 </body>
 </html> 

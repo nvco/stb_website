@@ -124,6 +124,7 @@ Requires PHP-enabled hosting (cPanel, cloud platforms, VPS with LAMP/LEMP stack)
 - 📋 [Setup & Deployment Guide](context/setup-guide.md) - Complete hosting and development instructions
 - 📋 [Business Requirements & Compliance](context/business-requirements.md) - Detailed feature and legal requirements  
 - 📋 [Development History](context/development-history.md) - Complete changelog and implementation notes
+- 📋 [Accessibility Testing Guide](context/accessibility-testing.md) - Comprehensive WCAG 2.1 AA testing checklist
 
 ### Content Resources
 - 📁 `resources/` folder - Business content, keywords, reviews, design references

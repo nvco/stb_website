@@ -1,4 +1,6 @@
 <?php 
+declare(strict_types=1);
+
 require_once 'config.php'; 
 
 // Page-specific variables
@@ -36,6 +38,7 @@ include 'includes/header.php';
 include 'includes/navigation.php';
 ?>
 
+<main id="main">
     <!-- Hero Section -->
     <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,7 +50,12 @@ include 'includes/navigation.php';
                     Discover the story behind <?php echo $business_name; ?> and our commitment to enhancing your natural beauty through genuine human connection and surgical precision.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors shadow-lg">
+                                            <a href="<?php echo $phone_link; ?>" class="inline-flex items-center 
+                                                                   px-8 py-4 
+                                                                   text-lg font-semibold text-white 
+                                                                   bg-accent-600 
+                                                                   rounded-full shadow-lg 
+                                                                   hover:bg-accent-700 transition-colors">
                         <?php echo $cta_phone; ?>
                     </a>
                     <a href="services" class="border-2 border-primary-300 text-primary-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
@@ -353,6 +361,7 @@ include 'includes/navigation.php';
             </div>
         </div>
     </section>
+</main>
 
 <?php
 include 'includes/footer.php';

@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 require_once 'config.php'; 
 
 // Page-specific variables
@@ -8,7 +10,7 @@ $page_structured_data = '{
     "@type": "MedicalBusiness",
     "name": "Still Time Beauty",
     "description": "Medical aesthetics practice specializing in Botox, dermal fillers, and facial rejuvenation treatments",
-    "url": "https://stilltimebeauty.com",
+    "url": "' . $base_url . '",
     "telephone": "(720) 731-8222",
     "address": {
         "@type": "PostalAddress",
@@ -27,6 +29,7 @@ include 'includes/header.php';
 include 'includes/navigation.php';
 ?>
 
+<main id="main">
     <!-- Hero Section -->
     <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,41 +43,17 @@ include 'includes/navigation.php';
                         Professional medical aesthetics in downtown Boulder. Expert Botox and dermal filler treatments by a qualified Nurse Practitioner with surgical precision.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors shadow-lg">
-                            <?php echo $cta_phone; ?>
-                        </a>
-                        <a href="services" class="border-2 border-primary-300 text-primary-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
-                            View Services
-                        </a>
+                        <?php echo cta_button_primary($phone_link, $cta_phone, 'lg', false); ?>
+                        <?php echo cta_button_secondary('services', 'View Services', 'lg', 'primary'); ?>
                     </div>
                     <div class="mt-6 grid grid-cols-2 gap-4 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
-                        <div class="bg-white/80 backdrop-blur-sm border border-primary-200 rounded-xl px-4 py-3 text-center lg:text-left">
-                            <div class="flex items-center justify-center lg:justify-start space-x-2">
-                                <i data-lucide="map-pin" class="w-4 h-4 text-accent-600"></i>
-                                <div>
-                                    <div class="text-xs font-semibold text-primary-800">
-                                        Convenient<br class="sm:hidden"> Location
-                                    </div>
-                                    <div class="text-xs text-primary-600">Pearl Street, Boulder</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white/80 backdrop-blur-sm border border-primary-200 rounded-xl px-4 py-3 text-center lg:text-left">
-                            <div class="flex items-center justify-center lg:justify-start space-x-2">
-                                <i data-lucide="calendar" class="w-4 h-4 text-accent-600"></i>
-                                <div>
-                                    <div class="text-xs font-semibold text-primary-800">
-                                        Flexible<br class="sm:hidden"> Scheduling
-                                    </div>
-                                    <div class="text-xs text-primary-600">By Appointment Only</div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php echo info_card('map-pin', 'Convenient<br class="sm:hidden"> Location', 'Pearl Street, Boulder'); ?>
+                        <?php echo info_card('calendar', 'Flexible<br class="sm:hidden"> Scheduling', 'By Appointment Only'); ?>
                     </div>
                     <div class="mt-8 flex items-center justify-center lg:justify-start space-x-6">
                         <div class="text-center">
                             <div class="text-2xl font-bold text-primary-800">5.0</div>
-                            <div class="flex text-primary-600 text-sm space-x-0.5">
+                            <div class="flex text-primary-600 text-sm space-x-0.5" aria-label="5 out of 5 star rating">
                                 <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                                 <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                                 <i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -94,10 +73,21 @@ include 'includes/navigation.php';
                     <!-- Main circular image -->
                     <div class="relative w-72 h-72 md:w-[26rem] md:h-[26rem] lg:w-[33rem] lg:h-[33rem]">
                         <div class="w-full h-full rounded-full overflow-hidden shadow-2xl border-8 border-white">
-                            <img src="assets/hero-faces.png" alt="Professional medical aesthetics for men and women" class="w-full h-full object-cover object-center">
+                            <img src="assets/hero-faces.png" 
+                                 alt="Professional medical aesthetics for men and women" 
+                                 class="w-full h-full object-cover object-center"
+                                 loading="eager"
+                                 decoding="async"
+                                 fetchpriority="high"
+                                 width="528" 
+                                 height="528">
                         </div>
                         <!-- Floating badge -->
-                        <div class="absolute -top-4 -right-4 bg-white/95 backdrop-blur-sm border-2 border-accent-200 text-primary-800 rounded-2xl px-4 py-2 shadow-xl">
+                        <div class="absolute -top-4 -right-4 
+                                    px-4 py-2 
+                                    text-primary-800 
+                                    bg-white/95 backdrop-blur-sm 
+                                    border-2 border-accent-200 rounded-2xl shadow-xl">
                             <div class="text-center">
                                 <div class="text-xs font-bold text-accent-600">Expert Care</div>
                                 <div class="text-xs text-primary-600">Men & Women</div>
@@ -108,16 +98,25 @@ include 'includes/navigation.php';
                             <div class="text-center">
                                 <div class="flex items-center justify-center space-x-1">
                                 <span class="text-2xl font-bold text-primary-800">5.0</span>
-                                <i data-lucide="star" class="w-5 h-5 fill-current text-accent-500"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-current text-accent-500" aria-label="5 star rating"></i>
                             </div>
                                 <div class="text-xs text-primary-600">Google Reviews</div>
                             </div>
                         </div>
                     </div>
                     <!-- Decorative elements -->
-                    <div class="absolute top-4 right-4 md:top-8 md:right-8 w-12 h-12 md:w-16 md:h-16 bg-accent-200 rounded-full opacity-30 animate-pulse"></div>
-                    <div class="absolute bottom-8 right-12 md:bottom-16 md:right-16 w-6 h-6 md:w-8 md:h-8 bg-primary-300 rounded-full opacity-40"></div>
-                    <div class="absolute top-12 left-4 md:top-16 md:left-8 w-8 h-8 md:w-12 md:h-12 bg-accent-100 rounded-full opacity-50"></div>
+                    <div class="absolute top-4 right-4 md:top-8 md:right-8 
+                           w-12 h-12 md:w-16 md:h-16 
+                           bg-accent-200 
+                           rounded-full opacity-30 animate-pulse"></div>
+                    <div class="absolute bottom-8 right-12 md:bottom-16 md:right-16 
+                           w-6 h-6 md:w-8 md:h-8 
+                           bg-primary-300 
+                           rounded-full opacity-40"></div>
+                    <div class="absolute top-12 left-4 md:top-16 md:left-8 
+                           w-8 h-8 md:w-12 md:h-12 
+                           bg-accent-100 
+                           rounded-full opacity-50"></div>
                 </div>
             </div>
         </div>
@@ -135,83 +134,33 @@ include 'includes/navigation.php';
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="syringe" class="w-8 h-8 text-accent-600"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Botox Treatments</h3>
-                    <p class="text-primary-600 mb-6">
-                        Smooth fine lines and wrinkles with precision neuromodulator treatments. Natural-looking results that enhance your expressions.
-                    </p>
-                    <div class="space-y-2 text-sm text-primary-600">
-                        <div class="flex justify-between">
-                            <span>✓ Forehead lines</span>
-                            <span class="text-accent-600 font-medium">Price at consultation</span>
+            <div class="grid md:grid-cols-3 gap-8">
+                <?php echo service_card_icon('syringe', 'Botox Treatments', 'Smooth away fine lines and wrinkles with expert precision injections. Achieve natural-looking results that enhance your facial expressions.'); ?>
+                        
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <i data-lucide="droplet" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-primary-800 mb-4">Dermal Fillers</h3>
+                            <p class="text-primary-600 leading-relaxed">
+                                Restore volume and enhance facial contours with premium hyaluronic acid fillers. Achieve subtle, natural enhancement.
+                            </p>
                         </div>
-                        <div class="flex justify-between">
-                            <span>✓ Crow's feet</span>
-                            <span class="text-accent-600 font-medium">Price at consultation</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>✓ Frown lines</span>
-                            <span class="text-accent-600 font-medium">Price at consultation</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="droplet" class="w-8 h-8 text-accent-600"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Dermal Fillers</h3>
-                    <p class="text-primary-600 mb-6">
-                        Restore volume and contour with premium hyaluronic acid fillers. Achieve natural enhancement with expert technique.
-                    </p>
-                    <div class="space-y-2 text-sm text-primary-600">
-                        <div class="flex justify-between">
-                            <span>✓ Lip enhancement</span>
-                            <span class="text-accent-600 font-medium">Price at consultation</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>✓ Cheek volume</span>
-                            <span class="text-accent-600 font-medium">Price at consultation</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>✓ Facial contouring</span>
-                            <span class="text-accent-600 font-medium">Price at consultation</span>
+                        
+                        <div class="text-center">
+                            <div class="flex justify-center mb-4">
+                                <i data-lucide="user-check" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-primary-800 mb-4">Expert Consultation</h3>
+                            <p class="text-primary-600 leading-relaxed">
+                                Personalized treatment planning with a licensed professional. Understand your options and create your perfect plan.
+                            </p>
                         </div>
                     </div>
-                </div>
-                
-                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
-                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i data-lucide="user-check" class="w-8 h-8 text-accent-600"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Expert Consultation</h3>
-                    <p class="text-primary-600 mb-6">
-                        Personalized treatment plans designed specifically for your unique facial anatomy and aesthetic goals.
-                    </p>
-                    <div class="space-y-2 text-sm text-primary-600">
-                        <div class="flex justify-between">
-                            <span>✓ Facial analysis</span>
-                            <span class="text-accent-600 font-medium">Included</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>✓ Treatment planning</span>
-                            <span class="text-accent-600 font-medium">Included</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>✓ Follow-up care</span>
-                            <span class="text-accent-600 font-medium">Included</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
             <div class="text-center mt-12">
                 <a href="services" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center">
-                    <i data-lucide="arrow-right" class="w-5 h-5 mr-2"></i>
+                    <i data-lucide="arrow-right" class="w-5 h-5 mr-2" aria-hidden="true"></i>
                     View All Services
                 </a>
             </div>
@@ -232,25 +181,25 @@ include 'includes/navigation.php';
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center space-x-3">
                             <div class="w-8 h-8 bg-accent-100 rounded-full flex items-center justify-center">
-                                <i data-lucide="check" class="w-5 h-5 text-accent-600"></i>
+                                <i data-lucide="check" class="w-5 h-5 text-accent-600" aria-hidden="true"></i>
                             </div>
                             <span class="text-primary-700"><?php echo $credentials; ?></span>
                         </div>
                         <div class="flex items-center space-x-3">
                             <div class="w-8 h-8 bg-accent-100 rounded-full flex items-center justify-center">
-                                <i data-lucide="check" class="w-5 h-5 text-accent-600"></i>
+                                <i data-lucide="check" class="w-5 h-5 text-accent-600" aria-hidden="true"></i>
                             </div>
                             <span class="text-primary-700">Surgical First Assist Background</span>
                         </div>
                         <div class="flex items-center space-x-3">
                             <div class="w-8 h-8 bg-accent-100 rounded-full flex items-center justify-center">
-                                <i data-lucide="check" class="w-5 h-5 text-accent-600"></i>
+                                <i data-lucide="check" class="w-5 h-5 text-accent-600" aria-hidden="true"></i>
                             </div>
                             <span class="text-primary-700">Dedicated to Natural Results</span>
                         </div>
                     </div>
                     <a href="about" class="bg-primary-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-800 transition-colors inline-flex items-center">
-                        <i data-lucide="user" class="w-5 h-5 mr-2"></i>
+                        <i data-lucide="user" class="w-5 h-5 mr-2" aria-hidden="true"></i>
                         Learn About Our Practice
                     </a>
                 </div>
@@ -258,7 +207,7 @@ include 'includes/navigation.php';
                     <div class="bg-white rounded-3xl p-8 shadow-xl">
                         <div class="text-center">
                             <div class="w-20 h-20 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <i data-lucide="award" class="w-10 h-10 text-accent-600"></i>
+                                <i data-lucide="award" class="w-10 h-10 text-accent-600" aria-hidden="true"></i>
                             </div>
                             <h3 class="text-2xl font-serif font-bold text-primary-800 mb-4">Expert Credentials</h3>
                             <div class="space-y-3 text-primary-600">
@@ -300,7 +249,7 @@ include 'includes/navigation.php';
             <div class="grid md:grid-cols-3 gap-8 mb-12">
                 <div class="bg-primary-50 rounded-2xl p-8">
                     <div class="flex items-center mb-4">
-                        <div class="flex text-accent-500 text-lg space-x-0.5">
+                        <div class="flex text-accent-500 text-lg space-x-0.5" aria-label="5 out of 5 star rating">
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -317,7 +266,7 @@ include 'includes/navigation.php';
                 
                 <div class="bg-primary-50 rounded-2xl p-8">
                     <div class="flex items-center mb-4">
-                        <div class="flex text-accent-500 text-lg space-x-0.5">
+                        <div class="flex text-accent-500 text-lg space-x-0.5" aria-label="5 out of 5 star rating">
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -334,7 +283,7 @@ include 'includes/navigation.php';
                 
                 <div class="bg-primary-50 rounded-2xl p-8">
                     <div class="flex items-center mb-4">
-                        <div class="flex text-accent-500 text-lg space-x-0.5">
+                        <div class="flex text-accent-500 text-lg space-x-0.5" aria-label="5 out of 5 star rating">
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -353,7 +302,7 @@ include 'includes/navigation.php';
             <div class="text-center">
                 <div class="inline-flex items-center space-x-4 bg-primary-50 rounded-full px-8 py-4 mb-8">
                     <div class="text-3xl font-bold text-primary-800">5.0</div>
-                    <div class="flex text-accent-500 text-2xl space-x-0.5">
+                    <div class="flex text-accent-500 text-2xl space-x-0.5" aria-label="5 out of 5 star rating">
                         <i data-lucide="star" class="w-6 h-6 fill-current"></i>
                         <i data-lucide="star" class="w-6 h-6 fill-current"></i>
                         <i data-lucide="star" class="w-6 h-6 fill-current"></i>
@@ -368,13 +317,13 @@ include 'includes/navigation.php';
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold inline-flex items-center">
-                        <i data-lucide="book-open" class="w-5 h-5 mr-2"></i>Read All Reviews
+                        <i data-lucide="book-open" class="w-5 h-5 mr-2" aria-hidden="true"></i>Read All Reviews
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
                     </a>
                     <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="border-2 border-accent-600 text-accent-600 px-8 py-4 rounded-full hover:bg-accent-50 transition-colors font-semibold inline-flex items-center">
-                        <i data-lucide="star" class="w-5 h-5 mr-2"></i>Leave a Review
+                        <i data-lucide="star" class="w-5 h-5 mr-2" aria-hidden="true"></i>Leave a Review
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
@@ -397,7 +346,7 @@ include 'includes/navigation.php';
             <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
                 <div class="bg-white rounded-2xl p-6 shadow-lg">
                     <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="calendar" class="w-6 h-6 text-accent-600"></i>
+                        <i data-lucide="calendar" class="w-6 h-6 text-accent-600" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-primary-800 mb-2">Consultation</h3>
                     <p class="text-primary-600 text-sm">Personalized assessment and treatment planning</p>
@@ -405,7 +354,7 @@ include 'includes/navigation.php';
                 
                 <div class="bg-white rounded-2xl p-6 shadow-lg">
                     <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="syringe" class="w-6 h-6 text-accent-600"></i>
+                        <i data-lucide="syringe" class="w-6 h-6 text-accent-600" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-primary-800 mb-2">Expert Treatment</h3>
                     <p class="text-primary-600 text-sm">Precise techniques with surgical-level care</p>
@@ -413,7 +362,7 @@ include 'includes/navigation.php';
                 
                 <div class="bg-white rounded-2xl p-6 shadow-lg">
                     <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="sun" class="w-6 h-6 text-accent-600"></i>
+                        <i data-lucide="sun" class="w-6 h-6 text-accent-600" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-primary-800 mb-2">Natural Results</h3>
                     <p class="text-primary-600 text-sm">Enhanced beauty that looks completely natural</p>
@@ -422,7 +371,7 @@ include 'includes/navigation.php';
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:(720) 731-8222" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center">
-                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>Call to Book: (720) 731-8222
+                    <i data-lucide="phone" class="w-5 h-5 mr-2" aria-hidden="true"></i>Call to Book: (720) 731-8222
                 </a>
                 <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
                     View All Services
@@ -430,6 +379,7 @@ include 'includes/navigation.php';
             </div>
         </div>
     </section>
+</main>
 
 <?php
 include 'includes/footer.php';
