@@ -21,9 +21,23 @@
         *:focus { outline: 2px solid #10b981; outline-offset: 2px; }
     </style>
     
-    <!-- Tailwind CSS - Load synchronously to prevent styling issues -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../includes/tailwind-config.js"></script>
+    <!-- Tailwind CSS - Load asynchronously to eliminate render blocking -->
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.tailwindcss.com"></noscript>
+    
+    <!-- Tailwind config - defer until after CSS loads -->
+    <script>
+    function loadTailwindConfig() {
+        var script = document.createElement('script');
+        script.src = '../includes/tailwind-config.js';
+        document.head.appendChild(script);
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadTailwindConfig);
+    } else {
+        loadTailwindConfig();
+    }
+    </script>
     
     <!-- Optimized Google Fonts loading -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';">
