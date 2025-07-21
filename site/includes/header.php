@@ -46,14 +46,11 @@
         .skip-link:focus { left: 6px; top: 6px; }
     </style>
     
-    <!-- Load Tailwind CSS asynchronously to prevent render blocking -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script" onload="this.onload=null;this.rel='stylesheet';var script=document.createElement('script');script.src=this.href;document.head.appendChild(script);">
-    <noscript><script src="https://cdn.tailwindcss.com"></script></noscript>
+    <!-- Tailwind CSS - Load synchronously for now to prevent styling issues -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js"></script>
     
-    <!-- Load Tailwind config asynchronously -->
-    <script async src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js"></script>
-    
-    <!-- Optimized Google Fonts loading -->
+    <!-- Optimized Google Fonts loading - keep async as this works correctly -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
