@@ -46,24 +46,9 @@
         .skip-link:focus { left: 6px; top: 6px; }
     </style>
     
-    <!-- Tailwind CSS - Load asynchronously to eliminate render blocking -->
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.tailwindcss.com"></noscript>
-    
-    <!-- Tailwind config - defer until after CSS loads -->
-    <script>
-    // Load Tailwind config after CSS is ready
-    function loadTailwindConfig() {
-        var script = document.createElement('script');
-        script.src = '<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js';
-        document.head.appendChild(script);
-    }
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadTailwindConfig);
-    } else {
-        loadTailwindConfig();
-    }
-    </script>
+    <!-- Tailwind CSS - Synchronous loading (CDN serves JS that generates CSS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js"></script>
     
     <!-- Optimized Google Fonts loading - keep async as this works correctly -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';">
