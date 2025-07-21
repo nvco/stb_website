@@ -15,14 +15,17 @@ stb_website/
 │   │   ├── header-legal.php # Legal pages header
 │   │   ├── navigation.php  # Navigation menu
 │   │   ├── footer.php      # Site footer
-│   │   └── scripts.php     # JavaScript includes
+│   │   ├── scripts.php     # JavaScript includes
+│   │   ├── components.php  # Reusable UI components
+│   │   ├── error-handler.php # Error handling & validation
+│   │   └── tailwind-config.js # Tailwind CSS configuration
 │   ├── legal/              # Legal compliance pages
 │   │   ├── privacy-policy.php
 │   │   ├── terms-of-service.php
 │   │   ├── medical-disclaimers.php
 │   │   └── hipaa-notice.php
 │   └── assets/             # Website assets
-│       └── hero-faces.png  # Hero section imagery
+│       └── hero-faces.webp # Hero section imagery (optimized)
 ├── CONTEXT.md              # Project documentation
 ├── README.md               # GitHub README
 └── resources/              # Project resources & content management
