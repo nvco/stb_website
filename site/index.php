@@ -135,28 +135,78 @@ include 'includes/navigation.php';
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <?php echo service_card_icon('syringe', 'Botox Treatments', 'Smooth away fine lines and wrinkles with expert precision injections. Achieve natural-looking results that enhance your facial expressions.'); ?>
-                        
-                        <div class="text-center">
-                            <div class="flex justify-center mb-4">
-                                <i data-lucide="droplet" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
-                            </div>
-                            <h3 class="text-2xl font-semibold text-primary-800 mb-4">Dermal Fillers</h3>
-                            <p class="text-primary-600 leading-relaxed">
-                                Restore volume and enhance facial contours with premium hyaluronic acid fillers. Achieve subtle, natural enhancement.
-                            </p>
+                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="syringe" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Botox Treatments</h3>
+                    <p class="text-primary-600 mb-6">
+                        Smooth fine lines and wrinkles with precision neuromodulator treatments. Natural-looking results that enhance your expressions.
+                    </p>
+                    <div class="space-y-2 text-sm text-primary-600">
+                        <div class="flex justify-between">
+                            <span>✓ Forehead lines</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
                         </div>
-                        
-                        <div class="text-center">
-                            <div class="flex justify-center mb-4">
-                                <i data-lucide="user-check" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
-                            </div>
-                            <h3 class="text-2xl font-semibold text-primary-800 mb-4">Expert Consultation</h3>
-                            <p class="text-primary-600 leading-relaxed">
-                                Personalized treatment planning with a licensed professional. Understand your options and create your perfect plan.
-                            </p>
+                        <div class="flex justify-between">
+                            <span>✓ Crow's feet</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>✓ Frown lines</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
                         </div>
                     </div>
+                </div>
+                
+                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="droplet" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Dermal Fillers</h3>
+                    <p class="text-primary-600 mb-6">
+                        Restore volume and contour with premium hyaluronic acid fillers. Achieve natural enhancement with expert technique.
+                    </p>
+                    <div class="space-y-2 text-sm text-primary-600">
+                        <div class="flex justify-between">
+                            <span>✓ Lip enhancement</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>✓ Cheek volume</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>✓ Facial contouring</span>
+                            <span class="text-accent-600 font-medium">Price at consultation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="user-check" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Expert Consultation</h3>
+                    <p class="text-primary-600 mb-6">
+                        Personalized treatment plans designed specifically for your unique facial anatomy and aesthetic goals.
+                    </p>
+                    <div class="space-y-2 text-sm text-primary-600">
+                        <div class="flex justify-between">
+                            <span>✓ Facial analysis</span>
+                            <span class="text-accent-600 font-medium">Included</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>✓ Treatment planning</span>
+                            <span class="text-accent-600 font-medium">Included</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>✓ Follow-up care</span>
+                            <span class="text-accent-600 font-medium">Included</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <div class="text-center mt-12">
                 <a href="services" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center">
