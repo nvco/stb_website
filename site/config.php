@@ -6,6 +6,7 @@ require_once __DIR__ . '/includes/error-handler.php';
 
 // Business information
 $business_name = 'Still Time Beauty';
+$contact_name = 'Still Time Beauty';
 $phone = '(720) 731-8222';
 $phone_link = 'tel:(720) 731-8222';
 $email = 'info@stilltimebeauty.com';
