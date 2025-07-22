@@ -209,7 +209,7 @@ include 'includes/navigation.php';
             </div>
             
             <div class="text-center mt-12">
-                <a href="services" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center">
+                                        <a href="services" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
                     <i data-lucide="arrow-right" class="w-5 h-5 mr-2" aria-hidden="true"></i>
                     View All Services
                 </a>
@@ -248,7 +248,7 @@ include 'includes/navigation.php';
                             <span class="text-primary-700">Dedicated to Natural Results</span>
                         </div>
                     </div>
-                    <a href="about" class="bg-primary-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-800 transition-colors inline-flex items-center">
+                    <a href="about" class="bg-primary-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-800 transition-colors inline-flex items-center justify-center">
                         <i data-lucide="user" class="w-5 h-5 mr-2" aria-hidden="true"></i>
                         Learn About Our Practice
                     </a>
@@ -366,13 +366,13 @@ include 'includes/navigation.php';
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold inline-flex items-center">
+                    <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold inline-flex items-center justify-center">
                         <i data-lucide="book-open" class="w-5 h-5 mr-2" aria-hidden="true"></i>Read All Reviews
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
                     </a>
-                    <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="border-2 border-accent-600 text-accent-600 px-8 py-4 rounded-full hover:bg-accent-50 transition-colors font-semibold inline-flex items-center">
+                    <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="border-2 border-accent-600 text-accent-600 px-8 py-4 rounded-full hover:bg-accent-50 transition-colors font-semibold inline-flex items-center justify-center">
                         <i data-lucide="star" class="w-5 h-5 mr-2" aria-hidden="true"></i>Leave a Review
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -420,10 +420,10 @@ include 'includes/navigation.php';
             </div>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:(720) 731-8222" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center">
+                <a href="tel:(720) 731-8222" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
                     <i data-lucide="phone" class="w-5 h-5 mr-2" aria-hidden="true"></i>Call to Book: (720) 731-8222
                 </a>
-                <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
+                <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
                     View All Services
                 </a>
             </div>

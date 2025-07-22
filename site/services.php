@@ -50,7 +50,7 @@ include 'includes/navigation.php';
                 <p class="text-xl text-primary-600 max-w-3xl mx-auto mb-8">
                     Expert treatments designed to enhance your natural beauty with the highest standards of safety, precision, and artistry.
                 </p>
-                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors">
+                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
                     <?php echo $cta_phone; ?>
                 </a>
             </div>
@@ -61,7 +61,7 @@ include 'includes/navigation.php';
     <section class="py-8 bg-white border-b">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-center gap-4">
-                                    <a href="#botox" class="inline-flex items-center 
+                                    <a href="#botox" class="inline-flex items-center justify-center 
                                             px-6 py-3 
                                             font-medium text-primary-800 
                                             bg-primary-100 
@@ -69,10 +69,10 @@ include 'includes/navigation.php';
                                             hover:bg-primary-200 transition-colors">
                     Botox Treatments
                 </a>
-                <a href="#fillers" class="bg-primary-100 text-primary-800 px-6 py-3 rounded-full hover:bg-primary-200 transition-colors font-medium">
+                <a href="#fillers" class="bg-primary-100 text-primary-800 px-6 py-3 rounded-full hover:bg-primary-200 transition-colors font-medium inline-flex items-center justify-center">
                     Dermal Fillers
                 </a>
-                <a href="#rejuvenation" class="bg-primary-100 text-primary-800 px-6 py-3 rounded-full hover:bg-primary-200 transition-colors font-medium">
+                <a href="#rejuvenation" class="bg-primary-100 text-primary-800 px-6 py-3 rounded-full hover:bg-primary-200 transition-colors font-medium inline-flex items-center justify-center">
                     Facial Rejuvenation
                 </a>
             </div>
@@ -337,10 +337,10 @@ include 'includes/navigation.php';
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center">
+                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
                     <i data-lucide="phone" class="w-5 h-5 mr-2"></i>Call for Consultation: <?php echo $phone; ?>
                 </a>
-                <a href="about" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
+                <a href="about" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
                     Learn About Our Practice
                 </a>
             </div>

@@ -8,8 +8,6 @@
     <title><?php echo isset($page_title) ? $page_title : 'Legal Information - ' . $business_name; ?></title>
     
     <!-- Preconnect to external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://unpkg.com">
     
@@ -24,10 +22,6 @@
     <!-- Tailwind CSS - Synchronous loading (CDN serves JS that generates CSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../includes/tailwind-config.js"></script>
-    
-    <!-- Optimized Google Fonts loading -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Critical JavaScript -->
     <script src="../includes/scripts-critical.js"></script>

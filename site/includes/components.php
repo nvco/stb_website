@@ -41,7 +41,7 @@ function cta_button_primary(string $href, string $text, string $size = 'lg', boo
         'lg' => 'px-8 py-4 text-lg'
     ];
     
-    $classes = "inline-flex items-center 
+    $classes = "inline-flex items-center justify-center 
                 " . $sizeClasses[$size] . " 
                 font-semibold text-white 
                 bg-accent-600 
@@ -93,7 +93,7 @@ function cta_button_secondary(string $href, string $text, string $size = 'lg', s
         'accent' => 'text-accent-600 border-accent-600 hover:bg-accent-50'
     ];
     
-    $classes = "inline-flex items-center 
+    $classes = "inline-flex items-center justify-center 
                 " . $sizeClasses[$size] . " 
                 font-semibold 
                 border-2 " . $colorClasses[$color] . " 

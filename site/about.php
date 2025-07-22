@@ -50,7 +50,7 @@ include 'includes/navigation.php';
                     Discover the story behind <?php echo $business_name; ?> and our commitment to enhancing your natural beauty through genuine human connection and surgical precision.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                            <a href="<?php echo $phone_link; ?>" class="inline-flex items-center 
+                                            <a href="<?php echo $phone_link; ?>" class="inline-flex items-center justify-center 
                                                                    px-8 py-4 
                                                                    text-lg font-semibold text-white 
                                                                    bg-accent-600 
@@ -58,7 +58,7 @@ include 'includes/navigation.php';
                                                                    hover:bg-accent-700 transition-colors">
                         <?php echo $cta_phone; ?>
                     </a>
-                    <a href="services" class="border-2 border-primary-300 text-primary-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
+                    <a href="services" class="border-2 border-primary-300 text-primary-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
                         View Services
                     </a>
                 </div>
@@ -352,10 +352,10 @@ include 'includes/navigation.php';
             </div>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center">
+                                    <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
                     <i data-lucide="phone" class="w-5 h-5 mr-2"></i>Call for Consultation: <?php echo $phone; ?>
                 </a>
-                <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
+                                    <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
                     View Our Services
                 </a>
             </div>

@@ -20,14 +20,8 @@
     <?php endif; ?>
     
     <!-- Preconnect to external resources for faster loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://unpkg.com">
-    
-    <!-- CRITICAL: Load hero font synchronously for LCP optimization -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap">
     
     <!-- Critical CSS inline to prevent render blocking -->
     <style>
@@ -41,13 +35,12 @@
         
         /* CRITICAL: Hero heading styles for immediate LCP rendering */
         .hero-heading {
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+            font-family: Georgia, 'Times New Roman', serif;
             font-weight: 700;
             font-size: 2.25rem; /* text-4xl */
             line-height: 1.1;
             color: #1e293b; /* text-primary-900 */
             margin-bottom: 1.5rem;
-            font-display: swap; /* Reduce layout shift */
         }
         @media (min-width: 1024px) {
             .hero-heading {
@@ -72,10 +65,6 @@
     <!-- Tailwind CSS - Synchronous loading (CDN serves JS that generates CSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js"></script>
-    
-    <!-- Secondary fonts loaded asynchronously (non-critical) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     
     <!-- Critical JavaScript inline for immediate execution -->
     <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/scripts-critical.js"></script>

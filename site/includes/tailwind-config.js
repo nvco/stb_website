@@ -32,8 +32,27 @@ tailwind.config = {
                 }
             },
             fontFamily: {
-                'serif': ['Playfair Display', 'serif'],
-                'sans': ['Inter', 'system-ui', 'sans-serif'],
+                'serif': [
+                    'Georgia',
+                    'Times New Roman', 
+                    'Times',
+                    'Noto Serif',
+                    'Droid Serif',
+                    'serif'
+                ],
+                'sans': [
+                    '-apple-system',
+                    'BlinkMacSystemFont',
+                    'Segoe UI',
+                    'Roboto',
+                    'Oxygen',
+                    'Ubuntu',
+                    'Cantarell',
+                    'Helvetica Neue',
+                    'Helvetica',
+                    'Arial',
+                    'sans-serif'
+                ],
             }
         }
     }

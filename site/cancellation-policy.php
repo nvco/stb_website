@@ -169,7 +169,7 @@ include 'includes/navigation.php';
                         <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
                             <i data-lucide="phone" class="w-5 h-5 mr-2"></i>Call with Questions
                         </a>
-                        <a href="about" class="border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-full font-semibold hover:bg-primary-50 transition-colors text-center">
+                        <a href="about" class="border-2 border-primary-600 text-primary-600 px-6 py-3 rounded-full font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
                             Learn About Our Practice
                         </a>
                     </div>
@@ -215,10 +215,10 @@ include 'includes/navigation.php';
             </div>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center">
+                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
                     <i data-lucide="phone" class="w-5 h-5 mr-2"></i>Call Now: <?php echo $phone; ?>
                 </a>
-                <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors">
+                <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
                     View Our Services
                 </a>
             </div>
