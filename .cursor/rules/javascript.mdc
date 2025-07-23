@@ -45,6 +45,10 @@ alwaysApply: false
 - Use object and array destructuring to minimize property access
 - Avoid creating functions inside render loops or frequent callbacks
 - Use memoization for expensive calculations that repeat with same inputs
+- **Use modern performance APIs**: `requestIdleCallback` for non-critical tasks, `requestAnimationFrame` for smooth animations
+- **Respect user preferences**: Check `prefers-reduced-motion` to disable animations for users who prefer reduced motion
+- **Optimize font loading**: Prefer system fonts over web fonts to eliminate network requests and improve LCP
+- **Optimize resource hints**: Use `preconnect`, `dns-prefetch`, and `preload` for critical external resources
 
 ## DOM Manipulation and Events
 - Use modern DOM methods (querySelector, querySelectorAll) over older methods
@@ -53,6 +57,21 @@ alwaysApply: false
 - Debounce scroll, resize, and input events to improve performance
 - Use passive event listeners for scroll and touch events when possible
 - Prefer data attributes over classes for storing element-specific data
+- **Implement proper focus management**: Move focus to appropriate elements when opening/closing modals or menus
+- **Use proper DOM ready detection**: Check `document.readyState` and use `DOMContentLoaded` for initialization
+- **Handle click-outside patterns**: Add document click listeners to close dropdowns/modals when clicking outside
+- **Implement keyboard navigation**: Support arrow keys, Escape, Enter, and Home/End for interactive components
+- **Manage focus trapping**: Ensure focus stays within modals and dropdowns during keyboard navigation
+
+## Accessibility Implementation
+- **ARIA state management**: Toggle `aria-expanded`, `aria-hidden`, and other ARIA attributes based on component state
+- **Focus restoration**: Return focus to triggering element when closing modals, dropdowns, or overlays
+- **Skip link functionality**: Implement skip-to-main-content links that move focus to main content area
+- **Screen reader announcements**: Use `aria-live` regions for dynamic content updates
+- **Keyboard event handling**: Implement proper keyboard shortcuts (Escape to close, Enter/Space for activation)
+- **Focus indicators**: Ensure programmatically focused elements have visible focus indicators
+- **Mobile menu patterns**: Implement proper focus management for hamburger menus with arrow key navigation
+- **Smooth scroll accessibility**: Add temporary `tabindex="-1"` to scroll targets for focus management
 
 ## Data Handling
 - Use immutable data patterns - don't mutate original objects/arrays

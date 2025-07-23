@@ -23,6 +23,10 @@ alwaysApply: false
 - Extract complex business logic into dedicated service classes
 - Use meaningful file and class names that describe their purpose
 - Group related functionality into logical namespaces
+- **Component extraction**: Create reusable UI components (buttons, cards, info displays) to eliminate code duplication
+- **DRY principle implementation**: Extract common patterns into utility functions for consistent reuse
+- **Centralized includes**: Use shared configuration and component files to maintain consistency across templates
+- **Utility functions**: Create helper functions for common tasks (phone formatting, HTML escaping, input validation)
 
 ## Object-Oriented Programming
 - Follow SOLID principles, especially Single Responsibility and Dependency Injection
@@ -42,6 +46,10 @@ alwaysApply: false
 - Use password_hash() and password_verify() for password handling
 - Implement proper CSRF protection for forms
 - Use htmlspecialchars() for output escaping to prevent XSS
+- **Centralized error handling**: Create dedicated error handler files for consistent error management
+- **Input validation utilities**: Implement reusable validation functions for common data types
+- **Safe output functions**: Create wrapper functions for htmlspecialchars and other escaping methods
+- **Router error handling**: Implement proper 404 handling and static file serving in routing logic
 
 ## Database and Data Handling
 - Always use prepared statements with PDO or MySQLi

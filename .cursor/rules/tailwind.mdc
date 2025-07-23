@@ -35,6 +35,9 @@ alwaysApply: false
 - Consider touch-friendly sizing: minimum 44px (touch-44) for tap targets on mobile
 - Use active states (active:bg-blue-700) for immediate feedback on touch devices
 - Avoid hover-only interactions - ensure touch users can access all functionality
+- **Button text centering**: Always include `justify-center` class for proper mobile button text alignment
+- **Consistent focus indicators**: Use `focus:ring-2 focus:ring-emerald-500 focus:outline-none` for consistent focus styling
+- **Mobile menu states**: Implement proper `aria-expanded` toggling with corresponding visual states
 
 ## Colors & Design System
 - Stick to defined color scales (blue-500, gray-200, etc.) rather than arbitrary colors
@@ -53,6 +56,10 @@ alwaysApply: false
 - Use @apply directive sparingly - only for complex repeated patterns
 - Prefer composition over extraction when possible
 - Name component classes semantically (btn-primary, card-elevated)
+- **Button component patterns**: Always include `justify-center` and proper focus states for consistent button behavior
+- **Mobile menu patterns**: Use consistent `aria-expanded` state styling with `hidden` and `block` utilities
+- **Icon-text combinations**: Create reusable patterns for icons with text using consistent spacing
+- **Card components**: Implement consistent shadow, padding, and hover state patterns for content cards
 
 ## Performance & Optimization
 - Only include utilities that are actually used in your markup
@@ -60,6 +67,10 @@ alwaysApply: false
 - Avoid deeply nested arbitrary values
 - Prefer standard utilities over custom CSS properties
 - Reference Tailwind documentation for component patterns rather than reinventing common solutions
+- **System fonts strategy**: Use Tailwind's system font stacks (font-serif, font-sans) to eliminate web font loading
+- **Reduce layout shift**: Always specify image dimensions and use proper aspect ratio utilities
+- **Critical CSS**: Load Tailwind CSS synchronously in the head to prevent FOUC (Flash of Unstyled Content)
+- **Font loading optimization**: Eliminate Google Fonts dependency for faster LCP and zero external font requests
 
 ## Accessibility (CSS-focused)
 - Always include focus states and proper focus management - use focus:ring-2 focus:ring-blue-500 focus:outline-none
@@ -71,6 +82,11 @@ alwaysApply: false
 - Ensure interactive elements have proper contrast in all states (hover, focus, active, disabled)
 - Use text-* utilities to maintain readable font sizes (minimum 16px/text-base on mobile)
 - Avoid using color alone to convey information - combine with icons, text, or patterns
+- **Skip link styling**: Hide skip links with `sr-only` until focused, then show with proper positioning
+- **Mobile menu focus**: Use enhanced focus indicators with background highlights for menu items
+- **Scroll target focus**: Apply temporary focus styling to scroll destination elements
+- **Motion preferences**: Use `motion-reduce:` prefix to respect users' motion preferences
+- **Focus restoration**: Ensure focus returns to logical elements after modal/menu interactions
 
 ## Custom CSS with Tailwind
 - **When to write custom CSS**: Only when Tailwind utilities cannot achieve the desired result

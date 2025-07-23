@@ -14,6 +14,9 @@ alwaysApply: false
 - Use form elements (input, textarea, select) for data collection
 - Use lists (ul, ol, dl) for grouped content
 - Use main, nav, header, footer, section, article, aside for page structure
+- **Add skip links**: Include "Skip to main content" links as the first focusable element on every page
+- **Use landmark roles**: Ensure main content area has `<main id="main">` for screen reader navigation
+- **Implement proper document structure**: Single h1 per page, logical heading progression
 
 ## Interactive Elements
 - Ensure all interactive elements are focusable and keyboard accessible
@@ -21,6 +24,10 @@ alwaysApply: false
 - Provide clear focus indicators for keyboard users
 - Ensure click targets are accessible via keyboard (Enter/Space for buttons)
 - Use proper form labels associated with inputs (for attribute or wrapping label)
+- **Mobile menu implementation**: Use `aria-controls`, `aria-expanded`, and proper button labeling for hamburger menus
+- **Focus management**: Implement focus trapping and restoration for modal dialogs and dropdown menus
+- **Touch targets**: Ensure minimum 44px touch targets for mobile accessibility
+- **Visual focus indicators**: Use consistent focus styling (2px solid accent color with sufficient contrast)
 
 ## ARIA Attributes and Labels
 - Use aria-label or aria-labelledby for elements that need accessible names
@@ -30,6 +37,25 @@ alwaysApply: false
 - Use aria-live regions for dynamic content updates
 - Use role attributes when semantic HTML isn't sufficient
 - Use aria-current for indicating current page/step in navigation
+- **Decorative icons**: Always add `aria-hidden="true"` to Lucide icons and other decorative SVGs
+- **Mobile menu ARIA**: Use `aria-controls="mobile-menu"` and `aria-label="Toggle mobile navigation menu"`
+- **Star ratings**: Provide `aria-label="5 out of 5 star rating"` for rating displays
+- **Navigation landmarks**: Use `role="navigation"` with descriptive `aria-label` for menu containers
+
+## Image Optimization and Accessibility
+- **Alt text strategy**: Provide descriptive alt text for informative images, empty alt="" for decorative images
+- **Performance attributes**: Add `loading="lazy"`, `decoding="async"`, and `fetchpriority="high"` for hero images
+- **Responsive images**: Include proper width/height attributes to prevent layout shift
+- **Modern formats**: Use WebP format with fallbacks for better performance (88% size reduction achievable)
+- **Hero image priority**: Use `fetchpriority="high"` for above-the-fold hero images
+
+## Motion and Animation Accessibility
+- **Respect user preferences**: Use `prefers-reduced-motion` media query to disable animations
+- **Focus-safe animations**: Ensure focus indicators work correctly during animations
+- **Smooth scroll accessibility**: Maintain functionality while respecting motion preferences
 
 ## Form Accessibility
-- Associate all
+- Associate all form inputs with clear, descriptive labels
+- Use fieldsets and legends for grouped form controls
+- Provide helpful error messages and validation feedback
+- Ensure form submission feedback is accessible to screen readers
