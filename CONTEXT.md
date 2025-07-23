@@ -123,6 +123,11 @@ Requires PHP-enabled hosting (cPanel, cloud platforms, VPS with LAMP/LEMP stack)
 
 ---
 
+## Claude Code References
+See CLAUDE.md for Claude Code-specific instructions and any updates from coding sessions that are important and we need to reference here.
+
+---
+
 ## Archive & References
 
 ### Detailed Documentation
