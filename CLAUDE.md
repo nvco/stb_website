@@ -124,8 +124,11 @@ Common issues:
 
 ### Documentation System
 - **CONTEXT.md**: Current project state and immediate priorities
-- **context/**: Detailed archived documentation (setup, requirements, testing)
-- **development-history.md**: Complete changelog and version history
+- **context/**: Detailed archived documentation
+  - **development-history.md**: Complete changelog and version history
+  - **setup-guide.md**: Complete hosting and development instructions
+  - **business-requirements.md**: Detailed feature and legal requirements
+  - **accessibility-testing.md**: Comprehensive WCAG 2.1 AA testing checklist
 - **CLAUDE.md**: This file - Claude Code specific guidance
 
 ## Cursor References and Project Guidelines
