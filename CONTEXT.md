@@ -123,10 +123,15 @@ Requires PHP-enabled hosting (cPanel, cloud platforms, VPS with LAMP/LEMP stack)
 
 ---
 
-## Claude Code Reference
-See `CLAUDE.md` for Claude Code-specific instructions and any updates from coding sessions that are important and we need to reference here.
+## Documentation System
 
----
+- **CONTEXT.md**: Current project state and immediate priorities
+- **context/**: Detailed archived documentation
+  - **development-history.md**: Complete changelog and version history
+  - **setup-guide.md**: Complete hosting and development instructions
+  - **business-requirements.md**: Detailed feature and legal requirements
+  - **accessibility-testing.md**: Comprehensive WCAG 2.1 AA testing checklist
+- **CLAUDE.md**: Claude Code specific guidance
 
 ## Archive & References
 
@@ -147,7 +152,7 @@ See `CLAUDE.md` for Claude Code-specific instructions and any updates from codin
 - **Update after major changes** or weekly development sessions
 - **Keep focused on current state** and immediate next steps
 - **Archive detailed content** when sections exceed 20-30 lines
-- **Maintain under 250 lines** for quick reference
+- **Maintain under 300 lines** for quick reference
 
 ### Last Reorganized
 *January 2025 - Updated to Version 3.0 with comprehensive development history and current optimized state*

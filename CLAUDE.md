@@ -77,7 +77,8 @@ router.php                               # Clean URL routing
 
 **Performance**:
 - WebP image optimization
-- CDN delivery for Tailwind CSS and Google Fonts
+- System fonts (no external font downloads) for instant text rendering
+- CDN delivery for Tailwind CSS
 - Direct static file serving in router
 
 ## Common Development Tasks
@@ -113,6 +114,19 @@ Common issues:
 - **Vanilla JavaScript** for interactions
 - **Clean URL routing** via custom router
 - **Component-based architecture** for maintainability
+
+## Development Workflow
+
+### Cursor Integration
+- Follow all coding rules and guidelines in `.cursor/rules/` folder  
+- Use `/sync-cursor` command before commits to coordinate documentation updates
+- Git workflow rules ensure proper documentation maintenance between tools
+
+### Documentation System
+- **CONTEXT.md**: Current project state and immediate priorities
+- **context/**: Detailed archived documentation (setup, requirements, testing)
+- **development-history.md**: Complete changelog and version history
+- **CLAUDE.md**: This file - Claude Code specific guidance
 
 ## Cursor References and Project Guidelines
 Follow all coding rules and guidelines specified in the `.cursor/rules/` folder.

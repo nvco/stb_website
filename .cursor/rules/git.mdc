@@ -10,6 +10,6 @@ Rules for git workflows and version control in this project.
 
 ## Doc Update Before Commit
 
-Before committing code (whether developed in Cursor or Claude Code), use the `/doc-up` command to ensure proper documentation updates and coordination between tools.
+Before committing code (whether developed in Cursor or Claude Code), use the `/sync-cursor` command to ensure proper documentation updates and coordination between tools.
 
 This workflow ensures that significant changes and insights from Claude Code sessions are properly captured in our project documentation.

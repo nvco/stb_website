@@ -3,10 +3,13 @@
 ## Version 3.2 - Cursor Documentation Workflow Integration (January 2025)
 
 ### 📋 **Development Workflow Enhancement**
-- **Added `/doc-up` command** for structured documentation updates before commit
+- **Added `/sync-cursor` command** for structured documentation updates before commit
   - Streamlined workflow for analyzing changes and determining documentation needs
   - Decision framework for updating CONTEXT.md vs context/ folder files
   - Improved consistency in documentation maintenance across development sessions
+- **Added `/sync-claude` command** for Claude Code workflow integration
+  - Parallel documentation workflow for Claude Code sessions
+  - Consistent approval process across both development tools
 - **Implemented git workflow rules** (`.cursor/rules/git.mdc`)
   - Always-applied git guidelines for version control best practices
   - Enhanced development workflow with automated guidance
