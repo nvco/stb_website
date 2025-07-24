@@ -1,5 +1,26 @@
 # Development History
 
+## Version 3.2 - Cursor Documentation Workflow Integration (January 2025)
+
+### 📋 **Development Workflow Enhancement**
+- **Added `/doc-up` command** for structured documentation updates before commit
+  - Streamlined workflow for analyzing changes and determining documentation needs
+  - Decision framework for updating CONTEXT.md vs context/ folder files
+  - Improved consistency in documentation maintenance across development sessions
+- **Implemented git workflow rules** (`.cursor/rules/git.mdc`)
+  - Always-applied git guidelines for version control best practices
+  - Enhanced development workflow with automated guidance
+  - Improved coordination between Cursor and Claude Code development sessions
+
+### 🔧 **Documentation Process Improvements**
+- **Structured documentation update workflow**
+  - Clear criteria for significant changes vs minor fixes
+  - Automated reminders for development milestone documentation
+  - Enhanced cross-tool coordination for documentation updates
+- **Minor CONTEXT.md formatting updates**
+  - Improved section header consistency
+  - Better integration with Cursor workflow system
+
 ## Version 3.1 - Font System Optimization (January 2025)
 
 ### 🚀 **Performance Optimization: System Fonts Implementation**
