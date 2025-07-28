@@ -25,6 +25,9 @@ $cta_phone = 'Call ' . $phone;
 $credentials = 'Licensed Nurse Practitioner';
 $credentials_description = 'Expert medical aesthetics with surgical precision background';
 
+// Blog configuration
+$blog_title = 'Botox & Dermal Fillers Blog';
+
 // Base URL configuration - dynamic for localhost and production
 $is_localhost = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false || strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== false);
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https://' : 'http://';

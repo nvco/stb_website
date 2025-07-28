@@ -9,6 +9,9 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
+# Blog posts
+RewriteRule ^blog/([^/]+)/?$ blog/$1.php [L]
+
 # Explicit rules for main pages (more reliable)
 RewriteRule ^about/?$ about.php [L]
 RewriteRule ^services/?$ services.php [L]

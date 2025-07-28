@@ -4,6 +4,15 @@
 ### 🎯 **Testing Overview**
 This checklist verifies all accessibility improvements implemented across the Still Time Beauty website. Use this guide to test with screen readers, keyboard navigation, and accessibility tools.
 
+**Pages to Test:**
+- Homepage (`/`)
+- About (`/about`)
+- Services (`/services`)
+- Blog listing (`/blog`)
+- Individual blog posts (`/blog/article-slug`)
+- Legal pages (`/legal/*`)
+- Cancellation policy (`/cancellation-policy`)
+
 ---
 
 ## ✅ **Completed Accessibility Improvements**
@@ -150,8 +159,8 @@ Test with at least one of: NVDA (free), JAWS, VoiceOver, or ORCA
 # Install axe-core CLI
 npm install -g @axe-core/cli
 
-# Run accessibility test
-axe http://localhost:8000 --tags wcag2a,wcag2aa
+# Run accessibility test (replace PORT with your server port)
+axe http://localhost:PORT --tags wcag2a,wcag2aa
 ```
 
 ### **Expected Results:**
@@ -215,14 +224,16 @@ axe http://localhost:8000 --tags wcag2a,wcag2aa
 
 ### **Local Testing:**
 ```bash
-# Start development server
-php -S localhost:8000 router.php
+php -S localhost:PORT router.php
+```
+(Replace PORT with any available port like 8000, 8001, 3000, etc.)
 
-# Test URLs:
-# http://localhost:8000/           (Homepage)
-# http://localhost:8000/about      (About page)
-# http://localhost:8000/services   (Services page)
-# http://localhost:8000/legal/privacy-policy  (Legal page)
+Test these URLs (replace PORT with your chosen port):
+```
+# http://localhost:PORT/           (Homepage)
+# http://localhost:PORT/about      (About page)  
+# http://localhost:PORT/services   (Services page)
+# http://localhost:PORT/legal/privacy-policy  (Legal page)
 ```
 
 ### **Screen Reader Setup:**

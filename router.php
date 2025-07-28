@@ -42,10 +42,21 @@ if (file_exists($static_file_path) && is_file($static_file_path)) {
     return true;
 }
 
+// Handle blog posts
+if (strpos($request_uri, 'blog/') === 0) {
+    $blog_slug = substr($request_uri, 5); // Remove 'blog/' prefix (5 characters)
+    $blog_file_path = $site_dir . '/blog/' . $blog_slug . '.php';
+    if (file_exists($blog_file_path)) {
+        require_once $blog_file_path;
+        return true;
+    }
+}
+
 // Map clean URLs to PHP files
 $routes = [
     'about' => 'about.php',
     'services' => 'services.php',
+    'blog' => 'blog.php',
     'cancellation-policy' => 'cancellation-policy.php',
     // Legal pages
     'legal/privacy-policy' => 'legal/privacy-policy.php',

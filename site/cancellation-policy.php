@@ -15,7 +15,7 @@ include 'includes/navigation.php';
 
 <main id="main">
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16">
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <div class="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-lg mb-6">
@@ -33,7 +33,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- Content Section -->
-    <section class="py-20 bg-white">
+    <section class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-accent-50 rounded-2xl p-8 mb-12">
                 <h2 class="text-2xl font-serif font-bold text-primary-900 mb-4">Effective Date: January 1, 2024</h2>
@@ -178,52 +178,7 @@ include 'includes/navigation.php';
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
-                Ready to Schedule Your Appointment?
-            </h2>
-            <p class="text-xl text-primary-600 mb-8 max-w-3xl mx-auto">
-                Now that you understand our policies, we're ready to help you achieve your aesthetic goals. Schedule your consultation today.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-                <div class="bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="phone" class="w-6 h-6 text-accent-600"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-primary-800 mb-2">Call to Schedule</h3>
-                    <p class="text-primary-600 text-sm">Speak directly with our team to book your consultation</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="calendar" class="w-6 h-6 text-accent-600"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-primary-800 mb-2">Flexible Scheduling</h3>
-                    <p class="text-primary-600 text-sm">Appointments available to fit your busy schedule</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="heart" class="w-6 h-6 text-accent-600"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-primary-800 mb-2">Personalized Care</h3>
-                    <p class="text-primary-600 text-sm">Individual attention and customized treatment plans</p>
-                </div>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
-                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>Call Now: <?php echo $phone; ?>
-                </a>
-                <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
-                    View Our Services
-                </a>
-            </div>
-        </div>
-    </section>
+    <?php include 'includes/cta-section-large.php'; ?>
 </main>
 
 <?php

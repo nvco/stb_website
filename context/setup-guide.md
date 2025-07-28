@@ -8,6 +8,7 @@ stb_website/
 │   ├── index.php           # Homepage
 │   ├── about.php           # About Us page
 │   ├── services.php        # Services page
+│   ├── blog.php            # Blog listing page
 │   ├── cancellation-policy.php # Cancellation Policy
 │   ├── config.php          # Site configuration
 │   ├── includes/           # Shared components
@@ -18,7 +19,12 @@ stb_website/
 │   │   ├── scripts.php     # JavaScript includes
 │   │   ├── components.php  # Reusable UI components
 │   │   ├── error-handler.php # Error handling & validation
+│   │   ├── article-date.php # Blog post date display component
+│   │   ├── cta-section.php # Reusable CTA section component
+│   │   ├── blog-functions.php # Blog listing and sorting functions
 │   │   └── tailwind-config.js # Tailwind CSS configuration
+│   ├── blog/               # Blog posts directory
+│   │   └── benefits-botox-superior-colorado-youthful-appearance.php # Sample article
 │   ├── legal/              # Legal compliance pages
 │   │   ├── privacy-policy.php
 │   │   ├── terms-of-service.php
@@ -26,8 +32,12 @@ stb_website/
 │   │   └── hipaa-notice.php
 │   └── assets/             # Website assets
 │       └── hero-faces.webp # Hero section imagery (optimized)
+├── content-temp/           # Temporary markdown files for blog conversion
 ├── CONTEXT.md              # Project documentation
 ├── README.md               # GitHub README
+├── .cursor/                # Cursor IDE configuration
+│   └── commands/
+│       └── add-article.md  # Blog article creation workflow
 └── resources/              # Project resources & content management
     ├── about-us.md
     ├── services-offered.md  # Master services reference document
@@ -42,15 +52,25 @@ stb_website/
 ### Prerequisites
 - PHP 7.4 or higher
 - Web browser
-- Text editor/IDE
+- Text editor/IDE (Cursor recommended for blog workflow)
+
+### Blog Content Management
+- **Markdown to PHP Conversion**: Automated via `/add-article` command
+- **Content Directory**: Place `.md` files in `content-temp/` for processing
+- **Automatic Discovery**: New articles appear automatically on `/blog` listing
+- **SEO Optimization**: Structured data and metadata generated automatically
 
 ### Setup Steps
 1. **Clone or download** the project to a local directory
 2. **Navigate** to the project directory in terminal
-3. **Start PHP server**: `php -S localhost:8000 -t site/`
-4. **Open browser** to `http://localhost:8000`
-5. **Test navigation** between pages (clean URLs enabled via router.php)
-6. **Verify mobile responsiveness** using browser dev tools
+3. **Start PHP server**: `php -S localhost:PORT router.php` (replace PORT with any available port)
+
+### Blog System Usage
+4. **Access blog**: Navigate to `/blog` on your local server for blog listing
+5. **Add articles**: Use `/add-article` command in Cursor to convert markdown files
+6. **Content workflow**: Place `.md` files in `content-temp/` directory before conversion
+7. **Test navigation** between pages (clean URLs enabled via router.php)
+8. **Verify mobile responsiveness** using browser dev tools
 
 ### Development Workflow
 - Edit PHP files in `site/` directory
@@ -193,10 +213,10 @@ location / {
 **Solution:**
 ```bash
 # ❌ WRONG - This breaks clean URLs
-php -S localhost:8000 -t site/
+php -S localhost:PORT -t site/
 
-# ✅ CORRECT - Always use router.php
-php -S localhost:8000 router.php
+# ✅ CORRECT - Always use router.php  
+php -S localhost:PORT router.php
 ```
 
 **Quick Fix:**
@@ -204,8 +224,8 @@ php -S localhost:8000 router.php
 # Stop the server
 pkill -f "php -S"
 
-# Restart correctly
-php -S localhost:8000 router.php
+# Restart correctly (replace PORT with your chosen port)
+php -S localhost:PORT router.php
 ```
 
 #### **Legal pages failing with "require_once" errors**
@@ -230,6 +250,7 @@ require_once __DIR__ . '/../config.php';
 - `site/legal/terms-of-service.php`
 - `site/legal/hipaa-notice.php`
 - `site/legal/medical-disclaimers.php`
+- `site/blog/*.php` (blog articles follow same pattern)
 
 #### **Static assets not loading (CSS, JS, images)**
 **Symptoms:**
@@ -268,25 +289,25 @@ When things break, check in this order:
    # Check what's running
    ps aux | grep "php -S"
    
-   # Should show: php -S localhost:8000 router.php
-   # NOT: php -S localhost:8000 -t site/
+   # Should show: php -S localhost:PORT router.php
+   # NOT: php -S localhost:PORT -t site/
    ```
 
 2. **Test Router Directly:**
    ```bash
-   curl -I http://localhost:8000/about
+   curl -I http://localhost:PORT/about
    # Should return: HTTP/1.1 200 OK
    ```
 
 3. **Check Static Assets:**
    ```bash
-   curl -I http://localhost:8000/assets/hero-faces.webp
+   curl -I http://localhost:PORT/assets/hero-faces.webp
    # Should return: HTTP/1.1 200 OK with image/webp content-type
    ```
 
 4. **Test Legal Pages:**
    ```bash
-   curl -I http://localhost:8000/privacy-policy
+   curl -I http://localhost:PORT/privacy-policy
    # Should return: HTTP/1.1 200 OK (not 500)
    ```
 
@@ -294,10 +315,10 @@ When things break, check in this order:
 ```bash
 # Nuclear option - restart everything
 pkill -f "php -S"
-php -S localhost:8000 router.php
+php -S localhost:PORT router.php
 
-# Open in browser
-open http://localhost:8000
+# Open in browser (replace with your URL)
+open http://localhost:PORT
 ```
 
 ### **Other Common Issues**

@@ -41,7 +41,7 @@ include 'includes/navigation.php';
 
 <main id="main">
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16">
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl lg:text-6xl font-serif font-bold text-primary-900 mb-6">
@@ -50,9 +50,7 @@ include 'includes/navigation.php';
                 <p class="text-xl text-primary-600 max-w-3xl mx-auto mb-8">
                     Expert treatments designed to enhance your natural beauty with the highest standards of safety, precision, and artistry.
                 </p>
-                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
-                    <?php echo $cta_phone; ?>
-                </a>
+                <?php include __DIR__ . '/includes/cta-call-button.php'; ?>
             </div>
         </div>
     </section>
@@ -80,7 +78,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- Botox Section -->
-    <section id="botox" class="py-20 bg-white">
+    <section id="botox" class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -156,7 +154,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- Dermal Fillers Section -->
-    <section id="fillers" class="py-20 bg-primary-50">
+    <section id="fillers" class="py-12 md:py-14 lg:py-16 bg-primary-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1">
@@ -230,7 +228,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- Facial Rejuvenation Section -->
-    <section id="rejuvenation" class="py-20 bg-white">
+    <section id="rejuvenation" class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
@@ -279,7 +277,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- Treatment Process Section -->
-    <section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
+    <section class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
@@ -326,53 +324,7 @@ include 'includes/navigation.php';
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
-                Ready to Enhance Your Natural Beauty?
-            </h2>
-            <p class="text-xl text-primary-600 mb-8 max-w-3xl mx-auto">
-                Schedule your personalized consultation and discover how our expert treatments can help you achieve your aesthetic goals with natural-looking results.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
-                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>Call for Consultation: <?php echo $phone; ?>
-                </a>
-                <a href="about" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
-                    Learn About Our Practice
-                </a>
-            </div>
-            
-            <div class="bg-primary-50 rounded-2xl p-8 max-w-4xl mx-auto">
-                <h3 class="text-2xl font-serif font-bold text-primary-800 mb-4">Why Choose Still Time Beauty?</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <i data-lucide="award" class="w-6 h-6 text-accent-600"></i>
-                        </div>
-                        <h4 class="font-semibold text-primary-800 mb-2">Licensed Professional</h4>
-                        <p class="text-primary-600 text-sm">Nurse Practitioner with surgical precision background</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <i data-lucide="heart" class="w-6 h-6 text-accent-600"></i>
-                        </div>
-                        <h4 class="font-semibold text-primary-800 mb-2">Natural Results</h4>
-                        <p class="text-primary-600 text-sm">Enhancement that looks like you, just refreshed</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <i data-lucide="shield" class="w-6 h-6 text-accent-600"></i>
-                        </div>
-                        <h4 class="font-semibold text-primary-800 mb-2">Safety First</h4>
-                        <p class="text-primary-600 text-sm">Highest medical and safety standards</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <?php include 'includes/cta-section-large.php'; ?>
 </main>
 
 <?php

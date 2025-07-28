@@ -28,6 +28,41 @@ alwaysApply: false
 - **Centralized includes**: Use shared configuration and component files to maintain consistency across templates
 - **Utility functions**: Create helper functions for common tasks (phone formatting, HTML escaping, input validation)
 
+## Reusable Components and Include Files
+
+### When to Create Include Files
+- **ALWAYS create include files** for any function or code block that could be reused across multiple PHP files
+- **Extract immediately** if you copy-paste the same code more than once
+- **Create includes for** any logic that's more than 10-15 lines and serves a specific purpose
+- **Avoid inline functions** in individual PHP files unless they are truly file-specific and won't be reused
+
+### Include File Location and Organization
+- **Primary location**: Place all reusable includes in `site/includes/` directory
+- **Naming convention**: Use descriptive, hyphenated names (e.g., `user-validation.php`, `blog-functions.php`, `cta-section.php`)
+- **Specialized subdirectories**: Create subdirectories for related functionality when needed (e.g., `includes/api/`, `includes/auth/`)
+
+### What Should Become Include Files
+- **UI Components**: Any HTML structure used multiple times (CTA sections, cards, buttons, modals)
+- **Business Logic Functions**: Data processing, calculations, formatting functions
+- **Utility Functions**: String manipulation, date formatting, validation helpers
+- **API Helpers**: Request handling, response formatting, authentication checks
+- **Database Functions**: Query builders, data transformation, connection helpers
+- **Template Partials**: Reusable HTML chunks with dynamic content
+
+### Include File Structure and Best Practices
+- **Start with function documentation**: Add PHPDoc comments explaining purpose, parameters, and return values
+- **Use typed parameters**: Always specify parameter and return types for functions in includes
+- **Single responsibility**: Each include file should focus on one specific area of functionality
+- **Consistent naming**: Use descriptive function names that clearly indicate their purpose
+- **Error handling**: Include proper error handling and input validation in reusable functions
+- **No side effects**: Functions should be pure when possible, avoiding global state modifications
+
+### Integration Guidelines
+- **Include early**: Add `include 'includes/filename.php';` at the top of files after config includes
+- **Check dependencies**: Ensure include files don't have circular dependencies
+- **Document usage**: Add comments explaining which functions are available from each include
+- **Consistent patterns**: Follow the same include patterns established in the project
+
 ## Object-Oriented Programming
 - Follow SOLID principles, especially Single Responsibility and Dependency Injection
 - Use proper visibility modifiers (private, protected, public) appropriately

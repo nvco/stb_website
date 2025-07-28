@@ -40,7 +40,7 @@ include 'includes/navigation.php';
 
 <main id="main">
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16">
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1 class="text-4xl lg:text-6xl font-serif font-bold text-primary-900 mb-6">
@@ -49,25 +49,15 @@ include 'includes/navigation.php';
                 <p class="text-xl text-primary-600 max-w-3xl mx-auto mb-8">
                     Discover the story behind <?php echo $business_name; ?> and our commitment to enhancing your natural beauty through genuine human connection and surgical precision.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                            <a href="<?php echo $phone_link; ?>" class="inline-flex items-center justify-center 
-                                                                   px-8 py-4 
-                                                                   text-lg font-semibold text-white 
-                                                                   bg-accent-600 
-                                                                   rounded-full shadow-lg 
-                                                                   hover:bg-accent-700 transition-colors">
-                        <?php echo $cta_phone; ?>
-                    </a>
-                    <a href="services" class="border-2 border-primary-300 text-primary-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
-                        View Services
-                    </a>
+                <div class="flex justify-center">
+                    <?php include __DIR__ . '/includes/cta-call-button.php'; ?>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Our Story Section -->
-    <section class="py-20 bg-white">
+    <section class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -113,7 +103,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- Philosophy Section -->
-    <section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
+    <section class="py-12 md:py-14 lg:py-16 bg-gradient-to-br from-primary-50 to-accent-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
@@ -211,7 +201,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="py-20 bg-white">
+    <section class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
@@ -222,7 +212,7 @@ include 'includes/navigation.php';
                 </p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-4">
                 <div>
                     <div class="space-y-8">
                         <div class="flex items-start space-x-4">
@@ -315,52 +305,7 @@ include 'includes/navigation.php';
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
-                Ready to Begin Your Journey?
-            </h2>
-            <p class="text-xl text-primary-600 mb-8 max-w-3xl mx-auto">
-                Schedule your personalized consultation and discover how our expertise, precision, and genuine care can help you achieve your aesthetic goals naturally.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-                <div class="bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="calendar" class="w-6 h-6 text-accent-600"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-primary-800 mb-2">Schedule Consultation</h3>
-                    <p class="text-primary-600 text-sm">Personalized assessment and treatment planning session</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="clipboard-check" class="w-6 h-6 text-accent-600"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-primary-800 mb-2">Custom Treatment Plan</h3>
-                    <p class="text-primary-600 text-sm">Tailored approach designed for your unique goals</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="sparkles" class="w-6 h-6 text-accent-600"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-primary-800 mb-2">Natural Results</h3>
-                    <p class="text-primary-600 text-sm">Enhanced beauty that looks completely natural</p>
-                </div>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                    <a href="<?php echo $phone_link; ?>" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
-                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>Call for Consultation: <?php echo $phone; ?>
-                </a>
-                                    <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
-                    View Our Services
-                </a>
-            </div>
-        </div>
-    </section>
+    <?php include 'includes/cta-section-large.php'; ?>
 </main>
 
 <?php

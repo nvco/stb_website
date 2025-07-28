@@ -15,6 +15,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="/about" class="<?php echo (isset($current_page) && $current_page == 'about') ? 'text-accent-600 font-medium' : 'text-primary-700 hover:text-accent-600 transition-colors'; ?>">About</a>
                     <a href="/services" class="<?php echo (isset($current_page) && $current_page == 'services') ? 'text-accent-600 font-medium' : 'text-primary-700 hover:text-accent-600 transition-colors'; ?>">Services</a>
+                    <a href="/blog" class="<?php echo (isset($current_page) && $current_page == 'blog') ? 'text-accent-600 font-medium' : 'text-primary-700 hover:text-accent-600 transition-colors'; ?>" title="<?php echo htmlspecialchars($blog_title); ?>">Blog</a>
                     <a href="/cancellation-policy" class="<?php echo (isset($current_page) && $current_page == 'cancellation-policy') ? 'text-accent-600 font-medium' : 'text-primary-700 hover:text-accent-600 transition-colors'; ?>">Cancellation Policy</a>
                 </div>
                 
@@ -42,6 +43,7 @@
                     <a href="<?php echo $base_url; ?>" class="block px-3 py-2 text-primary-700 hover:text-accent-600">Home</a>
                     <a href="/about" class="block px-3 py-2 <?php echo (isset($current_page) && $current_page == 'about') ? 'text-accent-600 font-medium' : 'text-primary-700 hover:text-accent-600'; ?>">About</a>
                     <a href="/services" class="block px-3 py-2 <?php echo (isset($current_page) && $current_page == 'services') ? 'text-accent-600 font-medium' : 'text-primary-700 hover:text-accent-600'; ?>">Services</a>
+                    <a href="/blog" class="block px-3 py-2 <?php echo (isset($current_page) && $current_page == 'blog') ? 'text-accent-600 font-medium' : 'text-primary-700 hover:text-accent-600'; ?>" title="<?php echo htmlspecialchars($blog_title); ?>">Blog</a>
                     <a href="/cancellation-policy" class="block px-3 py-2 <?php echo (isset($current_page) && $current_page == 'cancellation-policy') ? 'text-accent-600 font-medium' : 'text-primary-700 hover:text-accent-600'; ?>">Cancellation Policy</a>
                 </div>
                                                     <a href="<?php echo $phone_link; ?>" class="block text-center 

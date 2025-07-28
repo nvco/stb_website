@@ -31,7 +31,7 @@ include 'includes/navigation.php';
 
 <main id="main">
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-26 lg:pt-28 pb-16 overflow-hidden">
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left">
@@ -43,8 +43,7 @@ include 'includes/navigation.php';
                         Professional medical aesthetics in downtown Boulder. Expert Botox and dermal filler treatments by a qualified Nurse Practitioner with surgical precision.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <?php echo cta_button_primary($phone_link, $cta_phone, 'lg', false); ?>
-                        <?php echo cta_button_secondary('services', 'View Services', 'lg', 'primary'); ?>
+                        <?php include __DIR__ . '/includes/cta-call-button.php'; ?>
                     </div>
                     <div class="mt-6 grid grid-cols-2 gap-4 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
                         <?php echo info_card('map-pin', 'Convenient<br class="sm:hidden"> Location', 'Pearl Street, Boulder'); ?>
@@ -71,8 +70,8 @@ include 'includes/navigation.php';
                 </div>
                 <div class="relative flex justify-center">
                     <!-- Main circular image -->
-                    <div class="relative w-72 h-72 md:w-[26rem] md:h-[26rem] lg:w-[33rem] lg:h-[33rem]">
-                        <div class="w-full h-full rounded-full overflow-hidden shadow-2xl border-8 border-white">
+                    <div class="relative w-72 h-72 md:w-[26rem] md:h-[26rem] lg:w-[35rem] lg:h-[35rem]">
+                        <div class="w-full h-full rounded-2xl overflow-hidden shadow-2xl border-8 border-white">
                             <img src="assets/hero-faces.webp" 
                                  alt="Professional medical aesthetics for men and women" 
                                  class="w-full h-full object-cover object-center"
@@ -105,15 +104,15 @@ include 'includes/navigation.php';
                         </div>
                     </div>
                     <!-- Decorative elements -->
-                    <div class="absolute top-4 right-4 md:top-8 md:right-8 
+                    <div class="absolute top-4 right-4 md:top-8 md:right-8 lg:top-12 lg:-right-12
                            w-12 h-12 md:w-16 md:h-16 
                            bg-accent-200 
                            rounded-full opacity-30 animate-pulse"></div>
-                    <div class="absolute bottom-8 right-12 md:bottom-16 md:right-16 
+                    <div class="absolute bottom-8 right-12 md:bottom-16 md:right-16 lg:bottom-20 lg:-right-8
                            w-6 h-6 md:w-8 md:h-8 
                            bg-primary-300 
                            rounded-full opacity-40"></div>
-                    <div class="absolute top-12 left-4 md:top-16 md:left-8 
+                    <div class="absolute top-12 left-4 md:top-16 md:left-8 lg:top-20 lg:-left-12
                            w-8 h-8 md:w-12 md:h-12 
                            bg-accent-100 
                            rounded-full opacity-50"></div>
@@ -123,7 +122,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- Services Overview Section -->
-    <section class="py-20 bg-white">
+    <section class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-serif font-bold text-primary-900 mb-4">
@@ -209,7 +208,7 @@ include 'includes/navigation.php';
             </div>
             
             <div class="text-center mt-12">
-                                        <a href="services" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
+                                        <a href="services" class="border-2 border-accent-600 text-accent-600 bg-white hover:bg-accent-50 px-8 py-4 rounded-full text-lg font-semibold transition-colors inline-flex items-center justify-center">
                     <i data-lucide="arrow-right" class="w-5 h-5 mr-2" aria-hidden="true"></i>
                     View All Services
                 </a>
@@ -218,7 +217,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- About Preview Section -->
-    <section class="py-20 bg-primary-50">
+    <section class="py-12 md:py-14 lg:py-16 bg-primary-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
@@ -248,7 +247,7 @@ include 'includes/navigation.php';
                             <span class="text-primary-700">Dedicated to Natural Results</span>
                         </div>
                     </div>
-                    <a href="about" class="bg-primary-700 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-800 transition-colors inline-flex items-center justify-center">
+                    <a href="about" class="border-2 border-accent-600 text-accent-600 bg-white hover:bg-accent-50 px-8 py-4 rounded-full text-lg font-semibold transition-colors inline-flex items-center justify-center">
                         <i data-lucide="user" class="w-5 h-5 mr-2" aria-hidden="true"></i>
                         Learn About Our Practice
                     </a>
@@ -285,7 +284,7 @@ include 'includes/navigation.php';
     </section>
 
     <!-- Google Reviews Section -->
-    <section class="py-20 bg-white">
+    <section class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-serif font-bold text-primary-900 mb-4">
@@ -366,7 +365,7 @@ include 'includes/navigation.php';
                 </div>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="bg-primary-600 text-white px-8 py-4 rounded-full hover:bg-primary-700 transition-colors font-semibold inline-flex items-center justify-center">
+                    <a href="https://www.google.com/search?q=Still+Time+Beauty+Boulder+reviews" target="_blank" class="border-2 border-accent-600 text-accent-600 bg-white hover:bg-accent-50 px-8 py-4 rounded-full transition-colors font-semibold inline-flex items-center justify-center">
                         <i data-lucide="book-open" class="w-5 h-5 mr-2" aria-hidden="true"></i>Read All Reviews
                         <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
@@ -383,52 +382,7 @@ include 'includes/navigation.php';
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="py-20 bg-gradient-to-br from-primary-50 to-accent-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
-                Ready to Experience the Same Results?
-            </h2>
-            <p class="text-xl text-primary-600 mb-8 max-w-3xl mx-auto">
-                Join the satisfied clients who trust Still Time Beauty for expert medical aesthetics. Schedule your personalized consultation and discover how we can help you achieve your aesthetic goals.
-            </p>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-                <div class="bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="calendar" class="w-6 h-6 text-accent-600" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-primary-800 mb-2">Consultation</h3>
-                    <p class="text-primary-600 text-sm">Personalized assessment and treatment planning</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="syringe" class="w-6 h-6 text-accent-600" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-primary-800 mb-2">Expert Treatment</h3>
-                    <p class="text-primary-600 text-sm">Precise techniques with surgical-level care</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 shadow-lg">
-                    <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="sun" class="w-6 h-6 text-accent-600" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-primary-800 mb-2">Natural Results</h3>
-                    <p class="text-primary-600 text-sm">Enhanced beauty that looks completely natural</p>
-                </div>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:(720) 731-8222" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
-                    <i data-lucide="phone" class="w-5 h-5 mr-2" aria-hidden="true"></i>Call to Book: (720) 731-8222
-                </a>
-                <a href="services" class="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary-50 transition-colors inline-flex items-center justify-center">
-                    View All Services
-                </a>
-            </div>
-        </div>
-    </section>
+    <?php include 'includes/cta-section-large.php'; ?>
 </main>
 
 <?php

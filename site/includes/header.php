@@ -64,14 +64,14 @@
     
     <!-- Tailwind CSS - Synchronous loading (CDN serves JS that generates CSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/tailwind-config.js"></script>
+    <script src="<?php echo (isset($is_legal_page) || isset($is_blog_page)) ? '../' : ''; ?>includes/tailwind-config.js"></script>
     
     <!-- Critical JavaScript inline for immediate execution -->
-    <script src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/scripts-critical.js"></script>
+    <script src="<?php echo (isset($is_legal_page) || isset($is_blog_page)) ? '../' : ''; ?>includes/scripts-critical.js"></script>
     
     <!-- Non-critical resources loaded asynchronously -->
     <script async src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script async src="<?php echo isset($is_legal_page) ? '../' : ''; ?>includes/scripts-non-critical.js"></script>
+    <script async src="<?php echo (isset($is_legal_page) || isset($is_blog_page)) ? '../' : ''; ?>includes/scripts-non-critical.js"></script>
 
 </head>
 <body class="bg-gray-50 text-gray-900 leading-relaxed no-fouc"> 

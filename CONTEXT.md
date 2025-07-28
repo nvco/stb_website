@@ -36,12 +36,13 @@ Modern, responsive website for Still Time Beauty - a medical aesthetics practice
 - **Google Maps & Reviews** integration + **SEO optimization**
 
 ## Quick Setup
-
-### Local Development
 ```bash
-php -S localhost:8000 -t site/
+cd stb_website
+php -S localhost:PORT router.php
 ```
-Then open `http://localhost:8000` in browser.
+(Replace PORT with any available port like 8000, 8001, 3000, etc.)
+
+Then open your server URL in browser (e.g., `http://localhost:PORT`).
 
 ### Deployment
 Requires PHP-enabled hosting (cPanel, cloud platforms, VPS with LAMP/LEMP stack).
