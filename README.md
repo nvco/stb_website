@@ -18,8 +18,6 @@ A modern, responsive website for Still Time Beauty medical aesthetics practice i
 - 🏥 HIPAA-compliant legal pages
 - 🔍 SEO optimized
 - ♿ WCAG 2.1 AA accessibility
-- 🗺️ Google Maps integration
-- ⭐ Google Reviews display
 
 ## 📄 License
 

@@ -1,0 +1,23 @@
+name: Sync site folder and README
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Copy files to staging
+        run: |
+          mkdir staging
+          cp README.md staging/
+          cp -r site/* staging/
+      
+      - name: Push to separate repo
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          external_repository: nvco/stb-web-live
+          publish_dir: ./staging
