@@ -25,8 +25,8 @@ include __DIR__ . '/../includes/navigation.php';
             
             <div class="prose prose-lg max-w-none text-gray-700">
                 <p class="text-sm text-gray-600 mb-8">
-                    <strong>Effective Date:</strong> January 1, 2024<br>
-                    <strong>Last Updated:</strong> January 1, 2024
+                    <strong>Effective Date:</strong> July 1, 2025<br>
+<strong>Last Updated:</strong> July 1, 2025
                 </p>
 
                 <section class="mb-8">

@@ -32,7 +32,7 @@ include 'includes/navigation.php';
     <section class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-accent-50 rounded-2xl p-8 mb-12">
-                <h2 class="text-2xl font-serif font-bold text-primary-900 mb-4">Effective Date: January 1, 2024</h2>
+                <h2 class="text-2xl font-serif font-bold text-primary-900 mb-4">Effective Date: July 1, 2025</h2>
                 <p class="text-primary-700 leading-relaxed">
                     This policy outlines our appointment scheduling, cancellation, and refund procedures. By booking an appointment with <?php echo $business_name; ?>, you agree to these terms.
                 </p>

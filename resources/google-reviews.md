@@ -1,13 +1,13 @@
 # Google Reviews Content
 
 ## Current Reviews on Website
-Last updated: January 7, 2024
+Last updated: July 7, 2025
 
 ### Review 1 - Kendall M.
 - **Stars:** 5/5
 - **Author:** Kendall M. (for privacy)
 - **Original Author:** Kendall Murray
-- **Date:** June 7, 2024 (a month ago)
+- **Date:** June 7, 2025 (a month ago)
 - **Text:** "I would highly recommend Maria to anyone who is seeking aesthetic services! She took the time to listen to what I wanted and delivered exactly that— with skill, care and precision. She exhibited professionalism and patience throughout the whole appointment and I couldn't be happier with the results! I will definitely be using her services again in the future!"
 - **Date Added to Website:** June 23, 2025
 - **Status:** Active on homepage

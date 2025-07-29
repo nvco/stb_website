@@ -43,7 +43,7 @@
             <div class="border-t border-primary-700 mt-12 pt-8">
                 <div class="grid md:grid-cols-2 gap-4 items-center">
                     <div class="text-primary-300 text-sm">
-                        <p>&copy; 2024 <?php echo $business_name; ?>. All rights reserved.</p>
+                        <p>&copy; <?php echo date('Y'); ?> <?php echo $business_name; ?>. All rights reserved.</p>
                     </div>
                     <div class="text-primary-300 text-sm md:text-right">
                         <p class="mb-2">Medical Disclaimer: Individual results may vary. Consultation required.</p>
