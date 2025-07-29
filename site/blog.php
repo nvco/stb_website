@@ -5,6 +5,7 @@ require_once 'config.php';
 
 // Page-specific variables
 $current_page = 'blog';
+$is_blog_page = true;
 $page_title = $blog_title . ' - ' . $business_name . ' | Medical Aesthetics Boulder';
 $page_description = 'Read our latest articles about medical aesthetics, Botox treatments, dermal fillers, and facial rejuvenation tips from our expert team in Boulder, CO.';
 $page_keywords = 'medical aesthetics blog, Botox articles, dermal filler tips, facial rejuvenation, beauty tips Boulder CO, ' . $site_keywords;
