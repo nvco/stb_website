@@ -1,4 +1,4 @@
-name: Sync site folder and README
+name: Sync site folder and README with images
 on:
   push:
     branches: [ main ]
@@ -12,8 +12,12 @@ jobs:
       - name: Copy files to staging
         run: |
           mkdir staging
+          # Copy README to root
           cp README.md staging/
-          cp -r site/* staging/
+          # Copy entire site folder (maintains folder structure)
+          cp -r site staging/
+          # Copy images folder (maintains folder structure)
+          cp -r images staging/
       
       - name: Push to separate repo
         uses: peaceiris/actions-gh-pages@v3

@@ -1,8 +1,9 @@
 # Still Time Beauty
 
-A modern, responsive website for Still Time Beauty medical aesthetics practice in Boulder, Colorado.
+[Still Time Beauty](https://stilltimebeauty.com) is a modern, responsive website for a medical aesthetics practice with excellent load performance, mobile-first design approach, SEO optimization, and WCAG 2.1 AA accessibility compliance.
 
-[Still Time Beauty](https://stilltimebeauty.com)
+<img src="images/stb-load.jpg" style="max-width: 500px; width: 100%;">
+
 
 ## 🛠️ Tech Stack
 
@@ -21,4 +22,4 @@ A modern, responsive website for Still Time Beauty medical aesthetics practice i
 
 ## 📄 License
 
-Private project for Still Time Beauty medical practice.
+Private project for Still Time Beauty.
