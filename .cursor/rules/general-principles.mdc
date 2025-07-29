@@ -62,6 +62,14 @@ alwaysApply: true
 - Development milestones should reflect when work was actually performed
 - Maintain accurate project timeline for future reference and coordination
 
+### 10. Server Error Debugging - Critical Pattern Recognition
+- **Universal 500 errors in a specific directory = .htaccess rewrite rule problem**
+- If EVERY file in a directory gives 500 errors regardless of content, the issue is NOT the PHP code
+- **Most common cause: Infinite rewrite loop in .htaccess rules**
+- **Fix: Add RewriteCond %{REQUEST_FILENAME} !-f and !-d before problematic RewriteRule**
+- Don't waste time creating test files or checking PHP syntax when the pattern clearly indicates rewrite issues
+- **Remember: Content-agnostic 500 errors = server configuration problem, not code problem**
+
 ## Code Modification Guidelines
 
 ### Surgical Code Changes

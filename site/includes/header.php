@@ -33,8 +33,8 @@
         body { font-family: system-ui, -apple-system, sans-serif; }
         .header-bg { background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); }
         
-        /* CRITICAL: Hero heading styles for immediate LCP rendering */
-        .hero-heading {
+        /* CRITICAL: Page heading styles for immediate LCP rendering */
+        .hero-heading, .page-heading {
             font-family: Georgia, 'Times New Roman', serif;
             font-weight: 700;
             font-size: 2.25rem; /* text-4xl */
@@ -43,7 +43,7 @@
             margin-bottom: 1.5rem;
         }
         @media (min-width: 1024px) {
-            .hero-heading {
+            .hero-heading, .page-heading {
                 font-size: 3.75rem; /* lg:text-6xl */
             }
         }

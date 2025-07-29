@@ -72,7 +72,7 @@ include __DIR__ . '/../includes/navigation.php';
     <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl lg:text-5xl font-serif font-bold text-primary-900 mb-10">
+                <h1 class="page-heading">
                     5 Benefits of Botox in Superior, CO for a Natural Youthful Appearance
                 </h1>
                 <?php include __DIR__ . '/../includes/article-date.php'; ?>

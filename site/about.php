@@ -43,7 +43,7 @@ include 'includes/navigation.php';
     <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h1 class="text-4xl lg:text-6xl font-serif font-bold text-primary-900 mb-6">
+                <h1 class="page-heading">
                     Where Expertise Meets Artistry
                 </h1>
                 <p class="text-xl text-primary-600 max-w-3xl mx-auto mb-8">

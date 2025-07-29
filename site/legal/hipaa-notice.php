@@ -27,7 +27,7 @@ include __DIR__ . '/../includes/navigation.php';
                     <i data-lucide="shield-check" class="w-6 h-6 text-accent-600 mr-2"></i>
                     <span class="text-primary-700 font-semibold">HIPAA Compliant</span>
                 </div>
-                <h1 class="text-4xl lg:text-6xl font-serif font-bold text-primary-900 mb-6">
+                <h1 class="page-heading">
                     Notice of Privacy Practices
                 </h1>
                 <p class="text-xl text-primary-600 max-w-3xl mx-auto">
