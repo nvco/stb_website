@@ -29,9 +29,10 @@ $credentials_description = 'Expert medical aesthetics with surgical precision ba
 $blog_title = 'Botox & Dermal Fillers Blog';
 
 // Base URL configuration - dynamic for localhost and production
-$is_localhost = (strpos($_SERVER['HTTP_HOST'], 'localhost') !== false || strpos($_SERVER['HTTP_HOST'], '127.0.0.1') !== false);
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https://' : 'http://';
-$base_url = $is_localhost ? $protocol . $_SERVER['HTTP_HOST'] : 'https://stilltimebeauty.com';
+$http_host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$is_localhost = (strpos($http_host, 'localhost') !== false || strpos($http_host, '127.0.0.1') !== false);
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || ($_SERVER['SERVER_PORT'] ?? 80) == 443 ? 'https://' : 'http://';
+$base_url = $is_localhost ? $protocol . $http_host : 'https://stilltimebeauty.com';
 
 // Google Business Profile
 $google_maps_embed = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.4537!2d-105.2794!3d40.0194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876bf5ba4c8b4c8b%3A0x1234567890!2s741%20Pearl%20St%2C%20Boulder%2C%20CO%2080302!5e0!3m2!1sen!2sus!4v1234567890!5m2!1sen!2sus';

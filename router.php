@@ -14,12 +14,18 @@ if ($request_uri === '' || $request_uri === '/') {
     return true;
 }
 
+// Handle index redirects - both index.php and index should go to root
+if ($request_uri === '/index.php' || $request_uri === '/index') {
+    header('Location: /', true, 301);
+    exit;
+}
+
 // Remove leading slash
 $request_uri = ltrim($request_uri, '/');
 
-// Check for static files first (assets, includes, etc.)
+// Check for static files first (assets, includes, etc.) - EXCLUDE .php files
 $static_file_path = $site_dir . '/' . $request_uri;
-if (file_exists($static_file_path) && is_file($static_file_path)) {
+if (file_exists($static_file_path) && is_file($static_file_path) && pathinfo($static_file_path, PATHINFO_EXTENSION) !== 'php') {
     // Serve static files directly
     $mime_type = match(pathinfo($static_file_path, PATHINFO_EXTENSION)) {
         'css' => 'text/css',
@@ -42,6 +48,30 @@ if (file_exists($static_file_path) && is_file($static_file_path)) {
     return true;
 }
 
+// Function to serve 404 page
+function serve404() {
+    global $site_dir;
+    http_response_code(404);
+    // Change working directory to site for proper includes
+    $original_cwd = getcwd();
+    chdir($site_dir);
+    require_once '404.php';
+    chdir($original_cwd);
+    return true;
+}
+
+// Redirect .php URLs to clean URLs (similar to .htaccess behavior)
+if (pathinfo($request_uri, PATHINFO_EXTENSION) === 'php') {
+    $clean_url = pathinfo($request_uri, PATHINFO_FILENAME);
+    // Handle nested paths like legal/privacy-policy.php
+    $directory = dirname($request_uri);
+    if ($directory !== '.') {
+        $clean_url = $directory . '/' . pathinfo(basename($request_uri), PATHINFO_FILENAME);
+    }
+    header('Location: /' . $clean_url, true, 301);
+    exit;
+}
+
 // Handle blog posts
 if (strpos($request_uri, 'blog/') === 0) {
     $blog_slug = substr($request_uri, 5); // Remove 'blog/' prefix (5 characters)
@@ -49,6 +79,9 @@ if (strpos($request_uri, 'blog/') === 0) {
     if (file_exists($blog_file_path)) {
         require_once $blog_file_path;
         return true;
+    } else {
+        // Blog post not found - serve 404
+        return serve404();
     }
 }
 
@@ -65,6 +98,15 @@ $routes = [
     'legal/medical-disclaimers' => 'legal/medical-disclaimers.php'
 ];
 
+// Handle legal pages that aren't in the explicit routes
+if (strpos($request_uri, 'legal/') === 0) {
+    // Check if it's one of our explicit legal routes first
+    if (!array_key_exists($request_uri, $routes)) {
+        // Legal page not found - serve 404
+        return serve404();
+    }
+}
+
 // Check if the requested route exists
 if (array_key_exists($request_uri, $routes)) {
     $file_path = $site_dir . '/' . $routes[$request_uri];
@@ -74,15 +116,6 @@ if (array_key_exists($request_uri, $routes)) {
     }
 }
 
-// If it's a .php file request, handle it
-$php_file_path = $site_dir . '/' . $request_uri;
-if (pathinfo($request_uri, PATHINFO_EXTENSION) === 'php' && file_exists($php_file_path)) {
-    require_once $php_file_path;
-    return true;
-}
-
-// File not found
-http_response_code(404);
-echo "404 - Page not found: " . htmlspecialchars($request_uri);
-return true;
+// File not found - serve 404
+return serve404();
 ?> 

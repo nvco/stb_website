@@ -1,6 +1,9 @@
 # Still Time Beauty - Production URL Rewriting
 RewriteEngine On
 
+# Custom error pages
+ErrorDocument 404 /404.php
+
 # Redirect www to non-www (if you want this)
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
@@ -8,6 +11,14 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 # Force HTTPS (if you want this)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Handle index redirects - both index.php and index should go to root
+RewriteRule ^index\.php/?$ / [R=301,L]
+RewriteRule ^index/?$ / [R=301,L]
+
+# Redirect .php URLs to clean URLs (301 permanent redirect)
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1? [NC,L,R=301]
 
 # Blog root page
 RewriteRule ^blog/?$ blog.php [L]
@@ -34,8 +45,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^.]+)/?$ $1.php [NC,L]
 
 # Handle root domain
-DirectoryIndex index.php
-
-# Prevent direct access to .php files (optional)
-# RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
-# RewriteRule ^ /%1? [NC,L,R=301] 
+DirectoryIndex index.php 
