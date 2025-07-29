@@ -1,8 +1,12 @@
 # Still Time Beauty
 
-[Still Time Beauty](https://stilltimebeauty.com) is a modern, responsive website for a medical aesthetics practice with excellent load performance, mobile-first design approach, SEO optimization, and WCAG 2.1 AA accessibility compliance.
+[Still Time Beauty](https://stilltimebeauty.com) is a modern, responsive website for a local aesthetics practice with: 
+- excellent load performance
+- mobile-first design approach
+- SEO optimization
+- WCAG 2.1 AA accessibility compliance
 
-<img src="images/stb-load.jpg" style="max-width: 500px; width: 100%;">
+[<img src="images/stb-load.jpg" style="max-width: 500px; width: 100%;">](https://stilltimebeauty.com)
 
 
 ## 🛠️ Tech Stack
