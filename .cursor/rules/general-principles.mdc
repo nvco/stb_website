@@ -56,6 +56,12 @@ alwaysApply: true
 - Explain complex algorithms, business logic, or non-obvious implementations
 - Keep comments up-to-date with code changes
 
+### 9. Accurate Dating in Documentation
+- Always use the current actual date (month/year) when updating development history or documentation
+- Check terminal output or system date if uncertain about the current date
+- Development milestones should reflect when work was actually performed
+- Maintain accurate project timeline for future reference and coordination
+
 ## Code Modification Guidelines
 
 ### Surgical Code Changes
