@@ -17,6 +17,24 @@
         .fouc-loaded .no-fouc { visibility: visible; }
         body { font-family: system-ui, -apple-system, sans-serif; }
         *:focus { outline: 2px solid #10b981; outline-offset: 2px; }
+        
+        /* CRITICAL: Page heading styles for immediate LCP rendering */
+        .hero-heading, .page-heading {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: 2.25rem; /* text-4xl */
+            line-height: 1.1;
+            color: #1e293b; /* text-primary-900 */
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 1024px) {
+            .hero-heading, .page-heading {
+                font-size: 3.75rem; /* lg:text-6xl */
+            }
+        }
+        .hero-accent {
+            color: #0d9488; /* text-accent-600 */
+        }
     </style>
     
     <!-- Tailwind CSS - Synchronous loading (CDN serves JS that generates CSS) -->
