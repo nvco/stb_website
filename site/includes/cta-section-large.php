@@ -10,7 +10,7 @@ $cta_description = $cta_description ?? 'Schedule your personalized consultation 
 $feature_cards = $feature_cards ?? [
     [
         'icon' => 'award',
-        'title' => 'Licensed Professional',
+        'title' => 'Board Certified',
         'description' => 'Nurse Practitioner with surgical precision background'
     ],
     [

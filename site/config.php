@@ -22,7 +22,7 @@ $site_keywords = 'Botox Boulder, dermal fillers Boulder, medical aesthetics, fac
 
 // CTA and credentials
 $cta_phone = 'Call ' . $phone;
-$credentials = 'Licensed Nurse Practitioner';
+$credentials = 'Board Certified Nurse Practitioner';
 $credentials_description = 'Expert medical aesthetics with surgical precision background';
 
 // Blog configuration

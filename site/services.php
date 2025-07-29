@@ -87,9 +87,8 @@ include 'includes/navigation.php';
                         <p>
                             Our expert Botox treatments are designed to smooth fine lines and wrinkles while maintaining your natural expressions. Using <?php echo $fda_approved_treatments ? 'FDA-approved' : 'premium'; ?> neuromodulators, we target specific muscle groups to create a refreshed, youthful appearance.
                         </p>
-                        
                         <div class="bg-accent-50 rounded-2xl p-6">
-                            <h3 class="text-xl font-semibold text-primary-800 mb-4">Treatment Areas</h3>
+                            <h3 class="text-xl font-semibold text-primary-800 mb-4">Treatment</h3>
                             <div class="grid md:grid-cols-2 gap-3">
                                 <div class="flex items-center space-x-2">
                                     <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
@@ -101,7 +100,7 @@ include 'includes/navigation.php';
                                 </div>
                                 <div class="flex items-center space-x-2">
                                     <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
-                                    <span>Frown lines (11's)</span>
+                                    <span>Frown lines</span>
                                 </div>
                                 <div class="flex items-center space-x-2">
                                     <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
@@ -113,7 +112,31 @@ include 'includes/navigation.php';
                                 </div>
                                 <div class="flex items-center space-x-2">
                                     <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                    <span>Nasolabial folds</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                    <span>Marionette lines</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                    <span>Teeth clenching</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                    <span>Chin lines</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                    <span>Gummy smile</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
                                     <span>Lip flip</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                    <span>Neck lines</span>
                                 </div>
                             </div>
                         </div>
@@ -132,18 +155,32 @@ include 'includes/navigation.php';
                                 <div class="text-primary-600">per unit</div>
                                 <div class="text-sm text-primary-500 mt-2">Pricing depends on treatment area</div>
                             </div>
-                            <div class="space-y-3 text-sm text-primary-600">
-                                <div class="flex justify-between">
-                                    <span>Forehead (10-20 units)</span>
-                                    <span class="font-semibold">Price at consultation</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span>Crow's feet (6-12 units)</span>
-                                    <span class="font-semibold">Price at consultation</span>
-                                </div>
-                                <div class="flex justify-between">
-                                    <span>Frown lines (10-25 units)</span>
-                                    <span class="font-semibold">Price at consultation</span>
+                            <div class="space-y-3 text-primary-800">
+                                <div class="grid md:grid-cols-2 gap-3">
+                                    <div class="flex items-center space-x-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                        <span>Underarm perspiration</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                        <span>Microtox (baby botox)</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                        <span>Depression</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                        <span>Scar reduction</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                        <span>Headache</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-accent-600"></i>
+                                        <span>Postherpetic neuralgia pain</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

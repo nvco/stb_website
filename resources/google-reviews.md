@@ -3,26 +3,21 @@
 ## Current Reviews on Website
 Last updated: January 7, 2024
 
-### Review 1 - Kendall Murray
+### Review 1 - Kendall M.
 - **Stars:** 5/5
 - **Author:** Kendall M. (for privacy)
 - **Original Author:** Kendall Murray
 - **Date:** June 7, 2024 (a month ago)
 - **Text:** "I would highly recommend Maria to anyone who is seeking aesthetic services! She took the time to listen to what I wanted and delivered exactly that— with skill, care and precision. She exhibited professionalism and patience throughout the whole appointment and I couldn't be happier with the results! I will definitely be using her services again in the future!"
-- **Date Added to Website:** January 7, 2024
+- **Date Added to Website:** June 23, 2025
 - **Status:** Active on homepage
 
-### Review 2 - Placeholder
+### Review 2 - Denise K.
 - **Stars:** 5/5
-- **Author:** Jennifer L.
-- **Text:** "The surgical precision background really shows. My results look completely natural and exactly what I was hoping for."
-- **Status:** Placeholder - replace with real review when available
-
-### Review 3 - Placeholder  
-- **Stars:** 5/5
-- **Author:** Michelle R.
-- **Text:** "Professional, knowledgeable, and truly cares about achieving the best results. I wouldn't go anywhere else for my treatments."
-- **Status:** Placeholder - replace with real review when available
+- **Author:** Denise K.
+- **Text:** "I can't say enough great things about Maria of Still Time Beauty. From the moment you walk in, you will feel welcomed and at ease. Maria is knowledgeable, professional, and kind. She will carefully listen to your preferences and personalize your treatment. Highly recommend Maria and Still Time Beauty for aesthetics care. She is a gem!"
+- **Date Added to Website:** July 23, 2025
+- **Status:** Active on homepage
 
 ## Notes
 - Use first name + last initial for privacy (e.g., "Kendall M.")

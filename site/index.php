@@ -63,7 +63,7 @@ include 'includes/navigation.php';
                         </div>
                         <div class="text-center">
                             <div class="text-2xl font-bold text-primary-800">NP</div>
-                            <div class="text-sm text-primary-600">Licensed</div>
+                            <div class="text-sm text-primary-600">Board Certified</div>
                             <div class="text-xs text-primary-500">Nurse Practitioner</div>
                         </div>
                     </div>
@@ -142,19 +142,19 @@ include 'includes/navigation.php';
                     <p class="text-primary-600 mb-6">
                         Smooth fine lines and wrinkles with precision neuromodulator treatments. Natural-looking results that enhance your expressions.
                     </p>
-                    <div class="space-y-2 text-sm text-primary-600">
-                        <div class="flex justify-between">
-                            <span>✓ Forehead lines</span>
-                            <span class="text-accent-600 font-medium">Price at consultation</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>✓ Crow's feet</span>
-                            <span class="text-accent-600 font-medium">Price at consultation</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span>✓ Frown lines</span>
-                            <span class="text-accent-600 font-medium">Price at consultation</span>
-                        </div>
+                                          <div class="space-y-2 text-sm text-primary-600">
+                          <div class="flex justify-between">
+                              <span>✓ Lines & wrinkles</span>
+                              <span class="text-accent-600 font-medium">Price at consultation</span>
+                          </div>
+                          <div class="flex justify-between">
+                              <span>✓ Microtox</span>
+                              <span class="text-accent-600 font-medium">Price at consultation</span>
+                          </div>
+                          <div class="flex justify-between">
+                              <span>✓ Depression & more</span>
+                              <span class="text-accent-600 font-medium">Price at consultation</span>
+                          </div>
                     </div>
                 </div>
                 
@@ -295,7 +295,7 @@ include 'includes/navigation.php';
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="grid md:grid-cols-2 gap-8 mb-12 justify-center max-w-4xl mx-auto">
                 <div class="bg-primary-50 rounded-2xl p-8">
                     <div class="flex items-center mb-4">
                         <div class="flex text-accent-500 text-lg space-x-0.5" aria-label="5 out of 5 star rating">
@@ -307,9 +307,9 @@ include 'includes/navigation.php';
                         </div>
                     </div>
                     <p class="text-primary-700 italic mb-4">
-                        "The results look so natural that people can't tell I've had anything done. The technique is absolutely flawless and the attention to detail is incredible."
+                        "I would highly recommend Maria to anyone who is seeking aesthetic services! She took the time to listen to what I wanted and delivered exactly that— with skill, care and precision. She exhibited professionalism and patience throughout the whole appointment and I couldn't be happier with the results! I will definitely be using her services again in the future!"
                     </p>
-                    <div class="font-semibold text-primary-800">Sarah M.</div>
+                    <div class="font-semibold text-primary-800">Kendall M.</div>
                     <div class="text-sm text-primary-600">Verified Google Review</div>
                 </div>
                 
@@ -324,26 +324,9 @@ include 'includes/navigation.php';
                         </div>
                     </div>
                     <p class="text-primary-700 italic mb-4">
-                        "I felt completely comfortable throughout the entire process. The professionalism and expertise shown made me confident in my choice."
+                        "I can't say enough great things about Maria of Still Time Beauty. From the moment you walk in, you will feel welcomed and at ease. Maria is knowledgeable, professional, and kind. She will carefully listen to your preferences and personalize your treatment. Highly recommend Maria and Still Time Beauty for aesthetics care. She is a gem!"
                     </p>
-                    <div class="font-semibold text-primary-800">Jessica R.</div>
-                    <div class="text-sm text-primary-600">Verified Google Review</div>
-                </div>
-                
-                <div class="bg-primary-50 rounded-2xl p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="flex text-accent-500 text-lg space-x-0.5" aria-label="5 out of 5 star rating">
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-                        </div>
-                    </div>
-                    <p class="text-primary-700 italic mb-4">
-                        "The surgical precision background really shows in the work. Every detail is perfect and the results exceed my expectations every time."
-                    </p>
-                    <div class="font-semibold text-primary-800">Michael T.</div>
+                    <div class="font-semibold text-primary-800">Denise K.</div>
                     <div class="text-sm text-primary-600">Verified Google Review</div>
                 </div>
             </div>

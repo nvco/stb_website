@@ -3,10 +3,10 @@ require_once 'config.php';
 
 // Page-specific variables
 $current_page = 'cancellation-policy';
-$page_title = 'Cancellation & Refund Policy - ' . $business_name;
+$page_title = 'Boutique Policy - ' . $business_name;
 $page_description = 'Cancellation and refund policy for ' . $business_name . ' in Boulder, CO. Learn about our 24-hour cancellation policy, scheduling procedures, and payment terms for medical aesthetics treatments.';
 $page_keywords = 'cancellation policy, appointment scheduling, Boulder medical spa, refund policy, booking policy, medical aesthetics Boulder';
-$page_og_description = 'Cancellation and refund policy for medical aesthetics treatments. Learn about appointment scheduling, cancellation requirements, and payment terms.';
+$page_og_description = 'Boutique Policy - cancellation and refund policy for medical aesthetics treatments. Learn about appointment scheduling, cancellation requirements, and payment terms.';
 $page_url = '/cancellation-policy';
 
 include 'includes/header.php';
@@ -18,12 +18,8 @@ include 'includes/navigation.php';
     <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <div class="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-lg mb-6">
-                    <i data-lucide="calendar-clock" class="w-6 h-6 text-accent-600 mr-2"></i>
-                    <span class="text-primary-700 font-semibold">Booking Policies</span>
-                </div>
                 <h1 class="text-4xl lg:text-6xl font-serif font-bold text-primary-900 mb-6">
-                    Cancellation & Refund Policy
+                    Boutique Policies
                 </h1>
                 <p class="text-xl text-primary-600 max-w-3xl mx-auto">
                     Our appointment scheduling, cancellation, and refund policies to ensure the best experience for all our clients.
@@ -43,7 +39,7 @@ include 'includes/navigation.php';
             </div>
 
             <div class="prose prose-lg max-w-none">
-                <h2 class="text-3xl font-serif font-bold text-primary-900 mb-6">Appointment Scheduling</h2>
+                <h2 class="text-3xl font-serif font-bold text-primary-900 mb-6">Boutique Policies</h2>
                 
                 <div class="bg-primary-50 rounded-xl p-6 mb-8">
                     <div class="flex items-center mb-4">
@@ -64,7 +60,7 @@ include 'includes/navigation.php';
 
                     <div class="border-l-4 border-accent-600 pl-6">
                         <h3 class="text-xl font-semibold text-primary-800 mb-3">Same-Day Cancellations</h3>
-                        <p class="text-primary-700">Cancellations made with less than 24 hours notice may be subject to a cancellation fee of 50% of the scheduled service cost.</p>
+                        <p class="text-primary-700">Cancellations made with less than 24 hours notice will be subject to a cancellation fee of $75.</p>
                     </div>
 
                     <div class="border-l-4 border-accent-600 pl-6">
@@ -99,7 +95,7 @@ include 'includes/navigation.php';
 
                     <div class="border-l-4 border-accent-600 pl-6">
                         <h3 class="text-xl font-semibold text-primary-800 mb-3">Consultation Fees</h3>
-                        <p class="text-primary-700">Initial consultation fees are non-refundable once the consultation has been provided. However, consultation fees may be applied toward treatment costs if you proceed with recommended services.</p>
+                        <p class="text-primary-700">Initial consultation fee is $75, non-refundable once the consultation has been provided. However, consultation fees will be applied toward treatment costs if you proceed with recommended services the same day.</p>
                     </div>
 
                     <div class="border-l-4 border-accent-600 pl-6">
