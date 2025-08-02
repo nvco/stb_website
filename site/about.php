@@ -64,11 +64,19 @@ include 'includes/navigation.php';
                     <h2 class="text-4xl font-serif font-bold text-primary-900 mb-8">Our Story</h2>
                     <div class="prose prose-lg text-primary-700 space-y-6">
                         <p>
-                            Our founder's path to aesthetic medicine began with a simple but powerful conviction: the desire to make a meaningful difference in people's lives through genuine human connection. After completing nursing school and dedicating years to patient care, the calling to continue advancing in healthcare led to becoming a Nurse Practitioner.
+                            Maria's path to aesthetic medicine began with a simple but powerful conviction: the desire to make a meaningful difference in people's lives through genuine human connection. After completing nursing school and dedicating years to patient care, the calling to continue advancing in healthcare led to becoming a Nurse Practitioner.
                         </p>
                         <p>
                             Today, our founder brings the precision and expertise gained as a first assist in the operating room to the world of aesthetic medicine. This unique background combines surgical precision with an artistic eye, ensuring that every treatment is performed with the highest standards of safety and skill.
                         </p>
+                        <!-- Quote Options for Review -->
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-accent-200 pl-4">
+                                <p>
+                                     <b>"My goal is to enhance natural beauty through minimally invasive non-surgical procedures and to make you feel like the most beautiful version of yourself."</b> - Maria
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="relative">

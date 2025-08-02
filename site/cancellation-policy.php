@@ -95,7 +95,7 @@ include 'includes/navigation.php';
 
                     <div class="border-l-4 border-accent-600 pl-6">
                         <h3 class="text-xl font-semibold text-primary-800 mb-3">Consultation Fees</h3>
-                        <p class="text-primary-700">Initial consultation fee is $75, non-refundable once the consultation has been provided. However, consultation fees will be applied toward treatment costs if you proceed with recommended services the same day.</p>
+                        <p class="text-primary-700">Initial consultation fee is $75. However, consultation fees will be applied toward treatment costs if you proceed with recommended services the same day.</p>
                     </div>
 
                     <div class="border-l-4 border-accent-600 pl-6">

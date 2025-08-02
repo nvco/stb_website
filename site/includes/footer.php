@@ -5,8 +5,9 @@
                 <div class="md:col-span-2">
                     <h3 class="text-2xl font-serif font-bold mb-4"><?php echo $business_name; ?></h3>
                     <p class="text-primary-200 mb-6">
-                        Expert medical aesthetics in Boulder, Colorado. Enhancing natural beauty with precision, safety, and artistry.
-                    </p>
+                        Where time stands still, and your natural beauty takes center stage.<br>
+                        Expert medical aesthetics in Boulder, Colorado.
+                    </p> 
                     <div class="flex items-center space-x-3">
                         <div class="flex items-center space-x-2 border-2 border-accent-400 text-accent-400 px-3 py-1 rounded-lg">
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
