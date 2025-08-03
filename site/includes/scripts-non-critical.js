@@ -2,8 +2,10 @@
 (function() {
     'use strict';
     
-    // Scroll animations (non-critical)
+    // Scroll animations
     const initScrollAnimations = () => {
+        const sections = document.querySelectorAll('section');
+        
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -18,11 +20,22 @@
             });
         }, observerOptions);
         
-        document.querySelectorAll('.fade-in-up').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        // Set up animations for all sections
+        sections.forEach((section, index) => {
+            // Initial styles set via CSS in header.php
+            observer.observe(section);
+            
+            // Animate sections already visible on page load
+            const rect = section.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible) {
+                // Staggered animation for immediately visible sections
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 100 + 200);
+            }
         });
     };
     

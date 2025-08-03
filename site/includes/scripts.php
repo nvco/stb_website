@@ -2,15 +2,10 @@
     <!-- Critical JS already loaded in header -->
     <!-- Non-critical JS loaded asynchronously after page load -->
     
-    <script>
-    // Ensure non-critical scripts run after page load
-    if (document.readyState === 'complete') {
-        // Page already loaded, scripts should be available
-    } else {
-        window.addEventListener('load', function() {
-            // Additional optimizations can be added here if needed
-        });
-    }
-    </script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Non-critical JavaScript -->
+    <script src="<?php echo (isset($is_legal_page) || isset($is_blog_page) || isset($is_subdirectory_page)) ? '../' : ''; ?>includes/scripts-non-critical.js"></script>
 </body>
 </html> 

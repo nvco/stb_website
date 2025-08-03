@@ -60,18 +60,22 @@
         /* Skip link styles */
         .skip-link { position: absolute; left: -9999px; z-index: 999; padding: 8px 16px; background: #000; color: #fff; text-decoration: none; }
         .skip-link:focus { left: 6px; top: 6px; }
-    </style>
-    
-    <!-- Tailwind CSS - Synchronous loading (CDN serves JS that generates CSS) -->
+                /* Initial animation state for sections */
+            section {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+        </style>
+        
+        <!-- Tailwind CSS - Synchronous loading (CDN serves JS that generates CSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="<?php echo (isset($is_legal_page) || isset($is_blog_page) || isset($is_subdirectory_page)) ? '../' : ''; ?>includes/tailwind-config.js"></script>
     
     <!-- Critical JavaScript inline for immediate execution -->
     <script src="<?php echo (isset($is_legal_page) || isset($is_blog_page) || isset($is_subdirectory_page)) ? '../' : ''; ?>includes/scripts-critical.js"></script>
     
-    <!-- Non-critical resources loaded asynchronously -->
-    <script async src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script async src="<?php echo (isset($is_legal_page) || isset($is_blog_page) || isset($is_subdirectory_page)) ? '../' : ''; ?>includes/scripts-non-critical.js"></script>
+
 
 </head>
 <body class="bg-gray-50 text-gray-900 leading-relaxed no-fouc"> 
