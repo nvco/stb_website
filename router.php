@@ -91,6 +91,7 @@ $routes = [
     'services' => 'services.php',
     'blog' => 'blog.php',
     'cancellation-policy' => 'cancellation-policy.php',
+    'pre-post-treatment' => 'pre-post-treatment.php',
     // Legal pages
     'legal/privacy-policy' => 'legal/privacy-policy.php',
     'legal/terms-of-service' => 'legal/terms-of-service.php',

@@ -25,6 +25,7 @@
                         <li><a href="/services" class="text-primary-200 hover:text-white transition-colors">Services</a></li>
                         <li><a href="/blog" class="text-primary-200 hover:text-white transition-colors">Botox & Dermal Fillers Blog</a></li>
                         <li><a href="/cancellation-policy" class="text-primary-200 hover:text-white transition-colors">Boutique Policies</a></li>
+                        <li><a href="/pre-post-treatment" class="text-primary-200 hover:text-white transition-colors">Pre/post Treatment</a></li>
                     </ul>
                 </div>
                 
