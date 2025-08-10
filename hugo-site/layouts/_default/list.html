@@ -1,0 +1,57 @@
+{{ define "main" }}
+    <!-- Blog List Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="page-heading">
+                    {{ .Title }}
+                </h1>
+                {{ if .Description }}
+                <p class="text-xl text-primary-600 max-w-3xl mx-auto mb-8">
+                    {{ .Description }}
+                </p>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts List -->
+    <section class="py-12 md:py-14 lg:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {{ if .Pages }}
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {{ range .Pages }}
+                <article class="bg-primary-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
+                    <div class="mb-4">
+                        <div class="text-sm text-primary-600">{{ .Date.Format "January 2, 2006" }}</div>
+                        {{ if .Params.categories }}
+                        <div class="text-xs text-accent-600 font-semibold">{{ range .Params.categories }}{{ . }}{{ end }}</div>
+                        {{ end }}
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">
+                        <a href="{{ .Permalink }}" class="hover:text-accent-600 transition-colors">{{ .Title }}</a>
+                    </h3>
+                    {{ if .Description }}
+                    <p class="text-primary-600 mb-4">{{ .Description }}</p>
+                    {{ else }}
+                    <p class="text-primary-600 mb-4">{{ .Summary }}</p>
+                    {{ end }}
+                    <a href="{{ .Permalink }}" class="text-accent-600 hover:text-accent-700 font-semibold inline-flex items-center">
+                        Read More
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </article>
+                {{ end }}
+            </div>
+            {{ else }}
+            <div class="text-center py-16">
+                <i data-lucide="file-text" class="w-16 h-16 text-primary-300 mx-auto mb-4"></i>
+                <h3 class="text-xl font-semibold text-primary-700 mb-2">No posts yet</h3>
+                <p class="text-primary-600">Check back soon for informative articles about medical aesthetics.</p>
+            </div>
+            {{ end }}
+        </div>
+    </section>
+
+    {{ partial "cta-section-large.html" . }}
+{{ end }}

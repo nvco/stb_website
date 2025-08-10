@@ -1,0 +1,59 @@
+{{ define "main" }}
+    <!-- Blog Post Hero -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-8 md:pb-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                {{ if .Params.categories }}
+                <div class="mb-4">
+                    {{ range .Params.categories }}
+                    <span class="inline-block bg-accent-100 text-accent-600 text-sm font-semibold px-3 py-1 rounded-full mr-2">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-primary-900 mb-4">
+                    {{ .Title }}
+                </h1>
+                <div class="text-primary-600 text-sm mb-6">
+                    <span>Published {{ .Date.Format "January 2, 2006" }}</span>
+                    {{ if .Params.author }}
+                    <span class="mx-2">•</span>
+                    <span>By {{ .Params.author }}</span>
+                    {{ end }}
+                </div>
+                {{ if .Description }}
+                <p class="text-lg text-primary-700 max-w-3xl mx-auto">
+                    {{ .Description }}
+                </p>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg prose-primary max-w-none">
+                {{ .Content }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Navigation -->
+    <section class="py-8 bg-primary-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <a href="/blog/" class="text-primary-600 hover:text-primary-800 font-semibold inline-flex items-center">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+                    Back to Blog
+                </a>
+                <div class="text-center">
+                    <div class="flex justify-center">
+                        {{ partial "cta-call-button.html" . }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ partial "cta-section-large.html" . }}
+{{ end }}

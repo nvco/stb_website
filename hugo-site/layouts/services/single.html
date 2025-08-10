@@ -1,0 +1,206 @@
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="page-heading">
+                    {{ .Title }}
+                </h1>
+                <p class="text-xl text-primary-600 max-w-3xl mx-auto mb-8">
+                    Comprehensive medical aesthetics services designed to enhance your natural beauty through safe, effective treatments performed with precision and artistry.
+                </p>
+                <div class="flex justify-center">
+                    {{ partial "cta-call-button.html" . }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="py-12 md:py-14 lg:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="syringe" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Botox Treatments</h3>
+                    <p class="text-primary-600 mb-6">
+                        Smooth fine lines and wrinkles with precision neuromodulator treatments using authentic Botox products. Natural-looking results that enhance your expressions.
+                    </p>
+                    <div class="text-left space-y-2 text-sm text-primary-600">
+                        <div>• Lines & Wrinkles: Crow's feet, forehead lines, frown lines</div>
+                        <div>• Microtox: Skin texture improvement and fine line softening</div>
+                        <div>• Advanced Applications: Depression treatments and specialized techniques</div>
+                    </div>
+                    <div class="mt-4 text-accent-600 font-medium text-sm">
+                        Pricing determined during consultation
+                    </div>
+                </div>
+                
+                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="droplet" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Dermal Fillers</h3>
+                    <p class="text-primary-600 mb-6">
+                        Restore volume and contour with premium hyaluronic acid fillers. FDA-approved products and advanced injection techniques for natural enhancement.
+                    </p>
+                    <div class="text-left space-y-2 text-sm text-primary-600">
+                        <div>• Lip Enhancement: Natural volume and definition</div>
+                        <div>• Cheek Augmentation: Restore youthful contours</div>
+                        <div>• Facial Contouring: Jawline, chin, and temple enhancement</div>
+                        <div>• Under-eye Treatment: Tear trough correction</div>
+                    </div>
+                    <div class="mt-4 text-accent-600 font-medium text-sm">
+                        Pricing varies by product type and treatment area
+                    </div>
+                </div>
+                
+                <div class="bg-primary-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="user-check" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-primary-800 mb-4">Expert Consultation</h3>
+                    <p class="text-primary-600 mb-6">
+                        Every treatment begins with comprehensive consultation. Facial analysis, goal discussion, and personalized treatment planning.
+                    </p>
+                    <div class="text-left space-y-2 text-sm text-primary-600">
+                        <div>• Detailed facial analysis</div>
+                        <div>• Goal-oriented treatment planning</div>
+                        <div>• Product education and options</div>
+                        <div>• Follow-up care and support</div>
+                        <div>• Before and after assessment</div>
+                    </div>
+                    <div class="mt-4 text-accent-600 font-medium text-sm">
+                        Consultation included with all treatments
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Services Section -->
+    <section class="py-12 md:py-14 lg:py-16 bg-gradient-to-br from-primary-50 to-accent-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
+                    Why Choose Our Services?
+                </h2>
+                <p class="text-xl text-primary-600 max-w-3xl mx-auto">
+                    Experience the difference that medical expertise, precision techniques, and genuine care make in your aesthetic journey.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="award" class="w-8 h-8 text-accent-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Board Certified Expertise</h3>
+                    <p class="text-primary-600">
+                        Licensed {{ .Site.Params.credentials }} with surgical precision background and specialized aesthetic medicine training.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-accent-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Safety First</h3>
+                    <p class="text-primary-600">
+                        Adherence to the highest medical and safety standards in every procedure, ensuring your well-being is always the priority.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="heart" class="w-8 h-8 text-accent-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Natural Results</h3>
+                    <p class="text-primary-600">
+                        Enhancement that looks like you, just refreshed. We enhance your natural beauty rather than changing who you are.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="users" class="w-8 h-8 text-accent-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Personalized Care</h3>
+                    <p class="text-primary-600">
+                        Individual treatment plans tailored to your unique needs, facial anatomy, and aesthetic goals.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="headphones" class="w-8 h-8 text-accent-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Ongoing Support</h3>
+                    <p class="text-primary-600">
+                        Comprehensive follow-up care and support throughout your aesthetic journey with dedicated attention.
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-lucide="target" class="w-8 h-8 text-accent-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Precision Techniques</h3>
+                    <p class="text-primary-600">
+                        Surgical first assist background ensures every injection is placed with precision and attention to anatomical detail.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Treatment Process Section -->
+    <section class="py-12 md:py-14 lg:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-primary-900 mb-6">
+                    Your Treatment Journey
+                </h2>
+                <p class="text-xl text-primary-600 max-w-3xl mx-auto">
+                    From consultation to follow-up, we ensure a comfortable and professional experience every step of the way.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-accent-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Consultation</h3>
+                    <p class="text-primary-600">
+                        Comprehensive facial analysis and discussion of your aesthetic goals. We'll develop a personalized treatment plan just for you.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-accent-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Treatment</h3>
+                    <p class="text-primary-600">
+                        Professional treatment performed with surgical precision and the highest safety standards in a comfortable environment.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-accent-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary-800 mb-4">Follow-up</h3>
+                    <p class="text-primary-600">
+                        Ongoing support and follow-up care to ensure optimal results and your complete satisfaction with your treatment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ partial "cta-section-large.html" . }}
+{{ end }}

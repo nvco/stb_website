@@ -1,0 +1,37 @@
+baseURL = 'https://stilltimebeauty.com/'
+languageCode = 'en-us'
+title = 'Still Time Beauty - Medical Aesthetics | Boulder, Colorado'
+
+[params]
+  description = 'Expert medical aesthetics treatments including Botox and dermal fillers by a qualified Nurse Practitioner in downtown Boulder.'
+  author = 'Still Time Beauty'
+  phone = '(720) 731-8222'
+  business_name = 'Still Time Beauty'
+  credentials = 'Board Certified Nurse Practitioner'
+  address_street = '741 Pearl St'
+  address_city = 'Boulder'
+  address_state = 'CO'
+  address_zip = '80302'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 20
+  [[menu.main]]
+    name = 'Services'
+    url = '/services/'
+    weight = 30
+  [[menu.main]]
+    name = 'Blog'
+    url = '/blog/'
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

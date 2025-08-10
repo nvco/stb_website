@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="keywords" content="{{ if .Params.keywords }}{{ .Params.keywords }}{{ else }}medical aesthetics, Botox Boulder, dermal fillers Boulder, Nurse Practitioner{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <title>{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+    
+    <!-- Preconnect to external resources for faster loading -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    
+    <!-- Critical CSS inline to prevent render blocking -->
+    <style>
+        /* Critical above-the-fold styles */
+        .no-fouc { visibility: hidden; }
+        .fouc-loaded .no-fouc { visibility: visible; }
+        
+        /* Essential layout styles */
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .header-bg { background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); }
+        
+        /* CRITICAL: Page heading styles for immediate LCP rendering */
+        .hero-heading, .page-heading {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: 2.25rem; /* text-4xl */
+            line-height: 1.1;
+            color: #1e293b; /* text-primary-900 */
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 1024px) {
+            .hero-heading, .page-heading {
+                font-size: 3.75rem; /* lg:text-6xl */
+            }
+        }
+        .hero-accent {
+            color: #0d9488; /* text-accent-600 - CORRECTED */
+        }
+        
+        /* Critical focus styles for accessibility */
+        *:focus { outline: 2px solid #10b981; outline-offset: 2px; }
+        
+        /* Mobile menu critical styles */
+        .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 40; }
+        
+        /* Skip link styles - hidden off-screen, only visible when focused via keyboard */
+        .skip-link { 
+            position: absolute; 
+            left: -9999px; 
+            top: -9999px;
+            z-index: 999; 
+            padding: 8px 16px; 
+            background: #000; 
+            color: #fff; 
+            text-decoration: none;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .skip-link:focus { 
+            left: 6px; 
+            top: 6px; 
+            opacity: 1;
+            pointer-events: auto;
+        }
+        /* Initial animation state for sections */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        /* Legal page and content heading styles to match original formatting */
+        .prose h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-weight: 700;
+            font-size: 2.25rem; /* text-4xl - matches .page-heading */
+            line-height: 1.1;
+            margin-bottom: 1rem; /* mb-4 */
+            margin-top: 0; /* No top margin for h1 */
+        }
+        @media (min-width: 1024px) {
+            .prose h1 {
+                font-size: 3.75rem; /* lg:text-6xl - matches .page-heading responsive */
+            }
+        }
+        
+        .prose h2 {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem; /* text-2xl */
+            line-height: 1.2;
+            margin-bottom: 1rem; /* mb-4 */
+            margin-top: 2rem; /* mb-8 equivalent top spacing */
+        }
+        
+        .prose h3 {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            font-size: 1.25rem; /* text-xl */
+            line-height: 1.3;
+            margin-bottom: 0.75rem; /* mb-3 */
+            margin-top: 1.5rem;
+        }
+        
+        .prose h4 {
+            font-family: system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        /* Legal page section spacing */
+        .prose section {
+            margin-bottom: 2rem; /* mb-8 */
+        }
+        
+        /* Paragraph spacing to match original */
+        .prose p {
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        
+        /* List styling to match original */
+        .prose ul {
+            margin-bottom: 1rem; /* mb-4 */
+            padding-left: 1.5rem; /* pl-6 */
+        }
+        
+        .prose ul li {
+            list-style-type: disc;
+        }
+    </style>
+        
+    <!-- Tailwind CSS - Synchronous loading (CDN serves JS that generates CSS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/tailwind-config.js"></script>
+    
+    <!-- Critical JavaScript inline for immediate execution -->
+    <script src="/js/scripts-critical.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 leading-relaxed no-fouc">
+
+{{ partial "header.html" . }}
+{{ partial "navigation.html" . }}
+
+<main id="main">
+    {{ block "main" . }}{{ end }}
+</main>
+
+{{ partial "footer.html" . }}
+{{ partial "scripts.html" . }}
+
+</body>
+</html>
