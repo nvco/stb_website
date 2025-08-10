@@ -10,7 +10,7 @@
     <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ .Permalink }}">
-    <title>{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .Title }}{{ .Title }}{{ end }} - {{ .Site.Params.business_name }}</title>
     
     <!-- Preconnect to external resources for faster loading -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
@@ -131,7 +131,7 @@
         /* List styling to match original */
         .prose ul {
             margin-bottom: 1rem; /* mb-4 */
-            padding-left: 1.5rem; /* pl-6 */
+            padding-left: 0; /* pl-0 */
         }
         
         .prose ul li {

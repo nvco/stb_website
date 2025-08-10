@@ -2,64 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/cancellation-policy/</loc>
+    <loc>https://stilltimebeauty.com/cancellation-policy/</loc>
     <lastmod>2025-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/legal/</loc>
+    <loc>https://stilltimebeauty.com/</loc>
     <lastmod>2025-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/legal/medical-disclaimers/</loc>
+    <loc>https://stilltimebeauty.com/legal/medical-disclaimers/</loc>
     <lastmod>2025-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/legal/hipaa-notice/</loc>
+    <loc>https://stilltimebeauty.com/legal/hipaa-notice/</loc>
     <lastmod>2025-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/legal/privacy-policy/</loc>
+    <loc>https://stilltimebeauty.com/legal/privacy-policy/</loc>
     <lastmod>2025-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://stilltimebeauty.com/legal/terms-of-service/</loc>
     <lastmod>2025-07-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/legal/terms-of-service/</loc>
-    <lastmod>2025-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/benefits-botox-superior-colorado-youthful-appearance/</loc>
+    <loc>https://stilltimebeauty.com/blog/benefits-botox-superior-colorado-youthful-appearance/</loc>
     <lastmod>2024-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/anti-aging/</loc>
+    <loc>https://stilltimebeauty.com/blog/</loc>
     <lastmod>2024-07-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/botox/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/botox-treatment/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/medical-aesthetics/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/blog/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/superior-colorado/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/wrinkle-treatment/</loc>
-    <lastmod>2024-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/pre-post-treatment/</loc>
+    <loc>https://stilltimebeauty.com/pre-post-treatment/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/services/</loc>
+    <loc>https://stilltimebeauty.com/services/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://stilltimebeauty.com/about/</loc>
     <lastmod>2024-01-01T00:00:00+00:00</lastmod>
   </url>
 </urlset>
