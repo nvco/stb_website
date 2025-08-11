@@ -2,6 +2,7 @@ name: Build and deploy Hugo site
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -42,6 +43,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./public/
           server-dir: ./public_html/
+          dangerous-clean-slate: true
           exclude: |
             **/.git*
             **/.git*/**
