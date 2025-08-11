@@ -6,18 +6,30 @@ This file provides guidance to Claude Code when working with the Hugo-based Stil
 
 ### Local Development
 ```bash
-# Start Hugo development server (now from project root, not hugo-site/)
-hugo server --buildDrafts --bind 0.0.0.0
-
-# Or simple development server
+# Start Hugo development server (from project root)
 hugo server -D
 
-# Build production site
+# Or with drafts and network binding
+hugo server --buildDrafts --bind 0.0.0.0
+
+# Build production site locally (for testing)
 hugo --minify
 
 # Check Hugo version (using v0.148.2)
 hugo version
 ```
+
+### Deployment
+Production deployment is automated via GitHub Actions on push to `main` branch:
+1. Builds optimized site with `hugo --minify`
+2. Archives to `nvco/stb-web-live` repository
+3. Deploys via FTP to Hostinger hosting
+
+Required GitHub Secrets:
+- `PERSONAL_ACCESS_TOKEN` - For pushing to external repo
+- `FTP_SERVER` - Hostinger FTP server address
+- `FTP_USERNAME` - FTP account username
+- `FTP_PASSWORD` - FTP account password
 
 ### Project Status
 ✅ **Migration Complete**: Successfully migrated from PHP to Hugo static site generator
@@ -71,13 +83,15 @@ This is a Hugo static site for a medical aesthetics practice, migrated from PHP 
 │       ├── navigation.html
 │       ├── scripts.html
 │       └── structured-data.html
-├── static/                    # Assets (images, CSS, JS)
+├── static/                    # Static assets
+│   ├── images/                # Image files (organized)
+│   └── js/                    # JavaScript files
 ├── archetypes/                # Content templates
 ├── assets/                    # Hugo asset pipeline (empty)
 ├── data/                      # Data files (empty)
 ├── i18n/                      # Internationalization (empty)
 ├── themes/                    # Hugo themes (empty)
-├── public/                    # Generated site output
+├── public/                    # Generated site output (git-ignored)
 ├── hugo.toml                  # Hugo configuration
 ├── original-site-backup/      # Original PHP site backup
 └── resources/                 # Project documentation and assets
