@@ -6,8 +6,11 @@ This file provides guidance to Claude Code when working with the Hugo-based Stil
 
 ### Local Development
 ```bash
-# Start Hugo development server (from project root)
+# Start Hugo development server (now from project root, not hugo-site/)
 hugo server --buildDrafts --bind 0.0.0.0
+
+# Or simple development server
+hugo server -D
 
 # Build production site
 hugo --minify
@@ -26,9 +29,9 @@ hugo version
 
 This is a Hugo static site for a medical aesthetics practice, migrated from PHP with all original functionality preserved.
 
-### Hugo Structure
+### Hugo Structure (Now at Project Root)
 ```
-hugo-site/
+/ (project root)
 ├── content/                    # Page content (markdown)
 │   ├── _index.md              # Homepage (type: page, layout: home)
 │   ├── about.md               # About page (type: page, layout: about)
@@ -46,26 +49,38 @@ hugo-site/
 │   │   ├── baseof.html        # Base template with custom typography CSS
 │   │   ├── list.html
 │   │   └── single.html
-│   ├── page/                  # ⭐ All main page layouts moved here
-│   │   ├── home.html          # Homepage layout (was layouts/index.html)
+│   ├── page/                  # ⭐ All main page layouts
+│   │   ├── home.html          # Homepage layout
 │   │   ├── about.html         # About page layout
-│   │   ├── services.html      # Services page layout (was layouts/services/single.html)
+│   │   ├── services.html      # Services page layout
 │   │   ├── cancellation-policy.html  # Policy page layout
 │   │   └── pre-post-treatment.html   # Treatment guidelines layout
 │   ├── legal/
 │   │   └── single.html        # Legal pages with white backdrop container
 │   ├── blog/
+│   │   ├── list.html          # Blog listing page
 │   │   └── single.html        # Blog post template
+│   ├── 404.html               # Custom 404 error page
 │   └── partials/              # Reusable components
 │       ├── cta-call-button.html
 │       ├── cta-section-large.html
+│       ├── faq-section.html
 │       ├── footer.html
 │       ├── header.html
 │       ├── info-card.html
 │       ├── navigation.html
-│       └── scripts.html
+│       ├── scripts.html
+│       └── structured-data.html
 ├── static/                    # Assets (images, CSS, JS)
-└── hugo.toml                  # Hugo configuration with site params
+├── archetypes/                # Content templates
+├── assets/                    # Hugo asset pipeline (empty)
+├── data/                      # Data files (empty)
+├── i18n/                      # Internationalization (empty)
+├── themes/                    # Hugo themes (empty)
+├── public/                    # Generated site output
+├── hugo.toml                  # Hugo configuration
+├── original-site-backup/      # Original PHP site backup
+└── resources/                 # Project documentation and assets
 ```
 
 ### Content Type System
@@ -124,6 +139,20 @@ Original PHP variables converted to Hugo params:
 - Clean separation of content and presentation
 
 ## Recent Architectural Changes (August 2025)
+
+### Root Directory Migration (v1.2.0)
+**What Changed:**
+- ✅ Moved entire Hugo site from `hugo-site/` subdirectory to project root
+- ✅ Follows standard Hugo project structure conventions
+- ✅ Simplifies development and deployment workflows
+
+**Benefits:**
+- Standard Hugo commands work without path prefixes
+- Cleaner project structure
+- Easier CI/CD integration
+- Better tooling compatibility
+
+## Previous Architectural Changes
 
 ### Layout Restructuring
 **What Changed:**

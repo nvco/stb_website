@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-08-11
+
+### Changed
+- **BREAKING**: Migrated Hugo site structure from `hugo-site/` subdirectory to project root
+  - All Hugo files and directories now at root level for standard Hugo project structure
+  - Simplifies deployment and development workflow
+  - Original PHP backup remains in `original-site-backup/` directory
+
 ## [1.1.0] - 2025-08-11
 
 ### Added
