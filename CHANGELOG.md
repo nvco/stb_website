@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.2] - 2025-08-11
+
+### Documentation
+- Added comprehensive coding standards reference to CLAUDE.md
+- Updated front matter standardization with all content types (main pages, blog posts, legal pages)
+- Added references to `.cursor/rules/` files for development standards
+- Enhanced project documentation with FAQ schema and SEO directives
+
+### Technical
+- Documented `faqs:` front matter field for blog posts with question/answer schema
+- Documented `robots:` and `sitemap:` fields for legal page SEO control
+- Added `author:` field documentation for blog posts
+
 ## [1.3.1] - 2025-08-11
 
 ### Improved
@@ -43,7 +56,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **BREAKING**: Migrated Hugo site structure from `hugo-site/` subdirectory to project root
   - All Hugo files and directories now at root level for standard Hugo project structure
   - Simplifies deployment and development workflow
-  - Original PHP backup remains in `original-site-backup/` directory
+
+### Removed
+- Removed `original-site-backup/` directory containing legacy PHP files
+- Cleaned up repository to focus on Hugo implementation only
 
 ## [1.1.0] - 2025-08-11
 

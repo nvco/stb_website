@@ -93,7 +93,6 @@ This is a Hugo static site for a medical aesthetics practice, migrated from PHP 
 ├── themes/                    # Hugo themes (empty)
 ├── public/                    # Generated site output (git-ignored)
 ├── hugo.toml                  # Hugo configuration
-├── original-site-backup/      # Original PHP site backup
 └── resources/                 # Project documentation and assets
 ```
 
@@ -153,6 +152,25 @@ Original PHP variables converted to Hugo params:
 - Clean separation of content and presentation
 
 ## Recent Changes (August 2025)
+
+### Documentation Improvements (v1.3.2)
+**What Changed:**
+- ✅ Added comprehensive coding standards reference to CLAUDE.md
+- ✅ Updated front matter standardization with all content types
+- ✅ Added references to `.cursor/rules/` files for development consistency
+- ✅ Documented FAQ schema, SEO directives, and author fields
+
+**Technical Details:**
+- Coding standards section references general principles, HTML accessibility, JavaScript, and Tailwind rules
+- Front matter documentation now covers main pages, blog posts, and legal pages separately
+- Added `faqs:` field for blog post question/answer schema
+- Added `robots:` and `sitemap:` fields for legal page SEO control
+- Added `author:` field for blog post attribution
+
+**Benefits:**
+- Consistent code quality standards across development
+- Clear documentation for all content types and their front matter requirements
+- Better developer onboarding and maintenance workflows
 
 ### Accessibility Improvements (v1.3.0)
 **What Changed:**
