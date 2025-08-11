@@ -3,6 +3,9 @@ title: "Medical Disclaimers"
 description: "Medical disclaimers and treatment information for Still Time Beauty - Boulder Medical Aesthetics Practice."
 date: 2025-07-01
 type: "legal"
+robots: "noindex, nofollow"
+sitemap:
+  disable: true
 ---
 
 **Important Medical Notice:** This information is for educational purposes only and does not constitute medical advice. Individual results may vary. A comprehensive consultation and medical evaluation is required before any treatment decisions are made.
@@ -125,7 +128,7 @@ For questions about your treatment, please contact:
 **Still Time Beauty**  
 741 Pearl St  
 Boulder, CO 80302  
-Phone: (720) 731-8222  
+Phone: {{< phone >}}  
 Email: info@stilltimebeauty.com
 
 For medical emergencies, call 911 or go to the nearest emergency room.

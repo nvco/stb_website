@@ -3,6 +3,9 @@ title: "Notice of Privacy Practices"
 description: "HIPAA Notice of Privacy Practices for Still Time Beauty - Boulder Medical Aesthetics Practice. Patient privacy protection information."
 date: 2025-07-01
 type: "legal"
+robots: "noindex, nofollow"
+sitemap:
+  disable: true
 ---
 
 **Effective Date:** July 1, 2025
@@ -60,7 +63,7 @@ If you have questions about this notice or need to exercise your privacy rights,
 **Still Time Beauty**  
 741 Pearl St  
 Boulder, CO 80302  
-Phone: (720) 731-8222  
+Phone: {{< phone >}}  
 Email: info@stilltimebeauty.com
 
 ## Filing Complaints

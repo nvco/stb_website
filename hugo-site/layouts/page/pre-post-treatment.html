@@ -191,7 +191,7 @@
                         <div>
                             <h3 class="text-xl font-semibold text-primary-800 mb-4">Contact Us</h3>
                             <div class="space-y-2">
-                                <p class="text-primary-700">Phone: <strong><a href="tel:{{ .Site.Params.phone }}" class="text-accent-600 hover:text-accent-700">{{ .Site.Params.phone }}</a></strong></p>
+                                <p class="text-primary-700">Phone: <strong><a href="tel:{{ .Site.Params.phone_tel }}" class="text-accent-600 hover:text-accent-700">{{ .Site.Params.phone }}</a></strong></p>
                                 <p class="text-primary-700">Location: {{ .Site.Params.address_street }}, {{ .Site.Params.address_city }}, {{ .Site.Params.address_state }} {{ .Site.Params.address_zip }}</p>
                                 <p class="text-primary-700">Hours: By appointment only</p>
                             </div>
@@ -216,15 +216,8 @@
                     </div>
                 </div>
 
-                <div class="border border-accent-200 rounded-xl p-6 mt-8">
-                    <p class="text-primary-700 mb-4">
-                        If you have any questions about your pre or post treatment care, please don't hesitate to contact us. We're here to ensure you have the best possible experience and results from your aesthetic treatments.
-                    </p>
-                    <div class="flex justify-center flex-col sm:flex-row gap-4">
-                        <a href="tel:{{ .Site.Params.phone }}" class="bg-accent-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
-                            <i data-lucide="phone" class="w-5 h-5 mr-2"></i>Call with Questions
-                        </a>
-                    </div>
+                <div class="border border-accent-200 rounded-xl text-primary-700 p-6 mt-8">
+                    If you have any questions about your pre or post treatment care, please don't hesitate to contact us. We're here to ensure you have the best possible experience and results from your aesthetic treatments.
                 </div>
             </div>
         </div>

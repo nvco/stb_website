@@ -3,6 +3,9 @@ title: "Terms of Service"
 description: "Terms of Service for Still Time Beauty - Boulder Medical Aesthetics Practice. Patient treatment agreements and service terms."
 date: 2025-07-01
 type: "legal"
+robots: "noindex, nofollow"
+sitemap:
+  disable: true
 ---
 
 **Effective Date:** July 1, 2025  
@@ -37,7 +40,7 @@ These Terms apply to all visitors, users, and patients of Still Time Beauty, loc
 
 ### Scheduling
 
-- Appointments are by phone consultation only: (720) 731-8222
+- Appointments are by phone consultation only: {{< phone >}}
 - Initial consultations may require longer time slots
 - We operate by appointment only with flexible scheduling
 - Emergency appointments may be accommodated based on availability
@@ -153,5 +156,5 @@ For questions about these Terms of Service, please contact:
 **Still Time Beauty**  
 741 Pearl St  
 Boulder, CO 80302  
-Phone: (720) 731-8222  
+Phone: {{< phone >}}  
 Email: info@stilltimebeauty.com

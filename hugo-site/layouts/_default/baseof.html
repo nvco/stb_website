@@ -6,11 +6,21 @@
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="keywords" content="{{ if .Params.keywords }}{{ .Params.keywords }}{{ else }}medical aesthetics, Botox Boulder, dermal fillers Boulder, Nurse Practitioner{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
+    {{ if .Params.robots }}
+    <meta name="robots" content="{{ .Params.robots }}">
+    {{ else }}
+    {{/* Only include Open Graph tags for pages that can be indexed */}}
     <meta property="og:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
     <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ .Permalink }}">
+    {{ end }}
     <title>{{ if .Title }}{{ .Title }}{{ end }} - {{ .Site.Params.business_name }}</title>
+    
+    {{/* Structured Data for SEO - exclude from pages with noindex */}}
+    {{ if not .Params.robots }}
+    {{ partial "structured-data.html" . }}
+    {{ end }}
     
     <!-- Preconnect to external resources for faster loading -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
@@ -94,8 +104,8 @@
         .prose h2 {
             font-family: system-ui, -apple-system, sans-serif;
             font-weight: 600;
-            font-size: 1.5rem; /* text-2xl */
-            line-height: 1.2;
+            font-size: 1.875rem; /* text-3xl */
+            line-height: 2.25rem;
             margin-bottom: 1rem; /* mb-4 */
             margin-top: 2rem; /* mb-8 equivalent top spacing */
         }
@@ -131,11 +141,33 @@
         /* List styling to match original */
         .prose ul {
             margin-bottom: 1rem; /* mb-4 */
-            padding-left: 0; /* pl-0 */
+            padding-left: 1.5rem; /* pl-6 */
         }
         
         .prose ul li {
             list-style-type: disc;
+        }
+        
+        /* Blog-specific typography to match original site */
+        .blog-content h2 {
+            font-weight: 700;
+            font-size: 1.5rem; /* text-2xl base (mobile only) */
+            color: #0f172a; /* text-primary-900 */
+            margin-top: 2rem; /* mt-8 */
+            margin-bottom: 1rem; /* mb-4 */
+            line-height: 1.2;
+        }
+        
+        /* Responsive H2 sizing: text-2xl md:text-3xl */
+        @media (min-width: 768px) {
+            .blog-content h2 {
+                font-size: 1.875rem; /* md:text-3xl for tablet and desktop */
+            }
+        }
+        
+        .blog-content p {
+            margin-bottom: 1.5rem; /* mb-6 */
+            line-height: 1.75rem; /* leading-7 */
         }
     </style>
         

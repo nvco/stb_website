@@ -32,7 +32,7 @@
                         <i data-lucide="phone" class="w-6 h-6 text-accent-600 mr-2"></i>
                         <h3 class="text-xl font-semibold text-primary-800">How to Book</h3>
                     </div>
-                    <p class="text-primary-700 mb-4">All appointments must be scheduled by calling our office at <strong><a href="{{ .Site.Params.phone_link }}" class="text-accent-600 hover:text-accent-700">{{ .Site.Params.phone }}</a></strong>. We do not accept online bookings at this time.</p>
+                    <p class="text-primary-700 mb-4">All appointments must be scheduled by calling our office at <strong><a href="tel:{{ .Site.Params.phone_tel }}" class="text-accent-600 hover:text-accent-700">{{ .Site.Params.phone }}</a></strong>. We do not accept online bookings at this time.</p>
                     <p class="text-primary-700">We operate by appointment only. Please call during business hours to schedule your consultation or treatment.</p>
                 </div>
 
@@ -68,7 +68,7 @@
                         <h3 class="text-xl font-semibold text-primary-800">Flexible Rescheduling</h3>
                     </div>
                     <p class="text-primary-700 mb-4">We understand that schedules can change. You may reschedule your appointment without penalty if you provide at least 24 hours notice.</p>
-                    <p class="text-primary-700">To reschedule, please call our office at <strong><a href="{{ .Site.Params.phone_link }}" class="text-accent-600 hover:text-accent-700">{{ .Site.Params.phone }}</a></strong> as soon as possible.</p>
+                    <p class="text-primary-700">To reschedule, please call our office at <strong><a href="tel:{{ .Site.Params.phone_tel }}" class="text-accent-600 hover:text-accent-700">{{ .Site.Params.phone }}</a></strong> as soon as possible.</p>
                 </div>
 
                 <h2 class="text-3xl font-serif font-bold text-primary-900 mb-6">Payment and Refund Policy</h2>
@@ -113,14 +113,14 @@
                         <div>
                             <h3 class="text-xl font-semibold text-primary-800 mb-4">Schedule or Modify Appointments</h3>
                             <div class="space-y-2">
-                                <p class="text-primary-700">Phone: <strong><a href="{{ .Site.Params.phone_link }}" class="text-accent-600 hover:text-accent-700">{{ .Site.Params.phone }}</a></strong></p>
+                                <p class="text-primary-700">Phone: <strong><a href="tel:{{ .Site.Params.phone_tel }}" class="text-accent-600 hover:text-accent-700">{{ .Site.Params.phone }}</a></strong></p>
                                 <p class="text-primary-700">Location: {{ .Site.Params.address_street }}, {{ .Site.Params.address_city }}, {{ .Site.Params.address_state }} {{ .Site.Params.address_zip }}</p>
                                 <p class="text-primary-700">Hours: By appointment only</p>
                             </div>
                         </div>
                         <div>
                             <h3 class="text-xl font-semibold text-primary-800 mb-4">Best Practices</h3>
-                            <ul class="space-y-2 text-primary-700">
+                            <ul class="space-y-2 text-primary-700 !pl-0">
                                 <li class="flex items-start space-x-2">
                                     <i data-lucide="check" class="w-4 h-4 text-accent-600 mt-1 flex-shrink-0"></i>
                                     <span>Call as soon as you know you need to cancel</span>

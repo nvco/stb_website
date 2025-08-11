@@ -1,0 +1,166 @@
+{{ if eq .Type "page" }}
+    {{ if eq .Layout "home" }}
+    {{/* Homepage - MedicalBusiness Schema */}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "{{ .Site.Params.business_name }}",
+        "description": "Medical aesthetics practice specializing in Botox, dermal fillers, and facial rejuvenation treatments",
+        "url": "{{ .Site.BaseURL }}",
+        "telephone": "{{ .Site.Params.phone }}",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "{{ .Site.Params.address_street }}",
+            "addressLocality": "{{ .Site.Params.address_city }}",
+            "addressRegion": "{{ .Site.Params.address_state }}",
+            "postalCode": "{{ .Site.Params.address_zip }}",
+            "addressCountry": "US"
+        },
+        "medicalSpecialty": "Cosmetic Medicine",
+        "priceRange": "$$$",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00"
+        },
+        "sameAs": []
+    }
+    </script>
+    {{ else if eq .Layout "about" }}
+    {{/* About Page - AboutPage Schema */}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About {{ .Site.Params.business_name }}",
+        "description": "{{ .Description }}",
+        "url": "{{ .Permalink }}",
+        "mainEntity": {
+            "@type": "MedicalBusiness",
+            "name": "{{ .Site.Params.business_name }}",
+            "description": "Medical aesthetics practice specializing in Botox, dermal fillers, and facial rejuvenation treatments",
+            "url": "{{ .Site.BaseURL }}",
+            "telephone": "{{ .Site.Params.phone }}",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ .Site.Params.address_street }}",
+                "addressLocality": "{{ .Site.Params.address_city }}",
+                "addressRegion": "{{ .Site.Params.address_state }}",
+                "postalCode": "{{ .Site.Params.address_zip }}",
+                "addressCountry": "US"
+            },
+            "medicalSpecialty": "Cosmetic Medicine"
+        }
+    }
+    </script>
+    {{ else if eq .Layout "services" }}
+    {{/* Services Page - Service Schema */}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Medical Aesthetics Services",
+        "description": "{{ .Description }}",
+        "url": "{{ .Permalink }}",
+        "provider": {
+            "@type": "MedicalBusiness",
+            "name": "{{ .Site.Params.business_name }}",
+            "description": "Medical aesthetics practice specializing in Botox, dermal fillers, and facial rejuvenation treatments",
+            "url": "{{ .Site.BaseURL }}",
+            "telephone": "{{ .Site.Params.phone }}",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ .Site.Params.address_street }}",
+                "addressLocality": "{{ .Site.Params.address_city }}",
+                "addressRegion": "{{ .Site.Params.address_state }}",
+                "postalCode": "{{ .Site.Params.address_zip }}",
+                "addressCountry": "US"
+            },
+            "medicalSpecialty": "Cosmetic Medicine"
+        },
+        "serviceType": ["Botox Treatments", "Dermal Fillers", "Facial Rejuvenation", "Medical Aesthetics"]
+    }
+    </script>
+    {{ end }}
+{{ else if eq .Type "blog" }}
+    {{ if eq .Kind "page" }}
+    {{/* Individual Blog Post - Article Schema */}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ .Title }}",
+        "description": "{{ .Description }}",
+        "author": {
+            "@type": "MedicalBusiness",
+            "name": "{{ .Site.Params.business_name }}",
+            "url": "{{ .Site.BaseURL }}"
+        },
+        "publisher": {
+            "@type": "MedicalBusiness",
+            "name": "{{ .Site.Params.business_name }}",
+            "url": "{{ .Site.BaseURL }}",
+            "telephone": "{{ .Site.Params.phone }}",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ .Site.Params.address_street }}",
+                "addressLocality": "{{ .Site.Params.address_city }}",
+                "addressRegion": "{{ .Site.Params.address_state }}",
+                "postalCode": "{{ .Site.Params.address_zip }}",
+                "addressCountry": "US"
+            }
+        },
+        "datePublished": "{{ .Date.Format "2006-01-02" }}",
+        "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ .Permalink }}"
+        },
+        "url": "{{ .Permalink }}",
+        "keywords": "{{ .Params.keywords }}"
+        {{ if .Params.faqs }}
+        ,
+        "mainEntity": [
+            {{ range $index, $faq := .Params.faqs }}
+            {
+                "@type": "Question",
+                "name": "{{ $faq.question }}",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "{{ $faq.answer }}"
+                }
+            }{{ if lt $index (sub (len $.Params.faqs) 1) }},{{ end }}
+            {{ end }}
+        ]
+        {{ end }}
+    }
+    </script>
+    {{ else if eq .Kind "section" }}
+    {{/* Blog Index Page - Blog Schema */}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "{{ .Title }}",
+        "description": "Medical aesthetics articles, tips, and insights from our expert team in Boulder, Colorado.",
+        "url": "{{ .Permalink }}",
+        "publisher": {
+            "@type": "MedicalBusiness",
+            "name": "{{ .Site.Params.business_name }}",
+            "url": "{{ .Site.BaseURL }}",
+            "telephone": "{{ .Site.Params.phone }}",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ .Site.Params.address_street }}",
+                "addressLocality": "{{ .Site.Params.address_city }}",
+                "addressRegion": "{{ .Site.Params.address_state }}",
+                "postalCode": "{{ .Site.Params.address_zip }}",
+                "addressCountry": "US"
+            }
+        }
+    }
+    </script>
+    {{ end }}
+{{ end }}

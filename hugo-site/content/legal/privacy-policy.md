@@ -3,6 +3,9 @@ title: "Privacy Policy"
 description: "Privacy Policy for Still Time Beauty - Boulder Medical Aesthetics Practice. HIPAA compliant privacy practices for patient information protection."
 date: 2025-07-01
 type: "legal"
+robots: "noindex, nofollow"
+sitemap:
+  disable: true
 ---
 
 **Effective Date:** July 1, 2025  
@@ -192,5 +195,5 @@ For questions about this Privacy Policy or to exercise your privacy rights, plea
 **Still Time Beauty**  
 741 Pearl St  
 Boulder, CO 80302  
-Phone: (720) 731-8222  
+Phone: {{< phone >}}  
 Email: info@stilltimebeauty.com
