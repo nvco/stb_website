@@ -54,8 +54,22 @@
             color: #0d9488; /* text-accent-600 - CORRECTED */
         }
         
-        /* Critical focus styles for accessibility */
-        *:focus { outline: 2px solid #10b981; outline-offset: 2px; }
+        /* Critical focus styles for accessibility - improved for WCAG 2.1 */
+        *:focus-visible { 
+            outline: 3px solid #0d9488; 
+            outline-offset: 2px;
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+        }
+        a:focus-visible, button:focus-visible {
+            outline: 3px solid #0d9488;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
+            transition: box-shadow 0.2s ease;
+        }
+        /* Remove default focus for mouse users, keep for keyboard */
+        *:focus:not(:focus-visible) { 
+            outline: none; 
+        }
         
         /* Mobile menu critical styles */
         .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 40; }

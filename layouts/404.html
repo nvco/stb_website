@@ -23,7 +23,7 @@
                     <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-accent-600">
                         <div class="flex items-start">
                             <div class="flex-shrink-0">
-                                <i data-lucide="lightbulb" class="w-6 h-6 text-accent-600 mt-1"></i>
+                                <i data-lucide="lightbulb" class="w-6 h-6 text-accent-600 mt-1" aria-hidden="true"></i>
                             </div>
                             <div class="ml-4">
                                 <p class="text-gray-800 text-lg">
@@ -42,12 +42,12 @@
                         <!-- Return Home -->
                         <div class="text-center p-6 border-2 border-accent-100 rounded-xl hover:border-accent-300 transition-colors duration-200">
                             <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i data-lucide="home" class="w-8 h-8 text-accent-600"></i>
+                                <i data-lucide="home" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
                             </div>
                             <h4 class="text-lg font-semibold text-primary-900 mb-2">Go Home</h4>
                             <p class="text-gray-600 mb-4">Return to our homepage and start fresh</p>
                             <a href="/" class="border-2 border-accent-600 text-accent-600 bg-white hover:bg-accent-50 px-8 py-4 rounded-full font-semibold transition-colors inline-flex items-center justify-center">
-                                <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i>
+                                <i data-lucide="arrow-left" class="w-4 h-4 mr-2" aria-hidden="true"></i>
                                 Take Me Home
                             </a>
                         </div>
@@ -55,12 +55,12 @@
                         <!-- Explore Services -->
                         <div class="text-center p-6 border-2 border-accent-100 rounded-xl hover:border-accent-300 transition-colors duration-200">
                             <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <i data-lucide="sparkles" class="w-8 h-8 text-accent-600"></i>
+                                <i data-lucide="sparkles" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
                             </div>
                             <h4 class="text-lg font-semibold text-primary-900 mb-2">Our Services</h4>
                             <p class="text-gray-600 mb-4">Discover our Botox and dermal filler treatments</p>
                             <a href="/services" class="border-2 border-accent-600 text-accent-600 bg-white hover:bg-accent-50 px-8 py-4 rounded-full font-semibold transition-colors inline-flex items-center justify-center">
-                                <i data-lucide="arrow-right" class="w-4 h-4 mr-2"></i>
+                                <i data-lucide="arrow-right" class="w-4 h-4 mr-2" aria-hidden="true"></i>
                                 View Services
                             </a>
                         </div>
@@ -76,14 +76,14 @@
                     
                     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <a href="tel:{{ .Site.Params.phone_tel }}" class="inline-flex items-center px-6 py-3 bg-accent-600 text-white font-semibold rounded-lg hover:bg-accent-700 transition-colors duration-200">
-                            <i data-lucide="phone" class="w-4 h-4 mr-2"></i>
+                            <i data-lucide="phone" class="w-4 h-4 mr-2" aria-hidden="true"></i>
                             {{ .Site.Params.phone }}
                         </a>
                         
                         <span class="text-gray-400 hidden sm:block">or</span>
                         
                         <a href="/about" class="border-2 border-accent-600 text-accent-600 bg-white hover:bg-accent-50 px-8 py-4 rounded-full font-semibold transition-colors inline-flex items-center justify-center">
-                            <i data-lucide="info" class="w-4 h-4 mr-2"></i>
+                            <i data-lucide="info" class="w-4 h-4 mr-2" aria-hidden="true"></i>
                             Learn About Us
                         </a>
                     </div>

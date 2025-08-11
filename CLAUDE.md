@@ -152,6 +152,27 @@ Original PHP variables converted to Hugo params:
 - Front matter contains only necessary metadata
 - Clean separation of content and presentation
 
+## Recent Changes (August 2025)
+
+### Accessibility Improvements (v1.3.0)
+**What Changed:**
+- ✅ Added `aria-hidden="true"` to all decorative icons (Lucide icons and SVGs)
+- ✅ Added `role="img"` to star rating containers with `aria-label` attributes
+- ✅ Enhanced keyboard focus indicators with `:focus-visible` pseudo-class
+- ✅ Improved screen reader compatibility across all pages
+
+**Technical Details:**
+- All `<i data-lucide>` elements now have `aria-hidden="true"`
+- Star rating `<div>` elements with `aria-label` now have `role="img"` for proper semantics
+- Focus styles use 3px outline with box-shadow for better visibility
+- Uses `:focus-visible` to show focus only for keyboard users, not mouse users
+
+**Benefits:**
+- Better WCAG 2.1 compliance
+- Improved screen reader experience
+- Enhanced keyboard navigation
+- Lighthouse accessibility score improvements
+
 ## Recent Architectural Changes (August 2025)
 
 ### Root Directory Migration (v1.2.0)

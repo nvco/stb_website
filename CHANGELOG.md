@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.1] - 2025-08-11
+
+### Improved
+- Enhanced accessibility with WCAG 2.1 compliance improvements
+- Added `aria-hidden="true"` to all decorative icons (Lucide icons and SVGs)
+- Added `role="img"` to star rating containers with `aria-label` attributes
+- Improved keyboard navigation with enhanced `:focus-visible` styles
+- Better screen reader compatibility across all pages
+
+### Technical
+- Focus indicators now use 3px outline with box-shadow for better visibility
+- Implemented `:focus-visible` pseudo-class to show focus only for keyboard users
+- All decorative SVG and icon elements properly marked for assistive technology
+
 ## [1.3.0] - 2025-08-11
 
 ### Added
