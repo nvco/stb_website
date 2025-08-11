@@ -220,7 +220,8 @@ layouts/
 ```
 
 ### Content Front Matter Standardization
-**All main pages now follow this pattern:**
+
+**Main Pages Pattern:**
 ```yaml
 ---
 title: "Page Title"
@@ -229,6 +230,34 @@ keywords: "SEO keywords"
 date: 2024-01-01
 type: "page"                # ⭐ Consistent content type
 layout: "specific-layout"   # ⭐ Individual layout name
+---
+```
+
+**Blog Posts Pattern:**
+```yaml
+---
+title: "Blog Post Title"
+description: "SEO description"
+keywords: "SEO keywords"
+author: "Still Time Beauty"
+date: 2024-07-19
+type: "blog"
+faqs:                       # ⭐ FAQ schema for blog posts
+  - question: "Question text?"
+    answer: "Answer text"
+---
+```
+
+**Legal Pages Pattern:**
+```yaml
+---
+title: "Legal Page Title"
+description: "Legal page description"
+date: 2025-07-01
+type: "legal"
+robots: "noindex, nofollow" # ⭐ Prevent search indexing
+sitemap:                    # ⭐ Exclude from sitemap
+  disable: true
 ---
 ```
 
@@ -250,6 +279,16 @@ layout: "specific-layout"   # ⭐ Individual layout name
 - Hugo development server auto-reloads on changes
 - Test all page types and responsive behavior
 - Verify legal page formatting and accessibility
+
+## Coding Standards
+
+Reference and follow the rules defined in:
+- `.cursor/rules/general-principles.mdc` - Universal development principles and code quality standards
+- `.cursor/rules/html-accessibility.mdc` - WCAG compliance and semantic HTML guidelines
+- `.cursor/rules/javascript.mdc` - Modern JavaScript patterns and best practices
+- `.cursor/rules/tailwind.mdc` - Tailwind CSS utility-first development conventions
+
+These standards ensure consistent, accessible, and maintainable code across the project.
 
 ## Migration Notes
 
