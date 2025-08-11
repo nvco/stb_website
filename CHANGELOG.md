@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2025-08-11
+
+### 🚀 Major Release - Hugo Migration Complete
+
+#### Added
+- **BREAKING**: Hugo site is now the main production branch
+- Manual workflow dispatch option (`workflow_dispatch`) for GitHub Actions
+- Clean slate deployment with `dangerous-clean-slate: true` for fresh deployments
+- Branch backup system with `original-site-backup` for PHP site preservation
+
+#### Changed  
+- **BREAKING**: Main branch now contains Hugo site (was PHP)
+- Updated deployment path to `/domains/stilltimebeauty.com/public_html/` (absolute path)
+- GitHub Actions workflow refined for production Hugo deployment
+- Repository structure now fully committed to Hugo static site generator
+
+#### Migration Notes
+- Original PHP site backed up in `original-site-backup` branch
+- `hugo-migration` branch preserved as development backup
+- All PHP files will be cleaned from production server on next deployment
+- Deployment workflow tested and production-ready
+
 ## [1.3.2] - 2025-08-11
 
 ### Documentation
