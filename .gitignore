@@ -23,6 +23,11 @@ content-temp/
 # Node modules (if we add any later)
 node_modules/
 
+# Hugo generated files
+/public/
+/resources/_gen/
+/.hugo_build.lock
+
 # Build files (if we add any later)
 dist/
 build/ 

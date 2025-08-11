@@ -1,23 +1,30 @@
-name: Sync site folder and README with images
+name: Build and deploy Hugo site
 on:
   push:
     branches: [ main ]
 
 jobs:
-  sync:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.148.2'
+          extended: true
+      
+      - name: Build Hugo site
+        run: hugo --minify
       
       - name: Copy files to staging
         run: |
           mkdir staging
           # Copy README to root
           cp README.md staging/
-          # Copy entire site folder (maintains folder structure)
-          cp -r site staging/
-          # Copy images folder (maintains folder structure)
-          cp -r images staging/
+          # Copy Hugo build output
+          cp -r public/* staging/
       
       - name: Push to separate repo
         uses: peaceiris/actions-gh-pages@v3
@@ -25,3 +32,17 @@ jobs:
           personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           external_repository: nvco/stb-web-live
           publish_dir: ./staging
+      
+      # Deploy to Hostinger via FTP
+      - name: Deploy to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./public/
+          server-dir: ./public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
