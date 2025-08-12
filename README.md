@@ -114,6 +114,4 @@ Automated deployment via GitHub Actions on push to `main`:
 
 Copyright © 2025 Still Time Beauty. All Rights Reserved.
 
-Developed by Norbert Ver.
-
 This repository is provided for **portfolio demonstration purposes only**. The code is proprietary and may not be copied, modified, or used in any other projects without explicit written permission. See [LICENSE](LICENSE) for details.
