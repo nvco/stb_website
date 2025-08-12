@@ -77,7 +77,6 @@ hugo --minify
 
 ## 📚 Documentation
 
-- [CLAUDE.md](CLAUDE.md) - Comprehensive development guide
 - [CHANGELOG.md](CHANGELOG.md) - Detailed version history
 - Inline code documentation
 
