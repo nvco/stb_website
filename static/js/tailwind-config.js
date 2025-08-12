@@ -29,6 +29,9 @@ tailwind.config = {
                     700: '#0f766e',
                     800: '#115e59',
                     900: '#134e4a',
+                },
+                coral: {
+                    500: '#EE6D71',
                 }
             },
             fontFamily: {
