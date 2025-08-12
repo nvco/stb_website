@@ -252,7 +252,7 @@ layouts/
 title: "Page Title"
 description: "SEO description"
 keywords: "SEO keywords"
-date: 2024-01-01
+date: 2025-01-01
 type: "page"                # ⭐ Consistent content type
 layout: "specific-layout"   # ⭐ Individual layout name
 ---
@@ -265,7 +265,7 @@ title: "Blog Post Title"
 description: "SEO description"
 keywords: "SEO keywords"
 author: "Still Time Beauty"
-date: 2024-07-19
+date: 2025-07-19
 type: "blog"
 faqs:                       # ⭐ FAQ schema for blog posts
   - question: "Question text?"
