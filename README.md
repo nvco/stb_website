@@ -1,8 +1,8 @@
 # Still Time Beauty - Medical Aesthetics Website
 
-A modern, high-performance static website for a medical aesthetics practice, showcasing a complete PHP-to-Hugo migration with enterprise-grade deployment automation.
+A modern, high-performance static website for a medical aesthetics practice, [Still Time Beauty](https://stilltimebeauty.com), showcasing a complete PHP-to-Hugo migration with enterprise-grade deployment automation.
 
-[<img src="static/images/stb-load.webp" style="max-width: 500px; width: 100%;">](https://stilltimebeauty.com)
+[<img src="static/images/stb-load.webp" style="width: 100%; max-width: 500px;">](https://stilltimebeauty.com)
 
 ## 🎯 Project Highlights
 
