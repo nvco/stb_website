@@ -83,6 +83,7 @@ This is a Hugo static site for a medical aesthetics practice, migrated from PHP 
 │       ├── header.html
 │       ├── info-card.html
 │       ├── navigation.html
+│       ├── promo-offer.html      # Promotional offer badge (30% off)
 │       ├── scripts.html
 │       └── structured-data.html
 ├── static/                    # Static assets
@@ -136,6 +137,10 @@ Original PHP variables converted to Hugo params:
 
 ### CSS & Styling
 - **Tailwind CSS**: Primary styling framework via CDN
+- **Custom Colors**: Extended Tailwind config in `/static/js/tailwind-config.js`
+  - Primary palette: Grays for text and backgrounds
+  - Accent palette: Teal shades for CTAs and highlights
+  - Coral-500: `#EE6D71` for promotional elements
 - **Custom CSS**: Typography rules in `baseof.html` for proper markdown rendering
 - **Responsive**: Mobile-first design with proper accessibility
 - **Icons**: Lucide icons for consistent iconography
