@@ -16,30 +16,33 @@
     <!-- Our Story Section -->
     <section class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl font-serif font-bold text-primary-900 mb-8">Our Story</h2>
-                    <div class="prose prose-lg text-primary-700 space-y-6">
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="">
+                    <h2 class="text-4xl font-serif font-bold text-primary-900 mb-8 lg:mb-16">Our Story</h2>
+                    <div class="text-lg text-primary-700 space-y-6 mb-8">
                         <p>
-                            Maria's path to aesthetic medicine began with a simple but powerful conviction: the desire to make a meaningful difference in people's lives through genuine human connection. After completing nursing school and dedicating years to patient care, the calling to continue advancing in healthcare led to becoming a Nurse Practitioner.
+                            Maria's path to aesthetic medicine began with a simple but powerful conviction: the desire to make a meaningful difference in people's lives through genuine human connection. 
+                            <br class="hidden lg:block"><br class="hidden lg:block">
+                            After completing nursing school and dedicating years to patient care, the calling to continue advancing in healthcare led to becoming a Nurse Practitioner.
                         </p>
                         <p>
-                            Today, our founder brings the precision and expertise gained as a first assist in the operating room to the world of aesthetic medicine. This unique background combines surgical precision with an artistic eye, ensuring that every treatment is performed with the highest standards of safety and skill.
+                            Today, our founder brings the precision and expertise gained as a first assist in the operating room to the world of aesthetic medicine. 
+                            <br class="hidden lg:block"><br class="hidden lg:block">
+                            This unique background combines surgical precision with an artistic eye, ensuring that every treatment is performed with the highest standards of safety and skill.
                         </p>
-                        <!-- Quote Options for Review -->
-                        <div class="space-y-6">
-                            <div class="border-l-4 border-accent-200 pl-4">
-                                <p>
-                                     <b>"My goal is to enhance natural beauty through minimally invasive non-surgical procedures and to make you feel like the most beautiful version of yourself."</b> - Maria
-                                </p>
-                            </div>
-                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-accent-200 bg-white/50 backdrop-blur-sm rounded-lg px-6 py-2 lg:py-6">
+                        <p class="text-lg lg:text-3xl font-serif text-primary-700 lg:leading-loose">
+                             <b>"My goal is to enhance natural beauty through minimally invasive non-surgical procedures and to make you feel like the most beautiful version of yourself."</b><br> - <i>Maria</i>
+                        </p>
                     </div>
                 </div>
-                <div class="relative">
+                
+                <div class="">
                     <div class="bg-accent-50 rounded-3xl p-8 text-center">
-                        <div class="w-24 h-24 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i data-lucide="user-check" class="w-12 h-12 text-accent-600" aria-hidden="true"></i>
+                        <div class="mb-6">
+                            <img src="/images/maria.jpeg" alt="Maria - Nurse Practitioner at Still Time Beauty" class="w-full h-auto rounded-3xl shadow-lg">
                         </div>
                         <h3 class="text-2xl font-serif font-bold text-primary-800 mb-4">{{ .Site.Params.credentials }}</h3>
                           <p class="text-primary-600 mb-6">
