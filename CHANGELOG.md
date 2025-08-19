@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Promo displays over image on desktop/tablet, next to CTA on mobile
 - About page Our Story section layout: responsive column sizing (2:3 ratio on large screens, equal on medium)
 - About page quote styling: larger serif font with increased line height on large screens
+- Footer responsive SVG logos: separate mobile and desktop versions with proper accessibility attributes
 
 ## 2.0.0 (2025-08-11)
 
