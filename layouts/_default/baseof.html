@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta name="keywords" content="{{ if .Params.keywords }}{{ .Params.keywords }}{{ else }}medical aesthetics, Botox Boulder, dermal fillers Boulder, Nurse Practitioner{{ end }}">
+    <meta name="keywords" content="{{ if .Params.keywords }}{{ delimit .Params.keywords ", " }}{{ else }}medical aesthetics, Botox Boulder, dermal fillers Boulder, Nurse Practitioner{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
     {{ if .Params.robots }}
     <meta name="robots" content="{{ .Params.robots }}">

@@ -8,15 +8,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- Promotional offer partial component with coral color scheme ([7fce8f1](https://github.com/nvco/stb_website/commit/7fce8f1))
-- Light Coral color (#EE6D71) to Tailwind configuration
+- Email parameter and shortcode for centralized email management
+- Text message button alongside phone button in CTA components
+- Letter spacing (`tracking-wider`) to CTA buttons for improved visual design
 
 ### Changed
-- Homepage hero section with new promo offer display
-- Promo displays over image on desktop/tablet, next to CTA on mobile
-- About page Our Story section layout: responsive column sizing (2:3 ratio on large screens, equal on medium)
-- About page quote styling: larger serif font with increased line height on large screens
-- Footer responsive SVG logos: separate mobile and desktop versions with proper accessibility attributes
+- **BREAKING**: Fixed meta keywords display issue - removed square brackets around keywords
+  - Updated `baseof.html` to use `delimit .Params.keywords ", "` for proper comma separation
+  - Converted all keyword front matter from strings to YAML arrays for consistent processing
+- CTA call button component now includes both phone and text messaging options
+- CTA buttons now full-width on mobile, auto-width on desktop
+- Info cards now use flex layout instead of grid for content-based sizing
+- Enhanced button styling with increased padding (`px-14`) and larger text size
+- Promo offer text section now fills available space with centered content
+- All legal pages now use `{{< email >}}` shortcode instead of hardcoded email addresses
+
+### Fixed
+- Meta keywords no longer display with unwanted square brackets
+- CTA button layout now properly responsive across all screen sizes
+- Info card sizing now based on content rather than equal grid distribution
+- Email addresses centralized through Hugo site parameters for easier maintenance
+
+### Technical
+- Updated CLAUDE.md with Hugo server startup instructions for Claude Code
+- All pages converted to use proper YAML array format for keywords
+- Implemented proper line breaks in legal page contact information
 
 ## 2.0.0 (2025-08-11)
 

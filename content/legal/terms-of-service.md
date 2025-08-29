@@ -157,4 +157,4 @@ For questions about these Terms of Service, please contact:
 741 Pearl St  
 Boulder, CO 80302  
 Phone: {{< phone >}}  
-Email: info@stilltimebeauty.com
+Email: {{< email >}}

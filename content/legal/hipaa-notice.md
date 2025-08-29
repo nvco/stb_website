@@ -64,7 +64,7 @@ If you have questions about this notice or need to exercise your privacy rights,
 741 Pearl St  
 Boulder, CO 80302  
 Phone: {{< phone >}}  
-Email: info@stilltimebeauty.com
+Email: {{< email >}}
 
 ## Filing Complaints
 

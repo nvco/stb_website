@@ -1,3 +1,13 @@
-<a href="tel:{{ .Site.Params.phone_tel }}" class="bg-accent-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center">
-    <i data-lucide="phone" class="w-5 h-5 mr-2" aria-hidden="true"></i>{{ .Site.Params.phone }}
-</a>
+<div class="w-full md:w-auto">
+    <div class="w-full md:w-auto flex flex-col sm:flex-row gap-6">
+        <a href="tel:{{ .Site.Params.phone_tel }}" class="w-full sm:w-auto bg-accent-600 text-white px-14 py-4 rounded-full text-xl font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center tracking-wider">
+            <i data-lucide="phone" class="w-5 h-5 mr-2" aria-hidden="true"></i>{{ .Site.Params.phone_call }}
+        </a>
+        <a href="sms:{{ .Site.Params.phone_tel }}" class="w-full sm:w-auto bg-accent-600 text-white px-14 py-4 rounded-full text-xl font-semibold hover:bg-accent-700 transition-colors inline-flex items-center justify-center tracking-wider">
+            <i data-lucide="message-circle" class="w-5 h-5 mr-2" aria-hidden="true"></i>{{ .Site.Params.phone_text }}
+        </a>
+    </div>
+    <div class="w-full md:w-auto flex justify-center mt-5">
+        <div class="text-md text-primary-600">Call or text: {{ .Site.Params.phone }}</div>
+    </div>
+</div>

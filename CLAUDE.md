@@ -7,6 +7,7 @@ This file provides guidance to Claude Code when working with the Hugo-based Stil
 ### Local Development
 ```bash
 # Start Hugo development server (from project root)
+# IMPORTANT: Use run_in_background=true in Claude Code to keep server running
 hugo server -D
 
 # Or with drafts and network binding
@@ -18,6 +19,12 @@ hugo --minify
 # Check Hugo version (using v0.148.2)
 hugo version
 ```
+
+**Claude Code Specific Instructions:**
+- When starting the Hugo server, ALWAYS use the `run_in_background=true` parameter with the Bash tool
+- The server runs at http://localhost:1313/ and auto-reloads on file changes
+- Check if server is running with: `ps aux | grep hugo`
+- Use `BashOutput` tool to monitor server status and output
 
 ### Deployment
 Production deployment is automated via GitHub Actions on push to `main` branch:

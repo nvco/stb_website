@@ -129,6 +129,6 @@ For questions about your treatment, please contact:
 741 Pearl St  
 Boulder, CO 80302  
 Phone: {{< phone >}}  
-Email: info@stilltimebeauty.com
+Email: {{< email >}}
 
 For medical emergencies, call 911 or go to the nearest emergency room.

@@ -8,20 +8,20 @@
                         Enhance Your Natural Beauty with 
                         <span class="hero-accent">Expert Care</span>
                     </h1>
-                    <p class="text-xl text-primary-600 mb-8 leading-relaxed">
+                    <p class="text-xl text-primary-600 mb-6 leading-relaxed">
                         Professional medical aesthetics in downtown Boulder. Expert Botox and dermal filler treatments by a qualified Nurse Practitioner with surgical precision.
                     </p>
-                    <div class="flex flex-col-reverse md:flex-row gap-4 justify-center lg:justify-start items-center">
+                    <div class="flex flex-col-reverse md:flex-row gap-4 justify-center lg:justify-start items-center md:items-start">
                         {{ partial "cta-call-button.html" . }}
-                        <div class="md:hidden">
+                        <div class="w-full md:w-auto md:hidden">
                             {{ partial "promo-offer.html" . }}
                         </div>
                     </div>
-                    <div class="mt-6 grid grid-cols-2 gap-4 justify-center lg:justify-start max-w-md mx-auto lg:mx-0">
-                        {{ partial "info-card.html" (dict "icon" "map-pin" "title" "Convenient<br class=\"sm:hidden\"> Location" "subtitle" "Pearl Street, Boulder") }}
-                        {{ partial "info-card.html" (dict "icon" "calendar" "title" "Flexible<br class=\"sm:hidden\"> Scheduling" "subtitle" "By Appointment Only") }}
+                    <div class="mt-6 w-auto flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mx-auto lg:mx-0">
+                        {{ partial "info-card.html" (dict "icon" "map-pin" "title" "Convenient Location" "subtitle" "Pearl Street, Boulder") }}
+                        {{ partial "info-card.html" (dict "icon" "calendar" "title" "Flexible Scheduling" "subtitle" "By Appointment Only") }}
                     </div>
-                    <div class="mt-8 flex items-center justify-center lg:justify-start space-x-6">
+                    <div class="mt-6 flex items-center justify-center lg:justify-start space-x-6">
                         <div class="text-center">
                             <div class="text-2xl font-bold text-primary-800">5.0</div>
                             <div class="flex text-primary-600 text-sm space-x-0.5" role="img" aria-label="5 out of 5 star rating">

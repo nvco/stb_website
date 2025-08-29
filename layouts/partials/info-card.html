@@ -1,14 +1,14 @@
-<div class="flex items-center justify-center lg:justify-start space-x-2
+<div class="mx-auto md:mx-0 flex items-center justify-center lg:justify-start space-x-2
             px-4 py-3 
             text-center lg:text-left 
             bg-white/80 backdrop-blur-sm 
             border border-primary-200 rounded-xl">
     <div class="flex items-center justify-center lg:justify-start space-x-2">
-        <i data-lucide="{{ .icon }}" class="w-4 h-4 text-accent-600" aria-hidden="true"></i>
+        <i data-lucide="{{ .icon }}" class="w-8 h-8 text-accent-600" aria-hidden="true"></i>
         <div>
-            <div class="text-xs font-semibold text-primary-800">{{ .title | safeHTML }}</div>
+            <div class="text-dm font-semibold text-primary-800">{{ .title | safeHTML }}</div>
             {{ if .subtitle }}
-            <div class="text-xs text-primary-600">{{ .subtitle }}</div>
+            <div class="text-sm text-primary-600">{{ .subtitle }}</div>
             {{ end }}
         </div>
     </div>
