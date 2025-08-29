@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 2.1.0 (2025-08-29)
+
 ### Added
-- Email parameter and shortcode for centralized email management
+- Email parameter and shortcode for centralized email management ([5c3ddb7](https://github.com/nvco/stb_website/commit/5c3ddb7))
 - Text message button alongside phone button in CTA components
 - Letter spacing (`tracking-wider`) to CTA buttons for improved visual design
 
