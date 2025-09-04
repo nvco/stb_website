@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`d820e44`](https://github.com/nvco/stb_website/commit/d820e44) Rename slash command from start-server to start-hugo-dev (2025-09-04)
+  - Renamed /start-server slash command to /start-hugo-dev for better clarity
+  - Updated CLAUDE.md documentation to reflect new command name
+  - Removed test.md slash command file
 - [`ba0e315`](https://github.com/nvco/stb_website/commit/ba0e315) Complete accessibility improvements and custom slash commands (2025-09-04)
   - Missing ARIA labels added to all remaining internal links for complete screen reader support
   - Custom Claude Code slash commands for automated development workflows
