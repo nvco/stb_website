@@ -26,18 +26,6 @@ hugo version
 - Check if server is running with: `ps aux | grep hugo`
 - Use `BashOutput` tool to monitor server status and output
 
-### Git Hooks Setup
-Install the automated changelog updater:
-```bash
-# Install post-commit hook (run once per developer)
-./scripts/install-hooks.sh
-```
-
-**What this does:**
-- Automatically updates CHANGELOG.md with commit hash and link after each commit
-- Works with Cursor's AI commit feature - no manual work needed
-- Amends your commit to include the changelog update
-
 ### Deployment
 Production deployment is automated via GitHub Actions on push to `main` branch:
 1. Builds optimized site with `hugo --minify`
@@ -369,6 +357,18 @@ These standards ensure consistent, accessible, and maintainable code across the 
 - Add new posts: Create markdown files in `content/blog/`
 - Uses Hugo's built-in blog functionality
 - Automatic date sorting and pagination
+
+### Changelog Format
+When updating CHANGELOG.md, use this format for individual changes:
+```markdown
+### Changed
+- [`abc1234`](https://github.com/nvco/stb_website/commit/abc1234) Brief description of change (YYYY-MM-DD)
+```
+
+**Benefits:**
+- Each change links directly to its commit
+- Easy to trace changes back to specific commits
+- Cleaner than mixing commit links with version headers
 
 ## Technology Stack
 - **Hugo v0.148.2**: Static site generator

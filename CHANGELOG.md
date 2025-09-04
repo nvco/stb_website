@@ -1,5 +1,3 @@
-- [`9cf842a`](https://github.com/nvco/stb_website/commit/9cf842a) Update blog layout templates (2025-09-04)
-
 # Changelog
 
 All notable changes to the Still Time Beauty Hugo website will be documented in this file.
@@ -8,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+- [`9cf842a`](https://github.com/nvco/stb_website/commit/9cf842a) Update blog layout templates (2025-09-04)
+
+### Removed
+- Removed automated git hook system that was causing infinite loops and incorrect changelog placement
+- Cleaned up scripts directory and related CLAUDE.md documentation
+
+### Added
+- Documented preferred changelog format in CLAUDE.md for consistent future updates
 
 ## 2.2.0 (2025-09-03) ([60fb5c5](https://github.com/nvco/stb_website/commit/60fb5c5))
 
