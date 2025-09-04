@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`69c8c68`](https://github.com/nvco/stb_website/commit/69c8c68) SEO-focused internal linking strategy implementation (2025-09-04)
+  - Strategic internal links across all main pages for improved search engine optimization
+  - Blog post internal links targeting key pages with keyword-rich anchor text
+  - Automated CSS styling for all content links with consistent teal accent colors
+  - SEO internal linking guidelines documented in CLAUDE.md
+  - Link diversity strategy avoiding duplicate patterns and optimizing link equity distribution
 - [`ec99974`](https://github.com/nvco/stb_website/commit/ec99974) Category system and accessibility improvements (2025-09-04)
   - Complete category system with Hugo taxonomies for blog content organization
   - Category navigation with filter buttons on main blog page
