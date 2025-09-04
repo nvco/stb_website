@@ -2,9 +2,9 @@ baseURL = 'https://stilltimebeauty.com/'
 languageCode = 'en-us'
 title = 'Still Time Beauty - Medical Aesthetics | Boulder, Colorado'
 
-# Disable all taxonomies for now (no tags, no categories in sitemap)
+# Enable categories for content organization and SEO
 [taxonomies]
-  # category = "categories"  # Commented out - not needed yet
+  category = "categories"
 
 [params]
   description = 'Expert medical aesthetics treatments including Botox and dermal fillers by a qualified Nurse Practitioner in downtown Boulder.'

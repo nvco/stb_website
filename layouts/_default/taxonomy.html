@@ -1,33 +1,31 @@
+{{ define "title" }}
+{{ if eq .Data.Term "Botox" }}Botox Information & Guides | {{ .Site.Params.business_name }}{{ else }}{{ .Title }} Articles | {{ .Site.Params.business_name }}{{ end }}
+{{ end }}
+
 {{ define "main" }}
-    <!-- Blog Hero Section -->
+    <!-- Category Hero Section -->
     <section class="relative bg-gradient-to-br from-primary-50 to-accent-50 pt-24 md:pt-28 lg:pt-32 pb-12 md:pb-14 lg:pb-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h1>
-                    Educational Botox & Dermal Filler Articles from Boulder Experts
+                    {{ .Title }} Information & Guides
                 </h1>
-                <p class="text-base md:text-lg max-w-3xl mx-auto mb-6">
-                    Explore our collection of expert articles on Botox, dermal fillers, and facial rejuvenation. Learn about safe, natural treatments, tips for getting the best results, and insights from a board-certified Nurse Practitioner in Boulder and surrounding areas.
-                </p>
-            </div>
 
-            <!-- Categories Filter -->
-            <div class="text-center">
-                <div class="flex flex-wrap justify-center gap-3">
-                    <a href="/blog/" class="px-4 py-2 bg-white border-2 border-accent-200 text-accent-700 rounded-full hover:bg-accent-50 transition-colors">
-                        All Articles
-                    </a>
-                    {{ range .Site.Taxonomies.categories.ByCount }}
-                    <a href="{{ .Page.Permalink }}" class="px-4 py-2 bg-white border-2 border-accent-200 text-accent-700 rounded-full hover:bg-accent-50 transition-colors">
-                        {{ .Page.Data.Term }}
-                    </a>
-                    {{ end }}
-                </div>
+                <!-- Breadcrumbs -->
+                <nav aria-label="Breadcrumb">
+                    <div class="text-normal text-gray-600 mb-4">
+                        <a href="/" class="hover:text-accent-600 transition-colors">Home</a>
+                        <span class="mx-2" aria-hidden="true">›</span>
+                        <a href="/blog/" class="hover:text-accent-600 transition-colors">Blog</a>
+                        <span class="mx-2" aria-hidden="true">›</span>
+                        <span>{{ .Title }}</span>
+                    </div>
+                </nav>
             </div>
         </div>
     </section>
 
-    <!-- Blog Posts Listing -->
+    <!-- Category Posts Listing -->
     <section class="py-12 md:py-14 lg:py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -49,6 +47,13 @@
                 </article>
                 {{ end }}
             </div>
+
+            <!-- No posts message -->
+            {{ if eq (len .Pages) 0 }}
+            <div class="text-center py-8">
+                <p class="text-gray-600 text-lg">No articles found in this category yet. Check back soon!</p>
+            </div>
+            {{ end }}
         </div>
     </section>
 

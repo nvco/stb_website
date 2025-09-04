@@ -12,6 +12,7 @@ author: "Still Time Beauty"
 date: 2025-07-19
 publishDate: 2025-07-19
 type: "blog"
+categories: ["Botox"]
 params:
   h1title: "Top 5 Botox Benefits in Superior, CO"
 faqs:
