@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`ba0e315`](https://github.com/nvco/stb_website/commit/ba0e315) Complete accessibility improvements and custom slash commands (2025-09-04)
+  - Missing ARIA labels added to all remaining internal links for complete screen reader support
+  - Custom Claude Code slash commands for automated development workflows
+  - /commit-changes command automates full git commit process with changelog updates
+  - /start-server command streamlines Hugo development environment setup
 - [`09edd4d`](https://github.com/nvco/stb_website/commit/09edd4d) Accessibility improvements to internal linking strategy (2025-09-04)
   - Descriptive ARIA labels for all internal links providing clear destination context
   - Screen reader compatibility improvements while maintaining SEO anchor text
