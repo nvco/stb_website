@@ -423,3 +423,26 @@ For single changes, the simpler format is fine:
 - **Go Templates**: Hugo's templating system
 
 This Hugo implementation maintains all the functionality and design quality of the original PHP site while providing better performance, security, and maintainability.
+
+## Custom Slash Commands
+
+This project includes custom Claude Code slash commands to streamline common development tasks:
+
+### `/commit-changes`
+Automates the complete git commit workflow:
+1. Shows current git status and changes
+2. Stages all changes
+3. Creates descriptive commit with proper formatting
+4. Updates CHANGELOG.md with new entry
+5. Commits the changelog
+6. Shows final status
+
+**Usage:** Simply type `/commit-changes` to execute the full workflow.
+
+### `/start-server`
+Starts Hugo development server with project-specific settings:
+- Includes draft content
+- Binds to all network interfaces
+- Auto-reloads on changes
+
+**Usage:** Type `/start-server` to start the development environment.
