@@ -1,3 +1,5 @@
+- [`9cf842a`](https://github.com/nvco/stb_website/commit/9cf842a) Update blog layout templates (2025-09-04)
+
 # Changelog
 
 All notable changes to the Still Time Beauty Hugo website will be documented in this file.
