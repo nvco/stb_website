@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## 2.2.0 (2025-09-03)
+## 2.2.0 (2025-09-03) ([60fb5c5](https://github.com/nvco/stb_website/commit/60fb5c5))
 
 ### Added
 - **Custom H1 Titles**: Added `h1title` parameter support for blog posts to allow different H1 display titles vs. page titles
