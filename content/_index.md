@@ -1,12 +1,11 @@
 ---
-title: "Medical Aesthetics | Boulder, Colorado"
-description: "Professional medical aesthetics in downtown Boulder. Expert Botox and dermal filler treatments by a qualified Nurse Practitioner with surgical precision."
+title: "Botox & Dermal Fillers in Boulder, CO"
+description: "Expert Botox and dermal filler treatments in Boulder, CO. Board-certified NP on Pearl Street for safe, natural results."
 keywords:
   - "Botox Boulder"
-  - "dermal fillers Boulder"
-  - "medical aesthetics"
-  - "Nurse Practitioner"
-  - "Pearl Street"
+  - "Dermal fillers Boulder"
+  - "Medical aesthetics Boulder"
+  - "Botox & Fillers in Boulder, CO"
 type: "page"
 layout: "home"
 ---

@@ -1,11 +1,12 @@
 ---
-title: "Where Expertise Meets Artistry"
-description: "Learn about Still Time Beauty's founder, a Board Certified Nurse Practitioner with surgical precision background specializing in medical aesthetics in Boulder, CO."
+title: "About Still Time Beauty - Botox & Dermal Fillers in Boulder, CO"
+description: "Discover Still Time Beauty in Boulder, CO, offering expert Botox and dermal filler treatments by a board-certified Nurse Practitioner."
 keywords:
   - "Nurse Practitioner Boulder"
-  - "medical aesthetics credentials"
-  - "surgical precision"
-  - "facial rejuvenation expert"
+  - "Board certified injector Boulder"
+  - "Experienced Botox & Dermal Fillers Provider"
+  - "Medical Aesthetics Expertise in Boulder"
+  - "Safe, Natural Facial Rejuvenation"
 date: 2025-01-01
 type: "page"
 layout: "about"

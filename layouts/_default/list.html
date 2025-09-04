@@ -28,7 +28,7 @@
                         <div class="text-xs text-accent-600 font-semibold">{{ range .Params.categories }}{{ . }}{{ end }}</div>
                         {{ end }}
                     </div>
-                    <h3 class="text-xl font-semibold text-primary-800 mb-4">
+                    <h3 class="mb-4">
                         <a href="{{ .Permalink }}" class="hover:text-accent-600 transition-colors">{{ .Title }}</a>
                     </h3>
                     {{ if .Description }}
@@ -46,7 +46,7 @@
             {{ else }}
             <div class="text-center py-16">
                 <i data-lucide="file-text" class="w-16 h-16 text-primary-300 mx-auto mb-4" aria-hidden="true"></i>
-                <h3 class="text-xl font-semibold text-primary-700 mb-2">No posts yet</h3>
+                <h3 class="mb-2">No posts yet</h3>
                 <p class="text-primary-600">Check back soon for informative articles about medical aesthetics.</p>
             </div>
             {{ end }}

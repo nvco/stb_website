@@ -1,10 +1,11 @@
 ---
-title: "Botox & Dermal Fillers Blog"
-description: "Educational articles about Botox, dermal fillers, and medical aesthetics treatments. Expert insights from Boulder's premier medical aesthetics practice."
+title: "Botox & Dermal Fillers Blog | Medical Aesthetics Tips in Boulder"
+description: "Read educational articles on Botox, dermal fillers, and facial rejuvenation from Boulder’s expert medical aesthetics practice. Stay informed on safe, natural treatments."
 keywords:
-  - "medical aesthetics blog"
-  - "Botox information"
-  - "dermal filler education"
+  - "Botox blog Boulder"
+  - "Dermal fillers blog Boulder"
+  - "Medical aesthetics tips"
+  - "Facial rejuvenation insights"
   - "Boulder aesthetics"
 type: "blog"
 ---

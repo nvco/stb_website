@@ -272,9 +272,12 @@ title: "Blog Post Title"
 description: "SEO description"
 keywords: "SEO keywords"
 author: "Still Time Beauty"
-date: 2025-07-19
+date: 2025-07-19              # ⭐ Content creation/authoring date
+publishDate: 2025-09-03       # ⭐ Publication date (controls when live)
 type: "blog"
-faqs:                       # ⭐ FAQ schema for blog posts
+params:                       # ⭐ Optional parameters
+  h1title: "Custom H1 Title"  # ⭐ Override H1 display title (falls back to title if not set)
+faqs:                         # ⭐ FAQ schema for blog posts
   - question: "Question text?"
     answer: "Answer text"
 ---
