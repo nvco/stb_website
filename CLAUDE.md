@@ -346,12 +346,19 @@ These standards ensure consistent, accessible, and maintainable code across the 
 3. **Link diversity** - Each page should link to different target pages for optimal link equity distribution
 4. **Natural context** - Links must provide genuine value and feel contextual
 5. **Strategic targeting** - Support important search terms and page authority
+6. **Accessibility compliance** - Always include descriptive `aria-label` attributes explaining link destination and purpose
 
 **Maintenance Guidelines:**
 - **Review quarterly** - Check for new linking opportunities as content grows
 - **No convenience linking** - Resist adding links just for user navigation
 - **Anchor text variation** - Avoid repetitive phrases, vary keyword targeting
 - **Link equity balance** - Ensure all important pages receive internal links
+
+**Accessibility Requirements:**
+- **ARIA labels required** - Every internal link must have `aria-label="descriptive context"`
+- **Clear destination context** - Labels should explain where the link leads and why
+- **No redundant announcements** - Avoid "internal link" or similar unnecessary screen reader text
+- **Example format**: `<a href="/about/" aria-label="Learn about our Board-Certified Nurse Practitioner credentials">Board-Certified Nurse Practitioner</a>`
 
 ## Migration Notes
 
