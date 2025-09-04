@@ -439,10 +439,10 @@ Automates the complete git commit workflow:
 
 **Usage:** Simply type `/commit-changes` to execute the full workflow.
 
-### `/start-server`
+### `/start-hugo-dev`
 Starts Hugo development server with project-specific settings:
 - Includes draft content
 - Binds to all network interfaces
 - Auto-reloads on changes
 
-**Usage:** Type `/start-server` to start the development environment.
+**Usage:** Type `/start-hugo-dev` to start the development environment.
