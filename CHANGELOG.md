@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`09edd4d`](https://github.com/nvco/stb_website/commit/09edd4d) Accessibility improvements to internal linking strategy (2025-09-04)
+  - Descriptive ARIA labels for all internal links providing clear destination context
+  - Screen reader compatibility improvements while maintaining SEO anchor text
+  - Updated CLAUDE.md with accessibility requirements for future internal linking
+  - WCAG compliance enhancements for better inclusive user experience
 - [`69c8c68`](https://github.com/nvco/stb_website/commit/69c8c68) SEO-focused internal linking strategy implementation (2025-09-04)
   - Strategic internal links across all main pages for improved search engine optimization
   - Blog post internal links targeting key pages with keyword-rich anchor text
