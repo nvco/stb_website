@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 2.2.0 (2025-09-03)
+
+### Added
+- **Custom H1 Titles**: Added `h1title` parameter support for blog posts to allow different H1 display titles vs. page titles
+  - Blog single template now checks for `params.h1title` and falls back to regular title
+  - Blog list template also uses custom h1title for consistency
+  - Updated CLAUDE.md documentation with h1title usage pattern
+
+### Changed  
+- **Default Responsive Typography**: Implemented automatic responsive heading sizing without utility classes
+  - **H1**: `text-3xl` → `md:text-4xl` → `lg:text-5xl` (30px → 36px → 48px)
+  - **H2**: `text-xl` → `md:text-2xl` → `lg:text-3xl` (20px → 24px → 30px)  
+  - **H3**: `text-lg` → `md:text-xl` → `lg:text-2xl` (18px → 20px → 24px)
+  - **H4**: `text-base` → `md:text-lg` → `lg:text-lg` (16px → 18px → 18px)
+  - All heading styles include automatic bottom margins and proper color/font-weight
+- **Semantic HTML Cleanup**: Removed text sizing and styling classes from heading tags across all pages
+  - Cleaned up h1, h2, h3 tags in blog, legal, and utility pages 
+  - Preserved essential spacing classes (e.g., `mt-12` for section breaks)
+  - Maintained CTA sections and main landing pages unchanged per requirements
+- **CSS Loading Order**: Moved all custom styles to load after Tailwind CSS to ensure proper override
+- **Page Title Structure**: Updated title separator from dash to pipe (`|`) for better brand consistency
+
 ## 2.1.0 (2025-08-29)
 
 ### Added
