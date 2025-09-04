@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Get commit info
+COMMIT_HASH=$(git rev-parse --short HEAD)
+COMMIT_MSG=$(git log -1 --pretty=%B | head -n 1)
+DATE=$(date +%Y-%m-%d)
+REPO_URL="https://github.com/nvco/stb_website"
+
+# Skip if this is already a changelog commit
+if [[ "$COMMIT_MSG" == *"update changelog"* ]] || [[ "$COMMIT_MSG" == *"Update CHANGELOG"* ]]; then
+    exit 0
+fi
+
+# Add entry to changelog
+TEMP_FILE=$(mktemp)
+echo "- [\`$COMMIT_HASH\`]($REPO_URL/commit/$COMMIT_HASH) $COMMIT_MSG ($DATE)" > "$TEMP_FILE"
+echo "" >> "$TEMP_FILE"
+cat CHANGELOG.md >> "$TEMP_FILE"
+mv "$TEMP_FILE" CHANGELOG.md
+
+# Amend the commit to include changelog
+git add CHANGELOG.md
+git commit --amend --no-edit --no-verify

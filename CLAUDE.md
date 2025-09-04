@@ -26,6 +26,18 @@ hugo version
 - Check if server is running with: `ps aux | grep hugo`
 - Use `BashOutput` tool to monitor server status and output
 
+### Git Hooks Setup
+Install the automated changelog updater:
+```bash
+# Install post-commit hook (run once per developer)
+./scripts/install-hooks.sh
+```
+
+**What this does:**
+- Automatically updates CHANGELOG.md with commit hash and link after each commit
+- Works with Cursor's AI commit feature - no manual work needed
+- Amends your commit to include the changelog update
+
 ### Deployment
 Production deployment is automated via GitHub Actions on push to `main` branch:
 1. Builds optimized site with `hugo --minify`
