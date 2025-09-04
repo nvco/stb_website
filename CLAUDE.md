@@ -336,6 +336,23 @@ Reference and follow the rules defined in:
 
 These standards ensure consistent, accessible, and maintainable code across the project.
 
+## SEO-Optimized Internal Linking Strategy
+
+**Purpose**: SEO optimization, not user convenience. Focus on search engine value and keyword targeting.
+
+**Core Principles:**
+1. **No duplicate links** - Avoid linking the same anchor text to the same target page multiple times per page
+2. **Keyword-rich anchor text** - Use target page keywords: "Board-Certified Nurse Practitioner", "Botox and dermal filler"
+3. **Link diversity** - Each page should link to different target pages for optimal link equity distribution
+4. **Natural context** - Links must provide genuine value and feel contextual
+5. **Strategic targeting** - Support important search terms and page authority
+
+**Maintenance Guidelines:**
+- **Review quarterly** - Check for new linking opportunities as content grows
+- **No convenience linking** - Resist adding links just for user navigation
+- **Anchor text variation** - Avoid repetitive phrases, vary keyword targeting
+- **Link equity balance** - Ensure all important pages receive internal links
+
 ## Migration Notes
 
 ### Preserved Features

@@ -133,6 +133,18 @@
             }
         }
         
+        /* Default link styling for content areas - SEO-focused internal linking */
+        .prose a,
+        main a:not([class*="border"]):not([class*="bg-"]):not([class*="btn"]) {
+            color: #0d9488; /* text-accent-600 */
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .prose a:hover,
+        main a:not([class*="border"]):not([class*="bg-"]):not([class*="btn"]):hover {
+            color: #0f766e; /* text-accent-700 */
+        }
+        
         .hero-accent {
             color: #0d9488; /* text-accent-600 - CORRECTED */
         }
