@@ -69,7 +69,8 @@ This is a Hugo static site for a medical aesthetics practice, migrated from PHP 
 │   ├── _default/
 │   │   ├── baseof.html        # Base template with custom typography CSS
 │   │   ├── list.html
-│   │   └── single.html
+│   │   ├── single.html
+│   │   └── taxonomy.html      # Category/taxonomy pages template
 │   ├── page/                  # ⭐ All main page layouts
 │   │   ├── home.html          # Homepage layout
 │   │   ├── about.html         # About page layout
@@ -118,6 +119,16 @@ This is a Hugo static site for a medical aesthetics practice, migrated from PHP 
 **Legal Pages** (specialized type):
 - **Legal**: `legal/*.md` → `type: "legal"` → `layouts/legal/single.html`
 - Uses white backdrop container for professional presentation
+
+**Blog Posts** (with category system):
+- **Blog**: `blog/*.md` → `type: "blog"` → `layouts/blog/single.html`
+- Support `categories: ["Category Name"]` in front matter
+- Categories automatically generate taxonomy pages at `/categories/category-name/`
+
+**Category Pages** (auto-generated):
+- **Categories**: `/categories/botox/` → Hugo auto-generates → `layouts/_default/taxonomy.html`
+- No content files needed - generated from blog post categories
+- Custom metadata handled via template conditionals
 
 **Content Files Pattern**:
 - Pages with custom HTML layouts contain **only front matter** (no content)
@@ -359,16 +370,26 @@ These standards ensure consistent, accessible, and maintainable code across the 
 - Automatic date sorting and pagination
 
 ### Changelog Format
-When updating CHANGELOG.md, use this format for individual changes:
+When updating CHANGELOG.md, use this format for commits with multiple changes:
+```markdown
+### Added
+- [`abc1234`](https://github.com/nvco/stb_website/commit/abc1234) Brief summary of commit (YYYY-MM-DD)
+  - Specific change or feature added
+  - Another specific change or feature
+  - Additional details about the changes
+```
+
+For single changes, the simpler format is fine:
 ```markdown
 ### Changed
 - [`abc1234`](https://github.com/nvco/stb_website/commit/abc1234) Brief description of change (YYYY-MM-DD)
 ```
 
 **Benefits:**
-- Each change links directly to its commit
+- Group related changes under one commit link to reduce clutter
 - Easy to trace changes back to specific commits
-- Cleaner than mixing commit links with version headers
+- Hierarchical format shows both summary and details
+- Cleaner than repeating commit links multiple times
 
 ## Technology Stack
 - **Hugo v0.148.2**: Static site generator

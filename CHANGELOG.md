@@ -7,15 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- [`ec99974`](https://github.com/nvco/stb_website/commit/ec99974) Category system and accessibility improvements (2025-09-04)
+  - Complete category system with Hugo taxonomies for blog content organization
+  - Category navigation with filter buttons on main blog page
+  - Custom taxonomy template with SEO-optimized titles and breadcrumb navigation
+  - Accessible breadcrumb navigation with proper ARIA labels and screen reader support
+  - Enhanced blog post layout with category badges and improved navigation structure
+
 ### Changed
 - [`9cf842a`](https://github.com/nvco/stb_website/commit/9cf842a) Update blog layout templates (2025-09-04)
 
 ### Removed
-- [`4a9d2b1`](https://github.com/nvco/stb_website/commit/4a9d2b1) Removed automated git hook system that was causing infinite loops and incorrect changelog placement (2025-09-04)
-- [`4a9d2b1`](https://github.com/nvco/stb_website/commit/4a9d2b1) Cleaned up scripts directory and related CLAUDE.md documentation (2025-09-04)
-
-### Added
-- [`4a9d2b1`](https://github.com/nvco/stb_website/commit/4a9d2b1) Documented preferred changelog format in CLAUDE.md for consistent future updates (2025-09-04)
+- [`4a9d2b1`](https://github.com/nvco/stb_website/commit/4a9d2b1) Git hooks cleanup and documentation updates (2025-09-04)
+  - Removed automated git hook system that was causing infinite loops and incorrect changelog placement
+  - Cleaned up scripts directory and related CLAUDE.md documentation
+  - Documented preferred changelog format in CLAUDE.md for consistent future updates
 
 ## 2.2.0 (2025-09-03) ([60fb5c5](https://github.com/nvco/stb_website/commit/60fb5c5))
 
