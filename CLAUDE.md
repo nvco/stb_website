@@ -446,3 +446,49 @@ Starts Hugo development server with project-specific settings:
 - Auto-reloads on changes
 
 **Usage:** Type `/start-hugo-dev` to start the development environment.
+
+## Custom Agents
+
+This project includes specialized Claude Code agents for complex tasks:
+
+### Blog Content Generator Agent
+Generates comprehensive, SEO-optimized blog posts with keyword research integration and local geographic differentiation.
+
+**Location:** `.claude/agents/blog-content-generator.md`
+
+#### Invocation Methods:
+
+**Method 1: Explicit Invocation**
+
+Single Post:
+```
+Use the blog-content-generator agent to create a blog post:
+- Primary topic: "Botox for crow's feet"
+- Category: "Botox"  
+- Content length: "long form"
+- Geographic location: "Boulder"
+```
+
+Batch Processing:
+```
+Use the blog-content-generator agent to process the content queue at /.resources/content-guidelines/my-january-queue.md
+```
+
+**Method 2: Automatic Invocation**
+Claude Code automatically invokes the agent when you request blog content creation:
+- "Create a blog post about Botox benefits in Boulder"
+- "Generate multiple blog posts from my content planning file"
+- "Write a comprehensive article about dermal fillers"
+
+#### Agent Capabilities:
+- **Keyword Integration**: Uses `/.resources/content-guidelines/keywords.csv` with hybrid selection strategy
+- **Local Data**: Leverages city-specific data from `/.resources/content-guidelines/cities/`
+- **Content Differentiation**: Creates unique angles for similar topics across locations
+- **SEO Optimization**: 9th grade reading level with 1-2% keyword density
+- **Hugo Compliance**: Proper front matter, categories, FAQ schema
+- **Flexible Length**: Short form (1,000-1,500 words) or long form (2,000-3,000+ words)
+
+#### Required Files:
+- **Keywords**: `/.resources/content-guidelines/keywords/[category].csv` (category-specific keyword files)
+- **City Data**: `/.resources/content-guidelines/cities/[cityname].md` (for local content)
+- **Content Queue**: `/.resources/content-guidelines/content-queue-template.md` (for batch processing)
