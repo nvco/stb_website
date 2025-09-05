@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`8854d1d`](https://github.com/nvco/stb_website/commit/8854d1d) Create comprehensive blog content generator agent with keyword architecture (2025-09-05)
+  - Added Blog Content Generator agent with dual workflow modes (single/batch processing)
+  - Created content guidelines architecture with city data files for Boulder County locations
+  - Implemented keyword organization system with category-specific CSV structure
+  - Added city data files for Superior, Boulder, Erie, Louisville, Lafayette, and Niwot
+  - Created content queue template for batch blog post generation
+  - Updated CLAUDE.md with complete agent usage documentation and examples
+  - Added todo-list.md for systematic implementation tracking
 - [`d820e44`](https://github.com/nvco/stb_website/commit/d820e44) Rename slash command from start-server to start-hugo-dev (2025-09-04)
   - Renamed /start-server slash command to /start-hugo-dev for better clarity
   - Updated CLAUDE.md documentation to reflect new command name
