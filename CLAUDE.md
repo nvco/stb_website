@@ -120,10 +120,12 @@ This is a Hugo static site for a medical aesthetics practice, migrated from PHP 
 - **Legal**: `legal/*.md` → `type: "legal"` → `layouts/legal/single.html`
 - Uses white backdrop container for professional presentation
 
-**Blog Posts** (with category system):
+**Blog Posts** (with enhanced structure):
 - **Blog**: `blog/*.md` → `type: "blog"` → `layouts/blog/single.html`
 - Support `categories: ["Category Name"]` in front matter
 - Categories automatically generate taxonomy pages at `/categories/category-name/`
+- **Enhanced sections**: FAQs, References, and Medical Disclaimer automatically added
+- **Hierarchical spacing**: Improved typography with proper visual section breaks
 
 **Category Pages** (auto-generated):
 - **Categories**: `/categories/botox/` → Hugo auto-generates → `layouts/_default/taxonomy.html`
@@ -291,6 +293,9 @@ params:                       # ⭐ Optional parameters
 faqs:                         # ⭐ FAQ schema for blog posts
   - question: "Question text?"
     answer: "Answer text"
+references:                   # ⭐ Reference citations for blog posts
+  - name: "Reference Title"
+    url: "https://example.com"
 ---
 ```
 

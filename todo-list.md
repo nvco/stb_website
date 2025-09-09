@@ -75,6 +75,13 @@
 - ✅ **SEO compliance** - Validate front matter and structure
 - ✅ **Reading level check** - Confirm 9th grade reading level (and improved it)
 
+### 3.5 Blog Post Structure Enhancements (Completed 2025-09-09)
+- ✅ **FAQ sections** - Automatically rendered from frontmatter `faqs` array
+- ✅ **References sections** - Added support for `references` array in frontmatter  
+- ✅ **Medical disclaimer** - Always appears on blog posts for legal compliance
+- ✅ **Hierarchical spacing** - Improved typography with proper H2/H3/paragraph spacing
+- ✅ **Accessibility compliance** - Fixed font sizes and added proper semantic structure
+
 ### 3.4 Agent Improvements (Completed Today)
 - ✅ **Content focus updates** - Updated blog-content-generator for useful, engaging content over exhaustive coverage
 - ✅ **References section fixes** - Strengthened instructions to prevent formatting issues

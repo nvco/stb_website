@@ -52,12 +52,18 @@
     <!-- Blog Content -->
     <section class="py-12 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-none space-y-6 text-primary-700 text-lg leading-relaxed blog-content [&>h2]:font-serif">
+            <div class="max-w-none text-primary-700 text-lg leading-relaxed blog-content">
                 {{ .Content }}
             </div>
             
+            {{/* Medical Disclaimer - always appears on blog posts */}}
+            {{ partial "medical-disclaimer.html" . }}
+            
             {{/* FAQ Section - automatically renders if FAQs exist in front matter */}}
             {{ partial "faq-section.html" . }}
+            
+            {{/* References Section - automatically renders if references exist in front matter */}}
+            {{ partial "references-section.html" . }}
         </div>
     </section>
 

@@ -1,0 +1,15 @@
+{{ if .Params.references }}
+<section class="mt-12">
+    <div class="max-w-4xl mx-auto mx-auto px-6 sm:px-8 text-normal">
+        <div class="mb-4 font-bold">References</div>
+        <div>
+            {{ range $index, $ref := .Params.references }}
+                <div class="mb-2">
+                    {{ .name }}<br>
+                    {{ .url }}
+                </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

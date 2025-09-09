@@ -30,6 +30,17 @@ faqs:
     answer: "Common side effects include temporary injection site pain, mild bruising, and occasional headache immediately after treatment. Rare side effects may include neck weakness or flu-like symptoms. Most side effects resolve within 24-48 hours."
   - question: "How quickly does Botox work for migraines?"
     answer: "Most patients begin experiencing migraine reduction within 2-4 weeks after their first treatment. Maximum benefits typically develop by 6-8 weeks. Some patients may require 2-3 treatment cycles to achieve optimal results."
+references:
+  - name: "U.S. Food and Drug Administration - BOTOX for Chronic Migraine"
+    url: "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/botox-onabotulinumtoxina-chronic-migraine"
+  - name: "American Migraine Foundation - Botox and Migraine: What You Need to Know"
+    url: "https://americanmigrainefoundation.org/resource-library/botox-and-migraine/"
+  - name: "Mayo Clinic - Botox Injections for Chronic Migraine"
+    url: "https://www.mayoclinic.org/tests-procedures/botox/about/pac-20384658"
+  - name: "Cleveland Clinic - Botox for Migraine Prevention"
+    url: "https://my.clevelandclinic.org/health/treatments/8312-botox-for-migraine-prevention"
+  - name: "National Institute of Neurological Disorders and Stroke - Migraine Research and Treatment"
+    url: "https://www.ninds.nih.gov/health-information/disorders/migraine"
 ---
 
 Living with chronic migraines means dealing with crushing headaches that take over your life. When regular medications stop working, many patients discover that Botox injections offer real relief. This FDA-approved treatment has helped thousands of people get their lives back from debilitating migraines.
@@ -211,22 +222,3 @@ Deciding whether to try Botox for migraines involves weighing potential benefits
 If Botox seems like a good option, start with a consultation with a healthcare provider experienced in migraine treatment. They can assess your specific situation, review insurance requirements, and discuss whether you're a good candidate for therapy.
 
 Many patients find that Botox injections provide the relief they've been seeking after years of unsuccessful treatments. While not everyone responds to therapy, those who do often experience significant improvements in both migraine frequency and overall quality of life.
-
----
-
-**References**
-
-U.S. Food and Drug Administration - BOTOX for Chronic Migraine
-`https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/botox-onabotulinumtoxina-chronic-migraine`
-
-American Migraine Foundation - Botox and Migraine: What You Need to Know
-https://americanmigrainefoundation.org/resource-library/botox-and-migraine/
-
-Mayo Clinic - Botox Injections for Chronic Migraine
-https://www.mayoclinic.org/tests-procedures/botox/about/pac-20384658
-
-Cleveland Clinic - Botox for Migraine Prevention
-https://my.clevelandclinic.org/health/treatments/8312-botox-for-migraine-prevention
-
-National Institute of Neurological Disorders and Stroke - Migraine Research and Treatment
-https://www.ninds.nih.gov/health-information/disorders/migraine

@@ -194,6 +194,44 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+        
+        /* Blog content hierarchical spacing - overrides default spacing for better visual hierarchy */
+        .blog-content > h2 {
+            margin-top: 2rem; /* Large top margin for major section breaks */
+            margin-bottom: 1rem; /* Reduced bottom margin to keep content connected */
+        }
+        
+        .blog-content > h3 {
+            margin-top: 1.75rem; /* Moderate top margin for subsections */
+            margin-bottom: 0.75rem; /* Smaller bottom margin */
+        }
+        
+        .blog-content > h4 {
+            margin-top: 1.5rem; /* Smaller top margin for sub-subsections */
+            margin-bottom: 0.5rem; /* Minimal bottom margin */
+        }
+        
+        .blog-content > p {
+            margin-bottom: 1.25rem; /* Consistent paragraph spacing */
+        }
+        
+        .blog-content > ul,
+        .blog-content > ol {
+            margin-bottom: 1.25rem; /* Match paragraph spacing */
+        }
+        
+        /* First element after headings should have reduced spacing */
+        .blog-content > h2 + p,
+        .blog-content > h2 + ul,
+        .blog-content > h2 + ol,
+        .blog-content > h3 + p,
+        .blog-content > h3 + ul,
+        .blog-content > h3 + ol,
+        .blog-content > h4 + p,
+        .blog-content > h4 + ul,
+        .blog-content > h4 + ol {
+            margin-top: 0; /* Remove extra spacing after headings */
+        }
     </style>
     
     <!-- Critical JavaScript inline for immediate execution -->
