@@ -12,18 +12,22 @@ Use this template for batch content generation with the Blog Content Generator a
 
 ### Post 1
 - **Primary topic/keyword**: "Your keyword or predefined title here"
-- **Category**: "Botox" | "Dermal Fillers" | "Dysport" | etc.
+- **Category**: "Botox" | "Dermal Fillers" | "Dysport" | "Treatment Comparisons" | etc.
+- **Keyword Sources**: "Botox" | "Dermal Fillers" | "Dysport" | "Botox, Dysport" (for comparison posts) | etc.
 - **Content length**: "short form" | "long form"
+- **H1 title**: "Custom H1 title" (only if you want to override generated title)
 
 ### Post 2
 - **Primary topic/keyword**: "Another keyword or title"
-- **Category**: "Category name"
+- **Category**: "Treatment Comparisons"
+- **Keyword Sources**: "Botox, Dysport" (for comparison posts)
 - **Content length**: "short form" | "long form"  
 - **Geographic location**: "City name" (only if targeting specific location)
 
 ### Post 3
 - **Primary topic/keyword**: "Third topic"
 - **Category**: "Category name"
+- **Keyword Sources**: "Botox, Dysport" (for comparison posts)
 - **Content length**: "short form" | "long form"
 - **H1 title**: "Custom H1 title" (only if you want to override generated title)
 
@@ -34,39 +38,32 @@ Use this template for batch content generation with the Blog Content Generator a
 ### Post 1
 - **Primary topic/keyword**: "Botox for forehead wrinkles"
 - **Category**: "Botox"
+- **Keyword Sources**: "Botox"
 - **Content length**: "long form"
 - **Geographic location**: "Boulder"
 
 ### Post 2
 - **Primary topic/keyword**: "Benefits of dermal fillers for facial volume"
 - **Category**: "Dermal Fillers"
+- **Keyword Sources**: "Dermal Fillers"
 - **Content length**: "short form"
 - **Geographic location**: "Superior"
 - **H1 title**: "Restore Facial Volume with Professional Dermal Fillers"
 
 ### Post 3
 - **Primary topic/keyword**: "Botox vs Dysport comparison"
-- **Category**: "Botox"
+- **Category**: "Treatment Comparisons"
+- **Keyword Sources**: "Botox, Dysport"
 - **Content length**: "long form"
-
-### Post 4
-- **Primary topic/keyword**: "lip filler aftercare"
-- **Category**: "Dermal Fillers"
-- **Content length**: "short form"
-
-### Post 5
-- **Primary topic/keyword**: "Best age to start Botox treatments"
-- **Category**: "Botox"
-- **Content length**: "long form"
-- **Geographic location**: "Boulder"
 
 ---
 
 ## Usage Notes
 
-- **Required fields**: Primary topic/keyword, Category, Content length
+- **Required fields**: Primary topic/keyword, Category, Keyword Sources, Content length
 - **Optional fields**: Geographic location, H1 title
-- **Categories**: Must match existing Hugo categories (Botox, Dermal Fillers, etc.)
+- **Categories**: Must match existing Hugo categories (Botox, Dermal Fillers, Treatment Comparisons, etc.)
+- **Keyword Sources**: Which analysis files to use for keyword research ("Botox", "Dermal Fillers", "Botox, Dysport", etc.)
 - **Geographic locations**: Use existing city data files or "generic"
 - **Content length**: "short form" (1,000-1,500 words) or "long form" (2,000-3,000+ words)
 - **Batch processing**: Agent will process all posts in sequence
