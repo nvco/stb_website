@@ -438,9 +438,29 @@ Automates the complete git commit workflow:
 1. Shows current git status and changes
 2. Stages all changes
 3. Creates descriptive commit with proper formatting
-4. Updates CHANGELOG.md with new entry
+4. Updates CHANGELOG.md with properly categorized entry
 5. Commits the changelog
 6. Shows final status
+
+**Changelog Categorization Rules:**
+When updating CHANGELOG.md, analyze the commit content and categorize under the appropriate H3 section:
+
+- **`### Added`** - New features, new files, new functionality
+  - Examples: "Add new component", "Create new agent", "Implement new feature"
+  
+- **`### Changed`** - Changes to existing functionality, refactoring, improvements
+  - Examples: "Update existing component", "Improve performance", "Refactor code", "Replace CDN with self-hosted"
+  
+- **`### Fixed`** - Bug fixes, corrections, issue resolutions
+  - Examples: "Fix accessibility issue", "Resolve styling bug", "Correct typo"
+  
+- **`### Security`** - Security improvements, vulnerability fixes
+  - Examples: "Enhance security headers", "Fix XSS vulnerability"
+  
+- **`### Performance`** - Performance optimizations, speed improvements
+  - Examples: "Optimize font loading", "Reduce bundle size", "Improve loading times"
+
+**Important:** Always add new entries at the TOP of their respective sections, with empty lines between entries for readability.
 
 **Usage:** Simply type `/commit-changes` to execute the full workflow.
 
