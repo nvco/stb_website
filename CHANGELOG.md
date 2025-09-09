@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`bb7e46b`](https://github.com/nvco/stb_website/commit/bb7e46b) Implement self-hosted DM Sans fonts and optimize typography system (2025-09-09)
+  - Self-host DM Sans fonts (weights 400 & 600) with proper WOFF2 files for better performance and privacy
+  - Add comprehensive CSS custom properties for centralized font and color management
+  - Replace Google Fonts CDN with local font hosting and preload links for critical fonts
+  - Optimize font weight usage from 4 weights to 2 weights (50% bundle size reduction)
+  - Convert all hardcoded colors to CSS variables throughout the entire codebase
+  - Add alpha color variants for effects, overlays, and focus styles
+  - Enhanced accessibility compliance with variable-based focus indicators
+
 - [`c0dea36`](https://github.com/nvco/stb_website/commit/c0dea36) Improve commit-changes slash command with changelog spacing instructions (2025-09-09)
   - Add explicit formatting example showing empty lines between changelog entries
   - Include important note about maintaining readability in changelog
