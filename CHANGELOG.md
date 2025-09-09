@@ -18,6 +18,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Fixed accessibility issue with disclaimer font size (16px minimum)
 
 ### Changed
+- [`a5bd4fb`](https://github.com/nvco/stb_website/commit/a5bd4fb) Improve changelog organization and commit categorization system (2025-09-09)
+  - Reorganize changelog entries into proper sections (Added, Changed, Fixed, etc.)
+  - Move self-hosted fonts commit to "Changed" section (CDN replacement)
+  - Move slash command improvements to "Changed" section (existing functionality updates)
+  - Add comprehensive categorization rules to /commit-changes slash command documentation
+  - Define clear criteria for Added, Changed, Fixed, Security, and Performance sections
+
 - [`bb7e46b`](https://github.com/nvco/stb_website/commit/bb7e46b) Implement self-hosted DM Sans fonts and optimize typography system (2025-09-09)
   - Self-host DM Sans fonts (weights 400 & 600) with proper WOFF2 files for better performance and privacy
   - Add comprehensive CSS custom properties for centralized font and color management
