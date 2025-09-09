@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`d1c5495`](https://github.com/nvco/stb_website/commit/d1c5495) Enhance blog post structure with FAQ, references, disclaimer, and improved typography (2025-09-09)
+  - Added automatic FAQ section rendering from frontmatter faqs array
+  - Added references section with external link styling and numbering  
+  - Added medical disclaimer partial that appears on all blog posts
+  - Implemented hierarchical spacing for better visual section breaks (H2s, H3s, paragraphs)
+  - Fixed H2 font-family override issue by removing conflicting Tailwind class
+  - Updated blog post frontmatter documentation in CLAUDE.md
+  - Fixed accessibility issue with disclaimer font size (16px minimum)
+
 - [`8854d1d`](https://github.com/nvco/stb_website/commit/8854d1d) Create comprehensive blog content generator agent with keyword architecture (2025-09-05)
   - Added Blog Content Generator agent with dual workflow modes (single/batch processing)
   - Created content guidelines architecture with city data files for Boulder County locations
