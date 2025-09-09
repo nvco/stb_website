@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`c0dea36`](https://github.com/nvco/stb_website/commit/c0dea36) Improve commit-changes slash command with changelog spacing instructions (2025-09-09)
+  - Add explicit formatting example showing empty lines between changelog entries
+  - Include important note about maintaining readability in changelog
+  - Update instructions to ensure consistent spacing in future commits
+
 - [`d1c5495`](https://github.com/nvco/stb_website/commit/d1c5495) Enhance blog post structure with FAQ, references, disclaimer, and improved typography (2025-09-09)
   - Added automatic FAQ section rendering from frontmatter faqs array
   - Added references section with external link styling and numbering  
@@ -25,26 +30,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Created content queue template for batch blog post generation
   - Updated CLAUDE.md with complete agent usage documentation and examples
   - Added todo-list.md for systematic implementation tracking
+
 - [`d820e44`](https://github.com/nvco/stb_website/commit/d820e44) Rename slash command from start-server to start-hugo-dev (2025-09-04)
   - Renamed /start-server slash command to /start-hugo-dev for better clarity
   - Updated CLAUDE.md documentation to reflect new command name
   - Removed test.md slash command file
+
 - [`ba0e315`](https://github.com/nvco/stb_website/commit/ba0e315) Complete accessibility improvements and custom slash commands (2025-09-04)
   - Missing ARIA labels added to all remaining internal links for complete screen reader support
   - Custom Claude Code slash commands for automated development workflows
   - /commit-changes command automates full git commit process with changelog updates
   - /start-server command streamlines Hugo development environment setup
+
 - [`09edd4d`](https://github.com/nvco/stb_website/commit/09edd4d) Accessibility improvements to internal linking strategy (2025-09-04)
   - Descriptive ARIA labels for all internal links providing clear destination context
   - Screen reader compatibility improvements while maintaining SEO anchor text
   - Updated CLAUDE.md with accessibility requirements for future internal linking
   - WCAG compliance enhancements for better inclusive user experience
+
 - [`69c8c68`](https://github.com/nvco/stb_website/commit/69c8c68) SEO-focused internal linking strategy implementation (2025-09-04)
   - Strategic internal links across all main pages for improved search engine optimization
   - Blog post internal links targeting key pages with keyword-rich anchor text
   - Automated CSS styling for all content links with consistent teal accent colors
   - SEO internal linking guidelines documented in CLAUDE.md
   - Link diversity strategy avoiding duplicate patterns and optimizing link equity distribution
+  
 - [`ec99974`](https://github.com/nvco/stb_website/commit/ec99974) Category system and accessibility improvements (2025-09-04)
   - Complete category system with Hugo taxonomies for blog content organization
   - Category navigation with filter buttons on main blog page
