@@ -26,19 +26,76 @@
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://unpkg.com">
     
+    <!-- DM Sans Font - Self-hosted -->
+    <link rel="preload" href="/fonts/dm-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/dm-sans-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/fonts/dm-sans.css">
+    
     <!-- Tailwind CSS - Synchronous loading (CDN serves JS that generates CSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/js/tailwind-config.js"></script>
     
     <!-- Custom styles - loaded after Tailwind to ensure proper override -->
     <style>
+        /* CSS Custom Properties - centralized definitions */
+        :root {
+            /* Font definitions */
+            --font-serif: Georgia, 'Times New Roman', 'Times', 'Noto Serif', 'Droid Serif', serif;
+            --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            
+            /* Primary color palette */
+            --primary-50: #f8fafc;
+            --primary-100: #f1f5f9;
+            --primary-200: #e2e8f0;
+            --primary-300: #cbd5e1;
+            --primary-400: #94a3b8;
+            --primary-500: #64748b;
+            --primary-600: #475569;
+            --primary-700: #334155;
+            --primary-800: #1e293b;
+            --primary-900: #0f172a;
+            
+            /* Accent color palette */
+            --accent-50: #f0fdfa;
+            --accent-100: #ccfbf1;
+            --accent-200: #99f6e4;
+            --accent-300: #5eead4;
+            --accent-400: #2dd4bf;
+            --accent-500: #14b8a6;
+            --accent-600: #0d9488;
+            --accent-700: #0f766e;
+            --accent-800: #115e59;
+            --accent-900: #134e4a;
+            
+            /* Coral color */
+            --coral-500: #EE6D71;
+            
+            /* Common colors */
+            --white: #ffffff;
+            --black: #000000;
+            
+            /* Alpha color variants for effects */
+            --accent-600-alpha-10: rgba(13, 148, 136, 0.1);
+            --accent-600-alpha-15: rgba(13, 148, 136, 0.15);
+            --black-alpha-50: rgba(0, 0, 0, 0.5);
+            --black-alpha-30: rgba(0, 0, 0, 0.3);
+            --black-alpha-20: rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Font family utility classes */
+        .font-serif { font-family: var(--font-serif) !important; }
+        .font-sans { font-family: var(--font-sans) !important; }
+        
         /* Critical above-the-fold styles */
         .no-fouc { visibility: hidden; }
         .fouc-loaded .no-fouc { visibility: visible; }
         
         /* Essential layout styles */
-        body { font-family: system-ui, -apple-system, sans-serif; }
-        .header-bg { background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); }
+        body { 
+            font-family: var(--font-sans); 
+            color: var(--primary-800);
+        }
+        .header-bg { background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%); }
 
         body p {
             margin-bottom: 1rem; /* mb-4 */
@@ -55,11 +112,12 @@
         
         /* Default H1 styling - automatically responsive without utility classes */
         body h1 {
-            font-family: Georgia, 'Times New Roman', serif;
-            font-weight: 700;
+            font-family: var(--font-sans);
+            font-weight: 600;
             font-size: 1.875rem; /* text-3xl */
             line-height: 1.1;
-            color: #1e293b; /* text-primary-900 */
+            letter-spacing: -0.04em;
+            color: var(--primary-900);
             margin-bottom: 1.5rem;
         }
         @media (min-width: 768px) {
@@ -75,11 +133,12 @@
         
         /* Default H2 styling - automatically responsive without utility classes */
         body h2 {
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: var(--font-sans);
             font-weight: 600;
             font-size: 1.5rem; /* text-xl */
             line-height: 1.2;
-            color: #1e293b; /* text-primary-900 */
+            letter-spacing: -0.04em;
+            color: var(--primary-900);
             margin-bottom: 1.5rem;
         }
         @media (min-width: 768px) {
@@ -95,11 +154,12 @@
         
         /* Default H3 styling - automatically responsive without utility classes */
         body h3 {
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: var(--font-sans);
             font-weight: 600;
             font-size: 1.25rem; /* text-lg */
             line-height: 1.3;
-            color: #1e293b; /* text-primary-900 */
+            letter-spacing: -0.04em;
+            color: var(--primary-900);
             margin-bottom: 1.5rem;
         }
         @media (min-width: 768px) {
@@ -115,11 +175,12 @@
 
         /* Default H4 styling - automatically responsive without utility classes */
         body h4 {
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: var(--font-sans);
             font-weight: 600;
             font-size: 1rem; /* text-base */
             line-height: 1.1;
-            color: #1e293b; /* text-primary-900 */
+            letter-spacing: -0.04em;
+            color: var(--primary-900);
             margin-bottom: 1.5rem;
         }
         @media (min-width: 768px) {
@@ -132,33 +193,40 @@
                 font-size: 1.125rem; /* text-lg */
             }
         }
+
+        /* Landing H1 styling - automatically responsive without utility classes */
+        body .landing-page h1, 
+        body .landing-page h2 {
+            font-family: var(--font-serif);
+            letter-spacing: -0.02em;
+        }
         
         /* Default link styling for content areas - SEO-focused internal linking */
         .prose a,
-        main a:not([class*="border"]):not([class*="bg-"]):not([class*="btn"]) {
-            color: #0d9488; /* text-accent-600 */
+        .blog-content-full a:not([class*="border"]):not([class*="bg-"]):not([class*="btn"]) {
+            color: var(--accent-600);
             text-decoration: none;
             transition: color 0.2s ease;
         }
         .prose a:hover,
-        main a:not([class*="border"]):not([class*="bg-"]):not([class*="btn"]):hover {
-            color: #0f766e; /* text-accent-700 */
+        .blog-content-full a:not([class*="border"]):not([class*="bg-"]):not([class*="btn"]):hover {
+            color: var(--accent-700);
         }
         
         .hero-accent {
-            color: #0d9488; /* text-accent-600 - CORRECTED */
+            color: var(--accent-600);
         }
         
         /* Critical focus styles for accessibility - improved for WCAG 2.1 */
         *:focus-visible { 
-            outline: 3px solid #0d9488; 
+            outline: 3px solid var(--accent-600); 
             outline-offset: 2px;
-            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.1);
+            box-shadow: 0 0 0 4px var(--accent-600-alpha-10);
         }
         a:focus-visible, button:focus-visible {
-            outline: 3px solid #0d9488;
+            outline: 3px solid var(--accent-600);
             outline-offset: 2px;
-            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
+            box-shadow: 0 0 0 4px var(--accent-600-alpha-15);
             transition: box-shadow 0.2s ease;
         }
         /* Remove default focus for mouse users, keep for keyboard */
@@ -167,7 +235,7 @@
         }
         
         /* Mobile menu critical styles */
-        .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 40; }
+        .mobile-menu-overlay { position: fixed; inset: 0; background: var(--black-alpha-50); z-index: 40; }
         
         /* Skip link styles - hidden off-screen, only visible when focused via keyboard */
         .skip-link { 
@@ -176,8 +244,8 @@
             top: -9999px;
             z-index: 999; 
             padding: 8px 16px; 
-            background: #000; 
-            color: #fff; 
+            background: var(--black); 
+            color: var(--white); 
             text-decoration: none;
             opacity: 0;
             pointer-events: none;
@@ -196,30 +264,94 @@
         }
         
         /* Blog content hierarchical spacing - overrides default spacing for better visual hierarchy */
+        .blog-content {
+            font-size: 1rem; /* text-base */
+        }
+        @media (min-width: 768px) {
+            .blog-content {
+                font-size: 1.25rem;
+                line-height: 1.82222;
+            }
+        }
+
+        .blog-hero a {
+            color: var(--primary-50);
+        }
+        
+        .blog-hero a:hover {
+            color: var(--accent-200);
+        }
+
+        .blog-hero > h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            letter-spacing: -0.04em;
+            text-shadow: 0 0 21px var(--black-alpha-30), 0 1px 2px var(--black-alpha-20); /* Subtle depth */
+        }
+        @media (min-width: 768px) {
+            .blog-hero > h1 {
+                font-size: 3.9rem;
+            }
+        }
+
         .blog-content > h2 {
-            margin-top: 2rem; /* Large top margin for major section breaks */
-            margin-bottom: 1rem; /* Reduced bottom margin to keep content connected */
+            font-size: 2.2rem;
+            letter-spacing: -0.04em;
+            margin-top: 3rem; 
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .blog-content > h2 {
+                font-size: 3rem;
+                margin-top: 4rem; 
+            }
         }
         
         .blog-content > h3 {
-            margin-top: 1.75rem; /* Moderate top margin for subsections */
-            margin-bottom: 0.75rem; /* Smaller bottom margin */
+            font-size: 1.5rem;
+            letter-spacing: -0.04em;
+            margin-top: 1.5rem; 
+            margin-bottom: 1rem; 
+        }
+        @media (min-width: 768px) {
+            .blog-content > h3 {
+                font-size: 1.875rem;
+                margin-top: 2rem;
+            }
         }
         
         .blog-content > h4 {
-            margin-top: 1.5rem; /* Smaller top margin for sub-subsections */
-            margin-bottom: 0.5rem; /* Minimal bottom margin */
+            margin-top: 1rem; 
+            margin-bottom: 1rem; 
+        }
+        @media (min-width: 768px) {
+            .blog-content > h4 {
+                margin-top: 1.5rem;
+            }
         }
         
         .blog-content > p {
-            margin-bottom: 1.25rem; /* Consistent paragraph spacing */
+            margin-top: 1rem; 
+            margin-bottom: 1rem; 
         }
         
         .blog-content > ul,
         .blog-content > ol {
-            margin-bottom: 1.25rem; /* Match paragraph spacing */
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-left: 1.5em;
         }
-        
+        @media (min-width: 768px) {
+            .blog-content > ul,
+            .blog-content > ol {
+                padding-left: 2em;
+            }
+        }
+        .blog-content > ul li,
+        .blog-content > ol li {
+            margin-bottom: .5rem;
+        }
+
         /* First element after headings should have reduced spacing */
         .blog-content > h2 + p,
         .blog-content > h2 + ul,
@@ -232,17 +364,24 @@
         .blog-content > h4 + ol {
             margin-top: 0; /* Remove extra spacing after headings */
         }
+        
+        /* References section - break long URLs/text on mobile */
+        .references-section {
+            word-break: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
     </style>
     
     <!-- Critical JavaScript inline for immediate execution -->
     <script src="/js/scripts-critical.js"></script>
 </head>
-<body class="bg-gray-50 text-gray-900 leading-relaxed no-fouc">
+<body class="leading-relaxed no-fouc">
 
 {{ partial "header.html" . }}
 {{ partial "navigation.html" . }}
 
-<main id="main">
+<main id="main" class="{{ if eq .Type "page" }}landing-page{{ end }}">
     {{ block "main" . }}{{ end }}
 </main>
 

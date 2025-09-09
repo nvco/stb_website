@@ -32,10 +32,10 @@
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/about/" class="{{ if eq .Section "about" }}text-accent-600 font-medium{{ else }}text-primary-700 hover:text-accent-600 transition-colors{{ end }}">About</a>
-                    <a href="/services/" class="{{ if eq .Section "services" }}text-accent-600 font-medium{{ else }}text-primary-700 hover:text-accent-600 transition-colors{{ end }}">Services</a>
-                    <a href="/cancellation-policy/" class="{{ if eq .Title "Cancellation Policy - Still Time Beauty" }}text-accent-600 font-medium{{ else }}text-primary-700 hover:text-accent-600 transition-colors{{ end }}">Boutique Policies</a>
-                    <a href="/pre-post-treatment/" class="{{ if eq .Title "Pre & Post Treatment Guidelines" }}text-accent-600 font-medium{{ else }}text-primary-700 hover:text-accent-600 transition-colors{{ end }}">Pre/post Treatment</a>
+                    <a href="/about/" class="{{ if eq .Section "about" }}text-accent-600 font-semibold{{ else }}text-primary-700 hover:text-accent-600 transition-colors{{ end }}">About</a>
+                    <a href="/services/" class="{{ if eq .Section "services" }}text-accent-600 font-semibold{{ else }}text-primary-700 hover:text-accent-600 transition-colors{{ end }}">Services</a>
+                    <a href="/cancellation-policy/" class="{{ if eq .Title "Cancellation Policy - Still Time Beauty" }}text-accent-600 font-semibold{{ else }}text-primary-700 hover:text-accent-600 transition-colors{{ end }}">Boutique Policies</a>
+                    <a href="/pre-post-treatment/" class="{{ if eq .Title "Pre & Post Treatment Guidelines" }}text-accent-600 font-semibold{{ else }}text-primary-700 hover:text-accent-600 transition-colors{{ end }}">Pre/post Treatment</a>
                 </div>
                 
                 <!-- Mobile menu button -->
@@ -60,10 +60,10 @@
             <div class="px-2 pt-2 pb-3 sm:px-3">
                 <div class="space-y-1">
                     <a href="/" class="block px-3 py-2 text-primary-700 hover:text-accent-600">Home</a>
-                    <a href="/about/" class="block px-3 py-2 {{ if eq .Section "about" }}text-accent-600 font-medium{{ else }}text-primary-700 hover:text-accent-600{{ end }}">About</a>
-                    <a href="/services/" class="block px-3 py-2 {{ if eq .Section "services" }}text-accent-600 font-medium{{ else }}text-primary-700 hover:text-accent-600{{ end }}">Services</a>
-                    <a href="/cancellation-policy/" class="block px-3 py-2 {{ if eq .Title "Cancellation Policy - Still Time Beauty" }}text-accent-600 font-medium{{ else }}text-primary-700 hover:text-accent-600{{ end }}">Boutique Policies</a>
-                    <a href="/pre-post-treatment/" class="block px-3 py-2 {{ if eq .Title "Pre & Post Treatment Guidelines" }}text-accent-600 font-medium{{ else }}text-primary-700 hover:text-accent-600{{ end }}">Pre/post Treatment</a>
+                    <a href="/about/" class="block px-3 py-2 {{ if eq .Section "about" }}text-accent-600 font-semibold{{ else }}text-primary-700 hover:text-accent-600{{ end }}">About</a>
+                    <a href="/services/" class="block px-3 py-2 {{ if eq .Section "services" }}text-accent-600 font-semibold{{ else }}text-primary-700 hover:text-accent-600{{ end }}">Services</a>
+                    <a href="/cancellation-policy/" class="block px-3 py-2 {{ if eq .Title "Cancellation Policy - Still Time Beauty" }}text-accent-600 font-semibold{{ else }}text-primary-700 hover:text-accent-600{{ end }}">Boutique Policies</a>
+                    <a href="/pre-post-treatment/" class="block px-3 py-2 {{ if eq .Title "Pre & Post Treatment Guidelines" }}text-accent-600 font-semibold{{ else }}text-primary-700 hover:text-accent-600{{ end }}">Pre/post Treatment</a>
                 </div>
                 <a href="tel:{{ .Site.Params.phone_tel }}" class="block text-center 
                       mx-3 mt-5 mb-5 px-6 py-3 

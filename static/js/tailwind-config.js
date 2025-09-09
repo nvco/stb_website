@@ -44,6 +44,7 @@ tailwind.config = {
                     'serif'
                 ],
                 'sans': [
+                    'DM Sans',
                     '-apple-system',
                     'BlinkMacSystemFont',
                     'Segoe UI',

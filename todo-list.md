@@ -90,14 +90,33 @@
 
 ---
 
-## Phase 4: Documentation & Refinement
+## Phase 4: Internal Linking Agent
 
-### 4.1 Update Documentation
+### 4.1 Internal Linking Agent Development
+- [ ] **Create Internal Linking Agent** - Separate agent to handle SEO-optimized internal linking for new blog posts
+- [ ] **Agent specification** - Define agent capabilities and linking strategies
+- [ ] **Integration workflow** - Design how linking agent works with blog content generator output
+- [ ] **Link analysis logic** - Implement intelligent linking based on content topics and keywords
+- [ ] **Existing content scanning** - Agent should analyze existing blog posts for linking opportunities
+- [ ] **SEO compliance** - Ensure links follow internal linking strategy from CLAUDE.md
+- [ ] **Testing and validation** - Verify link quality and relevance
+
+### 4.2 Agent Integration Testing
+- [ ] **Workflow testing** - Test complete flow: blog generation → internal linking → final output
+- [ ] **Link quality review** - Validate that added links provide genuine value
+- [ ] **Performance testing** - Ensure agent doesn't slow down content creation process
+- [ ] **Documentation** - Document usage patterns and best practices
+
+---
+
+## Phase 5: Documentation & Refinement
+
+### 5.1 Update Documentation
 - [ ] **CLAUDE.md updates** - Document complete two-agent workflow
 - [ ] **Content queue template** - Add guidance for category selection
 - [ ] **Blog-content-generator.md** - Reference keyword-analysis-agent integration
 
-### 4.2 Process Refinement
+### 5.2 Process Refinement
 - [ ] **Analysis rule adjustments** - Refine keyword-analysis-agent based on testing
 - [ ] **Agent optimization** - Improve performance based on real usage
 - [ ] **Workflow documentation** - Document best practices for two-agent system
