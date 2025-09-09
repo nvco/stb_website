@@ -18,6 +18,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Fixed accessibility issue with disclaimer font size (16px minimum)
 
 ### Changed
+- [`e3b3b45`](https://github.com/nvco/stb_website/commit/e3b3b45) Refine typography letter spacing for better readability (2025-09-09)
+  - Reduce H1, H2, and H3 letter spacing from -0.04em to -0.02em for improved readability
+  - Remove excessive letter spacing from H4 elements for better text flow
+  - Maintain consistent typography hierarchy across all heading levels
+  - Improve overall reading experience with more balanced character spacing
+
 - [`a6c575c`](https://github.com/nvco/stb_website/commit/a6c575c) Optimize Botox blog post titles for better SEO and readability (2025-09-09)
   - Update meta title to "Top 5 Benefits of Botox in Superior, CO for a Youthful Look"
   - Update H1 title to "Top 5 Benefits of Botox for a Youthful Look in Superior, CO"
