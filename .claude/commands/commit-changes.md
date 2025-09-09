@@ -44,7 +44,11 @@ Add an entry to CHANGELOG.md under the "### Added" or appropriate section using 
 - [`commit_hash`](https://github.com/nvco/stb_website/commit/commit_hash) Brief description (2025-09-04)
   - Specific change or feature details
   - Additional bullet points for multiple changes
+
+- [`previous_commit`](https://github.com/nvco/stb_website/commit/previous_commit) Previous entry...
 ```
+
+**Important**: Always add an empty line between commit entries for better readability.
 
 ## Step 5: Commit Changelog
 Stage and commit the changelog update:
