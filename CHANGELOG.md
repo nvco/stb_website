@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`4eef367`](https://github.com/nvco/stb_website/commit/4eef367) Enhance local FAQ strategy with varied language and location fields (2025-09-11)
+  - Add location field to blog post front matter for Superior and Boulder articles
+  - Implement varied FAQ language patterns to avoid repetitive content across locations
+  - Update FAQ-local strategy with 7 different business value question variations
+  - Consolidate Boulder location transparency guidance into single clear section
+  - Add honest Boulder location answers for surrounding towns with drive times
+  - Update blog posts with hybrid FAQ approach (general + local questions)
+  - Improve FAQ structure using WHERE + business value question patterns
+
 - [`ec8e500`](https://github.com/nvco/stb_website/commit/ec8e500) Implement hybrid local strategy for Blog Content Generator (2025-09-11)
   - Add local-strategy parameter with three approaches: full-local, faq-local, generic
   - Default to faq-local when location provided, generic when no location
