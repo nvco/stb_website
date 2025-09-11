@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`67781c8`](https://github.com/nvco/stb_website/commit/67781c8) Refactor agent architecture with clean two-step workflow and proper documentation organization (2025-09-11)
+  - Rename Content Prioritization Agent to Keyword Strategy Agent for better clarity
+  - Implement clean architecture with internal Analysis Agent called by Keyword Strategy Agent
+  - Restore Botox analysis file to proper analysis/ subfolder structure
+  - Enhanced Blog Content Generator DATA file for complete self-sufficiency in regeneration
+  - Move documentation out of .claude/ folder to prevent slash command conflicts
+  - Relocate agents and commands documentation to docs/ folder structure
+  - Streamlined workflow: single Keyword Strategy Agent call generates both analysis and priority batches
+
 - [`990a134`](https://github.com/nvco/stb_website/commit/990a134) Restructure documentation and optimize CLAUDE.md organization (2025-09-11)
   - Reduced main CLAUDE.md from 600+ lines to 174 lines (71% reduction)
   - Created specialized documentation structure with proper Claude Code file organization
