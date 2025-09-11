@@ -18,7 +18,7 @@ When invoking this agent for a single post, provide:
 - **Category**: Hugo website category (Botox, Dermal Fillers, Dysport, Treatment Comparisons, etc.) - determines how content is categorized on the site
 - **Keyword Sources**: Which analysis files to use for keyword research (e.g., "Botox" or "Botox, Dysport") - determines which CSV/analysis files to read
 - **Content length**: "short form" (1,000-1,500 words) or "long form" (2,000-3,000+ words)
-- **Geographic location** (optional): Specific city (Boulder, Superior, Louisville, etc.) for location-based content
+- **Geographic location** (optional): Specific city (Boulder, Superior, Louisville, etc.) for location-based content - maps to `location` field in front matter
 - **Local strategy** (optional): "full-local" (entire article localized), "faq-local" (generic article + local FAQ section), or "generic" (no location focus)
   - **Dependency**: "full-local" and "faq-local" require geographic location to be provided
   - **Default**: "faq-local" when location provided, "generic" when no location
@@ -92,14 +92,28 @@ The agent will process all posts in the queue file sequentially and generate ind
 
 #### FAQ-Local Strategy (`"faq-local"` - Default when location provided):
 1. **Keep main content generic** - focus on universal topic coverage
-2. **Check for city data** in `/.resources/content-guidelines/cities/[cityname].md` for FAQ section
+2. **Check for city data** in `/.resources/content-guidelines/cities/[cityname].md` for FAQ section and incorporate relevant local details into FAQ answers
 3. **Plan location-specific FAQs** such as:
-   - "Where can I get [treatment] in [location]?"
-   - "Are there [treatment] specialists near [location]?"
-   - "Top reasons to choose [business] for [service]" - (List 3–6 reasons, including features, benefit)
-   - "Best [service] provider in [location]" - (Include features and benefits)
+   - **Location Questions** - Use varied phrasing: 
+      "Where can I get [treatment] **near** [location]?", 
+      "Are there [treatment] specialists **close to** [location]?", 
+      "Where can I find [treatment] in the **[location] area**?", 
+      "Are there [treatment] providers **serving** [location]?", 
+      "Where can I get [treatment] **around** [location]?"
+   - **Honest Boulder Location Answers** - For surrounding towns (Superior, Louisville, Lafayette, Westminster, etc.), always mention Boulder as the actual service location with drive time and incorporate city data details: 
+      "[Location], [state] residents can access [treatment] at Still Time Beauty in nearby Boulder - just a 15-20 minute drive..." or 
+      "Yes, Still Time Beauty in Boulder serves [location], [state] and surrounding communities..." 
+   - **Business Value Questions** - Use varied phrasing: 
+      "Why choose [business] for [service] in [location]?", 
+      "What makes [business] the best [service] provider in [location]?", 
+      "Which is the best [service] provider in [location]?",
+      "Top reasons to choose [business] for [service]", 
+      "What should I expect from [service] at [business]?", 
+      "How does [business] ensure quality [service] results?", 
+      "Why do patients recommend [business] for [service]?"
+   - **State Context**: For ambiguous city names (Superior, Louisville, Lafayette, Westminster), always include "Colorado" or "CO" in FAQ answers for clarity
 4. **Document in working file**: Add local FAQ questions and city-specific answers
-5. **Combine FAQ types**: Mix universal topic FAQs with location-specific FAQs (3-5 general + 2-3 local FAQs)
+5. **Combine FAQ types**: Mix universal topic FAQs with location-specific FAQs (4-6 general + 2-3 local FAQs)
 
 #### Generic Strategy (`"generic"`):
 1. **Skip location integration** - focus purely on topic expertise
@@ -122,6 +136,7 @@ The agent will process all posts in the queue file sequentially and generate ind
    - `publishDate`: Publication date (YYYY-MM-DD)
    - `type`: "blog"
    - `categories`: Array with specified category (e.g., ["Botox"])
+   - `location`: Geographic location if provided (e.g., "Boulder", "Superior")
    - `params.h1title`: Optional cleaner H1 override
    - `faqs`: 3-6 Q&A pairs for structured data schema (combine universal topic FAQs with location-specific FAQs based on local-strategy)
    - `references`: 3-5 credible sources with name and URL fields for build-time rendering
@@ -139,8 +154,8 @@ The agent will process all posts in the queue file sequentially and generate ind
 1. **Create/use H1 title** (use provided H1 if given, otherwise generate from primary keyword) and integrate primary keyword in opening paragraph
 2. **Distribute supporting keywords** naturally throughout content
 3. **Apply geographic optimization based on local-strategy**:
-   - **Full-local**: Add geographic modifiers throughout content for local SEO
-   - **FAQ-local**: Keep main content generic, add location keywords only in FAQ section
+   - **Full-local**: Add geographic modifiers throughout content for local SEO, include state for ambiguous city names
+   - **FAQ-local**: Keep main content generic, add location keywords only in FAQ section with state context in answers
    - **Generic**: No geographic modifiers
 4. **Include semantic keyword variations** for comprehensive coverage
 5. **Balance keyword density** at 1-2% (reasonable SEO approach)
