@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`133705d`](https://github.com/nvco/stb_website/commit/133705d) Implement separate callable agents with transparent two-step workflow and generate lip fillers analysis (2025-09-11)
+  - Update Keyword Analysis Agent to be directly callable by users instead of internal-only
+  - Update Keyword Strategy Agent to read existing analysis files rather than calling Analysis Agent via Task tool
+  - Create transparent two-step workflow: analysis first, then prioritization using analysis results
+  - Generate comprehensive lip fillers keyword analysis with 553 keywords analyzed
+  - Establish statistical breakpoints and volume tiers for strategic targeting
+  - Update documentation across agents and main CLAUDE.md to reflect new workflow
+
 - [`67781c8`](https://github.com/nvco/stb_website/commit/67781c8) Refactor agent architecture with clean two-step workflow and proper documentation organization (2025-09-11)
   - Rename Content Prioritization Agent to Keyword Strategy Agent for better clarity
   - Implement clean architecture with internal Analysis Agent called by Keyword Strategy Agent
