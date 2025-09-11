@@ -37,7 +37,7 @@ The agent will process all posts in the queue file sequentially and generate ind
 
 ### Step 1: Create Working Data File
 1. **Create temporary working file** to capture all research and data collection:
-   - **File location**: `/content/working-data/[article-name]-DATA.md`
+   - **File location**: `/.resources/content-guidelines/blog-content/[article-name]-DATA.md`
    - **File naming**: Same as the article filename but with "-DATA" suffix in capital letters (e.g., if article is `botox-for-migraine-relief.md`, working file is `botox-for-migraine-relief-DATA.md`)
 2. **Populate working file sections**:
    - **Selected Keywords**: List primary and supporting keywords chosen with search volumes
@@ -135,7 +135,7 @@ The agent will process all posts in the queue file sequentially and generate ind
    - **Short form**: Cover key topics with clear, direct explanations
    - **Long form**: Add useful context and examples, but avoid padding with unnecessary details
    - **Section structure**: Use H2 and H3 headings for logical flow - focus on reader needs, not academic completeness
-4. **Quality over quantity**: Better to have 1,800 useful words than 3,000 boring ones
+4. **Quality over quantity**: Better to have 1,000 useful words than 2,000 boring ones
 5. **Differentiate from competitors**: Provide fast, useful information instead of exhaustive coverage that bores readers
 
 ### Step 8: Research and References (Front Matter)
@@ -188,9 +188,12 @@ The agent will generate:
 ## File Management
 
 Generated posts will be saved as:
-- **Location**: `/content/blog/`
+- **Location**: `/.resources/content-guidelines/blog-content/`
 - **Naming**: Derive from generated title unless specific title provided - use `primary-keyword-location-benefit.md` format
 - **Testing**: Agent will validate Hugo compatibility
+- **Manual Publishing Workflow**: 
+  - Article files (.md) can be manually moved to `/content/blog/` when ready to publish
+  - Data files (-DATA.md) remain in blog-content folder for future reference and revisions
 
 ## How to Invoke This Agent
 

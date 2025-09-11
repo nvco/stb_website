@@ -571,7 +571,49 @@ Claude Code automatically invokes the agent when you request blog content creati
 - **City Data**: `/.resources/content-guidelines/cities/[cityname].md` (for local content)
 - **Content Queue**: `/.resources/content-guidelines/content-queue-template.md` (for batch processing)
 
-#### Two-Agent Workflow:
+### Content Prioritization Agent
+Analyzes keyword CSV files and existing analysis data to create strategic content prioritization plans that balance quick wins, medium-term growth, and long-term authority building for optimal SEO progression.
+
+**Location:** `.claude/agents/content-prioritization-agent.md`
+
+#### Purpose:
+- Creates strategic content prioritization with mixed batches for optimal SEO progression
+- Balances Foundation (low-hanging fruit), Growth (medium competition), and Authority (high-value) keywords
+- Organizes keywords into manageable batch files for execution tracking
+- Outputs organized folder structure with checkbox-based progress tracking
+
+#### Invocation Methods:
+
+**Single Category Analysis:**
+```
+Use the content-prioritization-agent to analyze /.resources/content-guidelines/keywords/botox.csv
+```
+
+**Multi-Category Analysis:**
+```
+Use the content-prioritization-agent to prioritize across categories:
+- Process: botox.csv, dermal-fillers.csv, dysport.csv
+- Create unified priority ranking across all categories
+```
+
+#### Agent Capabilities:
+- **Strategic Batching**: Mixed batches of 10 keywords balancing Foundation/Growth/Authority
+- **Pyramid Progression**: 30% Foundation, 50% Growth, 20% Authority distribution
+- **Organized Output**: Category subfolders with batch files (50 keywords per file)
+- **Progress Tracking**: Markdown checkboxes for execution tracking
+- **Scoring System**: Quick Win Score and Authority Score calculations
+
+#### Required Input:
+- **CSV Format**: Standard keyword research export with volume, competition, and trend data
+- **File Location**: `/.resources/content-guidelines/keywords/[category].csv`
+- **Optional**: `/.resources/content-guidelines/keywords/[category]-analysis.md` (enhances scoring)
+
+#### Generated Output:
+- **Folder Structure**: `/.resources/content-guidelines/content-todo/[category]/`
+- **Batch Files**: `batch-01.md`, `batch-02.md`, etc. (50 keywords per file)
+- **Universal Guide**: `README.md` in content-todo folder explaining metrics
+
+#### Three-Agent Workflow:
 
 **Complete Content Creation Process:**
 
@@ -585,7 +627,16 @@ Claude Code automatically invokes the agent when you request blog content creati
    - Creates statistical breakpoints for high/mid/long-tail keyword categorization
    - Identifies competition sweet spots and growth trend classifications
 
-3. **Content Generation**:
+3. **Strategic Prioritization**:
+   ```
+   Use the content-prioritization-agent to analyze /.resources/content-guidelines/keywords/[category].csv
+   ```
+   - Creates organized batch files with strategic keyword ordering
+   - Generates `/.resources/content-guidelines/content-todo/[category]/batch-01.md` 
+   - Balances Foundation/Growth/Authority across batches for optimal progression
+   - Outputs checkbox format for execution tracking
+
+4. **Content Creation**:
    ```
    Use the blog-content-generator agent to create a blog post:
    - Primary topic: "Your topic here"
@@ -593,13 +644,14 @@ Claude Code automatically invokes the agent when you request blog content creati
    - Content length: "long form"
    - Geographic location: "Boulder"
    ```
+   - Creates individual blog posts following prioritized batch order
    - Reads both CSV data and analysis rules for optimal keyword selection
-   - Uses analysis breakpoints to categorize keywords into tiers
-   - Applies data-driven selection strategy with error handling
-   - Fails gracefully if analysis.md file is missing
+   - Uses analysis breakpoints and prioritization strategy
 
 **Benefits:**
-- **Scalable**: Drop new CSV → run analysis → ready for blog generation
+- **Strategic**: Smart prioritization prevents getting stuck in low-value content
+- **Organized**: Clean folder structure with manageable batch files
+- **Executable**: Checkbox format makes progress tracking simple and actionable
+- **Scalable**: Drop new CSV → analyze → prioritize → execute in batches
 - **Consistent**: Same statistical methodology applied across all categories  
 - **Data-driven**: Specific numerical thresholds replace generic guidance
-- **Error-safe**: Clear error messages when analysis files are missing
