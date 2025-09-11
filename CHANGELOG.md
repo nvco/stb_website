@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`892e1c1`](https://github.com/nvco/stb_website/commit/892e1c1) Add Internal Linking Agent and update commit workflow (2025-09-11)
+  - Create Internal Linking Agent for SEO-optimized internal linking
+  - Update Blog Content Generator to use new blog-content folder structure  
+  - Enhance commit-changes command to support quick vs full commit modes
+  - Update Content Prioritization Agent with proper YAML front matter
+  - Clean up outdated resources files and documentation
+  - Complete Phase 5 Internal Linking Agent development in todo-list
 - [`d1c5495`](https://github.com/nvco/stb_website/commit/d1c5495) Enhance blog post structure with FAQ, references, disclaimer, and improved typography (2025-09-09)
   - Added automatic FAQ section rendering from frontmatter faqs array
   - Added references section with external link styling and numbering  
