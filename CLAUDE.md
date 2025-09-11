@@ -559,11 +559,27 @@ Claude Code automatically invokes the agent when you request blog content creati
 #### Agent Capabilities:
 - **Keyword Integration**: Uses category-specific CSV files with data-driven analysis rules
 - **Analysis-Driven Selection**: Leverages `[category]-analysis.md` files from Keyword Analysis Agent
-- **Local Data**: Leverages city-specific data from `/.resources/content-guidelines/cities/`
-- **Content Differentiation**: Creates unique angles for similar topics across locations
+- **Hybrid Local Strategy**: Three approaches for location-based content optimization
+- **Content Differentiation**: Creates unique angles based on chosen local strategy
 - **SEO Optimization**: 9th grade reading level with 1-2% keyword density
 - **Hugo Compliance**: Proper front matter, categories, FAQ schema
 - **Flexible Length**: Short form (1,000-1,500 words) or long form (2,000-3,000+ words)
+
+#### Local Strategy Options:
+- **Full-Local**: Entire article localized with city-specific content throughout (use for service keywords, location-intent terms)
+- **FAQ-Local**: Generic article + location-specific FAQ section (default when location provided - use for educational content)
+- **Generic**: No location focus, pure topic expertise (use for universal educational content)
+
+#### Local Strategy Quick Reference:
+**Default Behavior:**
+- **No Location Provided** → Automatic "generic" strategy
+- **Location Provided + No Strategy** → Automatic "faq-local" strategy (DEFAULT)
+- **Location Provided + Strategy Specified** → Uses specified strategy
+
+**When to Use Which Strategy:**
+- **"full-local"**: Service keywords, "near me" searches, location-intent terms
+- **"faq-local"**: Educational content, how-to guides, technical topics (DEFAULT with location)
+- **"generic"**: Universal content, comparison posts, broad educational topics
 
 #### Required Files:
 - **Keywords**: `/.resources/content-guidelines/keywords/[category].csv` (category-specific keyword files)
@@ -655,3 +671,51 @@ Use the content-prioritization-agent to prioritize across categories:
 - **Scalable**: Drop new CSV → analyze → prioritize → execute in batches
 - **Consistent**: Same statistical methodology applied across all categories  
 - **Data-driven**: Specific numerical thresholds replace generic guidance
+
+### Internal Linking Agent
+Adds SEO-optimized internal links to blog posts based on content analysis and strategic linking principles, following Still Time Beauty's internal linking strategy.
+
+**Location:** `.claude/agents/internal-linking-agent.md`
+
+#### Purpose:
+- Analyzes blog post content and adds strategic internal links for SEO enhancement
+- Ensures accessibility compliance with required ARIA labels for all internal links
+- Maintains natural content flow while supporting search engine optimization goals
+- Prevents over-optimization by limiting to 2-3 strategic links per post
+
+#### Invocation Methods:
+
+**Standard Usage:**
+```
+Use the internal-linking-agent to add internal links:
+- Blog post file: /content/blog/botox-for-migraines-boulder.md
+```
+
+**With Custom Link Limit:**
+```
+Use the internal-linking-agent to add internal links:
+- Blog post file: /content/blog/dermal-fillers-guide.md
+- Link limit: 2
+```
+
+#### Agent Capabilities:
+- **Content Analysis**: Extracts topics, keywords, and linking opportunities from blog posts
+- **Target Page Discovery**: Scans existing blog posts and main site pages for relevant linking targets
+- **Strategic Link Selection**: Applies SEO principles with keyword-rich anchor text and link diversity
+- **Accessibility Compliance**: Generates required ARIA labels for all internal links
+- **Quality Assurance**: Validates links and ensures genuine reader value
+
+#### Required Input:
+- **Blog Post File**: Path to published blog post in `/content/blog/` folder
+- **Link Limit**: Optional parameter (default: 3 links for optimal SEO balance)
+
+#### Generated Output:
+- **Enhanced Blog Post**: Same file updated with strategic internal links
+- **SEO-Optimized Anchors**: Keyword-rich anchor text using target page keywords
+- **Accessibility Markup**: All links include descriptive ARIA labels
+- **Natural Integration**: Links seamlessly integrated without disrupting content flow
+
+#### Workflow Integration:
+1. **Blog Content Generator** creates initial post (moved to `/content/blog/` when ready)
+2. **Internal Linking Agent** analyzes and enhances published posts with strategic internal links
+3. **Direct enhancement** of live blog posts with SEO-optimized internal linking

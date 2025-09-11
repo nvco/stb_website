@@ -18,7 +18,11 @@ When invoking this agent for a single post, provide:
 - **Category**: Hugo website category (Botox, Dermal Fillers, Dysport, Treatment Comparisons, etc.) - determines how content is categorized on the site
 - **Keyword Sources**: Which analysis files to use for keyword research (e.g., "Botox" or "Botox, Dysport") - determines which CSV/analysis files to read
 - **Content length**: "short form" (1,000-1,500 words) or "long form" (2,000-3,000+ words)
-- **Geographic location** (optional): Specific city (Boulder, Superior, Louisville, etc.) or "generic" for non-location content  
+- **Geographic location** (optional): Specific city (Boulder, Superior, Louisville, etc.) for location-based content
+- **Local strategy** (optional): "full-local" (entire article localized), "faq-local" (generic article + local FAQ section), or "generic" (no location focus)
+  - **Dependency**: "full-local" and "faq-local" require geographic location to be provided
+  - **Default**: "faq-local" when location provided, "generic" when no location
+  - **Override**: Can specify "generic" even with location provided for universal content
 - **H1 title** (optional): If provided, use this exact H1; otherwise generate from keyword/topic (typically matches or closely aligns with title)
 
 **Field Distinction:**
@@ -75,12 +79,33 @@ The agent will process all posts in the queue file sequentially and generate ind
 6. **Ensure balanced SEO approach** (not over-optimization) with diverse content angles
 7. **Document in working file**: Add selected keywords with search volumes and analysis rules applied
 
-### Step 3: Local Data Integration
+### Step 3: Local Data Integration (Location-Dependent)
+**Apply based on local-strategy parameter:**
+
+#### Full-Local Strategy (`"full-local"`):
 1. **Check for city data** in `/.resources/content-guidelines/cities/[cityname].md`
-2. **Extract unique local references** for content differentiation
+2. **Extract unique local references** for content differentiation throughout article
 3. **Identify specific landmarks, activities, demographics** for authentic local connection
 4. **Plan content angles** that distinguish this post from similar topics in other locations
-5. **Document in working file**: Add city data and local references to be used
+5. **Integrate location throughout**: Headlines, content sections, and examples
+6. **Document in working file**: Add comprehensive city data and local references
+
+#### FAQ-Local Strategy (`"faq-local"` - Default when location provided):
+1. **Keep main content generic** - focus on universal topic coverage
+2. **Check for city data** in `/.resources/content-guidelines/cities/[cityname].md` for FAQ section
+3. **Plan location-specific FAQs** such as:
+   - "Where can I get [treatment] in [location]?"
+   - "Are there [treatment] specialists near [location]?"
+   - "Top reasons to choose [business] for [service]" - (List 3–6 reasons, including features, benefit)
+   - "Best [service] provider in [location]" - (Include features and benefits)
+4. **Document in working file**: Add local FAQ questions and city-specific answers
+5. **Combine FAQ types**: Mix universal topic FAQs with location-specific FAQs (3-5 general + 2-3 local FAQs)
+
+#### Generic Strategy (`"generic"`):
+1. **Skip location integration** - focus purely on topic expertise
+2. **No city data required** - universal content approach
+3. **Automatic fallback** when no geographic location provided
+4. **Document in working file**: Note generic approach for consistency
 
 ### Step 4: Content Structure Generation
 1. **Reference working data file** as primary source for all content generation:
@@ -98,7 +123,7 @@ The agent will process all posts in the queue file sequentially and generate ind
    - `type`: "blog"
    - `categories`: Array with specified category (e.g., ["Botox"])
    - `params.h1title`: Optional cleaner H1 override
-   - `faqs`: 3-6 Q&A pairs for structured data schema (as content warrants)
+   - `faqs`: 3-6 Q&A pairs for structured data schema (combine universal topic FAQs with location-specific FAQs based on local-strategy)
    - `references`: 3-5 credible sources with name and URL fields for build-time rendering
 2. **Generate H2 sections** with benefit-focused structure:
    - Structure content logically with H2 headings for major topics
@@ -113,15 +138,32 @@ The agent will process all posts in the queue file sequentially and generate ind
 ### Step 5: SEO Optimization
 1. **Create/use H1 title** (use provided H1 if given, otherwise generate from primary keyword) and integrate primary keyword in opening paragraph
 2. **Distribute supporting keywords** naturally throughout content
-3. **Add geographic modifiers** for local SEO (if applicable)
+3. **Apply geographic optimization based on local-strategy**:
+   - **Full-local**: Add geographic modifiers throughout content for local SEO
+   - **FAQ-local**: Keep main content generic, add location keywords only in FAQ section
+   - **Generic**: No geographic modifiers
 4. **Include semantic keyword variations** for comprehensive coverage
 5. **Balance keyword density** at 1-2% (reasonable SEO approach)
 
-### Step 6: Content Differentiation
+### Step 6: Content Differentiation (Strategy-Dependent)
+**Apply based on local-strategy parameter:**
+
+#### Full-Local Strategy:
 1. **Analyze similar content** potential for uniqueness
-2. **Incorporate city-specific details** to prevent duplicate content
+2. **Incorporate city-specific details** throughout content to prevent duplicate content
 3. **Use unique angles** based on local demographics or lifestyle
 4. **Ensure authentic local connection** throughout content
+
+#### FAQ-Local Strategy:
+1. **Focus on topic expertise** for main content differentiation
+2. **Add local differentiation only in FAQ section** with city-specific questions/answers
+3. **Keep main content universally valuable** to avoid thin local content
+4. **Ensure local FAQs provide genuine location-specific value**
+
+#### Generic Strategy:
+1. **Focus purely on topic expertise** and comprehensive coverage
+2. **Differentiate through unique angles** and expert perspective
+3. **No location-based differentiation** needed
 
 ### Step 7: Content Length and Focus Execution
 1. **Prioritize usefulness over word count**:
@@ -189,7 +231,9 @@ The agent will generate:
 
 Generated posts will be saved as:
 - **Location**: `/.resources/content-guidelines/blog-content/`
-- **Naming**: Derive from generated title unless specific title provided - use `primary-keyword-location-benefit.md` format
+- **Naming**: Derive from generated title unless specific title provided - use format based on local-strategy:
+  - **Full-local**: `primary-keyword-location-benefit.md`
+  - **FAQ-local & Generic**: `primary-keyword-topic-benefit.md`
 - **Testing**: Agent will validate Hugo compatibility
 - **Manual Publishing Workflow**: 
   - Article files (.md) can be manually moved to `/content/blog/` when ready to publish
@@ -199,7 +243,7 @@ Generated posts will be saved as:
 
 ### Method 1: Explicit Invocation
 
-**Single Post:**
+**Single Post (Full Local):**
 ```
 Use the blog-content-generator agent to create a blog post:
 - Primary topic: "Botox for crow's feet"
@@ -207,6 +251,27 @@ Use the blog-content-generator agent to create a blog post:
 - Keyword Sources: "Botox"
 - Content length: "long form"
 - Geographic location: "Boulder"
+- Local strategy: "full-local"
+```
+
+**Single Post (FAQ Local - Default):**
+```
+Use the blog-content-generator agent to create a blog post:
+- Primary topic: "How Botox works for wrinkles"
+- Category: "Botox"
+- Keyword Sources: "Botox"
+- Content length: "long form"
+- Geographic location: "Boulder"
+```
+
+**Single Post (Generic):**
+```
+Use the blog-content-generator agent to create a blog post:
+- Primary topic: "Botox side effects and safety"
+- Category: "Botox"
+- Keyword Sources: "Botox"
+- Content length: "long form"
+- Local strategy: "generic"
 ```
 
 **Comparison Post:**
