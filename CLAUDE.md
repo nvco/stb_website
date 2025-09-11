@@ -152,10 +152,13 @@ This project uses specialized Claude Code agents for SEO-optimized content creat
 
 ### Quick Workflow:
 ```
-# 1. Create strategic content batches
-Use the keyword-strategy-agent to analyze /.resources/content-guidelines/keywords/[category].csv
+# 1. Generate statistical analysis
+Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/[category].csv
 
-# 2. Generate blog posts
+# 2. Create strategic content batches  
+Use the keyword-strategy-agent to prioritize /.resources/content-guidelines/keywords/[category].csv
+
+# 3. Generate blog posts
 Use the blog-content-generator agent to create a blog post:
 - Primary topic: "Your topic"
 - Category: "[category]"

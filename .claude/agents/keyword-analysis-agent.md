@@ -6,11 +6,11 @@ tools: [Read, Write, Glob, Grep, Bash]
 
 # Keyword Analysis Agent
 
-**Internal sub-agent** called by Keyword Strategy Agent to perform comprehensive statistical analysis of keyword CSV files and generate data-driven selection rules.
+Performs comprehensive statistical analysis of keyword CSV files and generates data-driven selection rules for SEO-optimized content creation.
 
 ## Purpose
 
-This agent is **not called directly by users**. It is automatically invoked by the Keyword Strategy Agent to:
+This agent can be **called directly by users** to:
 - Process keyword CSV files with rigorous statistical analysis
 - Generate category-specific analysis files with numerical thresholds
 - Create actionable selection rules for the Blog Content Generator
@@ -18,7 +18,7 @@ This agent is **not called directly by users**. It is automatically invoked by t
 
 ## Input Requirements
 
-**Called by Keyword Strategy Agent with:**
+**User provides:**
 - **CSV file path**: Full path to the keyword CSV file (e.g., `/.resources/content-guidelines/keywords/botox.csv`)
 - **Category name**: Treatment category name (e.g., "botox", "dermal-fillers", "dysport")
 
@@ -134,20 +134,33 @@ This agent is **not called directly by users**. It is automatically invoked by t
 - **Clear methodology**: Document analysis approach for transparency
 - **Risk awareness**: Identify potential limitations and edge cases
 
+## How to Invoke This Agent
+
+### Single Category Analysis
+```
+Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/lip-fillers.csv
+```
+
+### Batch Processing
+```
+Use the keyword-analysis-agent to process all CSV files in /.resources/content-guidelines/keywords/
+```
+
 ## Integration with Keyword Strategy Agent
 
-This agent is called internally by Keyword Strategy Agent:
+This agent works in sequence with the Keyword Strategy Agent:
 
-1. **Keyword Strategy Agent** reads CSV file
-2. **Calls this Analysis Agent** via Task tool with CSV path and category
-3. **Analysis Agent** generates analysis file with statistical thresholds
-4. **Returns results** to Keyword Strategy Agent
-5. **Keyword Strategy Agent** uses analysis results for strategic prioritization
+1. **Step 1**: User calls **Keyword Analysis Agent** to generate statistical analysis
+2. **Step 2**: User calls **Keyword Strategy Agent** to create strategic prioritization using the analysis results
+
+**Workflow:**
+1. `Use the keyword-analysis-agent to analyze [category].csv` → Generates analysis file
+2. `Use the keyword-strategy-agent to prioritize [category].csv` → Creates priority batches using analysis
 
 **Benefits:**
-- **Separation of concerns**: Statistical analysis vs strategic prioritization  
-- **Clean architecture**: Each agent focused on its specialty
-- **Maintainable**: Easy to update analysis logic independently
-- **Single user workflow**: User only calls Keyword Strategy Agent
+- **Transparent workflow**: User sees both analysis and prioritization steps  
+- **Flexible**: Can run analysis independently or re-run prioritization with different strategies
+- **Debuggable**: Each step's output is visible and can be reviewed
+- **Maintainable**: Easy to update either analysis or prioritization logic independently
 
-This ensures rigorous statistical analysis supports strategic content prioritization without overwhelming the user with multiple agent calls.
+This ensures rigorous statistical analysis supports strategic content prioritization with full transparency.

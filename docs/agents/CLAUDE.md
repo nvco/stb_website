@@ -189,19 +189,27 @@ Use the internal-linking-agent to add internal links:
 
 1. **Data Preparation**: Add keyword CSV file to `/.resources/content-guidelines/keywords/[category].csv`
 
-2. **Analysis & Strategic Prioritization**:
+2. **Statistical Analysis**:
    ```
-   Use the keyword-strategy-agent to analyze /.resources/content-guidelines/keywords/[category].csv
+   Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/[category].csv
    ```
-   - Calls internal Analysis Agent for comprehensive statistical analysis
-   - Performs strategic prioritization using analysis results
+   - Performs comprehensive statistical analysis of keyword CSV data
+   - Generates `/.resources/content-guidelines/keywords/analysis/[category]-analysis.md` with data-driven thresholds
+   - Creates selection rules and breakpoints for keyword categorization
+   - Identifies competition sweet spots and growth trend classifications
+
+3. **Strategic Prioritization**:
+   ```
+   Use the keyword-strategy-agent to prioritize /.resources/content-guidelines/keywords/[category].csv
+   ```
+   - Reads existing analysis file for statistical thresholds and criteria
+   - Performs strategic prioritization using analysis results  
    - Creates organized batch files with strategic keyword ordering
    - Generates `/.resources/content-guidelines/content-todo/[category]/batch-01.md` for content planning
-   - Generates `/.resources/content-guidelines/keywords/analysis/[category]-analysis.md` for keyword selection
    - Balances Foundation/Growth/Authority across batches for optimal progression
    - Outputs checkbox format for execution tracking
 
-3. **Content Creation**:
+4. **Content Creation**:
    ```
    Use the blog-content-generator agent to create a blog post:
    - Primary topic: "Your topic here"
@@ -213,7 +221,7 @@ Use the internal-linking-agent to add internal links:
    - Reads both CSV data and analysis rules for optimal keyword selection
    - Uses analysis breakpoints and statistical thresholds for keyword categorization
 
-4. **Post-Publication Enhancement**:
+5. **Post-Publication Enhancement**:
    ```
    Use the internal-linking-agent to add internal links:
    - Blog post file: /content/blog/[post-filename].md
