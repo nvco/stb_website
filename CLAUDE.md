@@ -5,14 +5,10 @@ This file provides guidance to Claude Code when working with the Hugo-based Stil
 ## Development Commands
 
 ### Local Development
+**Quick Start:** Use the `/start-hugo-dev` slash command to start the development server with optimal settings.
+
+**Manual Commands:**
 ```bash
-# Start Hugo development server (from project root)
-# IMPORTANT: Use run_in_background=true in Claude Code to keep server running
-hugo server -D
-
-# Or with drafts and network binding
-hugo server --buildDrafts --bind 0.0.0.0
-
 # Build production site locally (for testing)
 hugo --minify
 
@@ -20,11 +16,10 @@ hugo --minify
 hugo version
 ```
 
-**Claude Code Specific Instructions:**
-- When starting the Hugo server, ALWAYS use the `run_in_background=true` parameter with the Bash tool
-- The server runs at http://localhost:1313/ and auto-reloads on file changes
+**Development Server Notes:**
+- Server runs at http://localhost:1313/ and auto-reloads on file changes
 - Check if server is running with: `ps aux | grep hugo`
-- Use `BashOutput` tool to monitor server status and output
+- Use `BashOutput` tool to monitor server status when running in background
 
 ### Deployment
 Production deployment is automated via GitHub Actions on push to `main` branch:
@@ -46,277 +41,15 @@ Required GitHub Secrets:
 - Automated deployment via GitHub Actions
 - Original PHP site backed up in `original-site-backup` branch
 
-## Architecture Overview
+## Architecture
 
-This is a Hugo static site for a medical aesthetics practice, migrated from PHP with all original functionality preserved.
+Hugo static site for medical aesthetics practice. **Comprehensive documentation:** `docs/architecture/CLAUDE.md`
 
-### Hugo Structure (Now at Project Root)
-```
-/ (project root)
-├── content/                    # Page content (markdown)
-│   ├── _index.md              # Homepage (type: page, layout: home)
-│   ├── about.md               # About page (type: page, layout: about)
-│   ├── services.md            # Services page (type: page, layout: services)
-│   ├── cancellation-policy.md # Policies (type: page, layout: cancellation-policy)
-│   ├── pre-post-treatment.md  # Treatment guidelines (type: page, layout: pre-post-treatment)
-│   ├── legal/                 # Legal pages (type: legal)
-│   │   ├── privacy-policy.md
-│   │   ├── hipaa-notice.md
-│   │   ├── medical-disclaimers.md
-│   │   └── terms-of-service.md
-│   └── blog/                  # Blog posts
-├── layouts/
-│   ├── _default/
-│   │   ├── baseof.html        # Base template with custom typography CSS
-│   │   ├── list.html
-│   │   ├── single.html
-│   │   └── taxonomy.html      # Category/taxonomy pages template
-│   ├── page/                  # ⭐ All main page layouts
-│   │   ├── home.html          # Homepage layout
-│   │   ├── about.html         # About page layout
-│   │   ├── services.html      # Services page layout
-│   │   ├── cancellation-policy.html  # Policy page layout
-│   │   └── pre-post-treatment.html   # Treatment guidelines layout
-│   ├── legal/
-│   │   └── single.html        # Legal pages with white backdrop container
-│   ├── blog/
-│   │   ├── list.html          # Blog listing page
-│   │   └── single.html        # Blog post template
-│   ├── 404.html               # Custom 404 error page
-│   └── partials/              # Reusable components
-│       ├── cta-call-button.html
-│       ├── cta-section-large.html
-│       ├── faq-section.html
-│       ├── footer.html
-│       ├── header.html
-│       ├── info-card.html
-│       ├── navigation.html
-│       ├── promo-offer.html      # Promotional offer badge (30% off)
-│       ├── scripts.html
-│       └── structured-data.html
-├── static/                    # Static assets
-│   ├── images/                # Image files (organized)
-│   └── js/                    # JavaScript files
-├── archetypes/                # Content templates
-├── assets/                    # Hugo asset pipeline (empty)
-├── data/                      # Data files (empty)
-├── i18n/                      # Internationalization (empty)
-├── themes/                    # Hugo themes (empty)
-├── public/                    # Generated site output (git-ignored)
-├── hugo.toml                  # Hugo configuration
-└── resources/                 # Project documentation and assets
-```
-
-### Content Type System
-
-**Main Pages** (all use `type: "page"`):
-- **Home**: `_index.md` → `layout: "home"` → `layouts/page/home.html`
-- **About**: `about.md` → `layout: "about"` → `layouts/page/about.html`
-- **Services**: `services.md` → `layout: "services"` → `layouts/page/services.html`
-- **Policies**: `cancellation-policy.md` → `layout: "cancellation-policy"` → `layouts/page/cancellation-policy.html`
-- **Treatment**: `pre-post-treatment.md` → `layout: "pre-post-treatment"` → `layouts/page/pre-post-treatment.html`
-
-**Legal Pages** (specialized type):
-- **Legal**: `legal/*.md` → `type: "legal"` → `layouts/legal/single.html`
-- Uses white backdrop container for professional presentation
-
-**Blog Posts** (with enhanced structure):
-- **Blog**: `blog/*.md` → `type: "blog"` → `layouts/blog/single.html`
-- Support `categories: ["Category Name"]` in front matter
-- Categories automatically generate taxonomy pages at `/categories/category-name/`
-- **Enhanced sections**: FAQs, References, and Medical Disclaimer automatically added
-- **Hierarchical spacing**: Improved typography with proper visual section breaks
-
-**Category Pages** (auto-generated):
-- **Categories**: `/categories/botox/` → Hugo auto-generates → `layouts/_default/taxonomy.html`
-- No content files needed - generated from blog post categories
-- Custom metadata handled via template conditionals
-
-**Content Files Pattern**:
-- Pages with custom HTML layouts contain **only front matter** (no content)
-- All content is hardcoded in the layout templates
-- Hugo variables replace original PHP variables (`{{ .Site.Params.phone }}`)
-
-## Key Patterns
-
-### Layout Architecture
-- **`layouts/page/`**: All main site page layouts
-- **`layouts/legal/`**: Legal pages with specialized styling  
-- **`layouts/partials/`**: Reusable components (CTA buttons, navigation)
-- **`layouts/_default/baseof.html`**: Base template with custom CSS for typography
-
-### Hugo Template Variables
-Original PHP variables converted to Hugo params:
-```go
-// PHP: <?php echo $phone; ?>
-// Hugo: {{ .Site.Params.phone }}
-
-// PHP: <?php echo $business_name; ?>
-// Hugo: {{ .Site.Params.business_name }}
-```
-
-### CSS & Styling
-- **Tailwind CSS**: Primary styling framework via CDN
-- **Custom Colors**: Extended Tailwind config in `/static/js/tailwind-config.js`
-  - Primary palette: Grays for text and backgrounds
-  - Accent palette: Teal shades for CTAs and highlights
-  - Coral-500: `#EE6D71` for promotional elements
-- **Custom CSS**: Typography rules in `baseof.html` for proper markdown rendering
-- **Responsive**: Mobile-first design with proper accessibility
-- **Icons**: Lucide icons for consistent iconography
-
-## Content Management
-
-### Page Types
-1. **Landing Pages**: Custom HTML layouts with full design control
-2. **Legal Pages**: Markdown content with specialized container styling
-3. **Blog Posts**: Standard markdown with Hugo's built-in blog functionality
-
-### Hugo Best Practices Followed
-- Content types organized by function
-- Layouts follow Hugo's lookup hierarchy
-- Front matter contains only necessary metadata
-- Clean separation of content and presentation
-
-## Recent Changes (August 2025)
-
-### Documentation Improvements (v1.3.2)
-**What Changed:**
-- ✅ Added comprehensive coding standards reference to CLAUDE.md
-- ✅ Updated front matter standardization with all content types
-- ✅ Added references to `.cursor/rules/` files for development consistency
-- ✅ Documented FAQ schema, SEO directives, and author fields
-
-**Technical Details:**
-- Coding standards section references general principles, HTML accessibility, JavaScript, and Tailwind rules
-- Front matter documentation now covers main pages, blog posts, and legal pages separately
-- Added `faqs:` field for blog post question/answer schema
-- Added `robots:` and `sitemap:` fields for legal page SEO control
-- Added `author:` field for blog post attribution
-
-**Benefits:**
-- Consistent code quality standards across development
-- Clear documentation for all content types and their front matter requirements
-- Better developer onboarding and maintenance workflows
-
-### Accessibility Improvements (v1.3.0)
-**What Changed:**
-- ✅ Added `aria-hidden="true"` to all decorative icons (Lucide icons and SVGs)
-- ✅ Added `role="img"` to star rating containers with `aria-label` attributes
-- ✅ Enhanced keyboard focus indicators with `:focus-visible` pseudo-class
-- ✅ Improved screen reader compatibility across all pages
-
-**Technical Details:**
-- All `<i data-lucide>` elements now have `aria-hidden="true"`
-- Star rating `<div>` elements with `aria-label` now have `role="img"` for proper semantics
-- Focus styles use 3px outline with box-shadow for better visibility
-- Uses `:focus-visible` to show focus only for keyboard users, not mouse users
-
-**Benefits:**
-- Better WCAG 2.1 compliance
-- Improved screen reader experience
-- Enhanced keyboard navigation
-- Lighthouse accessibility score improvements
-
-## Recent Architectural Changes (August 2025)
-
-### Root Directory Migration (v1.2.0)
-**What Changed:**
-- ✅ Moved entire Hugo site from `hugo-site/` subdirectory to project root
-- ✅ Follows standard Hugo project structure conventions
-- ✅ Simplifies development and deployment workflows
-
-**Benefits:**
-- Standard Hugo commands work without path prefixes
-- Cleaner project structure
-- Easier CI/CD integration
-- Better tooling compatibility
-
-## Previous Architectural Changes
-
-### Layout Restructuring
-**What Changed:**
-- ✅ Moved all main page layouts from scattered locations to unified `layouts/page/` directory
-- ✅ Standardized all main pages to use `type: "page"` with individual `layout:` specifications
-- ✅ Cleaned up inconsistent content type usage
-
-**Before:**
-```
-layouts/
-├── index.html              # Homepage
-├── about.html              # About page  
-├── services/
-│   └── single.html         # Services page
-├── cancellation-policy.html
-└── pre-post-treatment.html
-```
-
-**After:**
-```
-layouts/
-├── page/                   # ⭐ All main pages now organized here
-│   ├── home.html          # Homepage (was index.html)
-│   ├── about.html         # About page
-│   ├── services.html      # Services page (was services/single.html)
-│   ├── cancellation-policy.html
-│   └── pre-post-treatment.html
-├── legal/
-│   └── single.html        # Specialized legal page template
-```
-
-### Content Front Matter Standardization
-
-**Main Pages Pattern:**
-```yaml
----
-title: "Page Title"
-description: "SEO description"
-keywords: "SEO keywords"
-date: 2025-01-01
-type: "page"                # ⭐ Consistent content type
-layout: "specific-layout"   # ⭐ Individual layout name
----
-```
-
-**Blog Posts Pattern:**
-```yaml
----
-title: "Blog Post Title"
-description: "SEO description"
-keywords: "SEO keywords"
-author: "Still Time Beauty"
-date: 2025-07-19              # ⭐ Content creation/authoring date
-publishDate: 2025-09-03       # ⭐ Publication date (controls when live)
-type: "blog"
-params:                       # ⭐ Optional parameters
-  h1title: "Custom H1 Title"  # ⭐ Override H1 display title (falls back to title if not set)
-faqs:                         # ⭐ FAQ schema for blog posts
-  - question: "Question text?"
-    answer: "Answer text"
-references:                   # ⭐ Reference citations for blog posts
-  - name: "Reference Title"
-    url: "https://example.com"
----
-```
-
-**Legal Pages Pattern:**
-```yaml
----
-title: "Legal Page Title"
-description: "Legal page description"
-date: 2025-07-01
-type: "legal"
-robots: "noindex, nofollow" # ⭐ Prevent search indexing
-sitemap:                    # ⭐ Exclude from sitemap
-  disable: true
----
-```
-
-### Hugo Best Practices Applied
-- **Content Type Consistency**: All main pages use `type: "page"`
-- **Layout Organization**: Grouped by content type in `layouts/page/`
-- **Template Lookup**: Follows Hugo's `layouts/{type}/{layout}.html` convention
-- **Maintainability**: Clear separation and logical organization
+### Quick Reference:
+- **Content Types**: `page`, `blog`, `legal` with standardized front matter
+- **Layouts**: Organized in `layouts/page/`, `layouts/legal/`, `layouts/blog/`
+- **Styling**: Tailwind CSS + custom colors, Lucide icons
+- **Key Patterns**: Content in markdown, layouts in HTML, Hugo variables for dynamic data
 
 ## Development Workflow
 
@@ -341,45 +74,6 @@ Reference and follow the rules defined in:
 
 These standards ensure consistent, accessible, and maintainable code across the project.
 
-## SEO-Optimized Internal Linking Strategy
-
-**Purpose**: SEO optimization, not user convenience. Focus on search engine value and keyword targeting.
-
-**Core Principles:**
-1. **No duplicate links** - Avoid linking the same anchor text to the same target page multiple times per page
-2. **Keyword-rich anchor text** - Use target page keywords: "Board-Certified Nurse Practitioner", "Botox and dermal filler"
-3. **Link diversity** - Each page should link to different target pages for optimal link equity distribution
-4. **Natural context** - Links must provide genuine value and feel contextual
-5. **Strategic targeting** - Support important search terms and page authority
-6. **Accessibility compliance** - Always include descriptive `aria-label` attributes explaining link destination and purpose
-
-**Maintenance Guidelines:**
-- **Review quarterly** - Check for new linking opportunities as content grows
-- **No convenience linking** - Resist adding links just for user navigation
-- **Anchor text variation** - Avoid repetitive phrases, vary keyword targeting
-- **Link equity balance** - Ensure all important pages receive internal links
-
-**Accessibility Requirements:**
-- **ARIA labels required** - Every internal link must have `aria-label="descriptive context"`
-- **Clear destination context** - Labels should explain where the link leads and why
-- **No redundant announcements** - Avoid "internal link" or similar unnecessary screen reader text
-- **Example format**: `<a href="/about/" aria-label="Learn about our Board-Certified Nurse Practitioner credentials">Board-Certified Nurse Practitioner</a>`
-
-## Migration Notes
-
-### Preserved Features
-- All original PHP functionality converted
-- Clean URL structure (`/about`, `/services`, etc.)
-- Responsive design and mobile optimization
-- Legal compliance and professional presentation
-- SEO optimization and structured data
-
-### Hugo Advantages
-- Static site generation for better performance
-- Built-in development server with live reload
-- Simplified deployment and hosting
-- Better security (no server-side processing)
-- Version control friendly (all text files)
 
 ## Common Tasks
 
@@ -431,291 +125,51 @@ This Hugo implementation maintains all the functionality and design quality of t
 
 ## Custom Slash Commands
 
-This project includes custom Claude Code slash commands to streamline common development tasks:
+Custom Claude Code commands for streamlined development workflows. **Full documentation:** `.claude/commands/CLAUDE.md`
 
-### `/commit-changes`
-Automates the complete git commit workflow:
-1. Shows current git status and changes
-2. Stages all changes
-3. Creates descriptive commit with proper formatting
-4. Updates CHANGELOG.md with properly categorized entry
-5. Commits the changelog
-6. Shows final status
+### Available Commands:
 
-**Changelog Categorization Rules:**
-When updating CHANGELOG.md, analyze the commit content and categorize under the appropriate H3 section:
-
-- **`### Added`** - New features, new files, new functionality
-  - Examples: "Add new component", "Create new agent", "Implement new feature"
-  
-- **`### Changed`** - Changes to existing functionality, refactoring, improvements
-  - Examples: "Update existing component", "Improve performance", "Refactor code", "Replace CDN with self-hosted"
-  
-- **`### Fixed`** - Bug fixes, corrections, issue resolutions
-  - Examples: "Fix accessibility issue", "Resolve styling bug", "Correct typo"
-  
-- **`### Security`** - Security improvements, vulnerability fixes
-  - Examples: "Enhance security headers", "Fix XSS vulnerability"
-  
-- **`### Performance`** - Performance optimizations, speed improvements
-  - Examples: "Optimize font loading", "Reduce bundle size", "Improve loading times"
-
-**Important:** Always add new entries at the TOP of their respective sections, with empty lines between entries for readability.
-
-**Usage:** Simply type `/commit-changes` to execute the full workflow.
-
-### `/start-hugo-dev`
-Starts Hugo development server with project-specific settings:
-- Includes draft content
-- Binds to all network interfaces
-- Auto-reloads on changes
-
-**Usage:** Type `/start-hugo-dev` to start the development environment.
+- **`/commit-changes`** - Automated git commit workflow with changelog categorization
+- **`/start-hugo-dev`** - Hugo development server with optimal settings for drafts and live reload
 
 ## Custom Agents
 
-This project includes specialized Claude Code agents for complex tasks:
+This project uses specialized Claude Code agents for SEO-optimized content creation. **Full documentation:** `.claude/agents/CLAUDE.md`
 
-### Keyword Analysis Agent
-Analyzes keyword CSV files to generate data-driven selection rules and statistical insights for optimized blog content creation.
+### Available Agents:
 
-**Location:** `.claude/agents/keyword-analysis-agent.md`
+1. **Keyword Analysis Agent** - Statistical analysis of keyword CSV files to generate data-driven selection rules
+   - **Location:** `.claude/agents/keyword-analysis-agent.md`
+   - **Purpose:** Creates analysis files with numerical thresholds for optimal keyword selection
 
-#### Purpose:
-- Processes keyword CSV files with statistical analysis
-- Generates category-specific analysis files with data-driven thresholds
-- Creates actionable selection rules for the Blog Content Generator Agent
-- Eliminates guesswork by providing numerical criteria for keyword selection
+2. **Content Prioritization Agent** - Strategic content planning with balanced batches for optimal SEO progression
+   - **Location:** `.claude/agents/content-prioritization-agent.md`
+   - **Purpose:** Organizes keywords into Foundation/Growth/Authority batches with progress tracking
 
-#### Invocation Methods:
+3. **Blog Content Generator Agent** - Comprehensive, SEO-optimized blog posts with local geographic strategies
+   - **Location:** `.claude/agents/blog-content-generator.md`
+   - **Purpose:** Creates Hugo-compliant blog posts with FAQ schema and keyword integration
 
-**Single Category Analysis:**
+4. **Internal Linking Agent** - Post-publication enhancement with strategic internal links
+   - **Location:** `.claude/agents/internal-linking-agent.md`
+   - **Purpose:** Adds accessibility-compliant internal links for SEO optimization
+
+### Quick Workflow:
 ```
-Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/botox.csv
-```
+# 1. Analyze keywords
+Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/[category].csv
 
-**Batch Processing:**
-```
-Use the keyword-analysis-agent to process CSV files in /.resources/content-guidelines/keywords/ without corresponding analysis.md files
-```
+# 2. Create content batches
+Use the content-prioritization-agent to analyze /.resources/content-guidelines/keywords/[category].csv
 
-#### Agent Capabilities:
-- **Statistical Analysis**: Volume distributions, competition breakpoints, growth trend categorization
-- **Data-Driven Rules**: Generates specific numerical thresholds instead of generic guidance
-- **Competition Sweet Spots**: Identifies optimal competition ranges with precise criteria
-- **Growth Categorization**: Classifies keywords by momentum with specific percentage ranges
-- **Output Format**: Creates `[category]-analysis.md` files with actionable selection rules
-
-#### Required Input:
-- **CSV Format**: Standard keyword research export with volume, competition, and trend data
-- **File Location**: `/.resources/content-guidelines/keywords/[category].csv`
-
-#### Generated Output:
-- **Analysis File**: `/.resources/content-guidelines/keywords/[category]-analysis.md`
-- **Content**: Statistical breakpoints, selection rules, competition criteria, trend classifications
-
-### Blog Content Generator Agent
-Generates comprehensive, SEO-optimized blog posts with keyword research integration and local geographic differentiation.
-
-**Location:** `.claude/agents/blog-content-generator.md`
-
-#### Invocation Methods:
-
-**Method 1: Explicit Invocation**
-
-Single Post:
-```
+# 3. Generate blog posts
 Use the blog-content-generator agent to create a blog post:
-- Primary topic: "Botox for crow's feet"
-- Category: "Botox"
-- Keyword Sources: "Botox"
+- Primary topic: "Your topic"
+- Category: "[category]"
 - Content length: "long form"
 - Geographic location: "Boulder"
-```
 
-Comparison Post:
-```
-Use the blog-content-generator agent to create a blog post:
-- Primary topic: "Botox vs Dysport comparison"
-- Category: "Treatment Comparisons"
-- Keyword Sources: "Botox, Dysport"
-- Content length: "long form" 
-- Geographic location: "Boulder"
-```
-
-Batch Processing:
-```
-Use the blog-content-generator agent to process the content queue at /.resources/content-guidelines/my-january-queue.md
-```
-
-**Method 2: Automatic Invocation**
-Claude Code automatically invokes the agent when you request blog content creation:
-- "Create a blog post about Botox benefits in Boulder"
-- "Generate multiple blog posts from my content planning file"
-- "Write a comprehensive article about dermal fillers"
-- "Create a comparison post about Botox vs Dysport in Boulder"
-- "Write a blog post comparing different injectable treatments"
-
-#### Agent Capabilities:
-- **Keyword Integration**: Uses category-specific CSV files with data-driven analysis rules
-- **Analysis-Driven Selection**: Leverages `[category]-analysis.md` files from Keyword Analysis Agent
-- **Hybrid Local Strategy**: Three approaches for location-based content optimization
-- **Content Differentiation**: Creates unique angles based on chosen local strategy
-- **SEO Optimization**: 9th grade reading level with 1-2% keyword density
-- **Hugo Compliance**: Proper front matter, categories, FAQ schema
-- **Flexible Length**: Short form (1,000-1,500 words) or long form (2,000-3,000+ words)
-
-#### Local Strategy Options:
-- **Full-Local**: Entire article localized with city-specific content throughout (use for service keywords, location-intent terms)
-- **FAQ-Local**: Generic article + location-specific FAQ section (default when location provided - use for educational content)
-- **Generic**: No location focus, pure topic expertise (use for universal educational content)
-
-#### Local Strategy Quick Reference:
-**Default Behavior:**
-- **No Location Provided** → Automatic "generic" strategy
-- **Location Provided + No Strategy** → Automatic "faq-local" strategy (DEFAULT)
-- **Location Provided + Strategy Specified** → Uses specified strategy
-
-**When to Use Which Strategy:**
-- **"full-local"**: Service keywords, "near me" searches, location-intent terms
-- **"faq-local"**: Educational content, how-to guides, technical topics (DEFAULT with location)
-- **"generic"**: Universal content, comparison posts, broad educational topics
-
-#### Required Files:
-- **Keywords**: `/.resources/content-guidelines/keywords/[category].csv` (category-specific keyword files)
-- **Analysis Rules**: `/.resources/content-guidelines/keywords/[category]-analysis.md` (generated by Keyword Analysis Agent)
-- **City Data**: `/.resources/content-guidelines/cities/[cityname].md` (for local content)
-- **Content Queue**: `/.resources/content-guidelines/content-queue-template.md` (for batch processing)
-
-### Content Prioritization Agent
-Analyzes keyword CSV files and existing analysis data to create strategic content prioritization plans that balance quick wins, medium-term growth, and long-term authority building for optimal SEO progression.
-
-**Location:** `.claude/agents/content-prioritization-agent.md`
-
-#### Purpose:
-- Creates strategic content prioritization with mixed batches for optimal SEO progression
-- Balances Foundation (low-hanging fruit), Growth (medium competition), and Authority (high-value) keywords
-- Organizes keywords into manageable batch files for execution tracking
-- Outputs organized folder structure with checkbox-based progress tracking
-
-#### Invocation Methods:
-
-**Single Category Analysis:**
-```
-Use the content-prioritization-agent to analyze /.resources/content-guidelines/keywords/botox.csv
-```
-
-**Multi-Category Analysis:**
-```
-Use the content-prioritization-agent to prioritize across categories:
-- Process: botox.csv, dermal-fillers.csv, dysport.csv
-- Create unified priority ranking across all categories
-```
-
-#### Agent Capabilities:
-- **Strategic Batching**: Mixed batches of 10 keywords balancing Foundation/Growth/Authority
-- **Pyramid Progression**: 30% Foundation, 50% Growth, 20% Authority distribution
-- **Organized Output**: Category subfolders with batch files (50 keywords per file)
-- **Progress Tracking**: Markdown checkboxes for execution tracking
-- **Scoring System**: Quick Win Score and Authority Score calculations
-
-#### Required Input:
-- **CSV Format**: Standard keyword research export with volume, competition, and trend data
-- **File Location**: `/.resources/content-guidelines/keywords/[category].csv`
-- **Optional**: `/.resources/content-guidelines/keywords/[category]-analysis.md` (enhances scoring)
-
-#### Generated Output:
-- **Folder Structure**: `/.resources/content-guidelines/content-todo/[category]/`
-- **Batch Files**: `batch-01.md`, `batch-02.md`, etc. (50 keywords per file)
-- **Universal Guide**: `README.md` in content-todo folder explaining metrics
-
-#### Three-Agent Workflow:
-
-**Complete Content Creation Process:**
-
-1. **Data Preparation**: Add keyword CSV file to `/.resources/content-guidelines/keywords/[category].csv`
-
-2. **Statistical Analysis**: 
-   ```
-   Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/[category].csv
-   ```
-   - Generates `[category]-analysis.md` with data-driven selection rules
-   - Creates statistical breakpoints for high/mid/long-tail keyword categorization
-   - Identifies competition sweet spots and growth trend classifications
-
-3. **Strategic Prioritization**:
-   ```
-   Use the content-prioritization-agent to analyze /.resources/content-guidelines/keywords/[category].csv
-   ```
-   - Creates organized batch files with strategic keyword ordering
-   - Generates `/.resources/content-guidelines/content-todo/[category]/batch-01.md` 
-   - Balances Foundation/Growth/Authority across batches for optimal progression
-   - Outputs checkbox format for execution tracking
-
-4. **Content Creation**:
-   ```
-   Use the blog-content-generator agent to create a blog post:
-   - Primary topic: "Your topic here"
-   - Category: "[category]" 
-   - Content length: "long form"
-   - Geographic location: "Boulder"
-   ```
-   - Creates individual blog posts following prioritized batch order
-   - Reads both CSV data and analysis rules for optimal keyword selection
-   - Uses analysis breakpoints and prioritization strategy
-
-**Benefits:**
-- **Strategic**: Smart prioritization prevents getting stuck in low-value content
-- **Organized**: Clean folder structure with manageable batch files
-- **Executable**: Checkbox format makes progress tracking simple and actionable
-- **Scalable**: Drop new CSV → analyze → prioritize → execute in batches
-- **Consistent**: Same statistical methodology applied across all categories  
-- **Data-driven**: Specific numerical thresholds replace generic guidance
-
-### Internal Linking Agent
-Adds SEO-optimized internal links to blog posts based on content analysis and strategic linking principles, following Still Time Beauty's internal linking strategy.
-
-**Location:** `.claude/agents/internal-linking-agent.md`
-
-#### Purpose:
-- Analyzes blog post content and adds strategic internal links for SEO enhancement
-- Ensures accessibility compliance with required ARIA labels for all internal links
-- Maintains natural content flow while supporting search engine optimization goals
-- Prevents over-optimization by limiting to 2-3 strategic links per post
-
-#### Invocation Methods:
-
-**Standard Usage:**
-```
+# 4. Add internal links
 Use the internal-linking-agent to add internal links:
-- Blog post file: /content/blog/botox-for-migraines-boulder.md
+- Blog post file: /content/blog/[filename].md
 ```
-
-**With Custom Link Limit:**
-```
-Use the internal-linking-agent to add internal links:
-- Blog post file: /content/blog/dermal-fillers-guide.md
-- Link limit: 2
-```
-
-#### Agent Capabilities:
-- **Content Analysis**: Extracts topics, keywords, and linking opportunities from blog posts
-- **Target Page Discovery**: Scans existing blog posts and main site pages for relevant linking targets
-- **Strategic Link Selection**: Applies SEO principles with keyword-rich anchor text and link diversity
-- **Accessibility Compliance**: Generates required ARIA labels for all internal links
-- **Quality Assurance**: Validates links and ensures genuine reader value
-
-#### Required Input:
-- **Blog Post File**: Path to published blog post in `/content/blog/` folder
-- **Link Limit**: Optional parameter (default: 3 links for optimal SEO balance)
-
-#### Generated Output:
-- **Enhanced Blog Post**: Same file updated with strategic internal links
-- **SEO-Optimized Anchors**: Keyword-rich anchor text using target page keywords
-- **Accessibility Markup**: All links include descriptive ARIA labels
-- **Natural Integration**: Links seamlessly integrated without disrupting content flow
-
-#### Workflow Integration:
-1. **Blog Content Generator** creates initial post (moved to `/content/blog/` when ready)
-2. **Internal Linking Agent** analyzes and enhances published posts with strategic internal links
-3. **Direct enhancement** of live blog posts with SEO-optimized internal linking

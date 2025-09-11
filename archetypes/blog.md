@@ -1,11 +1,20 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
-date: {{ .Date }}
-draft: false
 description: ""
-keywords: ""
+keywords:
+  - ""
 author: "Still Time Beauty"
+date: {{ .Date }}
+publishDate: {{ .Date }}
 type: "blog"
-categories: ["Medical Aesthetics"]
-tags: []
+categories: [""]
+location: ""
+params:
+  h1title: ""
+faqs:
+  - question: ""
+    answer: ""
+references:
+  - name: ""
+    url: ""
 ---

@@ -1,8 +1,8 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
-date: {{ .Date }}
-draft: false
 description: ""
 keywords: ""
+date: {{ .Date }}
 type: "page"
+layout: ""
 ---

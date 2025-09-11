@@ -1,9 +1,9 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
-date: {{ .Date }}
-draft: false
 description: ""
-keywords: ""
+date: {{ .Date }}
 type: "legal"
-layout: "legal"
+robots: "noindex, nofollow"
+sitemap:
+  disable: true
 ---
