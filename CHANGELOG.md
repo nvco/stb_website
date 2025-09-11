@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`ec8e500`](https://github.com/nvco/stb_website/commit/ec8e500) Implement hybrid local strategy for Blog Content Generator (2025-09-11)
+  - Add local-strategy parameter with three approaches: full-local, faq-local, generic
+  - Default to faq-local when location provided, generic when no location
+  - Update FAQ structure to combine universal topic FAQs with location-specific FAQs
+  - Add comprehensive local strategy documentation and quick reference guide
+  - Revert commit-changes command to original full workflow approach
+  - Refine local FAQ examples with business-focused questions
+
 - [`892e1c1`](https://github.com/nvco/stb_website/commit/892e1c1) Add Internal Linking Agent and update commit workflow (2025-09-11)
   - Create Internal Linking Agent for SEO-optimized internal linking
   - Update Blog Content Generator to use new blog-content folder structure  
