@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`990a134`](https://github.com/nvco/stb_website/commit/990a134) Restructure documentation and optimize CLAUDE.md organization (2025-09-11)
+  - Reduced main CLAUDE.md from 600+ lines to 174 lines (71% reduction)
+  - Created specialized documentation structure with proper Claude Code file organization
+  - Moved agent documentation to /.claude/agents/CLAUDE.md (285 lines)
+  - Moved slash command documentation to /.claude/commands/CLAUDE.md (180 lines)
+  - Moved architectural deep dive to /docs/architecture/CLAUDE.md (281 lines)
+  - Updated archetypes to match current front matter patterns with all required fields
+
 - [`4eef367`](https://github.com/nvco/stb_website/commit/4eef367) Enhance local FAQ strategy with varied language and location fields (2025-09-11)
   - Add location field to blog post front matter for Superior and Boulder articles
   - Implement varied FAQ language patterns to avoid repetitive content across locations
