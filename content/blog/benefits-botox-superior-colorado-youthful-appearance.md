@@ -25,9 +25,9 @@ faqs:
     answer: "Our approach focuses on natural-looking results that preserve your ability to express emotions while smoothing lines and wrinkles."
   - question: "When will I see results from my Botox treatment?"
     answer: "Initial improvements appear within 3-7 days, with full results visible at 2 weeks post-treatment."
-  - question: "Where can I find Botox in the Superior area?"
+  - question: "Where can I find Botox treatments in the Superior area?"
     answer: "Superior, Colorado residents can access expert Botox treatments at Still Time Beauty in nearby Boulder - just a 15-minute drive. Our Board-Certified Nurse Practitioner provides safe, professional injectable services specifically serving the Superior, Louisville, and northern Boulder County communities."
-  - question: "What makes Still Time Beauty the best Botox provider for Superior residents?"
+  - question: "What makes Still Time Beauty the best Botox treatment provider for Superior residents?"
     answer: "Still Time Beauty offers Superior, Colorado residents expert Botox treatments with a Board-Certified Nurse Practitioner, personalized consultation process, natural-looking results, convenient Boulder location just 15 minutes away, and comprehensive follow-up care to ensure optimal outcomes."
 ---
 

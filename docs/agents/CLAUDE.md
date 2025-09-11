@@ -4,51 +4,57 @@ This file contains detailed documentation for specialized Claude Code agents use
 
 ## Overview
 
-The project uses four specialized agents for SEO-optimized content creation and enhancement:
+The project uses three specialized agents for SEO-optimized content creation and enhancement:
 
-1. **Keyword Analysis Agent** - Statistical analysis of keyword CSV files
-2. **Content Prioritization Agent** - Strategic content planning and batching
-3. **Blog Content Generator Agent** - SEO-optimized blog post creation
-4. **Internal Linking Agent** - Post-publication internal link enhancement
+1. **Keyword Strategy Agent** - Complete analysis and strategic content planning with batching
+2. **Blog Content Generator Agent** - SEO-optimized blog post creation
+3. **Internal Linking Agent** - Post-publication internal link enhancement
 
-## Keyword Analysis Agent
+## Keyword Strategy Agent
 
-Analyzes keyword CSV files to generate data-driven selection rules and statistical insights for optimized blog content creation.
+Performs complete statistical analysis of keyword CSV files and creates strategic content prioritization plans that balance quick wins, medium-term growth, and long-term authority building for optimal SEO progression.
 
-**Location:** `.claude/agents/keyword-analysis-agent.md`
+**Location:** `.claude/agents/keyword-strategy-agent.md`
 
 ### Purpose:
-- Processes keyword CSV files with statistical analysis
-- Generates category-specific analysis files with data-driven thresholds
-- Creates actionable selection rules for the Blog Content Generator Agent
-- Eliminates guesswork by providing numerical criteria for keyword selection
+- Processes keyword CSV files with complete statistical analysis
+- Creates strategic content prioritization with mixed batches for optimal SEO progression
+- Balances Foundation (low-hanging fruit), Growth (medium competition), and Authority (high-value) keywords
+- Organizes keywords into manageable batch files for execution tracking
+- Outputs organized folder structure with checkbox-based progress tracking
 
 ### Invocation Methods:
 
 **Single Category Analysis:**
 ```
-Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/botox.csv
+Use the keyword-strategy-agent to analyze /.resources/content-guidelines/keywords/botox.csv
 ```
 
-**Batch Processing:**
+**Multi-Category Analysis:**
 ```
-Use the keyword-analysis-agent to process CSV files in /.resources/content-guidelines/keywords/ without corresponding analysis.md files
+Use the keyword-strategy-agent to prioritize across categories:
+- Process: botox.csv, dermal-fillers.csv, dysport.csv
+- Create unified priority ranking across all categories
 ```
 
 ### Agent Capabilities:
-- **Statistical Analysis**: Volume distributions, competition breakpoints, growth trend categorization
-- **Data-Driven Rules**: Generates specific numerical thresholds instead of generic guidance
-- **Competition Sweet Spots**: Identifies optimal competition ranges with precise criteria
-- **Growth Categorization**: Classifies keywords by momentum with specific percentage ranges
-- **Output Format**: Creates `[category]-analysis.md` files with actionable selection rules
+- **Integrated Workflow**: Calls internal Analysis Agent for statistical analysis, then performs strategic prioritization
+- **Complete Analysis**: Statistical analysis, volume distributions, competition breakpoints, growth trend categorization
+- **Data-Driven Rules**: Generates specific numerical thresholds for Blog Content Generator keyword selection
+- **Strategic Batching**: Mixed batches of 10 keywords balancing Foundation/Growth/Authority
+- **Pyramid Progression**: 30% Foundation, 50% Growth, 20% Authority distribution
+- **Dual Output**: Both analysis files (for keyword selection) and priority batches (for content planning)
+- **Progress Tracking**: Markdown checkboxes for execution tracking
+- **Scoring System**: Quick Win Score and Authority Score calculations
 
 ### Required Input:
 - **CSV Format**: Standard keyword research export with volume, competition, and trend data
-- **File Location**: `/.resources/content-guidelines/keywords/[category].csv`
+- **File Location**: `/.resources/content-guidelines/keywords/[category].csv` (directly in keywords folder)
 
 ### Generated Output:
-- **Analysis File**: `/.resources/content-guidelines/keywords/[category]-analysis.md`
-- **Content**: Statistical breakpoints, selection rules, competition criteria, trend classifications
+- **Priority Batches**: `/.resources/content-guidelines/content-todo/[category]/batch-01.md` (for content planning)
+- **Analysis Files**: `/.resources/content-guidelines/keywords/analysis/[category]-analysis.md` (for keyword selection)
+- **Universal Guide**: `README.md` in content-todo folder explaining metrics
 
 ## Blog Content Generator Agent
 
@@ -95,7 +101,7 @@ Claude Code automatically invokes the agent when you request blog content creati
 
 ### Agent Capabilities:
 - **Keyword Integration**: Uses category-specific CSV files with data-driven analysis rules
-- **Analysis-Driven Selection**: Leverages `[category]-analysis.md` files from Keyword Analysis Agent
+- **Analysis-Driven Selection**: Leverages `[category]-analysis.md` files from Keyword Strategy Agent
 - **Hybrid Local Strategy**: Three approaches for location-based content optimization
 - **Content Differentiation**: Creates unique angles based on chosen local strategy
 - **SEO Optimization**: 9th grade reading level with 1-2% keyword density
@@ -128,52 +134,10 @@ Claude Code automatically invokes the agent when you request blog content creati
 
 ### Required Files:
 - **Keywords**: `/.resources/content-guidelines/keywords/[category].csv` (category-specific keyword files)
-- **Analysis Rules**: `/.resources/content-guidelines/keywords/[category]-analysis.md` (generated by Keyword Analysis Agent)
+- **Analysis Rules**: `/.resources/content-guidelines/keywords/analysis/[category]-analysis.md` (generated by Keyword Strategy Agent)
 - **City Data**: `/.resources/content-guidelines/cities/[cityname].md` (for local content)
 - **Content Queue**: `/.resources/content-guidelines/content-queue-template.md` (for batch processing)
 
-## Content Prioritization Agent
-
-Analyzes keyword CSV files and existing analysis data to create strategic content prioritization plans that balance quick wins, medium-term growth, and long-term authority building for optimal SEO progression.
-
-**Location:** `.claude/agents/content-prioritization-agent.md`
-
-### Purpose:
-- Creates strategic content prioritization with mixed batches for optimal SEO progression
-- Balances Foundation (low-hanging fruit), Growth (medium competition), and Authority (high-value) keywords
-- Organizes keywords into manageable batch files for execution tracking
-- Outputs organized folder structure with checkbox-based progress tracking
-
-### Invocation Methods:
-
-**Single Category Analysis:**
-```
-Use the content-prioritization-agent to analyze /.resources/content-guidelines/keywords/botox.csv
-```
-
-**Multi-Category Analysis:**
-```
-Use the content-prioritization-agent to prioritize across categories:
-- Process: botox.csv, dermal-fillers.csv, dysport.csv
-- Create unified priority ranking across all categories
-```
-
-### Agent Capabilities:
-- **Strategic Batching**: Mixed batches of 10 keywords balancing Foundation/Growth/Authority
-- **Pyramid Progression**: 30% Foundation, 50% Growth, 20% Authority distribution
-- **Organized Output**: Category subfolders with batch files (50 keywords per file)
-- **Progress Tracking**: Markdown checkboxes for execution tracking
-- **Scoring System**: Quick Win Score and Authority Score calculations
-
-### Required Input:
-- **CSV Format**: Standard keyword research export with volume, competition, and trend data
-- **File Location**: `/.resources/content-guidelines/keywords/[category].csv`
-- **Optional**: `/.resources/content-guidelines/keywords/[category]-analysis.md` (enhances scoring)
-
-### Generated Output:
-- **Folder Structure**: `/.resources/content-guidelines/content-todo/[category]/`
-- **Batch Files**: `batch-01.md`, `batch-02.md`, etc. (50 keywords per file)
-- **Universal Guide**: `README.md` in content-todo folder explaining metrics
 
 ## Internal Linking Agent
 
@@ -219,30 +183,25 @@ Use the internal-linking-agent to add internal links:
 - **Accessibility Markup**: All links include descriptive ARIA labels
 - **Natural Integration**: Links seamlessly integrated without disrupting content flow
 
-## Three-Agent Workflow
+## Simplified Two-Step Workflow
 
 **Complete Content Creation Process:**
 
 1. **Data Preparation**: Add keyword CSV file to `/.resources/content-guidelines/keywords/[category].csv`
 
-2. **Statistical Analysis**: 
+2. **Analysis & Strategic Prioritization**:
    ```
-   Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/[category].csv
+   Use the keyword-strategy-agent to analyze /.resources/content-guidelines/keywords/[category].csv
    ```
-   - Generates `[category]-analysis.md` with data-driven selection rules
-   - Creates statistical breakpoints for high/mid/long-tail keyword categorization
-   - Identifies competition sweet spots and growth trend classifications
-
-3. **Strategic Prioritization**:
-   ```
-   Use the content-prioritization-agent to analyze /.resources/content-guidelines/keywords/[category].csv
-   ```
+   - Calls internal Analysis Agent for comprehensive statistical analysis
+   - Performs strategic prioritization using analysis results
    - Creates organized batch files with strategic keyword ordering
-   - Generates `/.resources/content-guidelines/content-todo/[category]/batch-01.md` 
+   - Generates `/.resources/content-guidelines/content-todo/[category]/batch-01.md` for content planning
+   - Generates `/.resources/content-guidelines/keywords/analysis/[category]-analysis.md` for keyword selection
    - Balances Foundation/Growth/Authority across batches for optimal progression
    - Outputs checkbox format for execution tracking
 
-4. **Content Creation**:
+3. **Content Creation**:
    ```
    Use the blog-content-generator agent to create a blog post:
    - Primary topic: "Your topic here"
@@ -250,11 +209,11 @@ Use the internal-linking-agent to add internal links:
    - Content length: "long form"
    - Geographic location: "Boulder"
    ```
-   - Creates individual blog posts following prioritized batch order
+   - Creates individual blog posts using data-driven keyword selection
    - Reads both CSV data and analysis rules for optimal keyword selection
-   - Uses analysis breakpoints and prioritization strategy
+   - Uses analysis breakpoints and statistical thresholds for keyword categorization
 
-5. **Post-Publication Enhancement**:
+4. **Post-Publication Enhancement**:
    ```
    Use the internal-linking-agent to add internal links:
    - Blog post file: /content/blog/[post-filename].md
@@ -264,12 +223,13 @@ Use the internal-linking-agent to add internal links:
    - Maintains natural content flow
 
 **Benefits:**
+- **Simplified**: Two-step process eliminates redundant analysis
+- **Efficient**: Single agent handles both analysis and prioritization
 - **Strategic**: Smart prioritization prevents getting stuck in low-value content
 - **Organized**: Clean folder structure with manageable batch files
 - **Executable**: Checkbox format makes progress tracking simple and actionable
-- **Scalable**: Drop new CSV → analyze → prioritize → execute in batches
-- **Consistent**: Same statistical methodology applied across all categories  
-- **Data-driven**: Specific numerical thresholds replace generic guidance
+- **Scalable**: Drop new CSV → analyze & prioritize → execute in batches
+- **Data-driven**: Specific numerical thresholds and strategic ordering
 - **Complete Workflow**: From keyword research to published, internally-linked content
 
 ## Workflow Integration
@@ -280,7 +240,6 @@ Use the internal-linking-agent to add internal links:
 3. **Direct enhancement** of live blog posts with SEO-optimized internal linking
 
 ### Development Workflow:
-1. Use **Keyword Analysis Agent** to understand keyword opportunities
-2. Use **Content Prioritization Agent** to create strategic content batches
-3. Use **Blog Content Generator Agent** to create individual blog posts
-4. Use **Internal Linking Agent** to enhance published posts with strategic linking
+1. Use **Keyword Strategy Agent** to analyze keywords and create strategic content batches
+2. Use **Blog Content Generator Agent** to create individual blog posts
+3. Use **Internal Linking Agent** to enhance published posts with strategic linking

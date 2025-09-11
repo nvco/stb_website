@@ -1,10 +1,10 @@
 ---
-name: Content Prioritization Agent
-description: Analyzes keyword CSV files and existing analysis data to create strategic content prioritization plans that balance quick wins, medium-term growth, and long-term authority building for optimal SEO progression
+name: Keyword Strategy Agent
+description: Performs comprehensive keyword analysis and creates strategic content prioritization plans that balance quick wins, medium-term growth, and long-term authority building for optimal SEO progression
 tools: [Read, Write, Glob, Grep]
 ---
 
-# Content Prioritization Agent
+# Keyword Strategy Agent
 
 ## Core Capabilities
 
@@ -31,8 +31,7 @@ tools: [Read, Write, Glob, Grep]
 ## Input Requirements
 
 ### Required Files
-- **Primary**: `/.resources/content-guidelines/keywords/[category].csv`
-- **Optional**: `/.resources/content-guidelines/keywords/[category]-analysis.md` (enhances scoring)
+- **CSV Files**: `/.resources/content-guidelines/keywords/[category].csv` (directly in keywords folder)
 
 ### CSV Structure Expected
 - Keyword/keyphrase
@@ -43,17 +42,50 @@ tools: [Read, Write, Glob, Grep]
 - Competition indexed value (0-100)
 - Top of page bid ranges
 
-### Analysis File Integration
-- Reads existing statistical breakpoints from analysis.md files
-- Uses competition sweet spots and trend classifications
-- Enhances scoring with data-driven thresholds
+### Integrated Analysis Workflow
+- Calls internal Analysis Agent to perform statistical analysis on CSV data
+- Uses generated analysis thresholds for strategic prioritization decisions
+- Creates both analysis files (for Blog Content Generator) and priority batches (for content planning)
+- Single-step process that handles complete analysis and prioritization workflow
+
+## Agent Process
+
+### Step 1: Statistical Analysis (Internal Agent Call)
+1. **Call Analysis Agent** using Task tool with CSV file path and category name
+2. **Analysis Agent generates** comprehensive statistical analysis file with:
+   - Data validation and quality assessment
+   - Statistical breakpoints for volume tiers (high/medium/low)
+   - Competition sweet spots and value opportunities
+   - Growth trend classifications with numerical thresholds
+   - Selection strategy rules for keyword categorization
+3. **Receive analysis results** including specific numerical criteria for prioritization
+
+### Step 2: Strategic Scoring and Prioritization
+1. **Read generated analysis file** to extract statistical thresholds
+2. **Apply Quick Win Score** and **Authority Score** calculations using analysis criteria
+3. **Categorize keywords** into Foundation/Growth/Authority phases based on analysis breakpoints
+4. **Balance distribution** to achieve 30/50/20 strategic mix
+5. **Create mixed batches** of 10 keywords with strategic variety per analysis recommendations
+
+### Step 3: Generate Priority Batches
+1. **Create batch files** with strategic keyword ordering
+2. **Organize into manageable files** (50 keywords per batch file)
+3. **Add progress tracking** with markdown checkboxes
+4. **Save batch files** to `/.resources/content-guidelines/content-todo/[category]/`
 
 ## Output Format
 
 ### Output Location
+
+**Priority Batches:**
 - **Folder Structure**: `/.resources/content-guidelines/content-todo/[category]/`
 - **File Organization**: `batch-01.md`, `batch-02.md`, etc. (50 keywords per file)
 - **Universal Guide**: `README.md` in content-todo folder explains all metrics
+
+**Analysis Files:**
+- **Folder Structure**: `/.resources/content-guidelines/keywords/analysis/`
+- **File Organization**: `[category]-analysis.md` (e.g., `botox-analysis.md`)
+- **Purpose**: Statistical thresholds and selection rules for Blog Content Generator
 
 ### Progress Tracking Features
 - **Markdown Checkboxes**: Each keyword has `- [ ]` for easy progress tracking
@@ -116,38 +148,37 @@ Where:
 
 ### Single Category Analysis
 ```
-Use the content-prioritization agent to analyze /.resources/content-guidelines/keywords/botox.csv
+Use the keyword-strategy-agent to analyze /.resources/content-guidelines/keywords/botox.csv
 ```
 
 ### Multi-Category Analysis
 ```
-Use the content-prioritization agent to prioritize across categories:
+Use the keyword-strategy-agent to prioritize across categories:
 - Process: botox.csv, dermal-fillers.csv, dysport.csv
 - Create unified priority ranking across all categories
 ```
 
 ### Batch Processing
 ```
-Use the content-prioritization agent to process all CSV files in /.resources/content-guidelines/keywords/
+Use the keyword-strategy-agent to process all CSV files in /.resources/content-guidelines/keywords/
 ```
 
 ## Integration with Existing Agents
 
 ### Workflow Integration
-1. **Keyword Analysis Agent** → Generates statistical analysis
-2. **Content Prioritization Agent** → Creates strategic ordering
-3. **Blog Content Generator** → Executes content creation in priority order
+1. **Keyword Strategy Agent** → Analyzes CSV data and creates strategic ordering in one step
+2. **Blog Content Generator** → Executes content creation in priority order
 
 ### Data Flow
-- Reads analysis.md files for enhanced scoring accuracy
+- Reads CSV files directly from keywords folder
+- Performs complete analysis and prioritization in single step
 - Generates priority lists for blog content generator consumption
-- Updates prioritization based on content performance data
 
 ## Error Handling
-- Graceful fallback if analysis.md files missing
 - Clear error messages for malformed CSV data
 - Default scoring when trend data unavailable
 - Validation of required CSV columns
+- Automatic fallback for missing statistical data
 
 ## Success Criteria
 - **Strategic Balance**: Achieves 30/50/20 phase distribution

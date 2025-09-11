@@ -125,7 +125,7 @@ This Hugo implementation maintains all the functionality and design quality of t
 
 ## Custom Slash Commands
 
-Custom Claude Code commands for streamlined development workflows. **Full documentation:** `.claude/commands/CLAUDE.md`
+Custom Claude Code commands for streamlined development workflows. **Full documentation:** `docs/commands/CLAUDE.md`
 
 ### Available Commands:
 
@@ -134,42 +134,35 @@ Custom Claude Code commands for streamlined development workflows. **Full docume
 
 ## Custom Agents
 
-This project uses specialized Claude Code agents for SEO-optimized content creation. **Full documentation:** `.claude/agents/CLAUDE.md`
+This project uses specialized Claude Code agents for SEO-optimized content creation. **Full documentation:** `docs/agents/CLAUDE.md`
 
 ### Available Agents:
 
-1. **Keyword Analysis Agent** - Statistical analysis of keyword CSV files to generate data-driven selection rules
-   - **Location:** `.claude/agents/keyword-analysis-agent.md`
-   - **Purpose:** Creates analysis files with numerical thresholds for optimal keyword selection
+1. **Keyword Strategy Agent** - Complete analysis and strategic planning with balanced batches for optimal SEO progression
+   - **Location:** `.claude/agents/keyword-strategy-agent.md`
+   - **Purpose:** Analyzes CSV files and organizes keywords into Foundation/Growth/Authority batches with progress tracking
 
-2. **Content Prioritization Agent** - Strategic content planning with balanced batches for optimal SEO progression
-   - **Location:** `.claude/agents/content-prioritization-agent.md`
-   - **Purpose:** Organizes keywords into Foundation/Growth/Authority batches with progress tracking
-
-3. **Blog Content Generator Agent** - Comprehensive, SEO-optimized blog posts with local geographic strategies
+2. **Blog Content Generator Agent** - Comprehensive, SEO-optimized blog posts with local geographic strategies
    - **Location:** `.claude/agents/blog-content-generator.md`
    - **Purpose:** Creates Hugo-compliant blog posts with FAQ schema and keyword integration
 
-4. **Internal Linking Agent** - Post-publication enhancement with strategic internal links
+3. **Internal Linking Agent** - Post-publication enhancement with strategic internal links
    - **Location:** `.claude/agents/internal-linking-agent.md`
    - **Purpose:** Adds accessibility-compliant internal links for SEO optimization
 
 ### Quick Workflow:
 ```
-# 1. Analyze keywords
-Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/[category].csv
+# 1. Create strategic content batches
+Use the keyword-strategy-agent to analyze /.resources/content-guidelines/keywords/[category].csv
 
-# 2. Create content batches
-Use the content-prioritization-agent to analyze /.resources/content-guidelines/keywords/[category].csv
-
-# 3. Generate blog posts
+# 2. Generate blog posts
 Use the blog-content-generator agent to create a blog post:
 - Primary topic: "Your topic"
 - Category: "[category]"
 - Content length: "long form"
 - Geographic location: "Boulder"
 
-# 4. Add internal links
+# 3. Add internal links
 Use the internal-linking-agent to add internal links:
 - Blog post file: /content/blog/[filename].md
 ```
