@@ -4,11 +4,12 @@ This file contains detailed documentation for specialized Claude Code agents use
 
 ## Overview
 
-The project uses three specialized agents for SEO-optimized content creation and enhancement:
+The project uses four specialized agents for SEO-optimized content creation and enhancement:
 
 1. **Keyword Strategy Agent** - Complete analysis and strategic content planning with batching
 2. **Blog Content Generator Agent** - SEO-optimized blog post creation
 3. **Internal Linking Agent** - Post-publication internal link enhancement
+4. **Visual Content Generator Agent** - Platform-optimized social media content for videos and images
 
 ## Keyword Strategy Agent
 
@@ -183,6 +184,102 @@ Use the internal-linking-agent to add internal links:
 - **Accessibility Markup**: All links include descriptive ARIA labels
 - **Natural Integration**: Links seamlessly integrated without disrupting content flow
 
+## Visual Content Generator Agent
+
+Generates platform-specific social media content optimized for engagement, discoverability, and conversion for Still Time Beauty visual content (videos and images) across YouTube, TikTok, Instagram, and Facebook.
+
+**Location:** `.claude/agents/visual-content-generator.md`
+
+### Purpose:
+- Creates optimized social media content for both videos and images
+- Generates platform-specific titles, descriptions, hashtags, and calls-to-action
+- Integrates blog article linking for YouTube content to drive website traffic
+- Ensures medical aesthetics compliance across all platforms
+- Supports local Boulder market optimization with geographic targeting
+
+### Invocation Methods:
+
+**Video Content:**
+```
+Use the visual-content-generator agent to create promotional content:
+- Content description: "botox injection process demonstration"
+- Content type: "video"
+- Content category: "educational"
+- Geographic location: "Boulder"
+- Call-to-action goal: "education and trust building"
+```
+
+**Image Content:**
+```
+Use the visual-content-generator agent to create promotional content:
+- Content description: "lip filler results showing natural enhancement"
+- Content type: "image"
+- Content category: "before/after"
+- Geographic location: "Superior"
+- Call-to-action goal: "book consultation"
+```
+
+### Agent Capabilities:
+- **Dual Content Support**: Handles both videos and images with content-specific optimizations
+- **Platform Optimization**: Tailored content for YouTube, TikTok, Instagram, and Facebook
+- **Smart Slug Generation**: Converts descriptions to clean, SEO-friendly filenames
+- **Blog Integration**: Searches existing blog posts for relevant linking opportunities (YouTube only)
+- **Local SEO**: Geographic targeting for Boulder area cities and communities
+- **Compliance Focus**: Medical aesthetics content guidelines and platform policies
+- **Strategic Hashtags**: Platform-specific hashtag strategies with local optimization
+
+### Content Categories:
+- **promotional**: Brand awareness and service promotion
+- **educational**: Treatment information and procedure explanations
+- **behind-the-scenes**: Practice culture and staff expertise
+- **testimonial**: Patient success stories and experiences
+- **treatment demo**: Live procedure demonstrations and consultations
+- **before/after**: Results showcasing with compliance considerations
+- **facility showcase**: Office environment and equipment displays
+
+### Platform-Specific Features:
+
+**YouTube:**
+- SEO-optimized titles and descriptions
+- Related blog article linking with contextual descriptions
+- Strategic keyword placement for YouTube search
+- End screen and annotation suggestions
+
+**TikTok:**
+- Trend-aware captions with engagement hooks
+- Balanced hashtag mix (trending + niche + local)
+- Community interaction strategies
+
+**Instagram:**
+- Maximum hashtag utilization (30 tags)
+- Story-friendly variations for multiple formats
+- Location and business tagging strategies
+- Content format optimization (Reels vs. Posts vs. Stories)
+
+**Facebook:**
+- Content shared from Instagram optimizations
+- Professional networking and community engagement focus
+
+### Required Input:
+- **Content description**: Brief description of visual content
+- **Content type**: "video" or "image"
+- **Content category**: Purpose and style classification
+- **Geographic location** (optional): City targeting for local SEO
+- **Call-to-action goal**: Primary business objective
+- **Target audience** (optional): Demographic focus
+
+### Generated Output:
+- **Videos**: `/.resources/social-media/videos/YYYYMMDD_[generated-slug]_video.md`
+- **Images**: `/.resources/social-media/images/YYYYMMDD_[generated-slug]_image.md`
+- **Platform-specific content**: Optimized titles, descriptions, hashtags for each platform
+- **Call-to-action variations**: Multiple CTA options for testing
+- **Blog linking**: Relevant article links for YouTube content when available
+
+### Slug Generation Examples:
+- "location tour and meet the owner" → `location-tour-meet-owner`
+- "botox injection process demonstration" → `botox-injection-process-demo`
+- "lip filler results showing natural enhancement" → `lip-filler-results-natural-enhancement`
+
 ## Simplified Two-Step Workflow
 
 **Complete Content Creation Process:**
@@ -230,6 +327,20 @@ Use the internal-linking-agent to add internal links:
    - Ensures accessibility compliance and SEO optimization
    - Maintains natural content flow
 
+6. **Social Media Content Creation**:
+   ```
+   Use the visual-content-generator agent to create promotional content:
+   - Content description: "Your content description here"
+   - Content type: "video" or "image"
+   - Content category: "promotional" or "educational" etc.
+   - Geographic location: "Boulder"
+   - Call-to-action goal: "book consultation"
+   ```
+   - Creates platform-optimized social media content for videos and images
+   - Generates YouTube descriptions with blog article linking for SEO
+   - Provides hashtag strategies for maximum discoverability
+   - Ensures medical aesthetics compliance across platforms
+
 **Benefits:**
 - **Simplified**: Two-step process eliminates redundant analysis
 - **Efficient**: Single agent handles both analysis and prioritization
@@ -251,3 +362,4 @@ Use the internal-linking-agent to add internal links:
 1. Use **Keyword Strategy Agent** to analyze keywords and create strategic content batches
 2. Use **Blog Content Generator Agent** to create individual blog posts
 3. Use **Internal Linking Agent** to enhance published posts with strategic linking
+4. Use **Visual Content Generator Agent** to create social media content for promotional videos and images

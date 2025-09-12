@@ -150,6 +150,10 @@ This project uses specialized Claude Code agents for SEO-optimized content creat
    - **Location:** `.claude/agents/internal-linking-agent.md`
    - **Purpose:** Adds accessibility-compliant internal links for SEO optimization
 
+4. **Visual Content Generator** - Platform-optimized content for video and image promotion with engagement focus
+   - **Location:** `.claude/agents/visual-content-generator.md`
+   - **Purpose:** Generates YouTube, TikTok, Instagram, and Facebook content for both videos and images with SEO optimization and conversion focus
+
 ### Quick Workflow:
 
 1. Generate statistical analysis
@@ -175,4 +179,41 @@ Use the blog-content-generator agent to create a blog post:
 4. Add internal links
 ```
 Use the internal-linking-agent to add internal links to /content/blog/[filename].md
+```
+
+5. Generate visual social media content
+```
+Use the visual-content-generator agent to create promotional content:
+- Content description: "location tour and meet the owner"
+- Content type: "video"
+- Content category: "promotional"
+- Geographic location: "Boulder"
+- Call-to-action goal: "book consultation"
+```
+
+#### Visual Content Agent Input Options:
+
+**Content Types:**
+- video, image
+
+**Content Categories:**
+- promotional, educational, behind-the-scenes, testimonial, treatment demo, before/after, facility showcase
+
+**Geographic Locations:**
+- Boulder, Superior, Louisville, Lafayette, Broomfield, Westminster, Arvada, etc.
+
+**Call-to-Action Goals:**
+- book consultation, drive website traffic, phone calls, brand awareness, education, trust building
+
+**Target Audiences:** (Optional)
+- new patients, existing clients, local community, specific demographics
+
+**Examples:**
+```
+Educational video:
+- Content description: "botox injection process demonstration"
+- Content type: "video"
+- Content category: "educational"
+- Geographic location: "Boulder"
+- Call-to-action goal: "education and trust building"
 ```
