@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`6911840`](https://github.com/nvco/stb_website/commit/6911840) Implement Visual Content Generator agent for social media optimization (2025-09-12)
+  - Create comprehensive Visual Content Generator agent supporting both videos and images
+  - Add platform-specific optimization for YouTube, TikTok, Instagram, and Facebook
+  - Implement smart slug generation from content descriptions for organized file naming
+  - Integrate blog article linking for YouTube SEO backlinks and website traffic
+  - Restructure social media content organization with dated files and type separation
+  - Update CLAUDE.md with expanded agent usage examples and comprehensive input options
+  - Add complete documentation in docs/agents/CLAUDE.md for workflow integration
+  - Support medical aesthetics compliance across all social platforms
+
 - [`93cca40`](https://github.com/nvco/stb_website/commit/93cca40) Implement blog content generation with keyword strategy integration and SEO optimization (2025-09-11)
   - Enhanced blog-content-generator agent with strategic list usage guidelines
   - Generated comprehensive lip filler swelling blog post with Boulder local SEO
