@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`93cca40`](https://github.com/nvco/stb_website/commit/93cca40) Implement blog content generation with keyword strategy integration and SEO optimization (2025-09-11)
+  - Enhanced blog-content-generator agent with strategic list usage guidelines
+  - Generated comprehensive lip filler swelling blog post with Boulder local SEO
+  - Created keyword strategy analysis and content prioritization system
+  - Added strategic content batches for Foundation/Growth/Authority phases
+  - Implemented FAQ-local strategy with geographic differentiation
+  - Fixed layout rendering issues in taxonomy and blog list templates
+
 - [`133705d`](https://github.com/nvco/stb_website/commit/133705d) Implement separate callable agents with transparent two-step workflow and generate lip fillers analysis (2025-09-11)
   - Update Keyword Analysis Agent to be directly callable by users instead of internal-only
   - Update Keyword Strategy Agent to read existing analysis files rather than calling Analysis Agent via Task tool
