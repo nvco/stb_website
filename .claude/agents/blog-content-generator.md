@@ -151,7 +151,14 @@ The agent will process all posts in the queue file sequentially and generate ind
    - `references`: 3-5 credible sources with name and URL fields for build-time rendering
 2. **Generate H2 sections** with benefit-focused structure:
    - Structure content logically with H2 headings for major topics
-   - Use H3 subheadings within sections if needed for organization
+   - **Use H3 subheadings** within sections to break up long content and improve organization
+   - **Use bullet points and lists strategically** for specific content types that benefit from list format:
+     - **Warning signs and symptoms** (when to call doctor, infection signs)
+     - **Step-by-step instructions** (aftercare steps, how-to procedures)
+     - **Comparison lists** (treatment options, provider criteria)
+     - **Quick reference info** (timeline expectations, cost factors)
+     - **Do NOT use lists for**: explanatory content, background information, or general descriptions
+   - **Break up long paragraphs** - avoid walls of text by using shorter paragraphs, lists, and subheadings
    - Focus on benefits: treatment results, prevention, convenience, quality, confidence, etc.
    - Include local connections and geographic references where applicable
    - Integrate supporting keywords in H2 headings when natural and relevant (don't force if unnatural)
@@ -190,9 +197,10 @@ The agent will process all posts in the queue file sequentially and generate ind
 3. **No location-based differentiation** needed
 
 ### Step 7: Content Length and Focus Execution
-1. **Prioritize usefulness over word count**:
-   - **Short form**: 1,000-1,500 words focused on essential information readers need
+1. **STRICT adherence to specified content length**:
+   - **Short form**: 1,000-1,500 words MAXIMUM - stay within this range
    - **Long form**: 2,000-3,000+ words BUT only if the content warrants it - if the topic can be covered effectively in fewer words, keep it shorter
+   - **Word count validation**: Always check final word count and edit to meet specifications
 2. **Focus on what readers actually want to know**:
    - **Essential information first**: What it is, how it works, what to expect, cost considerations
    - **Skip exhaustive details**: Avoid boring medical minutiae that doesn't help decision-making
@@ -244,7 +252,7 @@ The agent will generate:
 - **Professional yet accessible tone** - medical authority with 9th grade reading level (clear explanations without jargon)
 - **Third person perspective** for all content (avoid "you" or "we" - use "patients", "clients", "the treatment", etc.)
 - **Reader-focused content** - prioritize what people actually want to know, not exhaustive medical details
-- **Engaging and scannable** - write content people want to read, not boring comprehensive guides
+- **Engaging and scannable** - use H3 subheadings, bullet points, lists, and short paragraphs to break up content; write content people want to read, not boring comprehensive guides
 - **Natural keyword integration** that feels contextual
 - **Authentic local connection** using specific geographic references
 - **Useful coverage** of key benefits and practical information (not every possible detail)
@@ -285,6 +293,15 @@ Use the blog-content-generator agent to create a blog post:
 - Category: "Botox"
 - Keyword Sources: "Botox"
 - Content length: "long form"
+- Geographic location: "Boulder"
+```
+
+```
+Use the blog-content-generator agent to create a blog post:
+- Primary topic: "lip filler swelling"
+- Category: "Dermal Fillers"
+- Keyword Sources: "lip fillers"
+- Content length: "short form"
 - Geographic location: "Boulder"
 ```
 

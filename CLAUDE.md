@@ -151,21 +151,28 @@ This project uses specialized Claude Code agents for SEO-optimized content creat
    - **Purpose:** Adds accessibility-compliant internal links for SEO optimization
 
 ### Quick Workflow:
+
+1. Generate statistical analysis
 ```
-# 1. Generate statistical analysis
 Use the keyword-analysis-agent to analyze /.resources/content-guidelines/keywords/[category].csv
+```
 
-# 2. Create strategic content batches  
+2. Create strategic content batches  
+```
 Use the keyword-strategy-agent to prioritize /.resources/content-guidelines/keywords/[category].csv
+```
 
-# 3. Generate blog posts
+3. Generate blog posts
+```
 Use the blog-content-generator agent to create a blog post:
-- Primary topic: "Your topic"
-- Category: "[category]"
-- Content length: "long form"
+- Primary topic: "lip filler swelling"
+- Category: "Dermal Fillers"
+- Keyword Sources: "lip fillers"
+- Content length: "short form"
 - Geographic location: "Boulder"
+```
 
-# 3. Add internal links
-Use the internal-linking-agent to add internal links:
-- Blog post file: /content/blog/[filename].md
+4. Add internal links
+```
+Use the internal-linking-agent to add internal links to /content/blog/[filename].md
 ```
