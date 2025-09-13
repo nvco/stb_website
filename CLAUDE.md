@@ -150,9 +150,9 @@ This project uses specialized Claude Code agents for SEO-optimized content creat
    - **Location:** `.claude/agents/internal-linking-agent.md`
    - **Purpose:** Adds accessibility-compliant internal links for SEO optimization
 
-4. **Visual Content Generator** - Platform-optimized content for video and image promotion with engagement focus
-   - **Location:** `.claude/agents/visual-content-generator.md`
-   - **Purpose:** Generates YouTube, TikTok, Instagram, and Facebook content for both videos and images with SEO optimization and conversion focus
+4. **Visual Content Copy Generator** - Platform-optimized copy for video and image promotion with engagement focus
+   - **Location:** `.claude/agents/visual-content-copy-generator.md`
+   - **Purpose:** Generates YouTube, TikTok, Instagram, and Facebook copy for both videos and images with SEO optimization and conversion focus
 
 ### Quick Workflow:
 
@@ -183,7 +183,7 @@ Use the internal-linking-agent to add internal links to /content/blog/[filename]
 
 5. Generate visual social media content
 ```
-Use the visual-content-generator agent to create promotional content:
+Use the visual-content-copy-generator agent to create promotional content:
 - Content description: "location tour and meet the owner"
 - Content type: "video"
 - Content category: "promotional"
@@ -191,7 +191,7 @@ Use the visual-content-generator agent to create promotional content:
 - Call-to-action goal: "book consultation"
 ```
 
-#### Visual Content Agent Input Options:
+#### Visual Content Copy Agent Input Options:
 
 **Content Types:**
 - video, image

@@ -9,7 +9,7 @@ The project uses four specialized agents for SEO-optimized content creation and 
 1. **Keyword Strategy Agent** - Complete analysis and strategic content planning with batching
 2. **Blog Content Generator Agent** - SEO-optimized blog post creation
 3. **Internal Linking Agent** - Post-publication internal link enhancement
-4. **Visual Content Generator Agent** - Platform-optimized social media content for videos and images
+4. **Visual Content Copy Generator Agent** - Platform-optimized social media copy for videos and images
 
 ## Keyword Strategy Agent
 
@@ -184,14 +184,14 @@ Use the internal-linking-agent to add internal links:
 - **Accessibility Markup**: All links include descriptive ARIA labels
 - **Natural Integration**: Links seamlessly integrated without disrupting content flow
 
-## Visual Content Generator Agent
+## Visual Content Copy Generator Agent
 
-Generates platform-specific social media content optimized for engagement, discoverability, and conversion for Still Time Beauty visual content (videos and images) across YouTube, TikTok, Instagram, and Facebook.
+Generates platform-specific social media copy optimized for engagement, discoverability, and conversion for Still Time Beauty visual content (videos and images) across YouTube, TikTok, Instagram, and Facebook.
 
-**Location:** `.claude/agents/visual-content-generator.md`
+**Location:** `.claude/agents/visual-content-copy-generator.md`
 
 ### Purpose:
-- Creates optimized social media content for both videos and images
+- Creates optimized social media copy for both videos and images
 - Generates platform-specific titles, descriptions, hashtags, and calls-to-action
 - Integrates blog article linking for YouTube content to drive website traffic
 - Ensures medical aesthetics compliance across all platforms
@@ -201,7 +201,7 @@ Generates platform-specific social media content optimized for engagement, disco
 
 **Video Content:**
 ```
-Use the visual-content-generator agent to create promotional content:
+Use the visual-content-copy-generator agent to create promotional content:
 - Content description: "botox injection process demonstration"
 - Content type: "video"
 - Content category: "educational"
@@ -211,7 +211,7 @@ Use the visual-content-generator agent to create promotional content:
 
 **Image Content:**
 ```
-Use the visual-content-generator agent to create promotional content:
+Use the visual-content-copy-generator agent to create promotional content:
 - Content description: "lip filler results showing natural enhancement"
 - Content type: "image"
 - Content category: "before/after"
@@ -221,12 +221,12 @@ Use the visual-content-generator agent to create promotional content:
 
 ### Agent Capabilities:
 - **Dual Content Support**: Handles both videos and images with content-specific optimizations
-- **Platform Optimization**: Tailored content for YouTube, TikTok, Instagram, and Facebook
+- **Platform Optimization**: Tailored copy for YouTube, TikTok, Instagram, and Facebook
 - **Smart Slug Generation**: Converts descriptions to clean, SEO-friendly filenames
 - **Blog Integration**: Searches existing blog posts for relevant linking opportunities (YouTube only)
 - **Local SEO**: Geographic targeting for Boulder area cities and communities
 - **Compliance Focus**: Medical aesthetics content guidelines and platform policies
-- **Strategic Hashtags**: Platform-specific hashtag strategies with local optimization
+- **Strategic Hashtags**: Platform-specific hashtag copy strategies with local optimization
 
 ### Content Categories:
 - **promotional**: Brand awareness and service promotion
@@ -329,14 +329,14 @@ Use the visual-content-generator agent to create promotional content:
 
 6. **Social Media Content Creation**:
    ```
-   Use the visual-content-generator agent to create promotional content:
+   Use the visual-content-copy-generator agent to create promotional content:
    - Content description: "Your content description here"
    - Content type: "video" or "image"
    - Content category: "promotional" or "educational" etc.
    - Geographic location: "Boulder"
    - Call-to-action goal: "book consultation"
    ```
-   - Creates platform-optimized social media content for videos and images
+   - Creates platform-optimized social media copy for videos and images
    - Generates YouTube descriptions with blog article linking for SEO
    - Provides hashtag strategies for maximum discoverability
    - Ensures medical aesthetics compliance across platforms
@@ -362,4 +362,4 @@ Use the visual-content-generator agent to create promotional content:
 1. Use **Keyword Strategy Agent** to analyze keywords and create strategic content batches
 2. Use **Blog Content Generator Agent** to create individual blog posts
 3. Use **Internal Linking Agent** to enhance published posts with strategic linking
-4. Use **Visual Content Generator Agent** to create social media content for promotional videos and images
+4. Use **Visual Content Copy Generator Agent** to create social media copy for promotional videos and images

@@ -1,12 +1,12 @@
 ---
-name: Visual Content Generator
-description: Generate optimized social media content for YouTube, TikTok, Instagram, and Facebook to promote Still Time Beauty videos and images, driving website traffic and conversions
+name: Visual Content Copy Generator
+description: Generate optimized social media copy for YouTube, TikTok, Instagram, and Facebook to promote Still Time Beauty videos and images, driving website traffic and conversions
 tools: [Read, Write, Glob, Grep]
 ---
 
-# Visual Content Generator Agent
+# Visual Content Copy Generator Agent
 
-Generate platform-specific social media content optimized for engagement, discoverability, and conversion for Still Time Beauty visual content (videos and images) across YouTube, TikTok, Instagram, and Facebook.
+Generate platform-specific social media copy optimized for engagement, discoverability, and conversion for Still Time Beauty visual content (videos and images) across YouTube, TikTok, Instagram, and Facebook.
 
 ## Input Requirements
 
@@ -29,8 +29,9 @@ When invoking this agent, provide:
 
 ### Step 2: Platform Research and Business Context
 1. **Read business information** from hugo.toml for contact details and branding
-2. **Search for related blog content** in `/content/blog/` to find relevant articles for YouTube linking
-3. **Platform requirements analysis**:
+2. **Read city data** from `/.resources/content-guidelines/cities/[location].md` when geographic location is specified to incorporate authentic local references
+3. **Search for related blog content** in `/content/blog/` to find relevant articles for YouTube linking
+4. **Platform requirements analysis**:
    - Character limits and optimal lengths
    - Hashtag strategies and limits
    - Best practices for each platform
@@ -118,9 +119,19 @@ When relevant blog content exists:
 - **Cross-platform messaging consistency**
 - **Professional credibility maintenance**
 
+### Contact Information Guidelines
+- **Website focus**: Primary goal is driving traffic to https://stilltimebeauty.com for bookings
+- **Location references**: Use city data files for varied, authentic local references - not just Boulder/Pearl Street
+- **No phone numbers**: Keep focus on website conversion rather than direct calls
+- **Platform-specific CTAs**:
+  - YouTube/Facebook/LinkedIn: Include full website URL (clickable links allowed)
+  - Instagram/TikTok: Use "Link in bio" (no clickable links in captions)
+- **Avoid redundant location lines**: Don't add separate location lines after website URL if location is already mentioned in the content
+
 ### Local Market Focus
-- **Boulder-specific language** and cultural references
-- **Local landmark and community integration**
+- **City data integration**: Leverage local information from city data files for authentic, varied references
+- **Boulder-specific language** and cultural references beyond just Pearl Street
+- **Local landmark and community integration** (Flatirons, CU campus, neighborhoods, etc.)
 - **Regional hashtag strategies**
 - **Community engagement opportunities**
 
@@ -138,7 +149,7 @@ Where `[generated-slug]` is created from the content description (e.g., "locatio
 ## Strategy Overview
 [Brief summary of approach and targeting]
 
-## YouTube
+## YouTube (also works for Facebook & LinkedIn)
 **Title:** [SEO-optimized title]
 **Description:** [Full description with keywords, CTAs, related blog links, and contact info]
 **Tags:** [Comma-separated tags for YouTube]
