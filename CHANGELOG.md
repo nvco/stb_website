@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`b8b7d40`](https://github.com/nvco/stb_website/commit/b8b7d40) Enhance site functionality with internal linking, CSS improvements, and workflow updates (2025-09-13)
+  - Test and implement Internal Linking Agent on lip filler swelling guide with accessibility-compliant ARIA labels
+  - Add comprehensive spacing variables (--spacing-*) with style guide reference for consistent design system
+  - Implement dynamic main element classes for better CSS targeting across page types
+  - Update about page H2 to focus on credentials without redundant introduction
+  - Enhance taxonomy template consistency with "Information & Guides" format
+  - Streamline GitHub workflow by removing external repository push
+  - Add spacing scale documentation to style guide with organized variable reference table
+
 - [`afa0da3`](https://github.com/nvco/stb_website/commit/afa0da3) Rename Visual Content Generator to Visual Content Copy Generator for clarity (2025-09-13)
   - Rename agent file from visual-content-generator.md to visual-content-copy-generator.md
   - Enhance agent with city data integration for varied local Boulder references
