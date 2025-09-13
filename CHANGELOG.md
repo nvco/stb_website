@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`afa0da3`](https://github.com/nvco/stb_website/commit/afa0da3) Rename Visual Content Generator to Visual Content Copy Generator for clarity (2025-09-13)
+  - Rename agent file from visual-content-generator.md to visual-content-copy-generator.md
+  - Enhance agent with city data integration for varied local Boulder references
+  - Improve social media content with platform-specific CTAs (link in bio vs URLs)
+  - Update existing video content template with enhanced Boulder local references
+
 - [`6911840`](https://github.com/nvco/stb_website/commit/6911840) Implement Visual Content Generator agent for social media optimization (2025-09-12)
   - Create comprehensive Visual Content Generator agent supporting both videos and images
   - Add platform-specific optimization for YouTube, TikTok, Instagram, and Facebook
