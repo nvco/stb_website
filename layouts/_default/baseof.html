@@ -25,7 +25,7 @@
     <!-- Preconnect to external resources for faster loading -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://unpkg.com">
-    
+
     <!-- DM Sans Font - Self-hosted -->
     <link rel="preload" href="/fonts/dm-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/dm-sans-600-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -80,11 +80,32 @@
             --black-alpha-50: rgba(0, 0, 0, 0.5);
             --black-alpha-30: rgba(0, 0, 0, 0.3);
             --black-alpha-20: rgba(0, 0, 0, 0.2);
+
+            /* Spacing values (matching Tailwind scale) */
+            --spacing-0: 0;
+            --spacing-1: 0.25rem;
+            --spacing-2: 0.5rem;
+            --spacing-3: 0.75rem;
+            --spacing-4: 1rem;
+            --spacing-5: 1.25rem;
+            --spacing-6: 1.5rem;
+            --spacing-7: 1.75rem;
+            --spacing-8: 2rem;
+            --spacing-9: 2.25rem;
+            --spacing-10: 2.5rem;
+            --spacing-11: 2.75rem;
+            --spacing-12: 3rem;
+            --spacing-14: 3.5rem;
+            --spacing-16: 4rem;
+            --spacing-20: 5rem;
+            --spacing-24: 6rem;
+            --spacing-28: 7rem;
+            --spacing-32: 8rem;
+            --spacing-36: 9rem;
+            --spacing-40: 10rem;
+            --spacing-44: 11rem;
+            --spacing-48: 12rem;
         }
-        
-        /* Font family utility classes */
-        .font-serif { font-family: var(--font-serif) !important; }
-        .font-sans { font-family: var(--font-sans) !important; }
         
         /* Critical above-the-fold styles */
         .no-fouc { visibility: hidden; }
@@ -97,9 +118,7 @@
         }
         .header-bg { background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-200) 100%); }
 
-        body p {
-            margin-bottom: 1rem; /* mb-4 */
-        }
+        body p { margin-bottom: 1rem; /* mb-4 */ }
         
         body ul {
             margin-bottom: 1rem; /* mb-4 */
@@ -109,14 +128,18 @@
         body ul li {
             list-style-type: disc;
         }
+
+        /* Font family utility classes */
+        .font-serif { font-family: var(--font-serif) !important; }
+        .font-sans { font-family: var(--font-sans) !important; }
         
         /* Default H1 styling - automatically responsive without utility classes */
         body h1 {
-            font-family: var(--font-sans);
+            font-family: var(--font-serif);
             font-weight: 600;
             font-size: 1.875rem; /* text-3xl */
             line-height: 1.1;
-            letter-spacing: -0.02em;
+            letter-spacing: normal;
             color: var(--primary-900);
             margin-bottom: 1.5rem;
         }
@@ -260,6 +283,48 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
+
+        /* Main hero and hero-dark section styles */
+        .hero-main {
+            padding-top: var(--spacing-24);
+            padding-bottom: var(--spacing-8);
+        }
+        @media (min-width: 768px) {
+            .hero-main {
+                padding-top: var(--spacing-28);
+                padding-bottom: var(--spacing-12);
+            }
+        }
+
+        .hero-main h1 {
+            font-size: 2.22rem;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-4);
+        }
+        @media (min-width: 768px) {
+            .hero-main h1 {
+                font-size: 3.33rem;
+                margin-bottom: var(--spacing-8);
+            }
+        }
+
+        .hero-dark .hero-main {
+            background-color: var(--accent-600);
+            color: var(--primary-50);
+        }
+
+        .hero-dark .hero-main h1,
+        .hero-dark .hero-main p {
+            color: var(--primary-50);
+        }
+
+        .hero-dark .hero-main a {
+            color: var(--primary-50);
+        }
+        
+        .hero-dark .hero-main a:hover {
+            color: var(--accent-200);
+        }
         
         /* Blog content hierarchical spacing - overrides default spacing for better visual hierarchy */
         .blog-content {
@@ -269,25 +334,6 @@
             .blog-content {
                 font-size: 1.25rem;
                 line-height: 1.82222;
-            }
-        }
-
-        .blog-hero a {
-            color: var(--primary-50);
-        }
-        
-        .blog-hero a:hover {
-            color: var(--accent-200);
-        }
-
-        .blog-hero > h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            text-shadow: 0 0 21px var(--black-alpha-30), 0 1px 2px var(--black-alpha-20); /* Subtle depth */
-        }
-        @media (min-width: 768px) {
-            .blog-hero > h1 {
-                font-size: 3.9rem;
             }
         }
 
@@ -366,6 +412,8 @@
             overflow-wrap: break-word;
             hyphens: auto;
         }
+
+        footer, footer h4 { color: var(--primary-50); }
     </style>
     
     <!-- Critical JavaScript inline for immediate execution -->
@@ -376,7 +424,27 @@
 {{ partial "header.html" . }}
 {{ partial "navigation.html" . }}
 
-<main id="main" class="{{ if eq .Type "page" }}landing-page{{ end }}">
+{{ $mainClass := "" }}
+{{ if eq .Type "page" }}
+    {{ $mainClass = "landing-page" }}
+    {{ if .IsHome }}
+        {{ $mainClass = printf "%s homepage" $mainClass }}
+    {{ else }}
+        {{ $mainClass = printf "%s hero-dark" $mainClass }}
+    {{ end }}
+{{ else if eq .Section "blog" }}
+    {{ if .IsPage }}
+        {{ $mainClass = "blog-single hero-dark" }}
+    {{ else }}
+        {{ $mainClass = "blog-list hero-dark" }}
+    {{ end }}
+{{ else if eq .Type "categories" }}
+    {{ $mainClass = "blog-list hero-dark" }}
+{{ else }}
+    {{ $mainClass = "hi" }}
+{{ end }}
+
+<main id="main" class="{{ $mainClass }}">
     {{ block "main" . }}{{ end }}
 </main>
 

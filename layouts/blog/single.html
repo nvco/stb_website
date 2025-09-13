@@ -1,15 +1,15 @@
 {{ define "main" }}
     <!-- Blog Post Hero -->
-    <section class="relative from-primary-50 bg-accent-600 pt-24 md:pt-28 pb-8 md:pb-12">
+    <section class="relative hero-main">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="blog-hero">                
-                <h1 class="mb-10 text-primary-50">
+                <h1>
                     {{ if .Params.h1title }}{{ .Params.h1title }}{{ else }}{{ .Title }}{{ end }}
                 </h1>
 
                 <!-- Breadcrumbs -->
                 <nav aria-label="Breadcrumb">
-                    <div class="text-normal text-white">
+                    <div class="text-normal">
                         <a href="/">Home</a>
                         <span class="mx-1" aria-hidden="true">›</span>
                         <a href="/blog/">Blog</a>
