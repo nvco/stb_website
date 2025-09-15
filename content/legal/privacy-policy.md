@@ -167,6 +167,19 @@ Our website uses cookies and similar technologies to:
 - Improve website functionality and user experience
 - Ensure website security and prevent fraud
 
+### Google Analytics
+
+We use Google Analytics to understand how visitors interact with our website. Google Analytics collects information such as:
+
+- Pages visited and time spent on each page
+- Geographic location (city/state level)
+- Device and browser information
+- How visitors found our website
+
+This information is used to improve our website and services. Google Analytics data is anonymized and does not contain personally identifiable information. For more information about Google Analytics privacy practices, visit [Google's Privacy Policy](https://policies.google.com/privacy).
+
+You can opt out of Google Analytics tracking by visiting [Google Analytics Opt-out](https://tools.google.com/dlpage/gaoptout).
+
 You can control cookies through your browser settings, but some website features may not function properly if cookies are disabled.
 
 ## Data Retention

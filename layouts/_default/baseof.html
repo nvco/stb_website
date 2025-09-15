@@ -416,6 +416,17 @@
         footer, footer h4 { color: var(--primary-50); }
     </style>
     
+    <!-- Google Analytics -->
+    {{ if .Site.Params.google_analytics }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Params.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ .Site.Params.google_analytics }}');
+    </script>
+    {{ end }}
+
     <!-- Critical JavaScript inline for immediate execution -->
     <script src="/js/scripts-critical.js"></script>
 </head>

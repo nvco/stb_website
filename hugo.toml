@@ -20,6 +20,7 @@ title = 'Still Time Beauty - Medical Aesthetics | Boulder, Colorado'
   address_city = 'Boulder'
   address_state = 'CO'
   address_zip = '80302'
+  google_analytics = 'G-S72YCFZ2E0'
 
 [menu]
   [[menu.main]]
