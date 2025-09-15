@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`0865d7a`](https://github.com/nvco/stb_website/commit/0865d7a) Enhance Visual Content Copy Generator agent with treatment keyword optimization (2025-09-15)
+  - Update agent to extract specific treatment keywords from content descriptions
+  - Add guidance for natural keyword integration across all platforms (YouTube, TikTok, Instagram)
+  - Include YouTube optimization features: tags, category selection, and community posts
+  - Improve social media content strategy for "Botox & fillers" vs generic "medical aesthetics"
+  - Update location tour video template with YouTube tags, category, and community post content
+
 - [`b8b7d40`](https://github.com/nvco/stb_website/commit/b8b7d40) Enhance site functionality with internal linking, CSS improvements, and workflow updates (2025-09-13)
   - Test and implement Internal Linking Agent on lip filler swelling guide with accessibility-compliant ARIA labels
   - Add comprehensive spacing variables (--spacing-*) with style guide reference for consistent design system
