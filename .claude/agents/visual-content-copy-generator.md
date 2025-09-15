@@ -21,11 +21,11 @@ When invoking this agent, provide:
 ## Agent Process
 
 ### Step 1: Content Analysis and Strategy
-1. **Analyze video content type** to determine optimal messaging approach
-2. **Review business context** from hugo.toml and existing content for consistent branding
-3. **Extract treatment focus** from video description to identify relevant keywords
-4. **Search existing blog posts** for content matching video topic/treatment type
-5. **Determine platform-specific strategies** based on video type and audience
+1. **Analyze content description** to extract specific treatment keywords (e.g., "Botox", "fillers", "lip enhancement") for title optimization - prioritize specific treatment terms over generic terms like "medical aesthetics"
+2. **Analyze content type** to determine optimal messaging approach
+3. **Review business context** from hugo.toml and existing content for consistent branding
+4. **Search existing blog posts** for content matching topic/treatment type
+5. **Determine platform-specific strategies** based on content type and audience
 
 ### Step 2: Platform Research and Business Context
 1. **Read business information** from hugo.toml for contact details and branding
@@ -60,10 +60,14 @@ Create structured markdown file with:
 ## Platform-Specific Optimization
 
 ### YouTube
-- **SEO-focused titles** with primary keywords
+- **SEO-focused titles** with specific treatment keywords extracted from content description (prioritize "Botox", "fillers", "lip enhancement" over "medical aesthetics")
+- **Natural keyword integration** - incorporate keywords conversationally to avoid spammy appearance (e.g., "Your Boulder Botox & Filler Destination" vs "Boulder Botox Fillers Medical Aesthetics")
 - **Detailed descriptions** with timestamps and links
+- **Strategic tags** (8-12 relevant tags, quality over quantity): Balance actual video content with core services and location
+- **Category selection** guidance: "Howto & Style" for beauty/aesthetics content, "People & Blogs" for personal/business stories
+- **Community post content** for video promotion announcements
 - **Related blog article linking** when relevant content exists
-- **Strategic keyword placement** for YouTube search
+- **Strategic keyword placement** for YouTube search using treatment-specific terms
 - **End screen and annotation suggestions**
 - **Thumbnail text recommendations**
 
@@ -83,15 +87,19 @@ When relevant blog content exists:
    ```
 
 ### TikTok
+- **Treatment-focused captions** using specific keywords from content description (e.g., "Botox results" vs "aesthetic treatment results")
+- **Natural keyword integration** in opening hooks to boost algorithm discovery
 - **Trend-aware captions** incorporating current formats
-- **Hashtag mix** of trending, niche, and location tags
+- **Hashtag mix** of trending, niche, treatment-specific, and location tags
 - **Hook-focused opening lines** for engagement
 - **Community interaction strategies**
 - **Duet and stitch opportunities**
 
 ### Instagram
+- **Treatment-focused captions** leading with specific keywords from content description (prioritize "Botox & fillers" over "medical aesthetics" in opening lines)
+- **Natural keyword integration** in captions for better reach and discovery
 - **Story-friendly variations** for multiple content formats
-- **Maximum hashtag utilization** (30 tags)
+- **Maximum hashtag utilization** (30 tags) including treatment-specific hashtags
 - **Location and business tagging strategies**
 - **Instagram Shopping integration** where applicable
 - **Content format optimization**: Reels vs. Posts vs. Stories
@@ -152,7 +160,9 @@ Where `[generated-slug]` is created from the content description (e.g., "locatio
 ## YouTube (also works for Facebook & LinkedIn)
 **Title:** [SEO-optimized title]
 **Description:** [Full description with keywords, CTAs, related blog links, and contact info]
-**Tags:** [Comma-separated tags for YouTube]
+**Tags:** [8-12 comma-separated tags balancing content, services, and location]
+**Category:** [Recommended YouTube category - typically "Howto & Style" or "People & Blogs"]
+**Community Post:** [Short promotional post announcing the new video]
 **Notes:** [Platform-specific recommendations and blog linking strategy]
 
 ## TikTok

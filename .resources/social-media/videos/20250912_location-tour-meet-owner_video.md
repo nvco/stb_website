@@ -2,7 +2,7 @@
 ## Social Media Content Templates
 
 ### YouTube (also works for Facebook & LinkedIn)
-**Title:** "Meet Still Time Beauty: Your Boulder Medical Aesthetics Destination | Pearl Street Location Tour"
+**Title:** "Meet Still Time Beauty: Your Boulder Botox & Filler Destination"
 
 **Description:**
 Take a behind-the-scenes look at Still Time Beauty, Boulder's premier medical aesthetics practice in the heart of downtown! Meet our Board-Certified Nurse Practitioner and discover why Boulder residents - from CU students to outdoor enthusiasts - trust us for natural Botox and dermal filler treatments.
@@ -19,6 +19,12 @@ Book your consultation today and experience the Still Time Beauty difference!
 
 #BoulderBeauty #MedicalAesthetics #BotoxBoulder #DermalFiller #PearlStreet #BoulderMedSpa #StillTimeBeauty #ColoradoBeauty #FacialRejuvenation #BoulderLifestyle #BoulderCO #DowntownBoulder #ColoradoLifestyle
 
+**Tags:** Boulder Colorado, Pearl Street Mall, meet the owner, location tour, Boulder med spa, Botox Boulder, dermal fillers, board certified nurse practitioner, downtown Boulder, Boulder business
+
+**Category:** Howto & Style
+
+**Community Post:** 🎥 NEW VIDEO: Take a behind-the-scenes tour of Still Time Beauty and meet our Board-Certified Nurse Practitioner! Discover why Boulder residents trust us for natural Botox and dermal filler treatments in the heart of downtown. ✨ #BoulderBeauty #StillTimeBeauty
+
 ---
 
 ### TikTok
@@ -29,7 +35,9 @@ POV: You found Boulder's hidden gem for natural Botox & fillers 💎✨
 👩‍⚕️ Board-Certified NP
 🏔️ Perfect for your Boulder lifestyle
 
-Book your glow-up consultation! Link in bio 👆
+Book your glow-up consultation! 
+Link in bio 👆
+
 
 #BoulderBeauty #MedSpa #BotoxBoulder #PearlStreet #Colorado #GlowUp #Aesthetic #Boulder #MedicalAesthetics #SelfCare #BoulderLifestyle #StillTimeBeauty #BoulderCO
 
@@ -37,7 +45,7 @@ Book your glow-up consultation! Link in bio 👆
 
 ### Instagram
 **Caption:**
-Behind the doors of Boulder's most trusted medical aesthetics practice ✨
+Meet Still Time Beauty: Your Boulder Botox & Filler Destination ✨
 
 Meet the heart of Still Time Beauty - where science meets artistry in Boulder's vibrant downtown. Our Board-Certified Nurse Practitioner brings years of expertise to help you achieve natural, confident results that complement your active Boulder lifestyle.
 
