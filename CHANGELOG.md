@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`ce42f1f`](https://github.com/nvco/stb_website/commit/ce42f1f) Implement Google Analytics with HIPAA-compliant privacy disclosure (2025-09-15)
+  - Add Google Analytics configuration to hugo.toml with measurement ID
+  - Integrate GA4 tracking code in baseof.html template with conditional loading
+  - Update privacy policy with comprehensive Google Analytics disclosure
+  - Include opt-out instructions and Google privacy policy links
+  - Ensure compliance for local Colorado medical practice without cookie banner requirements
+
 - [`0865d7a`](https://github.com/nvco/stb_website/commit/0865d7a) Enhance Visual Content Copy Generator agent with treatment keyword optimization (2025-09-15)
   - Update agent to extract specific treatment keywords from content descriptions
   - Add guidance for natural keyword integration across all platforms (YouTube, TikTok, Instagram)
