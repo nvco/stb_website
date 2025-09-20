@@ -137,7 +137,7 @@ The agent will process all posts in the queue file sequentially and generate ind
    - Use prepared FAQ content from working file for front matter schema
    - Use found references from working file
 2. **Create Hugo-compliant front matter** with required fields:
-   - `title`: Use provided title if given, otherwise generate SEO-optimized title using primary keyword and location (if applicable)
+   - `title`: Use provided title if given, otherwise generate SEO-optimized title using primary keyword and location (if applicable) - vary question formats to avoid repetitive patterns (mix "Does...", "How...", "What...", "Is...", etc.)
    - `description`: 150-160 characters for search results, incorporating primary keyword naturally
    - `keywords`: YAML array format with quoted strings (e.g., `- "keyword phrase"`) using selected keywords from working file
    - `author`: "Still Time Beauty"
@@ -156,7 +156,7 @@ The agent will process all posts in the queue file sequentially and generate ind
    - **H2 sections**: Use natural, conversational titles - mix questions and statements based on what flows best
      - **Question format**: "How Long Does Botox Last?", "What Botox Side Effects Should I Expect?", "When Should I Worry About Side Effects?"
      - **Statement format**: "Botox Side Effects to Expect", "Best Candidates for Botox Treatment", "Botox vs Dysport Comparison"
-     - **Mix it up**: Vary between questions and statements throughout the article for natural flow
+     - **Mix it up**: Vary between questions and statements throughout the article for natural flow - avoid repetitive patterns like all "How..." or all "What..." questions
      - **Avoid colons**: Don't use formal titles like "Botox Side Effects: What to Expect" - keep titles conversational and flowing
      - **Choose what sounds most natural**: Let the content and topic guide whether a question or statement works better for each section
    - **Answer each question directly** in conversational tone focusing on what readers need to know
@@ -165,7 +165,7 @@ The agent will process all posts in the queue file sequentially and generate ind
 4. **Use strategic formatting to break up content**:
    - **Bold text** for key timeframes, important points, and emphasis
    - **Bullet points** for practical tips, step-by-step instructions, warning signs, and actionable items
-   - **Blockquotes (>)** for key takeaways, important warnings, or memorable points
+   - **Blockquotes (>)** for key takeaways, important warnings, interesting facts, or memorable points - vary placement and content type to avoid formulaic use
    - **Structured lists** with clear categories when helpful (e.g., "First 24 Hours:", "Week 1:", "Warning Signs:")
    - **Avoid walls of text** - mix paragraphs with formatting elements for scannable content
 5. **Plan strategic internal links** (2-3 links with proper ARIA labels) when genuinely helpful
@@ -260,13 +260,14 @@ The agent will generate:
 - **Third person perspective** for all content (avoid "you" or "we" - use "patients", "clients", "the treatment", etc.)
 - **Question-focused content** - H2 titles should mirror conversational questions people actually ask (like FAQ questions)
 - **Scannable formatting** - use bold text, bullet points, blockquotes, and structured lists to break up content
-- **Stay on topic** - focus only on the main question/topic; avoid unrelated sections like cost/provider selection unless directly relevant
+- **Stay on topic** - focus only on the main question/topic; avoid unrelated sections like insurance coverage, pricing, or provider selection unless directly relevant
 - **Helpful and brief** - answer the specific question asked rather than providing comprehensive background
 - **Natural keyword integration** that feels contextual
 - **Authentic local connection** using specific geographic references (when applicable)
 - **Visual variety** - mix paragraphs with formatting elements to avoid walls of text
 - **Strong call-to-action** encouraging consultation booking
 - **Mirror FAQ quality** - H2 sections should have the same conversational directness as FAQ questions
+- **Avoid title repetition** - vary question formats across articles to prevent formulaic patterns (if recent articles used "Does...", try "How well...", "What can...", "Is... worth it", etc.)
 
 ## File Management
 
