@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`41763d3`](https://github.com/nvco/stb_website/commit/41763d3) Add strategic internal links to rewritten blog articles (2025-09-19)
+  - Add internal links to Botox migraine article connecting to aftercare and practitioner credentials
+  - Add internal links to Superior Botox article linking to about page, aftercare, and services
+  - Add internal links to lip filler swelling article with aftercare and expertise connections
+  - Use keyword-rich anchor text with accessibility-compliant ARIA labels for SEO optimization
+
 - [`15d9e31`](https://github.com/nvco/stb_website/commit/15d9e31) Rewrite blog articles with conversational approach and enhance formatting variety (2025-09-19)
   - Rewrite Botox migraine article with question-focused H2 titles and strategic formatting
   - Transform Superior Botox article from listicle to helpful Q&A format
