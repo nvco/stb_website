@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`a0bcc8b`](https://github.com/nvco/stb_website/commit/a0bcc8b) Enhance blog content generator with conversational formatting and structure (2025-09-19)
+  - Update blog content generator agent to create conversational, question-focused articles
+  - Remove short/long form distinction in favor of flexible 600-1,200 word approach
+  - Add strategic formatting guidelines (bold text, bullet points, blockquotes)
+  - Implement natural H2 titles mixing questions and statements without colons
+  - Remove H1 tags from content body (handled by Hugo front matter)
+  - Rewrite lip filler swelling article as example of new conversational approach
+  - Update documentation in CLAUDE.md and docs/agents/CLAUDE.md
+
 - [`ce42f1f`](https://github.com/nvco/stb_website/commit/ce42f1f) Implement Google Analytics with HIPAA-compliant privacy disclosure (2025-09-15)
   - Add Google Analytics configuration to hugo.toml with measurement ID
   - Integrate GA4 tracking code in baseof.html template with conditional loading
