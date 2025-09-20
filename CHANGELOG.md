@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Removed
+- [`7cb3487`](https://github.com/nvco/stb_website/commit/7cb3487) Remove completed todo-list.md file (2025-09-19)
+  - Clean up project root by removing todo-list.md now that agent architecture is complete
+  - File served its purpose during agent development and blog content enhancement phases
+
 ### Added
 - [`41763d3`](https://github.com/nvco/stb_website/commit/41763d3) Add strategic internal links to rewritten blog articles (2025-09-19)
   - Add internal links to Botox migraine article connecting to aftercare and practitioner credentials
