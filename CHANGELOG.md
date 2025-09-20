@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- [`15d9e31`](https://github.com/nvco/stb_website/commit/15d9e31) Rewrite blog articles with conversational approach and enhance formatting variety (2025-09-19)
+  - Rewrite Botox migraine article with question-focused H2 titles and strategic formatting
+  - Transform Superior Botox article from listicle to helpful Q&A format
+  - Remove insurance/pricing content to focus on treatment information
+  - Vary blockquote placement and content types to avoid formulaic patterns
+  - Update H1 titles with natural question variety to prevent repetitive patterns
+  - Enhance blog content generator agent with title variation guidance
+
 - [`a0bcc8b`](https://github.com/nvco/stb_website/commit/a0bcc8b) Enhance blog content generator with conversational formatting and structure (2025-09-19)
   - Update blog content generator agent to create conversational, question-focused articles
   - Remove short/long form distinction in favor of flexible 600-1,200 word approach
