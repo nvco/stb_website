@@ -142,9 +142,9 @@ This project uses specialized Claude Code agents for SEO-optimized content creat
    - **Location:** `.claude/agents/keyword-strategy-agent.md`
    - **Purpose:** Analyzes CSV files and organizes keywords into Foundation/Growth/Authority batches with progress tracking
 
-2. **Blog Content Generator Agent** - Comprehensive, SEO-optimized blog posts with local geographic strategies
+2. **Blog Content Generator Agent** - Brief, helpful blog posts with conversational question-focused structure
    - **Location:** `.claude/agents/blog-content-generator.md`
-   - **Purpose:** Creates Hugo-compliant blog posts with FAQ schema and keyword integration
+   - **Purpose:** Creates Hugo-compliant blog posts with conversational H2 titles, strategic formatting, and FAQ schema
 
 3. **Internal Linking Agent** - Post-publication enhancement with strategic internal links
    - **Location:** `.claude/agents/internal-linking-agent.md`
@@ -172,7 +172,6 @@ Use the blog-content-generator agent to create a blog post:
 - Primary topic: "lip filler swelling"
 - Category: "Dermal Fillers"
 - Keyword Sources: "lip fillers"
-- Content length: "short form"
 - Geographic location: "Boulder"
 ```
 

@@ -7,7 +7,7 @@ This file contains detailed documentation for specialized Claude Code agents use
 The project uses four specialized agents for SEO-optimized content creation and enhancement:
 
 1. **Keyword Strategy Agent** - Complete analysis and strategic content planning with batching
-2. **Blog Content Generator Agent** - SEO-optimized blog post creation
+2. **Blog Content Generator Agent** - Brief, helpful blog posts with conversational structure
 3. **Internal Linking Agent** - Post-publication internal link enhancement
 4. **Visual Content Copy Generator Agent** - Platform-optimized social media copy for videos and images
 
@@ -59,7 +59,7 @@ Use the keyword-strategy-agent to prioritize across categories:
 
 ## Blog Content Generator Agent
 
-Generates comprehensive, SEO-optimized blog posts with keyword research integration and local geographic differentiation.
+Generates brief, helpful blog posts with conversational question-focused structure, strategic formatting, and local geographic integration.
 
 **Location:** `.claude/agents/blog-content-generator.md`
 
@@ -73,7 +73,6 @@ Use the blog-content-generator agent to create a blog post:
 - Primary topic: "Botox for crow's feet"
 - Category: "Botox"
 - Keyword Sources: "Botox"
-- Content length: "long form"
 - Geographic location: "Boulder"
 ```
 
@@ -83,7 +82,6 @@ Use the blog-content-generator agent to create a blog post:
 - Primary topic: "Botox vs Dysport comparison"
 - Category: "Treatment Comparisons"
 - Keyword Sources: "Botox, Dysport"
-- Content length: "long form" 
 - Geographic location: "Boulder"
 ```
 
@@ -107,7 +105,9 @@ Claude Code automatically invokes the agent when you request blog content creati
 - **Content Differentiation**: Creates unique angles based on chosen local strategy
 - **SEO Optimization**: 9th grade reading level with 1-2% keyword density
 - **Hugo Compliance**: Proper front matter, categories, FAQ schema
-- **Flexible Length**: Short form (1,000-1,500 words) or long form (2,000-3,000+ words)
+- **Brief and Helpful**: Typically 600-1,000 words, maximum 1,200 words - focuses on answering questions thoroughly
+- **Strategic Formatting**: Bold text, bullet points, blockquotes for scannable content
+- **Conversational H2 Titles**: Question-based headings that mirror FAQ style
 
 ### Local Strategy Options:
 - **Full-Local**: Entire article localized with city-specific content throughout (use for service keywords, location-intent terms)
@@ -310,8 +310,7 @@ Use the visual-content-copy-generator agent to create promotional content:
    ```
    Use the blog-content-generator agent to create a blog post:
    - Primary topic: "Your topic here"
-   - Category: "[category]" 
-   - Content length: "long form"
+   - Category: "[category]"
    - Geographic location: "Boulder"
    ```
    - Creates individual blog posts using data-driven keyword selection

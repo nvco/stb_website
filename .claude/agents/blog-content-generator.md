@@ -17,7 +17,7 @@ When invoking this agent for a single post, provide:
 - **Primary topic/keyword**: Main focus for the blog post (can be just a keyword/phrase or a complete predefined title)
 - **Category**: Hugo website category (Botox, Dermal Fillers, Dysport, Treatment Comparisons, etc.) - determines how content is categorized on the site
 - **Keyword Sources**: Which analysis files to use for keyword research (e.g., "Botox" or "Botox, Dysport") - determines which CSV/analysis files to read
-- **Content length**: "short form" (1,000-1,500 words) or "long form" (2,000-3,000+ words)
+- **Content length**: Not required - agent defaults to brief, helpful content (maximum 1,200 words)
 - **Geographic location** (optional): Specific city (Boulder, Superior, Louisville, etc.) for location-based content - maps to `location` field in front matter
 - **Local strategy** (optional): "full-local" (entire article localized), "faq-local" (generic article + local FAQ section), or "generic" (no location focus)
   - **Dependency**: "full-local" and "faq-local" require geographic location to be provided
@@ -130,7 +130,7 @@ The agent will process all posts in the queue file sequentially and generate ind
 3. **Automatic fallback** when no geographic location provided
 4. **Document in working file**: Note generic approach for consistency
 
-### Step 4: Content Structure Generation
+### Step 4: Content Structure Generation (Conversational Q&A Format)
 1. **Reference working data file** as primary source for all content generation:
    - Use selected keywords from working file (not CSV files)
    - Use planned content outline from working file
@@ -140,7 +140,7 @@ The agent will process all posts in the queue file sequentially and generate ind
    - `title`: Use provided title if given, otherwise generate SEO-optimized title using primary keyword and location (if applicable)
    - `description`: 150-160 characters for search results, incorporating primary keyword naturally
    - `keywords`: YAML array format with quoted strings (e.g., `- "keyword phrase"`) using selected keywords from working file
-   - `author`: "Still Time Beauty" 
+   - `author`: "Still Time Beauty"
    - `date`: Content creation date (YYYY-MM-DD)
    - `publishDate`: Publication date (YYYY-MM-DD)
    - `type`: "blog"
@@ -149,25 +149,30 @@ The agent will process all posts in the queue file sequentially and generate ind
    - `params.h1title`: Optional cleaner H1 override
    - `faqs`: 3-6 Q&A pairs for structured data schema (combine universal topic FAQs with location-specific FAQs based on local-strategy)
    - `references`: 3-5 credible sources with name and URL fields for build-time rendering
-2. **Generate H2 sections** with benefit-focused structure:
-   - Structure content logically with H2 headings for major topics
-   - **Use H3 subheadings** within sections to break up long content and improve organization
-   - **Use bullet points and lists strategically** for specific content types that benefit from list format:
-     - **Warning signs and symptoms** (when to call doctor, infection signs)
-     - **Step-by-step instructions** (aftercare steps, how-to procedures)
-     - **Comparison lists** (treatment options, provider criteria)
-     - **Quick reference info** (timeline expectations, cost factors)
-     - **Do NOT use lists for**: explanatory content, background information, or general descriptions
-   - **Break up long paragraphs** - avoid walls of text by using shorter paragraphs, lists, and subheadings
-   - Focus on benefits: treatment results, prevention, convenience, quality, confidence, etc.
-   - Include local connections and geographic references where applicable
-   - Integrate supporting keywords in H2 headings when natural and relevant (don't force if unnatural)
-   - **Content-driven structure**: Let the topic and content requirements determine section count and depth, not arbitrary numbers
-3. **Plan strategic internal links** (2-3 links with proper ARIA labels)
-4. **FAQ handling**: FAQs are automatically generated at build time from front matter schema - do NOT create FAQ content section in article body
+3. **Structure content using conversational, natural H2 titles** in article format:
+   - **No H1 in content body**: Hugo generates H1 from front matter `h1title` parameter - start content directly with opening paragraph
+   - **Opening paragraph**: Provide clear answer that serves as TLDR for the whole article, incorporating the main topic naturally
+     - Example: Start with "Botox side effects are typically mild and temporary..." rather than "# How to Manage Botox Side Effects"
+   - **H2 sections**: Use natural, conversational titles - mix questions and statements based on what flows best
+     - **Question format**: "How Long Does Botox Last?", "What Botox Side Effects Should I Expect?", "When Should I Worry About Side Effects?"
+     - **Statement format**: "Botox Side Effects to Expect", "Best Candidates for Botox Treatment", "Botox vs Dysport Comparison"
+     - **Mix it up**: Vary between questions and statements throughout the article for natural flow
+     - **Avoid colons**: Don't use formal titles like "Botox Side Effects: What to Expect" - keep titles conversational and flowing
+     - **Choose what sounds most natural**: Let the content and topic guide whether a question or statement works better for each section
+   - **Answer each question directly** in conversational tone focusing on what readers need to know
+   - **Focus on the specific topic only** - avoid unrelated sections like cost/provider selection unless directly relevant to the main question
+   - **Keep sections brief and specific** - address the question asked, not exhaustive background information
+4. **Use strategic formatting to break up content**:
+   - **Bold text** for key timeframes, important points, and emphasis
+   - **Bullet points** for practical tips, step-by-step instructions, warning signs, and actionable items
+   - **Blockquotes (>)** for key takeaways, important warnings, or memorable points
+   - **Structured lists** with clear categories when helpful (e.g., "First 24 Hours:", "Week 1:", "Warning Signs:")
+   - **Avoid walls of text** - mix paragraphs with formatting elements for scannable content
+5. **Plan strategic internal links** (2-3 links with proper ARIA labels) when genuinely helpful
+6. **FAQ handling**: FAQs are automatically generated at build time from front matter schema - do NOT create FAQ content section in article body
 
 ### Step 5: SEO Optimization
-1. **Create/use H1 title** (use provided H1 if given, otherwise generate from primary keyword) and integrate primary keyword in opening paragraph
+1. **H1 handled by front matter**: Hugo generates H1 from `h1title` parameter - integrate primary keyword naturally in opening paragraph
 2. **Distribute supporting keywords** naturally throughout content
 3. **Apply geographic optimization based on local-strategy**:
    - **Full-local**: Add geographic modifiers throughout content for local SEO, include state for ambiguous city names
@@ -176,41 +181,43 @@ The agent will process all posts in the queue file sequentially and generate ind
 4. **Include semantic keyword variations** for comprehensive coverage
 5. **Balance keyword density** at 1-2% (reasonable SEO approach)
 
-### Step 6: Content Differentiation (Strategy-Dependent)
+### Step 6: Content Focus (Strategy-Dependent)
 **Apply based on local-strategy parameter:**
 
 #### Full-Local Strategy:
-1. **Analyze similar content** potential for uniqueness
-2. **Incorporate city-specific details** throughout content to prevent duplicate content
-3. **Use unique angles** based on local demographics or lifestyle
-4. **Ensure authentic local connection** throughout content
+1. **Focus on being helpful** with city-specific context throughout content
+2. **Incorporate local details** when they genuinely help answer the question
+3. **Use local examples** based on demographics or lifestyle when relevant
+4. **Ensure authentic local connection** without forcing unnecessary geographic references
 
 #### FAQ-Local Strategy:
-1. **Focus on topic expertise** for main content differentiation
-2. **Add local differentiation only in FAQ section** with city-specific questions/answers
-3. **Keep main content universally valuable** to avoid thin local content
-4. **Ensure local FAQs provide genuine location-specific value**
+1. **Focus on answering questions helpfully** for main content
+2. **Add local context only in FAQ section** with city-specific questions/answers
+3. **Keep main content universally valuable** and directly helpful
+4. **Ensure local FAQs provide genuine value** to location-specific questions
 
 #### Generic Strategy:
-1. **Focus purely on topic expertise** and comprehensive coverage
-2. **Differentiate through unique angles** and expert perspective
-3. **No location-based differentiation** needed
+1. **Focus purely on being helpful** and answering questions directly
+2. **Provide specific, actionable information** rather than general overviews
+3. **No location-based content** needed - focus on universal helpfulness
 
-### Step 7: Content Length and Focus Execution
-1. **STRICT adherence to specified content length**:
-   - **Short form**: 1,000-1,500 words MAXIMUM - stay within this range
-   - **Long form**: 2,000-3,000+ words BUT only if the content warrants it - if the topic can be covered effectively in fewer words, keep it shorter
-   - **Word count validation**: Always check final word count and edit to meet specifications
-2. **Focus on what readers actually want to know**:
-   - **Essential information first**: What it is, how it works, what to expect, cost considerations
-   - **Skip exhaustive details**: Avoid boring medical minutiae that doesn't help decision-making
-   - **Be engaging**: Write content people actually want to read, not comprehensive textbooks
-3. **Content depth strategy**:
-   - **Short form**: Cover key topics with clear, direct explanations
-   - **Long form**: Add useful context and examples, but avoid padding with unnecessary details
-   - **Section structure**: Use H2 and H3 headings for logical flow - focus on reader needs, not academic completeness
-4. **Quality over quantity**: Better to have 1,000 useful words than 2,000 boring ones
-5. **Differentiate from competitors**: Provide fast, useful information instead of exhaustive coverage that bores readers
+### Step 7: Content Length and Focus Execution (Brief & Helpful)
+1. **Prioritize brevity and helpfulness**:
+   - **Default approach**: Write as briefly as possible while being genuinely helpful
+   - **Maximum length**: 1,200 words - but if you can answer it well in 600-800 words, stop there
+   - **No minimum word count**: Focus on answering questions thoroughly, not hitting word targets
+   - **Word count validation**: Always check final word count and edit to remove unnecessary content
+2. **Question-focused content strategy**:
+   - **Answer the question directly**: Start each section with a clear, immediate answer
+   - **Essential information only**: What readers need to know to make decisions or understand the topic
+   - **Skip unrelated facts**: Avoid medical minutiae or background that doesn't answer the specific question
+   - **Conversational flow**: Write as if personally answering someone's specific question
+3. **Content depth approach**:
+   - **Main question plus 4-6 related sub-questions** that naturally follow from the main topic
+   - **Section structure**: Each H2 should answer a specific question that readers actually ask
+   - **Stop when helpful**: If the topic is thoroughly covered in fewer words, don't add padding
+4. **Helpful over comprehensive**: Better to thoroughly answer key questions than partially cover many topics
+5. **Reader-first approach**: Write what people need to know, not what demonstrates medical expertise
 
 ### Step 8: Research and References (Front Matter)
 1. **Use references from working file** if available, otherwise search for credible sources using WebSearch to support content claims:
@@ -239,25 +246,27 @@ The agent will process all posts in the queue file sequentially and generate ind
 
 The agent will generate:
 - **Complete blog post markdown file** with proper front matter
-- **SEO-optimized content** (short form: 1,000-1,500 words | long form: 2,000-3,000+ words)
+- **Brief, helpful content** (typically 600-1,000 words, maximum 1,200 words)
 - **Strategic keyword integration** without over-optimization
 - **Local geographic authenticity** (when applicable)
 - **FAQ schema** (3-6 Q&As) for enhanced SERP features
-- **Internal linking strategy** with proper accessibility
+- **Strategic formatting** with bold text, bullet points, and blockquotes for scannable content
 - **Credible references** in front matter schema with 3-5 authoritative sources (auto-rendered by Hugo after FAQs)
 - **Hugo-compliant structure** ready for immediate publication
 
 ## Quality Standards
 
-- **Professional yet accessible tone** - medical authority with 9th grade reading level (clear explanations without jargon)
+- **Conversational yet professional tone** - medical authority with accessible language that answers questions directly
 - **Third person perspective** for all content (avoid "you" or "we" - use "patients", "clients", "the treatment", etc.)
-- **Reader-focused content** - prioritize what people actually want to know, not exhaustive medical details
-- **Engaging and scannable** - use H3 subheadings, bullet points, lists, and short paragraphs to break up content; write content people want to read, not boring comprehensive guides
+- **Question-focused content** - H2 titles should mirror conversational questions people actually ask (like FAQ questions)
+- **Scannable formatting** - use bold text, bullet points, blockquotes, and structured lists to break up content
+- **Stay on topic** - focus only on the main question/topic; avoid unrelated sections like cost/provider selection unless directly relevant
+- **Helpful and brief** - answer the specific question asked rather than providing comprehensive background
 - **Natural keyword integration** that feels contextual
-- **Authentic local connection** using specific geographic references
-- **Useful coverage** of key benefits and practical information (not every possible detail)
+- **Authentic local connection** using specific geographic references (when applicable)
+- **Visual variety** - mix paragraphs with formatting elements to avoid walls of text
 - **Strong call-to-action** encouraging consultation booking
-- **Concise value** - if it can be said in fewer words effectively, do so even in "long form" content
+- **Mirror FAQ quality** - H2 sections should have the same conversational directness as FAQ questions
 
 ## File Management
 
@@ -281,7 +290,6 @@ Use the blog-content-generator agent to create a blog post:
 - Primary topic: "Botox for crow's feet"
 - Category: "Botox"
 - Keyword Sources: "Botox"
-- Content length: "long form"
 - Geographic location: "Boulder"
 - Local strategy: "full-local"
 ```
@@ -292,7 +300,6 @@ Use the blog-content-generator agent to create a blog post:
 - Primary topic: "How Botox works for wrinkles"
 - Category: "Botox"
 - Keyword Sources: "Botox"
-- Content length: "long form"
 - Geographic location: "Boulder"
 ```
 
@@ -301,7 +308,6 @@ Use the blog-content-generator agent to create a blog post:
 - Primary topic: "lip filler swelling"
 - Category: "Dermal Fillers"
 - Keyword Sources: "lip fillers"
-- Content length: "short form"
 - Geographic location: "Boulder"
 ```
 
@@ -311,7 +317,6 @@ Use the blog-content-generator agent to create a blog post:
 - Primary topic: "Botox side effects and safety"
 - Category: "Botox"
 - Keyword Sources: "Botox"
-- Content length: "long form"
 - Local strategy: "generic"
 ```
 
@@ -321,7 +326,6 @@ Use the blog-content-generator agent to create a blog post:
 - Primary topic: "Botox vs Dysport comparison"
 - Category: "Treatment Comparisons"
 - Keyword Sources: "Botox, Dysport"
-- Content length: "long form"
 - Geographic location: "Boulder"
 ```
 
@@ -344,11 +348,12 @@ Claude Code will automatically invoke this agent when you request blog content c
 
 **Single Post Output:**
 - Analyzes keywords.csv for relevant terms using hybrid selection
-- Reads city data for local references and differentiation  
-- Generates unique content with local lifestyle connections
-- Creates H2 sections with location-specific examples
+- Reads city data for local references and differentiation
+- Generates unique content focused on answering specific questions
+- Creates conversational H2 sections that mirror FAQ questions
+- Uses strategic formatting (bold text, bullet points, blockquotes) for scannable content
 - Integrates keywords naturally at 9th grade reading level
-- Outputs complete publication-ready blog post (1,000-3,000+ words based on length setting)
+- Outputs complete publication-ready blog post (typically 600-1,000 words, maximum 1,200)
 
 **Batch Processing Output:**
 - Reads queue file with multiple post definitions
